@@ -34,4 +34,9 @@ Tuter::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # We don't want DB access or model initialization on precompile in Heroku
+  config.assets.initialize_on_precompile = false;
+
+  config.action_mailer.default_url_options = { :host => 'localhost:3000'}
 end
