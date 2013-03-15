@@ -1,13 +1,23 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
+gem 'ruby'
+gem 'heroku'
+gem 'devise'
+gem 'omniauth-facebook', '~> 1.4.1'
+# TODO Thin gem not bundling, look into
+# gem "thin", '~> 1.5.0'
+gem 'emberjs-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
-
+group :production do
+	gem 'pg'
+end
+group :test, :development do
+	gem 'sqlite3'
+end 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

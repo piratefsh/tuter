@@ -6,7 +6,7 @@
 #   git config --global core.excludesfile ~/.gitignore_global
 
 # Ignore bundler config
-/.bundle
+
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -15,9 +15,7 @@
 /log/*.log
 /tmp
 =======
-*.gem
 *.rbc
-.bundle
 .config
 coverage
 InstalledFiles
@@ -28,7 +26,6 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
-
 # YARD artifacts
 .yardoc
 _yardoc
