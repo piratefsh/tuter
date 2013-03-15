@@ -5,10 +5,30 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
 <%= yield %>
+    <div id="wrapper">
+        <header>
+            <nav>
+                <ul id="nav_all">
+                    <li>Home</li>
+                    <li>Search</li>
+                    <li>Profile</li>
+                </ul>
+            </nav>
+        </header>
 
+        <div id="maincontent">
+            <h1>Welcome to Tuter</h1>
+            <section>
+                <p>Hello world!</p>
+            </section>
+        </div>
+
+    </div>
 </body>
 </html>
