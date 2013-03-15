@@ -11,12 +11,6 @@ div#maincontent {
 
 header {
   background-color: #2185c5;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2185c5), to(#15547d));
-  background-image: -webkit-linear-gradient(top, #2185c5, #15547d);
-  background-image: -moz-linear-gradient(top, #2185c5, #15547d);
-  background-image: -ms-linear-gradient(top, #2185c5, #15547d);
-  background-image: -o-linear-gradient(top, #2185c5, #15547d);
-  background-color: #2185c5;
   color: #eeeeee;
   font-weight: bold;
   overflow: visible;
@@ -40,7 +34,7 @@ nav {
     border-right: 1px solid #15547d; }
 
 section {
-  padding: 6px; }
+  padding: 8px; }
 
 h1, h2, h3 {
   color: #3e454c; }

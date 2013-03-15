@@ -1,7 +1,10 @@
 Tuter::Application.routes.draw do
 
   root :to => "home#index"
+
   match "/signup" => "signup#signup"
+  match "/search" => "search#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
