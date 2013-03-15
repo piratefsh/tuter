@@ -1,17 +1,23 @@
 $light_grey: #eee
 $dark_grey: #3E454C
-$grey: #ccc
+$grey: #666
 $cream: #FFF6E5
 $blue: #2185C5
 $darker_blue: #15547D
 $light_blue: #7ECEFD
 $white: #ffffff
-
+$red: #FF7F66
 $little_space: 4px
-$medium_space: 6px
+$medium_space: 8px
 $big_space: 12px
 
 $header_padding: 12px
+
+@mixin rounded-corners ($radius)
+    -moz-border-radius: $radius
+    -webkit-border-radius: $radius
+    -khtml-border-radius: $radius
+    border-radius: $radius
 
 @mixin gradient($color1, $color2)
     background-color: $color1
@@ -34,7 +40,7 @@ div
     &#maincontent
         padding: $big_space
 header
-    @include gradient($blue, $darker_blue)
+    //@include gradient($blue, $darker_blue)
     background-color: $blue
     color: $light_grey
     font-weight: bold
