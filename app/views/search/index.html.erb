@@ -1,0 +1,36 @@
+<%= stylesheet_link_tag    "search", :media => "all" %>
+<div id = "sidebar">
+    <h2>Search Tutors</h2>
+    <form>
+        <div class="form_element">
+            <label>Search All</label>
+            <label class="helper_text">Search any</label>
+            <input type="text" name="general_search"/>
+        </div> 
+
+        <div class="form_element">
+            <label>Location</label>
+            <label class="helper_text">Zip code</label>
+            <input type="text" name="location"/>
+        </div>
+
+        <div class="form_element">
+            <label>Course</label>
+            <label class="helper_text">Course code</label>
+            <input type="text" name="course"/>
+        </div>
+        <div class="form_element">
+            <label>Type</label>
+            <input type="checkbox" value="drop in" name="dropin"/>
+            <label for="dropin">Drop in</label>
+            <input type="checkbox" name="group"/>
+            <label for="dropin">Group</label>
+        </div>
+        <div class="form_element">
+            <label>Rate</label>
+            <input type="number" name="rates"></input>
+        </div>
+
+        <input value="Go!" type="submit"/>
+    </form>
+</div>
