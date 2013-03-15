@@ -11,22 +11,33 @@ div#maincontent {
 
 header {
   background-color: #2185c5;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2185c5), to(#15547d));
+  background-image: -webkit-linear-gradient(top, #2185c5, #15547d);
+  background-image: -moz-linear-gradient(top, #2185c5, #15547d);
+  background-image: -ms-linear-gradient(top, #2185c5, #15547d);
+  background-image: -o-linear-gradient(top, #2185c5, #15547d);
+  background-color: #2185c5;
   color: #eeeeee;
-  padding: 4px;
   font-weight: bold;
-  overflow: auto; }
+  overflow: visible;
+  padding: 12px;
+  padding-left: 0; }
 
-nav ul {
-  width: 300px; }
-  nav ul#nav_user {
-    float: right;
-    clear: right; }
-  nav ul#nav_al {
-    float: left;
-    clear: left; }
-nav li {
-  display: inline;
-  padding: 0 4px; }
+nav {
+  padding: 0; }
+  nav ul {
+    padding: 0;
+    margin: 0; }
+    nav ul#nav_user {
+      float: right;
+      clear: right; }
+    nav ul#nav_al {
+      float: left;
+      clear: left; }
+  nav li {
+    display: inline;
+    padding: 12px;
+    border-right: 1px solid #15547d; }
 
 section {
   padding: 6px; }

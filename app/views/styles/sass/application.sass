@@ -1,0 +1,65 @@
+$light_grey: #eee
+$dark_grey: #3E454C
+$grey: #ccc
+$cream: #FFF6E5
+$blue: #2185C5
+$darker_blue: #15547D
+$light_blue: #7ECEFD
+$white: #ffffff
+
+$little_space: 4px
+$medium_space: 6px
+$big_space: 12px
+
+$header_padding: 12px
+
+@mixin gradient($color1, $color2)
+    background-color: $color1
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color1), to($color2))
+    background-image: -webkit-linear-gradient(top, $color1, $color2)
+    background-image:    -moz-linear-gradient(top, $color1, $color2)
+    background-image:     -ms-linear-gradient(top, $color1, $color2)
+    background-image:      -o-linear-gradient(top, $color1, $color2)
+
+body
+    background-color: $light_grey
+    font-family: 'Open Sans', Helvetica, Arial
+
+div
+    &#wrapper
+        width: 700px
+        margin: 0 auto
+        background-color: $white
+
+    &#maincontent
+        padding: $big_space
+header
+    @include gradient($blue, $darker_blue)
+    background-color: $blue
+    color: $light_grey
+    font-weight: bold
+    overflow: visible
+    padding: $header_padding
+    padding-left: 0
+
+nav
+    padding: 0
+    ul 
+        padding: 0
+        margin: 0
+        &#nav_user
+            float: right
+            clear: right
+        &#nav_al
+            float: left
+            clear: left
+    li 
+        display: inline
+        padding: $header_padding
+        border-right: 1px solid $darker_blue
+
+section
+    padding: $medium_space
+
+h1, h2, h3
+    color: $dark_grey
