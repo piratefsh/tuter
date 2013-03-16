@@ -44,7 +44,7 @@ header
     background-color: $blue
     color: $light_grey
     font-weight: bold
-    overflow: visible
+    overflow: auto
     padding: $header_padding
     padding-left: 0
 
@@ -56,13 +56,20 @@ nav
         &#nav_user
             float: right
             clear: right
-        &#nav_al
+            li
+                border-left: 1px solid $darker_blue
+        &#nav_all
             float: left
             clear: left
+            li 
+                border-right: 1px solid $darker_blue
+
     li 
         display: inline
         padding: $header_padding
-        border-right: 1px solid $darker_blue
+        a 
+            color: $white
+            text-decoration: none
 
 section
     padding: $medium_space

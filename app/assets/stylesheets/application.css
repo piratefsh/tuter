@@ -13,7 +13,7 @@ header {
   background-color: #2185c5;
   color: #eeeeee;
   font-weight: bold;
-  overflow: visible;
+  overflow: auto;
   padding: 12px;
   padding-left: 0; }
 
@@ -25,13 +25,19 @@ nav {
     nav ul#nav_user {
       float: right;
       clear: right; }
-    nav ul#nav_al {
+      nav ul#nav_user li {
+        border-left: 1px solid #15547d; }
+    nav ul#nav_all {
       float: left;
       clear: left; }
+      nav ul#nav_all li {
+        border-right: 1px solid #15547d; }
   nav li {
     display: inline;
-    padding: 12px;
-    border-right: 1px solid #15547d; }
+    padding: 12px; }
+    nav li a {
+      color: white;
+      text-decoration: none; }
 
 section {
   padding: 8px; }
