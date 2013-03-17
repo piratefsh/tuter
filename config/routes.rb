@@ -1,14 +1,16 @@
 Tuter::Application.routes.draw do
 
-  devise_for :users, :controllers => {:omniauth_callbacks => "omniauth_callbacks" }
+  devise_for :users
 
-  root :to => "home#index"
+  root :to => "application#index"
 
-  match '/auth/:provider/callback', to: 'sessions#create'
-  match '/auth/failure', to: redirect('/')
 
-  # match "/signup" => "signup#signup"
-  # match "/search" => "search#index"
+  match '/users/auth/:provider/callback', to: 'sessions#create'
+  match '/users/auth/failure', to: redirect('/')
+
+
+  match "/signup" => "signup#signup"
+  match "/search" => "search#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

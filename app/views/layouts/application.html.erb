@@ -24,12 +24,13 @@
             </nav>
         </header>
         <% if user_signed_in? %>
-            Logged in as <strong></strong>.
+            Logged in as <strong><%= current_user.first_name + " " + current_user.last_name %></strong>.
             <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
         <% else %>
             <%= link_to "Sign up", new_user_registration_path %> |
             <%= link_to "Login", new_user_session_path %> | 
-            <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), id: "signin" %> 
+            <%= link_to "Sign in with Facebook", "/users/auth/facebook" %> 
+
          <% end %>
 
         <div id="maincontent">
