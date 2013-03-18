@@ -32,6 +32,9 @@ nav {
     display: inline;
     padding: 12px;
     border-right: 1px solid #15547d; }
+  nav div {
+    float: right; 
+    clear: none; }
 
 section {
   padding: 8px; }

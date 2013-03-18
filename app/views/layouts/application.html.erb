@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Tuter</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "application.css", :media => "all" %>
   <%= javascript_include_tag "application.js" %>
   <%= csrf_meta_tags %>
 
@@ -17,25 +17,36 @@
         <header>
             <nav>
                 <ul id="nav_all">
-                    <li>Home</li>
-                    <li>Find a Tutor</li>
-                    <li>Be a Tutor</li>
+                  <li>Home</li>
+                  <li>Find a Tutor</li>
+                  <li>Be a Tutor</li>
+                  <% if user_signed_in? %>
+                    <li>Logged in as <strong><%= current_user.first_name + " " + current_user.last_name %></strong>.</li>
+                    <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+                  <% else %>
+                    <li><%= link_to "Login", new_user_session_path %></li> 
+                    <li><%= link_to "Sign in with Facebook", "/users/auth/facebook" %></li> 
+                  <% end %> 
                 </ul>
             </nav>
-        </header>
-        <% if user_signed_in? %>
-            Logged in as <strong><%= current_user.first_name + " " + current_user.last_name %></strong>.
-            <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-        <% else %>
-            <%= link_to "Login", new_user_session_path %> | 
-            <%= link_to "Sign in with Facebook", "/users/auth/facebook" %> 
 
-         <% end %>
+        </header>
+
 
         <div id="maincontent">
+          <%= yield %>
+          <div id="signupzone">
+            <!-- buttons w/ paths to come  -->
+            <strong><p>New to Tuter?</p><strong>
+            I am a...<br />
+            <%= button_to "Student", new_user_registration(:user, :as => :student_role)) %><br />
+            <%= button_to "Tutor", new_user_registration_path %><br />
+            <%= button_to "Organizations", new_user_registration_path %><br />
+          </div>
 
-        <%= yield %>
-
+          <div id="listzone">
+            tuter list here
+          </div>  
         </div>
 
     </div>

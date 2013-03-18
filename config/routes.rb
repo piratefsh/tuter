@@ -4,13 +4,18 @@ Tuter::Application.routes.draw do
 
   root :to => "application#index"
 
-
+  # Omniauth routes
   match '/users/auth/:provider/callback', to: 'sessions#create'
   match '/users/auth/failure', to: redirect('/')
 
+  # User Signup Routes
+  match '/users/sign_up', to: 'registrations#new'
 
-  match "/signup" => "signup#signup"
-  match "/search" => "search#index"
+
+  #match "/signup" => "signup#signup"
+  #match "/search" => "search#index"
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

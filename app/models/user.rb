@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :validatable,
          :recoverable, :rememberable, :trackable, :omniauthable
 
+  has_one :student_role
+  has_one :tutor_role
+  has_one :organization_role
+
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :desc, :provider, :uid
 

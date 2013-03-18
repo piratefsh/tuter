@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
 
 
   def index
-    @user = current_user
   end	
 
   private
