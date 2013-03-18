@@ -9,6 +9,7 @@ Tuter::Application.routes.draw do
   match '/users/auth/failure', to: redirect('/')
 
   # User Signup Routes
+  # match '/users/sign_up', to: 'devise/registrations#new'
 
 
   #match "/signup" => "signup#signup"

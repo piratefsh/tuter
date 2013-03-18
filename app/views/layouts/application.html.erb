@@ -21,7 +21,7 @@
                   <li>Find a Tutor</li>
                   <li>Be a Tutor</li>
                   <% if user_signed_in? %>
-                    <li>Logged in as <strong><%= current_user.first_name + " " + current_user.last_name %></strong>.</li>
+                    <li>Logged in as <%= current_user.first_name + " " + current_user.last_name %>.</li>
                     <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
                   <% else %>
                     <li><%= link_to "Login", new_user_session_path %></li> 
@@ -35,15 +35,6 @@
 
         <div id="maincontent">
           <%= yield %>
-          <div id="signupzone">
-            <!-- buttons w/ paths to come  -->
-            <strong><p>New to Tuter?</p><strong>
-            I am a...<br />
-          </div>
-
-          <div id="listzone">
-            tuter list here
-          </div>  
         </div>
 
     </div>
