@@ -13,7 +13,7 @@ header {
   background-color: #2185c5;
   color: #eeeeee;
   font-weight: bold;
-  overflow: visible;
+  overflow: auto;
   padding: 12px;
   padding-left: 0; }
 
@@ -25,16 +25,27 @@ nav {
     nav ul#nav_user {
       float: right;
       clear: right; }
-    nav ul#nav_al {
+      nav ul#nav_user li {
+        border-left: 1px solid #15547d; }
+    nav ul#nav_all {
       float: left;
       clear: left; }
+      nav ul#nav_all li {
+        border-right: 1px solid #15547d; }
   nav li {
     display: inline;
+<<<<<<< HEAD
     padding: 12px;
     border-right: 1px solid #15547d; }
   nav div {
     float: right; 
     clear: none; }
+=======
+    padding: 12px; }
+    nav li a {
+      color: white;
+      text-decoration: none; }
+>>>>>>> 8bf532421a4db63707c2200648d8ab6aef1b4b3e
 
 section {
   padding: 8px; }
