@@ -3,7 +3,7 @@ $dark_grey: #3E454C
 $grey: #666
 $cream: #FFF6E5
 $blue: #2185C5
-$darker_blue: #15547D
+$darker_blue: #497099
 $light_blue: #7ECEFD
 $white: #ffffff
 $red: #FF7F66
@@ -12,7 +12,11 @@ $medium_space: 8px
 $big_space: 12px
 
 $header_padding: 12px
+$content_width: 700px
 
+@mixin centered_content
+    margin: 0 auto
+    width: $content_width
 @mixin rounded-corners ($radius)
     -moz-border-radius: $radius
     -webkit-border-radius: $radius
@@ -30,49 +34,70 @@ $header_padding: 12px
 body
     background-color: $light_grey
     font-family: 'Open Sans', Helvetica, Arial
+    margin: 0
 
 div
     &#wrapper
-        width: 700px
-        margin: 0 auto
         background-color: $white
 
     &#maincontent
+        margin: 0 auto
+        width: $content_width
         padding: $big_space
 header
     //@include gradient($blue, $darker_blue)
     background-color: $blue
     color: $light_grey
-    font-weight: bold
     overflow: auto
     padding: $header_padding
-    padding-left: 0
 
 nav
+    @include centered_content
+    font-weight: bold
+    font-size: small
     padding: 0
+
     ul 
+        list-style-type: none
+        list-style: none
         padding: 0
         margin: 0
+
+        li 
+            display: inline
+            margin: 0
+            padding: $header_padding
+
+            &:hover
+                background-color: $light_blue
+            a 
+                color: $white
+                text-decoration: none
+        
         &#nav_user
             float: right
-            clear: right
             li
                 border-left: 1px solid $darker_blue
         &#nav_all
             float: left
-            clear: left
             li 
                 border-right: 1px solid $darker_blue
 
-    li 
-        display: inline
-        padding: $header_padding
-        a 
-            color: $white
-            text-decoration: none
 
-section
+
+section, footer
     padding: $medium_space
+
+footer
+    @include centered_content
+    p 
+        font-size: small
+        font-style: italic
+        color: $grey
+
 
 h1, h2, h3
     color: $dark_grey
+
+a
+    color: $red
