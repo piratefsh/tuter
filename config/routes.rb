@@ -8,7 +8,7 @@ Tuter::Application.routes.draw do
   match '/users/auth/:provider/callback', to: 'sessions#create'
   match '/users/auth/failure', to: redirect('/')
 
-
+  match '/search/index', to: 'search#index'
 
   #match "/signup" => "signup#signup"
   #match "/search" => "search#index"

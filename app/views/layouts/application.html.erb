@@ -16,9 +16,9 @@
         <header>
             <nav>
                 <ul id="nav_all">
-                  <li>Home</li>
-                  <li>Find a Tutor</li>
-                  <li>Be a Tutor</li>
+                  <li><%= link_to "Home", root_url %></li>
+                  <li><%= link_to "Find a Tutor", "/search/index"%></li>
+                  <li><%= link_to "Be a Tutor", new_user_registration_url %></li>
                 </ul>
 
                 <ul id="nav_user">
