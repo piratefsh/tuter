@@ -10,6 +10,7 @@ Tuter::Application.routes.draw do
 
   match "/signup" => "signup#signup"
   match "/search" => "search#index"
+  match "/home" => "home#index"
 
 
 

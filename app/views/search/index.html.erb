@@ -4,7 +4,7 @@
 <% end %>
 <div id = "sidebar">
     <h2>Search Tutors</h2>
-    <form>
+    <form method="get">
         <div class="form_element">
             <label>Search All</label>
             <label class="helper_text">Search any</label>
@@ -97,3 +97,7 @@
     </tbody> 
     </table> 
 </div>
+
+<script>
+    $('div#results').height = 500px;
+</script>
