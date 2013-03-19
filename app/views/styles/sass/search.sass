@@ -1,16 +1,8 @@
 @import "./application"
+@import "./form_style"
 
 $sidebar_width: 200px
 
-@mixin small_text
-    font-weight: normal
-    font-size: small
-    color: $grey
-
-@mixin large_text
-    font-weight: bold
-    font-size: large
-    color: $white
 div
     &#sidebar
         overflow: auto
@@ -28,6 +20,7 @@ div
         float: right
         clear: right
 
+
 form
     div.form_element
         padding-bottom: $big_space * 2
@@ -40,24 +33,8 @@ form
             font-style: italic
             float: right
     input 
-        margin: 0
-        @include rounded-corners(4px)
-        border: none
-        padding: $medium_space
+        @include form_input_style
 
-        &[type="text"]
-            display: block
-            margin-right: 0
-
-        &[type="checkbox"] + label
-            @include small_text
-            color: $dark_grey
-                    
-        &[type="submit"]
-            @include large_text
-            padding: $big_space
-            background-color: $blue
-            float: right
 table
     width: 100%
     font-size: small

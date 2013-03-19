@@ -13,6 +13,7 @@ Tuter::Application.routes.draw do
   match "/login" =>"login#login"
   match "/user" => "user#user"
   match "/search" => "search#index"
+  match "/search/index" => "search#index"
 
 
   # The priority is based upon order of creation:
