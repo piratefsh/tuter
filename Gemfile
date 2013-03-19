@@ -20,7 +20,7 @@ group :development, :test do
 	gem 'sqlite3'
 end
 gem 'execjs'
-gem 'therubyracer'
+#gem 'therubyracer' This is for linux users only
 
 
 
