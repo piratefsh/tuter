@@ -7,18 +7,18 @@ div#wrapper {
   background-color: white; }
 div#maincontent {
   margin: 0 auto;
-  width: 700px;
+  width: 900px;
   padding: 12px; }
 
 header {
   background-color: #2185c5;
   color: #eeeeee;
-  overflow: auto;
-  padding: 12px; }
+  padding: 12px;
+  overflow: auto; }
 
 nav {
   margin: 0 auto;
-  width: 700px;
+  width: 900px;
   font-weight: bold;
   font-size: small;
   padding: 0; }
@@ -55,8 +55,9 @@ section, footer {
   padding: 8px; }
 
 footer {
+  clear: both;
   margin: 0 auto;
-  width: 700px; }
+  width: 900px; }
   footer p {
     font-size: small;
     font-style: italic;

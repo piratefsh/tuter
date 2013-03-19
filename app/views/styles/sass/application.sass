@@ -12,7 +12,7 @@ $medium_space: 8px
 $big_space: 12px
 
 $header_padding: 12px
-$content_width: 700px
+$content_width: 900px
 
 @mixin centered_content
     margin: 0 auto
@@ -48,9 +48,8 @@ header
     //@include gradient($blue, $darker_blue)
     background-color: $blue
     color: $light_grey
-    overflow: auto
     padding: $header_padding
-
+    overflow: auto
 nav
     @include centered_content
     font-weight: bold
@@ -89,6 +88,7 @@ section, footer
     padding: $medium_space
 
 footer
+    clear: both
     @include centered_content
     p 
         font-size: small

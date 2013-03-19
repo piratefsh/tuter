@@ -3,12 +3,16 @@ Tuter::Application.routes.draw do
   devise_for :users
 
   root :to => "home#index"
+<<<<<<< HEAD
 
+=======
+>>>>>>> 76a1a76bbb5a271cd7d3491f0f467656e518f457
 
   # Omniauth routes
   match '/users/auth/:provider/callback', to: 'sessions#create'
   match '/users/auth/failure', to: redirect('/')
 
+<<<<<<< HEAD
 
   # User Signup Routes
 
@@ -17,6 +21,10 @@ Tuter::Application.routes.draw do
   match "/login" =>"login#login"
   match "/search" => "search#index"
   match "/user" => "user#user"
+=======
+  match "/signup" => "signup#signup"
+  match "/search" => "search#index"
+>>>>>>> 76a1a76bbb5a271cd7d3491f0f467656e518f457
 
 
 
