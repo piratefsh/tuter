@@ -63,3 +63,11 @@ h1, h2, h3 {
 
 a {
   color: #ff7f66; }
+
+div#alerts_and_notice p {
+  margin: 0;
+  text-align: center; }
+  div#alerts_and_notice p.alert {
+    background-color: #ff7f66; }
+  div#alerts_and_notice p.notice {
+    background-color: #10c556; }

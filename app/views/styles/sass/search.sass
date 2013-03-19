@@ -8,13 +8,12 @@ div
         overflow: auto
         width: $sidebar_width
         background-color: $light_grey
-        padding:  $big_space
-        padding-left: $big_space * 2
+        padding:  $big_space * 2
         float: left
         clear: left
 
     &#results
-        width: $content_width - $sidebar_width - $big_space * 6
+        width: $content_width - $sidebar_width - $big_space * 7
         background-color: $light_grey
         padding: $big_space
         float: right
@@ -22,18 +21,42 @@ div
 
 
 form
-    div.form_element
-        padding-bottom: $big_space * 2
-    label 
-        padding-bottom: $medium_space
-        font-weight: bold
-        color: $dark_grey
-        &.helper_text
-            @include small_text
-            font-style: italic
-            float: right
     input 
         @include form_input_style
+        margin: 0
+    
+    div.form_element
+        display: block
+        clear: left
+
+
+        label 
+            font-weight: bold
+            color: $dark_grey
+            text-align: left
+            float: left
+            width: auto
+            padding: 0
+            &.checkbox
+                float: none
+                clear:none
+            &.helper_text
+                @include small_text
+                font-style: italic
+                float: right
+
+        div.checkbox_group
+            display: table
+            clear: left
+            label
+                display: table-cell
+                vertical-align: middle
+                padding: 0
+                padding-left: $big_space
+            input
+                display: table-cell
+                height: 20px
+                vertical-align: -3px
 
 table
     width: 100%

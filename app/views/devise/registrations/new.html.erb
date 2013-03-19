@@ -2,10 +2,10 @@
 <%= stylesheet_link_tag  "form_style", :media => "all" %>
 
 <h2>Register With Tuter</h2>
-<form class="centered_form">
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %> 
 
+<div class="centered_form" >
   <div class="form_element"><%= f.label :first_name%>
   <%= f.text_field :first_name, :autofocus => true%></div>
 
@@ -36,4 +36,4 @@
 
 <% end %>
 <%= render "devise/shared/links" %>
-</form>
+</div>

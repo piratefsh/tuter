@@ -24,11 +24,17 @@
         </div>
         <div class="form_element">
             <label>Type</label>
-            <input type="checkbox" value="drop in" name="dropin"/>
-            <label for="dropin">Drop in</label>
-            <input type="checkbox" name="group"/>
-            <label for="dropin">Group</label>
+            
+            <div class="checkbox_group">
+                <input type="checkbox" value="drop in" name="dropin"/>
+                <label class="checkbox" for="dropin">Drop in</label>
+            </div>
+            <div class="checkbox_group">
+                <input type="checkbox" name="group"/>
+                <label class="checkbox"for="group">Group</label>
+            </div>
         </div>
+        
         <div class="form_element">
             <label>Rate</label>
             <input type="number" name="rates"></input>

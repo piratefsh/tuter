@@ -19,37 +19,57 @@
     padding: $medium_space
 
     &[type="text"]
-        display: block
         margin-right: 0
 
     &[type="checkbox"] + label
         @include small_text
         color: $dark_grey
-                
+
     &[type="submit"]
         @include large_text
         padding: $big_space
         background-color: $blue
         float: right
 
-form
+form, div.centered_form
     margin-right: auto
     margin-left: auto
-    .form_element
-        margin:
-            bottom: $big_space
-        display: table 
+    display: table
 
-        input 
-            display: table-cell
-        label
-            padding: $medium-space
-            vertical-align: middle
-            display: table-cell
-            width: 300px
-            text-align: right
-        textarea
-            @include form_input_style
-            height: 150px
+@mixin tablecell_vertical
+    display: table-cell
+    vertical-align: middle
+
+div.form_element
+    display: table
+    padding-bottom: $big_space
+    input 
+        display: table-cell
+    label
+        @include tablecell_vertical
+        width: 100px
+        padding-top: $medium-space
+        padding-bottom: $medium-space
+        text-align: right
+    textarea
+        @include form_input_style
+        height: 150px
 input
     @include form_input_style
+
+div.field_with_errors
+    @include tablecell_vertical
+    input
+        border: 2px $red solid
+
+div#error_explanation
+    border: 2px solid $red
+    padding: $big_space
+    margin-bottom: $big_space * 4
+
+    h2
+        text-align: center
+        font-size: large
+        color: red
+
+    ul
