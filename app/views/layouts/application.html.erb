@@ -5,13 +5,12 @@
   <%= stylesheet_link_tag    "application.css", :media => "all" %>
   <%= javascript_include_tag "application.js" %>
   <%= csrf_meta_tags %>
-
+  <%= content_for :header%>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <p class="notice"><%= notice%></p>
     <p class="alert"><%= alert %></p> 
-
 
     <div id="wrapper">
         <header>
@@ -20,6 +19,9 @@
                   <li>Home</li>
                   <li>Find a Tutor</li>
                   <li>Be a Tutor</li>
+                </ul>
+
+                <ul id="nav_user">
                   <% if user_signed_in? %>
                     <li>Logged in as <%= current_user.first_name + " " + current_user.last_name %>.</li>
                     <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
@@ -29,14 +31,12 @@
                   <% end %> 
                 </ul>
             </nav>
-
         </header>
-
-
         <div id="maincontent">
           <%= yield %>
         </div>
-
-    </div>
+    <footer>
+        <p>Questions, feedback or problems? Contact us at <a href="mailto:admin@tuter.me">admin@tuter.me</a></p>
+    </footer>
 </body>
 </html>
