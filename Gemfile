@@ -20,7 +20,7 @@ group :development, :test do
 	gem 'sqlite3'
 end
 gem 'execjs'
-gem 'therubyracer'
+# gem 'therubyracer' # only for linux
 
 
 # Gems used only for assets and not required
