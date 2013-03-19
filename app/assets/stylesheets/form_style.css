@@ -81,13 +81,14 @@ div.form_element {
   display: table;
   padding-bottom: 12px; }
   div.form_element input {
-    display: table-cell; }
+    display: table-cell;
+    vertical-align: middle; }
   div.form_element label {
     display: table-cell;
     vertical-align: middle;
+    padding: 0;
+    margin: 0;
     width: 100px;
-    padding-top: 8px;
-    padding-bottom: 8px;
     text-align: right; }
   div.form_element textarea {
     margin-left: 12px;
