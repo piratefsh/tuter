@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class SessionsController < HomeController
 
 	def create
 		@user = User.from_omniauth(request.env["omniauth.auth"]) 
