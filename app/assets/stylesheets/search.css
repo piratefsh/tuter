@@ -229,15 +229,18 @@ div#sidebar {
   overflow: auto;
   width: 200px;
   background-color: #eeeeee;
-  padding: 24px;
+  padding: 12px;
   float: left;
   clear: left; }
 div#results {
-  width: 616px;
+  width: 640px;
   background-color: #eeeeee;
   padding: 12px;
   float: right;
   clear: right; }
+
+h2 {
+  margin-top: 0; }
 
 form input {
   margin-left: 12px;
