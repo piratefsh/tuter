@@ -8,18 +8,11 @@ Tuter::Application.routes.draw do
   match '/users/auth/:provider/callback', to: 'sessions#create'
   match '/users/auth/failure', to: redirect('/')
 
-<<<<<<< HEAD
+  # User Signup Routes
   match "/signup" => "signup#signup"
+  match "/login" =>"login#login"
+  match "/user" => "user#user"
   match "/search" => "search#index"
-  match "/home" => "home#index"
-=======
-  match '/search/index', to: 'search#index'
-
-  #match "/signup" => "signup#signup"
-  #match "/search" => "search#index"
-
->>>>>>> 24ff3673063e2f8f0b5c31ca0439f5254e90c2d5
-
 
 
   # The priority is based upon order of creation:
