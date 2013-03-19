@@ -3,8 +3,9 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.1'
 gem 'ruby'
 gem 'heroku'
-gem 'devise'
+gem 'devise', :git => 'https://github.com/plataformatec/devise'
 gem 'omniauth-facebook', '~> 1.4.1'
+gem 'certified'
 # TODO Thin gem not bundling, look into
 # gem "thin", '~> 1.5.0'
 gem 'emberjs-rails'
@@ -52,3 +53,4 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+

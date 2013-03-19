@@ -31,3 +31,6 @@ tmp
 _yardoc
 doc/
 >>>>>>> origin/master
+
+# Ignore application configuration
+/config/application.yml

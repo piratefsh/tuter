@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/plataformatec/devise
+  revision: 6c566c1ca4c7b8b511f3a08c730d158cbd074f17
+  specs:
+    devise (2.2.3)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (~> 3.1)
+      warden (~> 1.2.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -39,6 +49,7 @@ GEM
     bcrypt-ruby (3.0.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
     builder (3.0.4)
+    certified (0.1.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -46,11 +57,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.1)
-    devise (2.2.3)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (~> 3.1)
-      warden (~> 1.2.1)
     ember-data-source (0.0.5)
       ember-source
     ember-rails (0.11.1)
@@ -180,8 +186,9 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  certified
   coffee-rails (~> 3.2.1)
-  devise
+  devise!
   emberjs-rails
   execjs
   heroku

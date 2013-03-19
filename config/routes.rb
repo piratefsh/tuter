@@ -2,11 +2,19 @@ Tuter::Application.routes.draw do
 
   devise_for :users
 
-  root :to => "home#index"
+  root :to => "application#index"
+
+  # Omniauth routes
+  match '/users/auth/:provider/callback', to: 'sessions#create'
+  match '/users/auth/failure', to: redirect('/')
+
+  # User Signup Routes
 
 
-  # match "/signup" => "signup#signup"
-  # rmatch "/search" => "search#index"
+  #match "/signup" => "signup#signup"
+  #match "/search" => "search#index"
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -57,7 +65,7 @@ Tuter::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'views#index'
+  
 
   # See how all your routes lay out with "rake routes"
 
