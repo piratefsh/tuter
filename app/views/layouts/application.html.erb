@@ -2,43 +2,41 @@
 <html>
 <head>
   <title>Tuter</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "application.css", :media => "all" %>
+  <%= javascript_include_tag "application.js" %>
   <%= csrf_meta_tags %>
-
+  <%= content_for :header%>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <p class="notice"><%= notice%></p>
     <p class="alert"><%= alert %></p> 
 
-
     <div id="wrapper">
         <header>
             <nav>
                 <ul id="nav_all">
-                    <li>Home</li>
-                    <li>Find a Tutor</li>
-                    <li>Be a Tutor</li>
+                  <li>Home</li>
+                  <li>Find a Tutor</li>
+                  <li>Be a Tutor</li>
                 </ul>
 
-                <% if user_signed_in? %>
-                  Logged in as <strong><%= current_user.email %></strong>.
-                  <%= link_to 'Edit profile', edit_user_registration_path %> |
-                  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-                <% else %>
-                  <%= link_to "Sign up", new_user_registration_path %> |
-                  <%= link_to "Login", new_user_session_path %>
-                <% end %>
+                <ul id="nav_user">
+                  <% if user_signed_in? %>
+                    <li>Logged in as <strong><%= current_user.first_name + " " + current_user.last_name %></strong>.</li>
+                    <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+                  <% else %>
+                    <li><%= link_to "Login", new_user_session_path %></li> 
+                    <li><%= link_to "Sign in with Facebook", "/users/auth/facebook" %></li> 
+                  <% end %> 
+                </ul>
             </nav>
         </header>
-
         <div id="maincontent">
-
-        <%= yield %>
-
+          <%= yield %>
         </div>
-
-    </div>
+    <footer>
+        <p>Questions, feedback or problems? Contact us at <a href="mailto:admin@tuter.me">admin@tuter.me</a></p>
+    </footer>
 </body>
 </html>

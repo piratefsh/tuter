@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/plataformatec/devise
+  revision: 6c566c1ca4c7b8b511f3a08c730d158cbd074f17
+  specs:
+    devise (2.2.3)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (~> 3.1)
+      warden (~> 1.2.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -36,8 +46,10 @@ GEM
       ember-source
       execjs
       handlebars-source
+    bcrypt-ruby (3.0.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
     builder (3.0.4)
+    certified (0.1.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -45,11 +57,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.1)
-    devise (2.2.3)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (~> 3.1)
-      warden (~> 1.2.1)
     ember-data-source (0.0.5)
       ember-source
     ember-rails (0.11.1)
@@ -91,6 +98,7 @@ GEM
       multi_json (>= 1.5)
     launchy (2.2.0)
       addressable (~> 2.3)
+    libv8 (3.11.8.13)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -114,6 +122,7 @@ GEM
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
     orm_adapter (0.4.0)
+    pg (0.14.1)
     pg (0.14.1-x86-mingw32)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -141,6 +150,7 @@ GEM
     rake (10.0.3)
     rdoc (3.12.2)
       json (~> 1.4)
+    ref (1.0.2)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     ruby (0.1.0)
@@ -154,7 +164,11 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    sqlite3 (1.3.7)
     sqlite3 (1.3.7-x86-mingw32)
+    therubyracer (0.11.4)
+      libv8 (~> 3.11.8.12)
+      ref
     thor (0.14.6)
     tilt (1.3.5)
     treetop (1.4.12)
@@ -168,11 +182,13 @@ GEM
       rack (>= 1.0)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
+  certified
   coffee-rails (~> 3.2.1)
-  devise
+  devise!
   emberjs-rails
   execjs
   heroku
@@ -183,4 +199,5 @@ DEPENDENCIES
   ruby
   sass-rails (~> 3.2.3)
   sqlite3
+  therubyracer
   uglifier (>= 1.0.3)
