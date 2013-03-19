@@ -2,17 +2,14 @@ Tuter::Application.routes.draw do
 
   devise_for :users
 
-  root :to => "application#index"
+  root :to => "home#index"
 
   # Omniauth routes
   match '/users/auth/:provider/callback', to: 'sessions#create'
   match '/users/auth/failure', to: redirect('/')
 
-  # User Signup Routes
-
-
-  #match "/signup" => "signup#signup"
-  #match "/search" => "search#index"
+  match "/signup" => "signup#signup"
+  match "/search" => "search#index"
 
 
 

@@ -1,5 +1,7 @@
 @import "./application"
 
+$sidebar_width: 200px
+
 @mixin small_text
     font-weight: normal
     font-size: small
@@ -12,10 +14,19 @@
 div
     &#sidebar
         overflow: auto
-        width: 200px
+        width: $sidebar_width
         background-color: $light_grey
         padding:  $big_space
         padding-left: $big_space * 2
+        float: left
+        clear: left
+
+    &#results
+        width: $content_width - $sidebar_width - $big_space * 6
+        background-color: $light_grey
+        padding: $big_space
+        float: right
+        clear: right
 
 form
     div.form_element
@@ -47,3 +58,15 @@ form
             padding: $big_space
             background-color: $blue
             float: right
+table
+    width: 100%
+    font-size: small
+    th 
+        background-color: $blue
+        color: $white
+        padding: $little_space
+        
+    td
+        color: $grey
+        background-color: $white
+        text-align: center
