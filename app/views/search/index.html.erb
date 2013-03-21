@@ -42,7 +42,7 @@
             <br/>
             <select>
                 <% @rates.each do |range| %>
-                <option><%= range %></option>
+                    <option><%= range %></option>
                 <% end %>
             </select>
         </div>
@@ -69,7 +69,7 @@
         <th>Availability</th> 
         <th>Type</th> 
         <th>Rate</th> 
-        <th>Currently Tutoring</th> 
+        <th>Tutoring Now?</th> 
     </tr> 
     </thead> 
 
@@ -86,6 +86,7 @@
         <td>5pm-6pm</td> 
         <td>Drop-In</td> 
         <td>$50.00</td> 
+        <td>No</td> 
     </tr>     
 
     <% end %>
