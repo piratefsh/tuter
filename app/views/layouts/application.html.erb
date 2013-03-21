@@ -29,6 +29,8 @@
                 <ul id="nav_user">
                   <% if user_signed_in? %>
                     <%= link_to "/user" do%><li>Logged in as <%= current_user.first_name + " " + current_user.last_name %>.</li><% end %>
+                    <li><%= link_to "Profile", "/user" %></li>
+
                     <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
                   <% else %>
                     <li><%= link_to "Log In", new_user_session_path %></li> 
