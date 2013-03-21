@@ -1,7 +1,8 @@
 body {
   background-color: #eeeeee;
   font-family: "Open Sans", Helvetica, Arial;
-  margin: 0; }
+  margin: 0;
+  color: #3e454c; }
 
 div#wrapper {
   background-color: white; }
@@ -34,9 +35,9 @@ nav {
       padding: 12px; }
       nav ul li:hover {
         background-color: #7ecefd; }
-      nav ul li a {
-        color: white;
-        text-decoration: none; }
+    nav ul a {
+      color: white;
+      text-decoration: none; }
     nav ul#nav_user {
       float: right; }
       nav ul#nav_user li {
@@ -66,8 +67,28 @@ a {
 
 div#alerts_and_notice p {
   margin: 0;
-  text-align: center; }
+  text-align: center;
+  font-weight: bold;
+  color: white; }
   div#alerts_and_notice p.alert {
     background-color: #ff7f66; }
   div#alerts_and_notice p.notice {
     background-color: #10c556; }
+
+ul {
+  padding: 0;
+  margin: 0; }
+  ul.button_list {
+    margin: 0 auto;
+    list-style: none; }
+    ul.button_list li {
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -khtml-border-radius: 4px;
+      border-radius: 4px;
+      padding: 8px;
+      background-color: #2185c5;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 4px; }

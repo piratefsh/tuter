@@ -1,6 +1,7 @@
 <%= content_for :header do%>
     <%= stylesheet_link_tag    "search", :media => "all" %>
     <%= javascript_include_tag 'sortable_table.js' %>
+    <%= javascript_include_tag 'search_table.js' %>
 <% end %>
 <h1>Find A Tutor</h1>
 <div id = "sidebar">
@@ -9,7 +10,7 @@
         <div class="form_element">
             <label>Search All</label>
             <label class="helper_text">Search any</label>
-            <input type="text" name="general_search"/>
+            <input id="keyword_search" type="text" name="general_search"/>
         </div> 
 
         <div class="form_element">
@@ -41,7 +42,12 @@
             <input type="number" name="rates"></input>
         </div>
 
-        <input value="Go!" type="submit"/>
+        <div class="form_element">
+            <label>Organization</label>
+            <label class="helper_text">Tutoring Organizations</label>
+            <input type="text" name="organization"/>
+        </div>
+        <input value="Search!" type="submit"/>
     </form>
 </div>
 
@@ -58,49 +64,26 @@
         <th>Availability</th> 
         <th>Type</th> 
         <th>Rate</th> 
+        <th>Currently Tutoring</th> 
     </tr> 
     </thead> 
+
     <tbody> 
+
+    <% @users.each do |user| %>
+    
     <tr> 
-        <td>Smith</td> 
-        <td>John</td> 
+        <td><%= user.first_name %></td> 
+        <td><%= user.last_name %></td> 
         <td>CS302</td> 
         <td>Group</td> 
         <td>Helen C White</td> 
         <td>5pm-6pm</td> 
         <td>Drop-In</td> 
         <td>$50.00</td> 
-    </tr> 
-    <tr> 
-        <td>Bach</td> 
-        <td>Frank</td> 
-        <td>CS367</td> 
-        <td>Group</td> 
-        <td>Van Hise</td> 
-        <td>7am-10am</td> 
-        <td>Drop-In</td> 
-        <td>$50.00</td> 
-    </tr> 
-    <tr> 
-        <td>Doe</td> 
-        <td>Jason</td> 
-        <td>MATH221</td> 
-        <td>Group</td> 
-        <td>Van Hise</td> 
-        <td>5pm-9pm</td> 
-        <td>Group</td> 
-        <td>$100.00</td> 
-    </tr> 
-    <tr> 
-        <td>Conway</td> 
-        <td>Tim</td> 
-        <td>PHY103</td> 
-        <td>Group</td> 
-        <td>Memorial Library</td> 
-        <td>4:30pm-9:30pm</td> 
-        <td>One-on-one</td> 
-        <td>$50.00</td> 
-    </tr> 
+    </tr>     
+
+    <% end %>
     </tbody> 
     </table> 
 </div>
