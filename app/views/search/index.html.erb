@@ -39,7 +39,12 @@
         
         <div class="form_element">
             <label>Rate</label>
-            <input type="number" name="rates"></input>
+            <br/>
+            <select>
+                <% @rates.each do |range| %>
+                <option><%= range %></option>
+                <% end %>
+            </select>
         </div>
 
         <div class="form_element">
@@ -87,7 +92,3 @@
     </tbody> 
     </table> 
 </div>
-
-<script>
-    $('div#results').height = 500px;
-</script>
