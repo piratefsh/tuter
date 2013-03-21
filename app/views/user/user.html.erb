@@ -1,53 +1,43 @@
-<!--Profile Sidebar
+	<!--function generateProfileButtons(){
+		var htmlstring="";
+		if(current_user.has_one(StudentRole)){
+			htmlstring+="<input type=\"submit\" name=\"student\" value=\"Student Profile\">";
+		}
+		if(current_user.has_one(TutorRole)){
+			htmlstring+="<input type=\"submit\" name=\"tutor\" value=\"Tutor Profile\">";
+		}
+		if(current_user.has_one(OrganizationRole)){
+			htmlstring+="<input type=\"submit\" name=\"org\" value=\"Organization Profile\">";
+		}			
 
-Profile Picture
-Name
-Affiliation
-Contact
-social Media Links
-Edit Profile
-Search
+		var tableAnchor=document.getElementById('profileButtons');
+		tableAnchor.innerHTML=htmlString;
+	}-->
 
-=======================
-Student Tab view
--Content View Options
-	-Current Groups View and Add Group button
-	-Watchlist and Add More Watchlist button
 
-=======================
-Tutor Tab view
--Activate Tutor Account
--Content View Options
-	-Groups View with Create Group and Edit Group button
--Search Students View
-	-Search Students
-	-Results
+<script type="JavaScript">
 
-=======================
-Organization Tab View
--Content View Options
-	-Students and Tutors table and remove users button
-	-Programs
--->
-<style type="text/css">
-.profileBar {
-	height: 100%;
-	float: left;
-	background: #ccc;
-	padding-top:5px;
-	padding-left:10px;
-	padding-bottom: 10px;
-	width: 200px;
-	margin-right:15px;
-	margin-bottom: 0;
-}
-</style>
+	function generateProfileButtons(){
+		var htmlString="";
+		htmlstring+="<input type=\"submit\" name=\"student\" value=\"Student Profile\">";
+		htmlstring+="<input type=\"submit\" name=\"tutor\" value=\"Tutor Profile\">";
+		htmlstring+="<input type=\"submit\" name=\"org\" value=\"Organization Profile\">";
+		var tableAnchor=document.getElementById('profileButtons');
+		tableAnchor.innerHTML=htmlString;
+	}
+		 
+	
 
-<div class="profileBar">
+</script>
+<h2><%=current_user.first_name%> <%=current_user.last_name%></h2>
 
-<img src="USER PROFILE PIC" alt="This is supposed to be a profile picture, here XXX">
+<form>
+<div id="profileButtons" onload="generateProfileButtons()"></div>
+</form>
+
+<%= image_tag("blank_profile.png", :alt => "Profile Picture") %>
 <br/><br/><br/>
-<div>User.Name</div>
+
 <script type="JavaScript">
 	//for each affiliation that user belongs to 
 	//for(var i; i<numOrgs; i++){
@@ -55,17 +45,32 @@ Organization Tab View
 	//}
 
 </script>
-<div><a >Affiliation #1</a> --Student</div>
-<div><a>Affiliation #2</a> --Tutor </div>
-<br/>
-<div>User.email</div>
 
-<div>User.Social_Media_Links</div>
+<h3>Affiliations:</h3>
+<div><a >Affiliation #1</a> (Tutor)</div>
+<div><a>Affiliation #2</a> (Student) </div>
+<br/>
+
+<h3>Contact Info:</h3>
+<div><a href="mainto:<%=current_user.email%>"><%=current_user.email%></a></div>
+<div>Phone Number</div>
+<div>User Facebook Link (if applicable)</div>
+<div>User Twitter Link (if applicable)</div>
+
+
+<h3>Personal Information</h3>
+<div>Age: 22</div>
+<div>Year in School: Senior</div>
+<div>Transportation: Bus, Walk</div>
+<div>Tutor Rating: <a>**** (4)</a></div>
+<br/>
+
 <form>
 	<input type="submit" name="edit" value="Edit Profile" />
 </form>
 
-</div>
+
+
 
 
 
