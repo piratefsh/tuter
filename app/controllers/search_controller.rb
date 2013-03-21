@@ -1,5 +1,6 @@
 class SearchController < ApplicationController
   def index
+
     @users = User.all
     @rates = Array.new
 
