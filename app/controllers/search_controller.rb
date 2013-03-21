@@ -1,5 +1,9 @@
 class SearchController < ApplicationController
   def index
+
+	@users = User.all
+
+
     @users = User.all
     @rates = Array.new
 
@@ -16,11 +20,6 @@ class SearchController < ApplicationController
     respond_to do |format|
         format.html #search/index/html.erb
 
-
-	@users = User.all
-
-  	respond_to do |format|
-  		format.html #search/index/html.erb
   	end
   end
 end
