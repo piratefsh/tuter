@@ -14,10 +14,11 @@
 		tableAnchor.innerHTML=htmlString;
 	}-->
 
+
 <script type="JavaScript">
 
 	function generateProfileButtons(){
-		var htmlstring="";
+		var htmlString="";
 		htmlstring+="<input type=\"submit\" name=\"student\" value=\"Student Profile\">";
 		htmlstring+="<input type=\"submit\" name=\"tutor\" value=\"Tutor Profile\">";
 		htmlstring+="<input type=\"submit\" name=\"org\" value=\"Organization Profile\">";
@@ -25,14 +26,13 @@
 		tableAnchor.innerHTML=htmlString;
 	}
 		 
-	window.onload=generateProfileButtons;
+	
 
 </script>
-
 <h2><%=current_user.first_name%> <%=current_user.last_name%></h2>
 
 <form>
-<div id="profileButtons"></div>
+<div id="profileButtons" onload="generateProfileButtons()"></div>
 </form>
 
 <%= image_tag("blank_profile.png", :alt => "Profile Picture") %>
@@ -45,6 +45,7 @@
 	//}
 
 </script>
+
 <h3>Affiliations:</h3>
 <div><a >Affiliation #1</a> (Tutor)</div>
 <div><a>Affiliation #2</a> (Student) </div>
@@ -67,6 +68,7 @@
 <form>
 	<input type="submit" name="edit" value="Edit Profile" />
 </form>
+
 
 
 
