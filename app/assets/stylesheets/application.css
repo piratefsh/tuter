@@ -14,7 +14,8 @@ header {
   background-color: #2185c5;
   color: #eeeeee;
   padding: 12px;
-  overflow: auto; }
+  overflow: auto;
+  overflow-x: hidden; }
 
 nav {
   margin: 0 auto;
@@ -43,13 +44,7 @@ nav {
     nav ul#nav_all {
       float: left; }
       nav ul#nav_all li {
-        border-right: 1px solid #15547d; }
-  nav li {
-    display: inline;
-    padding: 12px; }
-    nav li a {
-      color: white;
-      text-decoration: none; }
+        border-right: 1px solid #497099; }
 
 section, footer {
   padding: 8px; }
@@ -68,3 +63,11 @@ h1, h2, h3 {
 
 a {
   color: #ff7f66; }
+
+div#alerts_and_notice p {
+  margin: 0;
+  text-align: center; }
+  div#alerts_and_notice p.alert {
+    background-color: #ff7f66; }
+  div#alerts_and_notice p.notice {
+    background-color: #10c556; }

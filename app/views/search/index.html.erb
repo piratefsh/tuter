@@ -1,10 +1,11 @@
-<%= stylesheet_link_tag    "search", :media => "all" %>
 <%= content_for :header do%>
+    <%= stylesheet_link_tag    "search", :media => "all" %>
     <%= javascript_include_tag 'sortable_table.js' %>
 <% end %>
+<h1>Find A Tutor</h1>
 <div id = "sidebar">
-    <h2>Search Tutors</h2>
-    <form>
+    <h2>Search</h2>
+    <form method="get">
         <div class="form_element">
             <label>Search All</label>
             <label class="helper_text">Search any</label>
@@ -24,11 +25,17 @@
         </div>
         <div class="form_element">
             <label>Type</label>
-            <input type="checkbox" value="drop in" name="dropin"/>
-            <label for="dropin">Drop in</label>
-            <input type="checkbox" name="group"/>
-            <label for="dropin">Group</label>
+            
+            <div class="checkbox_group">
+                <input type="checkbox" value="drop in" name="dropin"/>
+                <label class="checkbox" for="dropin">Drop in</label>
+            </div>
+            <div class="checkbox_group">
+                <input type="checkbox" name="group"/>
+                <label class="checkbox"for="group">Group</label>
+            </div>
         </div>
+        
         <div class="form_element">
             <label>Rate</label>
             <input type="number" name="rates"></input>
@@ -39,7 +46,7 @@
 </div>
 
 <div id="results">
-    <h1>Search results</h1>
+    <h2>Results</h2>
     <table id="results_table"> 
     <thead> 
     <tr> 
@@ -97,3 +104,7 @@
     </tbody> 
     </table> 
 </div>
+
+<script>
+    $('div#results').height = 500px;
+</script>

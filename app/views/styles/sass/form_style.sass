@@ -1,0 +1,77 @@
+@import "./application"
+
+@mixin small_text
+    font-weight: normal
+    font-size: small
+    color: $grey
+
+@mixin large_text
+    font-weight: bold
+    font-size: large
+    color: $white
+
+@mixin form_input_style
+    margin: 
+        left: $big_space
+
+    @include rounded-corners(4px)
+    border: 1px solid $light_grey 
+    padding: $medium_space
+
+    &[type="text"]
+        margin-right: 0
+
+    &[type="checkbox"] + label
+        @include small_text
+        color: $dark_grey
+
+    &[type="submit"]
+        @include large_text
+        padding: $big_space
+        background-color: $blue
+        float: right
+
+form, div.centered_form
+    margin-right: auto
+    margin-left: auto
+    display: table
+
+@mixin tablecell_vertical
+    display: table-cell
+    vertical-align: middle
+
+div.form_element
+    display: table
+    padding-bottom: $big_space
+    input 
+        @include tablecell_vertical
+
+    label
+        @include tablecell_vertical
+        padding: 0
+        margin: 0
+        width: 100px
+        text-align: right
+
+    textarea
+        @include form_input_style
+        height: 150px
+input
+    @include form_input_style
+
+div.field_with_errors
+    @include tablecell_vertical
+    input
+        border: 2px $red solid
+
+div#error_explanation
+    border: 2px solid $red
+    padding: $big_space
+    margin-bottom: $big_space * 4
+
+    h2
+        text-align: center
+        font-size: large
+        color: red
+
+    ul

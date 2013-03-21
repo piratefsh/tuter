@@ -20,7 +20,11 @@ group :development, :test do
 	gem 'sqlite3'
 end
 gem 'execjs'
+<<<<<<< HEAD
 
+=======
+gem 'therubyracer'
+>>>>>>> 73cc662cfbb5b5680c5350a3eb90f3b0fd101f0d
 
 
 

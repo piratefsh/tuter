@@ -29,13 +29,13 @@
 
 </script>
 
-<h3><%=current_user.first_name%> <%=current_user.last_name%></h3>
+<h2><%=current_user.first_name%> <%=current_user.last_name%></h2>
 
 <form>
 <div id="profileButtons"></div>
 </form>
 
-<img src="USER PROFILE PIC" alt="This is supposed to be a profile picture, here XXX">
+<%= image_tag("blank_profile.png", :alt => "Profile Picture") %>
 <br/><br/><br/>
 
 <script type="JavaScript">
@@ -45,12 +45,25 @@
 	//}
 
 </script>
-<div><a >Affiliation #1</a> --Student</div>
-<div><a>Affiliation #2</a> --Tutor </div>
+<h3>Affiliations:</h3>
+<div><a >Affiliation #1</a> (Tutor)</div>
+<div><a>Affiliation #2</a> (Student) </div>
 <br/>
-<div><%=current_user.email%> </div>
 
-<div>User.Social_Media_Links</div>
+<h3>Contact Info:</h3>
+<div><a href="mainto:<%=current_user.email%>"><%=current_user.email%></a></div>
+<div>Phone Number</div>
+<div>User Facebook Link (if applicable)</div>
+<div>User Twitter Link (if applicable)</div>
+
+
+<h3>Personal Information</h3>
+<div>Age: 22</div>
+<div>Year in School: Senior</div>
+<div>Transportation: Bus, Walk</div>
+<div>Tutor Rating: <a>**** (4)</a></div>
+<br/>
+
 <form>
 	<input type="submit" name="edit" value="Edit Profile" />
 </form>

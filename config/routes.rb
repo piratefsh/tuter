@@ -11,15 +11,12 @@ Tuter::Application.routes.draw do
 
 
   # User Signup Routes
-
-
   match "/signup" => "signup#signup"
   match "/login" =>"login#login"
-  match "/search" => "search#index"
   match "/user" => "user#user"
 
-  match '/search/index', to: 'search#index'
-
+  match "/search" => "search#index"
+  match "/search/index" => "search#index"
 
 
 
