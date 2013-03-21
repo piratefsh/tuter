@@ -13,7 +13,14 @@
 		var tableAnchor=document.getElementById('profileButtons');
 		tableAnchor.innerHTML=htmlString;
 	}-->
-
+  <style type="text/css">
+  #profile {
+    background-color: #eeeeee;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 20px; }
+  </style>
 
 <script type="JavaScript">
 
@@ -29,6 +36,8 @@
 	
 
 </script>
+
+<div id="profile">
 <h2><%=current_user.first_name%> <%=current_user.last_name%></h2>
 
 <form>
@@ -36,7 +45,7 @@
 </form>
 
 <%= image_tag("blank_profile.png", :alt => "Profile Picture") %>
-<br/><br/><br/>
+<br/><br/>
 
 <script type="JavaScript">
 	//for each affiliation that user belongs to 
@@ -68,6 +77,7 @@
 <form>
 	<input type="submit" name="edit" value="Edit Profile" />
 </form>
+</div>
 
 
 
