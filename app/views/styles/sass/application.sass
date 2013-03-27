@@ -7,12 +7,16 @@ $darker_blue: #497099
 $light_blue: #7ECEFD
 $white: #ffffff
 $red: #FF7F66
+$green: #10C556
+
 $little_space: 4px
 $medium_space: 8px
 $big_space: 12px
+$lots_of_space: 12px
 
 $header_padding: 12px
 $content_width: 900px
+$sidebar_width: 250px
 
 @mixin centered_content
     margin: 0 auto
@@ -35,6 +39,7 @@ body
     background-color: $light_grey
     font-family: 'Open Sans', Helvetica, Arial
     margin: 0
+    color: $dark_grey
 
 div
     &#wrapper
@@ -49,7 +54,7 @@ header
     background-color: $blue
     color: $light_grey
     padding: $header_padding
-    overflow: auto
+    overflow-x: hidden
 nav
     @include centered_content
     font-weight: bold
@@ -69,9 +74,9 @@ nav
 
             &:hover
                 background-color: $light_blue
-            a 
-                color: $white
-                text-decoration: none
+        a 
+            color: $white
+            text-decoration: none
         
         &#nav_user
             float: right
@@ -101,3 +106,31 @@ h1, h2, h3
 
 a
     color: $red
+
+div#alerts_and_notice
+    p
+        margin: 0
+        text-align: center
+        font-weight: bold
+        color: white
+        &.alert
+            background-color: $red
+
+        &.notice
+            background-color: $green
+
+ul
+    padding: 0
+    margin: 0
+    &.button_list
+        margin: 0 auto
+        list-style: none
+        li
+            @include rounded-corners (4px)
+            padding: $medium_space
+            background-color: $blue
+            color: white
+            font-weight: bold
+            text-align: center
+            margin:
+                bottom: $little_space

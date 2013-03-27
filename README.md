@@ -1,4 +1,24 @@
-tuter Iteration 0 DONE
-=====
+#Tuter: The Ultimate Tutor Finder App
+v1.0 02-21-2013
 
-Tuter: The Ultimate Tutor Finder App
+Notes: 
+<ul>
+  <li>If you are running Linux, include "gem 'therubyracer'" in the Gemfile. Otherwise, remove it.
+  </li>
+
+  <li>Sign in with Facebook only works when web app is on Heroku. Will nto work locally</li>
+</ul>
+
+##To Run Server
+`````
+  rake db:migrate
+  rake db:seed
+  rails server
+````
+
+##To Run Web App Locally
+Visit localhost:3000 on your browser
+
+##Hosted
+  http://tuter.heroku.com
+  

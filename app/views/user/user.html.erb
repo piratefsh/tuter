@@ -1,0 +1,87 @@
+	<!--function generateProfileButtons(){
+		var htmlstring="";
+		if(current_user.has_one(StudentRole)){
+			htmlstring+="<input type=\"submit\" name=\"student\" value=\"Student Profile\">";
+		}
+		if(current_user.has_one(TutorRole)){
+			htmlstring+="<input type=\"submit\" name=\"tutor\" value=\"Tutor Profile\">";
+		}
+		if(current_user.has_one(OrganizationRole)){
+			htmlstring+="<input type=\"submit\" name=\"org\" value=\"Organization Profile\">";
+		}			
+
+		var tableAnchor=document.getElementById('profileButtons');
+		tableAnchor.innerHTML=htmlString;
+	}-->
+  <style type="text/css">
+  #profile {
+    background-color: #eeeeee;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 20px; }
+  </style>
+
+<script type="JavaScript">
+
+	function generateProfileButtons(){
+		var htmlString="";
+		htmlstring+="<input type=\"submit\" name=\"student\" value=\"Student Profile\">";
+		htmlstring+="<input type=\"submit\" name=\"tutor\" value=\"Tutor Profile\">";
+		htmlstring+="<input type=\"submit\" name=\"org\" value=\"Organization Profile\">";
+		var tableAnchor=document.getElementById('profileButtons');
+		tableAnchor.innerHTML=htmlString;
+	}
+		 
+	
+
+</script>
+
+<div id="profile">
+<h2><%=current_user.first_name%> <%=current_user.last_name%></h2>
+
+<form>
+<div id="profileButtons" onload="generateProfileButtons()"></div>
+</form>
+
+<%= image_tag("blank_profile.png", :alt => "Profile Picture") %>
+<br/><br/>
+
+<script type="JavaScript">
+	//for each affiliation that user belongs to 
+	//for(var i; i<numOrgs; i++){
+		//echo <div><a href="orgpage">Affiliation NAME</a></div> -- <div>Affiliation Type (Student/Tutor)</div>
+	//}
+
+</script>
+
+<h3>Affiliations:</h3>
+<div><a >Affiliation #1</a> (Tutor)</div>
+<div><a>Affiliation #2</a> (Student) </div>
+<br/>
+
+<h3>Contact Info:</h3>
+<div><a href="mainto:<%=current_user.email%>"><%=current_user.email%></a></div>
+<div>Phone Number</div>
+<div>User Facebook Link (if applicable)</div>
+<div>User Twitter Link (if applicable)</div>
+
+
+<h3>Personal Information</h3>
+<div>Age: 22</div>
+<div>Year in School: Senior</div>
+<div>Transportation: Bus, Walk</div>
+<div>Tutor Rating: <a>**** (4)</a></div>
+<br/>
+
+<form>
+	<input type="submit" name="edit" value="Edit Profile" />
+</form>
+</div>
+
+
+
+
+
+
+

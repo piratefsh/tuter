@@ -4,12 +4,19 @@ Tuter::Application.routes.draw do
 
   root :to => "home#index"
 
+
   # Omniauth routes
   match '/users/auth/:provider/callback', to: 'sessions#create'
   match '/users/auth/failure', to: redirect('/')
 
+
+  # User Signup Routes
   match "/signup" => "signup#signup"
+  match "/login" =>"login#login"
+  match "/user" => "user#user"
+
   match "/search" => "search#index"
+  match "/search/index" => "search#index"
 
 
 
