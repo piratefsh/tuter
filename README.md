@@ -6,7 +6,7 @@ Notes:
   <li>If you are running Linux, include "gem 'therubyracer'" in the Gemfile. Otherwise, remove it.
   </li>
 
-  <li>Sign in with Facebook only works when web app is on Heroku. Will nto work locally</li>
+  <li>Sign in with Facebook only works when web app is on Heroku. Will not work locally</li>
 </ul>
 
 ##To Run Server
