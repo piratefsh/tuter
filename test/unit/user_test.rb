@@ -1,14 +1,8 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
- 	test "user creation"
- 		user = User.new
- 		assert user
- 	end
-
- 	test "destroy user"
- 		user = User.new
- 		user.destroy
- 		assert user = nil
- 	end
+  test "user_creation" do
+    user = User.new
+    assert !user.valid?, "No first_name, last_name, email"
+  end
 end

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.1'
+gem 'rails'
 gem 'ruby'
 gem 'heroku'
 gem 'devise', :git => 'https://github.com/plataformatec/devise'
@@ -48,6 +48,10 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
+# To use debugger, should only use in development mode
+# place debugger as breakpoint
+# rails server --debugger
+gem 'debugger', group: [:development, :test]
+# ruby-debug19 is outdated according to SO
 # gem 'ruby-debug19', :require => 'ruby-debug'
 

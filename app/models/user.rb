@@ -7,17 +7,15 @@ class User < ActiveRecord::Base
 
   has_one :student_role
   has_one :tutor_role
-  has_one :organization_role
-
-  has_one :student_role
-  has_one :tutor_role
+  has_one :organization_role  
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :desc, :provider, :uid
+  attr_accessible :email, :password, :password_confirmation, :remember_me, 
+  :first_name, :last_name, :desc, :provider, :uid
+  
+  validates :first_name, :last_name, :email, :presence => true 
 
   # Setup creation validation
-
-
 
   def self.from_omniauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
