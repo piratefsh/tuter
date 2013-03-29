@@ -1,5 +1,13 @@
-#Tuter: The Ultimate Tutor Finder App
+# Tuter: The Ultimate Tutor Finder App
+
+[![CI Build Status]
+
+**Tuter 1.0 is now in 2nd phase of development
+
 v1.0 02-21-2013
+
+## An Introduction
+Tuter is an online tutoring management system created by a team of 5 cool human.
 
 Notes: 
 <ul>
@@ -9,16 +17,14 @@ Notes:
   <li>Sign in with Facebook only works when web app is on Heroku. Will not work locally</li>
 </ul>
 
-##To Run Server
-`````
-  rake db:migrate
-  rake db:seed
-  rails server
-````
+## To Run Server
+	$ rake db:migrate
+	$ rake db:seed
+	$ rails server
 
-##To Run Web App Locally
+## To Run Web App Locally
 Visit localhost:3000 on your browser
 
-##Hosted
-  http://tuter.heroku.com
+## Hosted
+	http://tuter.heroku.com
   
