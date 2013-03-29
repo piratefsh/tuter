@@ -1,21 +1,19 @@
 # Tuter: The Ultimate Tutor Finder App
 
-[![CI Build Status]
+[![CI Build Status]]
 
 **Tuter 1.0 is now in 2nd phase of development
 
 v1.0 02-21-2013
 
 ## An Introduction
-Tuter is an online tutoring management system created by a team of 5 cool human.
+Tuter is an online tutoring management system created by a team of 5 cool humans.
 
-Notes: 
-<ul>
-  <li>If you are running Linux, include "gem 'therubyracer'" in the Gemfile. Otherwise, remove it.
-  </li>
+Notes:
 
-  <li>Sign in with Facebook only works when web app is on Heroku. Will not work locally</li>
-</ul>
+- Linux users need to uncomment `gem 'therubyracer'` in the Gemfile.
+- Sign in with Facebook only works when web app is on Heroku, not locally
+
 
 ## To Run Server
 	$ rake db:migrate
@@ -26,5 +24,5 @@ Notes:
 Visit localhost:3000 on your browser
 
 ## Hosted
-	http://tuter.heroku.com
+http://tuter.heroku.com
   
