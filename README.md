@@ -1,6 +1,6 @@
 # Tuter: The Ultimate Tutor Finder App
 
-**Tuter 1.0 is now in 2nd phase of development
+**Tuter 1.0 is now in 2nd phase of development**
 
 v1.0 02-21-2013
 
@@ -19,7 +19,7 @@ Notes:
 	$ rails server
 
 ## To Run Web App Locally
-Visit localhost:3000 on your browser
+Visit **localhost:3000** on your browser
 
 ## Hosted
 http://tuter.heroku.com
