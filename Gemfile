@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails'
+gem 'rails', '3.2.3'
 gem 'ruby'
 gem 'heroku'
 gem 'devise', :git => 'https://github.com/plataformatec/devise'
