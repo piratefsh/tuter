@@ -13,6 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-//= require jquery.tablesorter.js
+//= require jquery.tablesorter
 
 
