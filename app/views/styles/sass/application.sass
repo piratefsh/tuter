@@ -1,136 +1,136 @@
-$light_grey: #eee
-$dark_grey: #3E454C
-$grey: #666
-$cream: #FFF6E5
-$blue: #2185C5
-$darker_blue: #497099
-$light_blue: #7ECEFD
-$white: #ffffff
-$red: #FF7F66
-$green: #10C556
-
-$little_space: 4px
-$medium_space: 8px
-$big_space: 12px
-$lots_of_space: 12px
-
-$header_padding: 12px
-$content_width: 900px
-$sidebar_width: 250px
-
-@mixin centered_content
-    margin: 0 auto
-    width: $content_width
-@mixin rounded-corners ($radius)
-    -moz-border-radius: $radius
-    -webkit-border-radius: $radius
-    -khtml-border-radius: $radius
-    border-radius: $radius
-
-@mixin gradient($color1, $color2)
-    background-color: $color1
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color1), to($color2))
-    background-image: -webkit-linear-gradient(top, $color1, $color2)
-    background-image:    -moz-linear-gradient(top, $color1, $color2)
-    background-image:     -ms-linear-gradient(top, $color1, $color2)
-    background-image:      -o-linear-gradient(top, $color1, $color2)
-
+// $light_grey: #eee
+// $dark_grey: #3E454C
+// $grey: #666
+// $cream: #FFF6E5
+// $blue: #2185C5
+// $darker_blue: #497099
+// $light_blue: #7ECEFD
+// $white: #ffffff
+// $red: #FF7F66
+// $green: #10C556
+// 
+// $little_space: 4px
+// $medium_space: 8px
+// $big_space: 12px
+// $lots_of_space: 12px
+// 
+// $header_padding: 12px
+// $content_width: 900px
+// $sidebar_width: 250px
+// 
+// @mixin centered_content
+    // margin: 0 auto
+    // width: $content_width
+// @mixin rounded-corners ($radius)
+    // -moz-border-radius: $radius
+    // -webkit-border-radius: $radius
+    // -khtml-border-radius: $radius
+    // border-radius: $radius
+// 
+// @mixin gradient($color1, $color2)
+    // background-color: $color1
+    // background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color1), to($color2))
+    // background-image: -webkit-linear-gradient(top, $color1, $color2)
+    // background-image:    -moz-linear-gradient(top, $color1, $color2)
+    // background-image:     -ms-linear-gradient(top, $color1, $color2)
+    // background-image:      -o-linear-gradient(top, $color1, $color2)
+// 
 body
     background-color: $light_grey
     font-family: 'Open Sans', Helvetica, Arial
     margin: 0
     color: $dark_grey
-
-div
-    &#wrapper
-        background-color: $white
-
-    &#maincontent
-        margin: 0 auto
-        width: $content_width
-        padding: $big_space
-header
-    //@include gradient($blue, $darker_blue)
-    background-color: $blue
-    color: $light_grey
-    padding: $header_padding
-    overflow-x: hidden
-nav
-    @include centered_content
-    font-weight: bold
-    font-size: small
-    padding: 0
-
-    ul 
-        list-style-type: none
-        list-style: none
-        padding: 0
-        margin: 0
-
-        li 
-            display: inline
-            margin: 0
-            padding: $header_padding
-
-            &:hover
-                background-color: $light_blue
-        a 
-            color: $white
-            text-decoration: none
-        
-        &#nav_user
-            float: right
-            li
-                border-left: 1px solid $darker_blue
-        &#nav_all
-            float: left
-            li 
-                border-right: 1px solid $darker_blue
-
-
-
-section, footer
-    padding: $medium_space
-
-footer
-    clear: both
-    @include centered_content
-    p 
-        font-size: small
-        font-style: italic
-        color: $grey
-
-
-h1, h2, h3
-    color: $dark_grey
-
-a
-    color: $red
-
-div#alerts_and_notice
-    p
-        margin: 0
-        text-align: center
-        font-weight: bold
-        color: white
-        &.alert
-            background-color: $red
-
-        &.notice
-            background-color: $green
-
-ul
-    padding: 0
-    margin: 0
-    &.button_list
-        margin: 0 auto
-        list-style: none
-        li
-            @include rounded-corners (4px)
-            padding: $medium_space
-            background-color: $blue
-            color: white
-            font-weight: bold
-            text-align: center
-            margin:
-                bottom: $little_space
+// 
+// div
+    // &#wrapper
+        // background-color: $white
+// 
+    // &#maincontent
+        // margin: 0 auto
+        // width: $content_width
+        // padding: $big_space
+// header
+    // //@include gradient($blue, $darker_blue)
+    // background-color: $blue
+    // color: $light_grey
+    // padding: $header_padding
+    // overflow-x: hidden
+// nav
+    // @include centered_content
+    // font-weight: bold
+    // font-size: small
+    // padding: 0
+// 
+    // ul 
+        // list-style-type: none
+        // list-style: none
+        // padding: 0
+        // margin: 0
+// 
+        // li 
+            // display: inline
+            // margin: 0
+            // padding: $header_padding
+// 
+            // &:hover
+                // background-color: $light_blue
+        // a 
+            // color: $white
+            // text-decoration: none
+//         
+        // &#nav_user
+            // float: right
+            // li
+                // border-left: 1px solid $darker_blue
+        // &#nav_all
+            // float: left
+            // li 
+                // border-right: 1px solid $darker_blue
+// 
+// 
+// 
+// section, footer
+    // padding: $medium_space
+// 
+// footer
+    // clear: both
+    // @include centered_content
+    // p 
+        // font-size: small
+        // font-style: italic
+        // color: $grey
+// 
+// 
+// h1, h2, h3
+    // color: $dark_grey
+// 
+// a
+    // color: $red
+// 
+// div#alerts_and_notice
+    // p
+        // margin: 0
+        // text-align: center
+        // font-weight: bold
+        // color: white
+        // &.alert
+            // background-color: $red
+// 
+        // &.notice
+            // background-color: $green
+// 
+// ul
+    // padding: 0
+    // margin: 0
+    // &.button_list
+        // margin: 0 auto
+        // list-style: none
+        // li
+            // @include rounded-corners (4px)
+            // padding: $medium_space
+            // background-color: $blue
+            // color: white
+            // font-weight: bold
+            // text-align: center
+            // margin:
+                // bottom: $little_space

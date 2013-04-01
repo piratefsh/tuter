@@ -1,0 +1,136 @@
+@import "application"
+
+div.form_element 
+  display: table
+  padding-bottom: 12px
+div.form_element input
+  display: table-cell
+  vertical-align: middle
+div.form_element label 
+  display: table-cell
+  vertical-align: middle
+  padding: 0
+  margin: 0
+  width: 100px
+  text-align: right
+div.form_element textarea 
+  margin-left: 12px
+  -moz-border-radius: 4px
+  -webkit-border-radius: 4px
+  -khtml-border-radius: 4px
+  border-radius: 4px
+  border: 1px solid #eeeeee
+  padding: 8px
+  height: 150px
+div.form_element textarea[type="text"] 
+  margin-right: 0
+div.form_element textarea[type="checkbox"] + label
+  font-weight: normal
+  font-size: small
+  color: #666666
+  color: #3e454c
+div.form_element textarea[type="submit"]
+  font-weight: bold
+  font-size: large
+  color: white
+  padding: 12px
+  background-color: #2185c5
+  float: right
+
+div.field_with_errors
+  display: table-cell
+  vertical-align: middle
+div.field_with_errors input
+  border: 2px #ff7f66 solid
+
+div#error_explanation
+  border: 2px solid #ff7f66
+  padding: 12px
+  margin-bottom: 48px
+div#error_explanation h2
+  text-align: center
+  font-size: large
+  color: red
+
+div#sidebar 
+  overflow: auto
+  width: 200px
+  background-color: #eeeeee
+  padding: 12px
+  float: left
+  clear: left
+div#results
+  width: 640px
+  background-color: #eeeeee
+  padding: 12px
+  float: right
+  clear: right
+
+h2
+  margin-top: 0
+
+form input 
+  margin-left: 12px
+  -moz-border-radius: 4px
+  -webkit-border-radius: 4px
+  -khtml-border-radius: 4px
+  border-radius: 4px
+  border: 1px solid #eeeeee
+  padding: 8px
+  margin: 0
+form input[type="text"]
+  margin-right: 0
+form input[type="checkbox"] + label
+  font-weight: normal
+  font-size: small
+  color: #666666
+  color: #3e454c
+form input[type="submit"]
+  font-weight: bold
+  font-size: large
+  color: white
+  padding: 12px
+  background-color: #2185c5
+  float: right
+form div.form_element
+  display: block
+  clear: left
+form div.form_element label 
+  font-weight: bold
+  color: #3e454c
+  text-align: left
+  float: left
+  width: auto
+  padding: 0 
+form div.form_element label.checkbox
+  float: none
+form div.form_element label.helper_text
+  font-weight: normal
+  font-size: small
+  color: #666666
+  font-style: italic
+  float: right
+form div.form_element div.checkbox_group
+  display: table
+  clear: left
+form div.form_element div.checkbox_group label
+  display: table-cell
+  vertical-align: middle
+  padding: 0
+  padding-left: 12px
+form div.form_element div.checkbox_group input
+  display: table-cell
+  height: 20px
+  vertical-align: -3px
+
+table
+  width: 100%
+  font-size: small
+table th 
+  background-color: #2185c5
+  color: white
+  padding: 4px
+table td
+  color: #666666
+  background-color: white
+  text-align: center

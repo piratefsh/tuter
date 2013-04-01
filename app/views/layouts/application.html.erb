@@ -2,48 +2,49 @@
 <html>
 <head>
   <title>Tuter</title>
-  <%= stylesheet_link_tag    "application.css", :media => "all" %>
-  <%= javascript_include_tag "application.js" %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <%= content_for :header%>
+  <%= content_for :header %>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <div id="alerts_and_notice">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p> 
-    </div>
-    <div id="wrapper">
-        <header>
-            <nav>
-                <ul id="nav_all">
-                  <%= link_to  root_url do%><li>Home</li><% end %>
+	<div id="alerts_and_notice">
+  	<p class="notice"><%= notice %></p>
+    <p class="alert" ><%= alert  %></p> 
+  </div>
+  <div id="wrapper">
+  	<header>
+    	<nav>
+      	<ul id="nav_all">
+        	<%= link_to  root_url do%><li>Home</li><% end %>
 
-                  <%= link_to  "/search" do%><li>Find a Tutor</li><% end %>
+          <%= link_to  "/search" do%><li>Find a Tutor</li><% end %>
 
-                  <%= link_to new_user_registration_url do%><li>Be a Tutor</li><% end %>
+          <%= link_to new_user_registration_url do%><li>Be a Tutor</li><% end %>
                   
-                  <%= link_to "/search" do%><li>Tutoring Organizations</li><%end %>
-                </ul>
+          <%= link_to "/search" do%><li>Tutoring Organizations</li><%end %>
+        </ul>
 
-                <ul id="nav_user">
-                  <% if user_signed_in? %>
-                    <%= link_to "/user" do%><li>Logged in as <%= current_user.first_name + " " + current_user.last_name %>.</li><% end %>
-                    <li><%= link_to "Profile", "/user" %></li>
+        <ul id="nav_user">
+        	<% if user_signed_in? %>
+          <%= link_to "/user" do%><li>Logged in as <%= current_user.first_name + " " + current_user.last_name %>.</li><% end %>
+          <li><%= link_to "Profile", "/user" %></li>
 
-                    <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-                  <% else %>
-                    <li><%= link_to "Log In", new_user_session_path %></li> 
-                    <li><%= link_to "Sign in with Facebook", "/users/auth/facebook" %></li> 
-                  <% end %> 
-                </ul>
-            </nav>
+          <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+          <li><%= link_to "Log In", new_user_session_path %></li> 
+          <li><%= link_to "Sign in with Facebook", "/users/auth/facebook" %></li> 
+          <% end %> 
+        </ul>
+      </nav>
         </header>
         <div id="maincontent">
           <%= yield %>
         </div>
     <footer>
-        <p>Questions, feedback or problems? Contact us at <a href="mailto:admin@tuter.me">admin@tuter.me</a></p>
+    	Questions, feedback or problems? Contact us at <a href="mailto:admin@tuter.me">admin@tuter.me</a>
     </footer>
+    <%= debug(params) if Rails.env.development? %>
 </body>
 </html>

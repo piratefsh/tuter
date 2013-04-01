@@ -57,6 +57,13 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    columnize (0.3.6)
+    debugger (1.5.0)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.2.0)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.2.0)
     ember-data-source (0.0.5)
       ember-source
     ember-rails (0.11.1)
@@ -183,6 +190,7 @@ PLATFORMS
 DEPENDENCIES
   certified
   coffee-rails (~> 3.2.1)
+  debugger
   devise!
   emberjs-rails
   execjs
@@ -190,7 +198,7 @@ DEPENDENCIES
   jquery-rails
   omniauth-facebook (~> 1.4.1)
   pg
-  rails
+  rails (= 3.2.3)
   ruby
   sass-rails (~> 3.2.3)
   sqlite3
