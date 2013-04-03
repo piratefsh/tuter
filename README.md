@@ -5,13 +5,14 @@ v1.0 02-21-2013
 
 Notes: 
 
- - **Linux** users need to uncomment 'gem 'therubyracer'' in the Gemfile. 
- - Facebook sign-in only works when web app is on Heroku. Will not work locally
+ - **Linux** users need to uncomment `gem 'therubyracer'` in the Gemfile. 
+ - **Facebook** sign-in only works when web app is on Heroku. Will not work locally
 
 ## To Run Server
-  $ rake db:migrate
-  $ rake db:seed
-  $ rails server
+ 
+ $ rake db:migrate
+ $ rake db:seed
+ $ rails server
 
 ## To Run Web App Locally
 Visit localhost:3000 on your browser
