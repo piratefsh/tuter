@@ -1,5 +1,5 @@
 <%= content_for :header do%>
-    <%= stylesheet_link_tag "home", :media => "all" %>
+    <%= stylesheet_link_tag "home", "gmaps4rails", :media => "all" %>    
 <% end %>
 
 <p>Pardon the dust, site under construction!</p>
@@ -30,6 +30,8 @@
 
     <div id="map_div">
         <h2 class="first_h">Map</h2>
-        <div id="google_map"></div>
+        <div id="google_map">
+        	<%= gmaps4rails(@json) %>
+        </div>
     </div>
 </div>

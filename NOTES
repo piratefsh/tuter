@@ -1,0 +1,20 @@
+Summary of changes:
+Gemfile:
+gem 'webrick'
+gem 'debugger'
+gem 'thin'
+gem 'annotate'
+gem 'gmaps4rails'
+
+Useful commands for development...
+$ heroku git:remote -a tuter
+$ git push heroku master
+ 
+$ heroku pg:reset DATABASE --confirm tuter 
+$ heroku run rake db:setup
+
+$ heroku logs --tail
+
+Unit testing
+Modify the data for test database (db/test.sqlite3) in test/fixtures
+$ rake test:units
