@@ -8,8 +8,7 @@ Notes:
  - **Linux** users need to uncomment `gem 'therubyracer'` in the Gemfile. 
  - **Facebook** sign-in only works when web app is on Heroku. Will not work locally
 
-## To Run Server
- 
+## To Run Server 
  $ rake db:migrate
  $ rake db:seed
  $ rails server
@@ -19,4 +18,3 @@ Visit localhost:3000 on your browser
 
 ## Hosted
   http://tuter.heroku.com
-  
