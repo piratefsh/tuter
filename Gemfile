@@ -7,7 +7,7 @@ gem 'devise'
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'certified'
 
-# gem 'thin'
+gem 'thin'
 
 group :production do
 	gem 'pg'
