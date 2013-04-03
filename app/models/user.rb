@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_one :student_role
   has_one :tutor_role
   has_one :organization_role
+  # has_one :location
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, 

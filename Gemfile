@@ -8,6 +8,7 @@ gem 'omniauth-facebook', '~> 1.4.1'
 gem 'certified'
 gem 'annotate'
 gem 'thin'
+gem 'gmaps4rails'
 
 group :production do
 	gem 'pg'
