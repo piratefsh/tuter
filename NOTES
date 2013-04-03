@@ -1,0 +1,12 @@
+Useful commands for development...
+
+$ heroku git:remote -a tuter
+$ git push heroku master
+ 
+$ heroku pg:reset DATABASE --confirm tuter 
+$ heroku run rake db:setup
+
+$ heroku logs
+
+Using gem 'annotate' for easy commenting on models, routes, etc
+
