@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   def index
-
+    puts '==================SearchController=================='
     @users = User.all
     @rates = Array.new
 
@@ -8,6 +8,7 @@ class SearchController < ApplicationController
     end_rate    = 100
     interval    = 10
     i = start_rate
+
 
     until end_rate < i
         @rates.push("$#{i} - $#{i + interval}")
