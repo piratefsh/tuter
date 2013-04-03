@@ -6,6 +6,7 @@ gem 'heroku'
 gem 'devise'
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'certified'
+gem 'annotate'
 # TODO Thin gem not bundling, look into
 # gem "thin", '~> 1.5.0'
 
@@ -15,6 +16,7 @@ end
 group :development, :test do
 	gem 'sqlite3'
 	gem 'webrick'
+	gem 'debugger'
 end
 gem 'execjs'
 # gem 'therubyracer'
@@ -44,7 +46,3 @@ gem 'jquery-rails'
 
 # Deploy with Capistrano
 # gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-

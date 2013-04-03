@@ -1,3 +1,9 @@
+Summary of changes:
+Gemfile:
+gem 'webrick'
+gem 'debugger'
+
+
 Useful commands for development...
 
 $ heroku git:remote -a tuter
