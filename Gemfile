@@ -7,8 +7,7 @@ gem 'devise'
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'certified'
 gem 'annotate'
-# TODO Thin gem not bundling, look into
-# gem "thin", '~> 1.5.0'
+gem 'thin'
 
 group :production do
 	gem 'pg'
