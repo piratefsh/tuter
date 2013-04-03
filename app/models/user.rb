@@ -10,10 +10,11 @@ class User < ActiveRecord::Base
   has_one :organization_role
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :desc, :provider, :uid
+  attr_accessible :email, :password, :password_confirmation, :remember_me, 
+                  :first_name, :last_name, :desc, :provider, :uid
 
   # Setup creation validation
-
+  validates :first_name, :last_name, :email, :presence => true
 
 
   def self.from_omniauth(auth)
