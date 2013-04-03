@@ -9,12 +9,13 @@ Notes:
  - **Facebook** sign-in only works when web app is on Heroku. Will not work locally
 
 ## To Run Server 
+  
   $ rake db:migrate
   $ rake db:seed
   $ rails server
 
 ## To Run Web App Locally
-Visit localhost:3000 on your browser
+Visit **localhost:3000** on your browser
 
 ## Hosted
   http://tuter.heroku.com
