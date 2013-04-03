@@ -1,10 +1,10 @@
 # Tuter: The Ultimate Tutor Finder App
 v1.0 02-21-2013
 
-**Tuter is now in 2nd phase of development**
+**_Tuter_ is now in 2nd phase of development**
 
 ## An Introduction
-Tuter is an online tutoring management system developed by a team of 5 cool humans.
+**_Tuter_** is an online tutoring management system developed by a team of 5 cool humans.
 
 Notes: 
 
@@ -14,6 +14,8 @@ Notes:
 ## To Run Server 
 ```
 $ rake db:migrate
+$ rake db:seed
+$ rails server
 ```
 
 ## To Run Web App Locally
