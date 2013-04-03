@@ -1,9 +1,8 @@
-<% where_am_i = 'views/devise/registrations/new.html.erb'%>
-<%=  where_am_i if Rails.env.development? %>
+
 <%= stylesheet_link_tag  "form_style", :media => "all" %>
 
 <h2>Register With Tuter</h2>
-<%= form_for(@user, :url => registration_path(resource_name)) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %> 
 
 <div class="centered_form" >

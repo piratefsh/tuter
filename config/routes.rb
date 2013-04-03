@@ -11,9 +11,9 @@ Tuter::Application.routes.draw do
 
 
   # User Signup Routes
-  # match "/signup" => "signup#signup"
-  # match "/login" =>"login#login"
-  # match "/user" => "user#user"
+  match "/signup" => "signup#signup"
+  match "/login" =>"login#login"
+  match "/user" => "user#user"
 
   match "/search" => "search#index"
   match "/search/index" => "search#index"
@@ -77,25 +77,3 @@ Tuter::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 end
-#== Route Map
-# Generated on 02 Apr 2013 20:06
-#
-#             user_session POST     /users/sign_in(.:format)                 devise/sessions#create
-#     destroy_user_session DELETE   /users/sign_out(.:format)                devise/sessions#destroy
-#  user_omniauth_authorize GET|POST /users/auth/:provider(.:format)          devise/omniauth_callbacks#passthru {:provider=>/(?!)/}
-#   user_omniauth_callback GET|POST /users/auth/:action/callback(.:format)   devise/omniauth_callbacks#(?-mix:(?!))
-#            user_password POST     /users/password(.:format)                devise/passwords#create
-#        new_user_password GET      /users/password/new(.:format)            devise/passwords#new
-#       edit_user_password GET      /users/password/edit(.:format)           devise/passwords#edit
-#                          PUT      /users/password(.:format)                devise/passwords#update
-# cancel_user_registration GET      /users/cancel(.:format)                  devise/registrations#cancel
-#        user_registration POST     /users(.:format)                         devise/registrations#create
-#    new_user_registration GET      /users/sign_up(.:format)                 devise/registrations#new
-#   edit_user_registration GET      /users/edit(.:format)                    devise/registrations#edit
-#                          PUT      /users(.:format)                         devise/registrations#update
-#                          DELETE   /users(.:format)                         devise/registrations#destroy
-#                     root          /                                        home#index
-#                                   /users/auth/:provider/callback(.:format) sessions#create
-#       users_auth_failure          /users/auth/failure(.:format)            :controller#:action
-#                   search          /search(.:format)                        search#index
-#             search_index          /search/index(.:format)                  search#index
