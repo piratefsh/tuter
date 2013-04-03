@@ -1,26 +1,28 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.1'
 gem 'ruby'
 gem 'heroku'
-gem 'devise'
+gem 'devise', :git => 'https://github.com/plataformatec/devise'
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'certified'
+# TODO Thin gem not bundling, look into
+# gem "thin", '~> 1.5.0'
+gem 'emberjs-rails'
 
-gem 'thin'
+# Bundle edge Rails instead:
+# gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :production do
 	gem 'pg'
 end 
 group :development, :test do
 	gem 'sqlite3'
-	# gem 'webrick'
-	# gem 'rails-erd'
-	# gem 'annotate'
 end
-
 gem 'execjs'
-# gem 'therubyracer' # only for linux users
+# gem 'therubyracer'
+
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -48,7 +50,6 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger, should only use in development mode
-# place debugger as breakpoint in source code
-# $ rails server --debugger
-# gem 'debugger', group: [:development, :test]
+# To use debugger
+# gem 'ruby-debug19', :require => 'ruby-debug'
+

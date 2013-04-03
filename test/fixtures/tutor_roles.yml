@@ -1,17 +1,3 @@
-# == Schema Information
-#
-# Table name: tutor_roles
-#
-#  id             :integer          not null, primary key
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
-#  tutor_ID       :integer
-#  age            :integer
-#  year_in_school :string(255)
-#  rating         :float
-#  transportation :boolean
-#
-
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 # This model initially had no columns defined.  If you add columns to the
