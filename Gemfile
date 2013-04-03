@@ -2,27 +2,23 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 gem 'ruby'
-gem 'devise', :git => 'https://github.com/plataformatec/devise'
+gem 'devise'
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'certified'
 
-gem 'thin'
-# gem 'emberjs-rails' # not using anymore, right?
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# gem 'thin'
 
 group :production do
 	gem 'pg'
 end 
 group :development, :test do
 	gem 'sqlite3'
-	gem 'webrick'
-	gem 'rails-erd'
+	# gem 'webrick'
+	# gem 'rails-erd'
 	gem 'annotate'
 end
 gem 'execjs'
-# gem 'therubyracer' # only for linux
+# gem 'therubyracer' # only for linux users
 
 # Gems used only for assets and not required
 # in production environments by default.
