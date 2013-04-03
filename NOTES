@@ -10,3 +10,6 @@ $ heroku logs
 
 Using gem 'annotate' for easy commenting on models, routes, etc
 
+Unit testing
+Modify the data for test database in test/fixtures
+$ rake test:units
