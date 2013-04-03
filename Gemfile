@@ -3,26 +3,21 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.3'
 gem 'ruby'
 gem 'heroku'
-gem 'devise', :git => 'https://github.com/plataformatec/devise'
+gem 'devise'
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'certified'
-
-gem 'thin'
-gem 'emberjs-rails'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# TODO Thin gem not bundling, look into
+# gem "thin", '~> 1.5.0'
 
 group :production do
 	gem 'pg'
 end 
 group :development, :test do
 	gem 'sqlite3'
+	gem 'webrick'
 end
 gem 'execjs'
 # gem 'therubyracer'
-
-
 
 # Gems used only for assets and not required
 # in production environments by default.
