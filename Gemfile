@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.1'
+gem 'rails', '3.2.3'
 gem 'ruby'
 gem 'heroku'
 gem 'devise', :git => 'https://github.com/plataformatec/devise'
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'certified'
-# TODO Thin gem not bundling, look into
-# gem "thin", '~> 1.5.0'
+
+gem 'thin'
 gem 'emberjs-rails'
 
 # Bundle edge Rails instead:
