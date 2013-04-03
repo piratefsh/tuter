@@ -2,11 +2,12 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 gem 'ruby'
+gem 'heroku'
 gem 'devise'
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'certified'
 
-gem 'thin'
+# gem 'thin'
 
 group :production do
 	gem 'pg'
@@ -15,7 +16,7 @@ group :development, :test do
 	gem 'sqlite3'
 	# gem 'webrick'
 	# gem 'rails-erd'
-	gem 'annotate'
+	# gem 'annotate'
 end
 
 gem 'execjs'
@@ -50,4 +51,4 @@ gem 'jquery-rails'
 # To use debugger, should only use in development mode
 # place debugger as breakpoint in source code
 # $ rails server --debugger
-gem 'debugger', group: [:development, :test]
+# gem 'debugger', group: [:development, :test]
