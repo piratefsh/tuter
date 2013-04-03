@@ -6,7 +6,7 @@ gem 'devise'
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'certified'
 
-# gem 'thin'
+gem 'thin'
 
 group :production do
 	gem 'pg'
@@ -17,6 +17,7 @@ group :development, :test do
 	# gem 'rails-erd'
 	gem 'annotate'
 end
+
 gem 'execjs'
 # gem 'therubyracer' # only for linux users
 
