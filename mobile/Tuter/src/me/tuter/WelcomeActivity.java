@@ -28,13 +28,13 @@ public class WelcomeActivity extends Activity {
 	
 	private void checkPlayServicesAvailable()
 	{
-		//Check if Google Play Services is available 
+		//Check if Google Play Services is available
+		//Needed for Google Maps v2 fragment
         int playAvail = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getApplicationContext());
         
         switch(playAvail)
         {
         	case ConnectionResult.SUCCESS: 
-        		Log.d(TAG, "Device has Google Play Services");
         		break;
         	case ConnectionResult.SERVICE_MISSING:
         	case ConnectionResult.SERVICE_VERSION_UPDATE_REQUIRED:

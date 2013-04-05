@@ -2,5 +2,8 @@
 <resources>
     <color name="white">#ffffff</color>
     <color name="dark_grey">#222222</color>
+    <color name="tuter_grey">#3E454C</color>
     <color name="tuter_blue">#0985c4</color>
+    <color name="tuter_lightblue">#7ECEFD</color>
+    
 </resources>

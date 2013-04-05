@@ -2,6 +2,8 @@
 <resources>
 
     <string name="app_name">Tuter</string>
+    <string name="tuter_catchphrase">The Ultimate Tutor Finder</string>
+    <string name="tuter_version">v1.0</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="welcome_welcomeText">Welcome</string>
@@ -15,12 +17,14 @@
     <string name="search_locationHint">Location (e.g. Helen C. White)</string>
     <string name="search_volunteerLabel">Volunteer</string>
     <string name="search_paidLabel">Paid</string>
+    <string name="search_searchButton">Search</string>
     
     <string name="title_activity_search">Search Tutors</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_search_results">SearchResultsActivity</string>
     <string name="title_activity_google_map_v2">GoogleMapV2</string>
+    
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in_register"><b>Sign in</b> or register</string>
