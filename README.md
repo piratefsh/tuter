@@ -23,8 +23,3 @@ Visit **localhost:3000** on your browser
 
 ## Hosted
 http://tuter.heroku.com
-
-## Tuter Mobile
-###Dependencies
-The Android app requires Google Play Services installed. Here is a quick guide on setting it up
-https://docs.google.com/document/pub?id=19nQzvKP-CVLd7_VrpwnHfl-AE9fjbJySowONZZtNHzw
