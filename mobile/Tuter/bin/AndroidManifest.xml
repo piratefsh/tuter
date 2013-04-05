@@ -29,10 +29,10 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-	
-	    <meta-data
-	        android:name="com.google.android.maps.v2.API_KEY"
-	        android:value="AIzaSyDUU-l5nK7z0lt0UqMKA9DeUICev7OQmdc" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDUU-l5nK7z0lt0UqMKA9DeUICev7OQmdc" />
+
         <activity
             android:name="me.tuter.WelcomeActivity"
             android:label="@string/app_name" >
