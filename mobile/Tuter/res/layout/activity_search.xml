@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchActivity" >
+
+	    
+		<fragment 
+	         android:id="@+id/map"
+	         android:layout_width="match_parent"
+	         android:layout_height="wrap_content"
+	         android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+		<LinearLayout
+		    android:layout_height="wrap_content"
+		    android:layout_width="fill_parent"
+		    android:layout_alignParentBottom="true"
+		    android:padding="8dp"
+		    android:orientation="vertical"
+		    android:background="@color/dark_grey">
+		    
+		    <EditText
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:hint="@string/search_courseHint"
+		        android:inputType="text" />
+
+		    <EditText
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:hint="@string/search_locationHint"
+		        android:inputType="text" />
+		    
+    		<LinearLayout
+			    android:layout_height="wrap_content"
+			    android:layout_width="fill_parent">
+    		    
+		    <CheckBox
+		        android:id="@+id/checkboxVolunteer"
+		        android:layout_height="wrap_content"
+		        android:layout_width="wrap_content"
+		        android:text="@string/search_volunteerLabel"
+		    	android:textColor="@color/white"
+		        android:layout_weight="1"/>
+		    <CheckBox
+		        android:id="@+id/checkboxPaid"
+		        android:layout_height="wrap_content"
+		        android:layout_width="wrap_content"
+		    	android:textColor="@color/white"
+		        android:text="@string/search_paidLabel"
+		        android:layout_weight="1"/>
+    		</LinearLayout>
+		</LinearLayout>
+    
+    
+
+</RelativeLayout>
