@@ -34,7 +34,7 @@
             android:value="AIzaSyDUU-l5nK7z0lt0UqMKA9DeUICev7OQmdc" />
 
         <activity
-            android:name="me.tuter.WelcomeActivity"
+            android:name="me.tuter.activities.WelcomeActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,20 +43,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="me.tuter.LogInActivity"
+            android:name="me.tuter.activities.LogInActivity"
             android:label="@string/title_activity_login"
             android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
         <activity
-            android:name="me.tuter.SearchActivity"
+            android:name="me.tuter.activities.SearchActivity"
             android:label="@string/title_activity_search" >
         </activity>
         <activity
-            android:name="me.tuter.SearchResultsActivity"
+            android:name="me.tuter.activities.SearchResultsActivity"
             android:label="@string/title_activity_search_results" >
         </activity>
         <activity
-            android:name="me.tuter.SignUpActivity"
+    		android:name="me.tuter.activities.SignUpActivity"
             android:label="@string/title_activity_sign_up"
             android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>

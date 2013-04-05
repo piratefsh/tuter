@@ -43,7 +43,7 @@
             </intent-filter>
         </activity>
         <activity
-            andme.tuter.activities.LogInActivitygInActivity"
+            android:name="me.tuter.activities.LogInActivity"
             android:label="@string/title_activity_login"
             android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
@@ -51,11 +51,12 @@
             android:name="me.tuter.activities.SearchActivity"
             android:label="@string/title_activity_search" >
         </activity>
-        <acme.tuter.activities.SearchResultsActivitye="me.tuter.SearchResultsActivity"
+        <activity
+            android:name="me.tuter.activities.SearchResultsActivity"
             android:label="@string/title_activity_search_results" >
         </activity>
         <activity
-    me.tuter.activities.SignUpActivitye.tuter.SignUpActivity"
+    		android:name="me.tuter.activities.SignUpActivity"
             android:label="@string/title_activity_sign_up"
             android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
