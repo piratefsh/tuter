@@ -16,6 +16,8 @@ class SearchController < ApplicationController
 
     respond_to do |format|
         format.html #search/index/html.erb
+        format.json {render :json => @users}
+
   	end
   end
 end
