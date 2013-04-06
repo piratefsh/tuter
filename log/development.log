@@ -1405,3 +1405,930 @@ Served asset /application.js - 304 Not Modified (57ms)
 
 Started GET "/assets/sortable_table.js?body=1" for 127.0.0.1 at 2013-04-05 18:07:16 -0500
 Served asset /sortable_table.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-06 13:39:10 -0500
+Processing by HomeController#index as HTML
+  [1m[36mLocation Load (0.1ms)[0m  [1mSELECT "locations".* FROM "locations" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "locations".* FROM "locations" 
+Compiled home.css  (52ms)  (pid 2758)
+  Rendered /home/piratefsh/.gem/ruby/1.9.1/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (1.4ms)
+  Rendered home/index.html.erb within layouts/application (99.2ms)
+Compiled application.css  (25ms)  (pid 2758)
+Completed 200 OK in 299ms (Views: 229.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-06 13:39:10 -0500
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-06 13:39:10 -0500
+Served asset /home.css - 200 OK (2ms)
+
+
+Started GET "/assets/gmaps4rails.css?body=1" for 127.0.0.1 at 2013-04-06 13:39:10 -0500
+Served asset /gmaps4rails.css - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-06 13:39:16 -0500
+Processing by HomeController#index as HTML
+  [1m[36mLocation Load (0.4ms)[0m  [1mSELECT "locations".* FROM "locations" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "locations".* FROM "locations" 
+Compiled home.css  (47ms)  (pid 2758)
+  Rendered /home/piratefsh/.gem/ruby/1.9.1/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (0.8ms)
+  Rendered home/index.html.erb within layouts/application (55.7ms)
+Compiled application.css  (25ms)  (pid 2758)
+Completed 200 OK in 127ms (Views: 124.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-06 13:39:16 -0500
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:16 -0500
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:16 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.base.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:16 -0500
+Served asset /gmaps4rails/gmaps4rails.base.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.bing.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:16 -0500
+Served asset /gmaps4rails/gmaps4rails.bing.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/gmaps4rails.css?body=1" for 127.0.0.1 at 2013-04-06 13:39:16 -0500
+Served asset /gmaps4rails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-06 13:39:16 -0500
+Served asset /home.css - 200 OK (2ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.googlemaps.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:16 -0500
+Served asset /gmaps4rails/gmaps4rails.googlemaps.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.mapquest.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:16 -0500
+Served asset /gmaps4rails/gmaps4rails.mapquest.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.openlayers.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:16 -0500
+Served asset /gmaps4rails/gmaps4rails.openlayers.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:16 -0500
+Served asset /locations.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sortable_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:16 -0500
+Served asset /sortable_table.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:16 -0500
+Served asset /search_table.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.tablesorter.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:16 -0500
+Served asset /jquery.tablesorter.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:16 -0500
+Served asset /application.js - 304 Not Modified (12ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-04-06 13:39:34 -0500
+Processing by SearchController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+WARNING on line 44 of /home/piratefsh/Dropbox/Development/RoR/Tuter/app/assets/stylesheets/search.sass:
+This selector doesn't have any properties and will not be rendered.
+Compiled search.css  (60ms)  (pid 2758)
+  Rendered search/index.html.erb within layouts/application (78.0ms)
+Completed 200 OK in 133ms (Views: 85.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-06 13:39:35 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:35 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:35 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.base.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:35 -0500
+Served asset /gmaps4rails/gmaps4rails.base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.bing.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:35 -0500
+Served asset /gmaps4rails/gmaps4rails.bing.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.css?body=1" for 127.0.0.1 at 2013-04-06 13:39:35 -0500
+Served asset /search.css - 200 OK (1ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.googlemaps.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:35 -0500
+Served asset /gmaps4rails/gmaps4rails.googlemaps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.mapquest.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:35 -0500
+Served asset /gmaps4rails/gmaps4rails.mapquest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.openlayers.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:35 -0500
+Served asset /gmaps4rails/gmaps4rails.openlayers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:35 -0500
+Served asset /locations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:35 -0500
+Served asset /application.js - 304 Not Modified (51ms)
+
+
+Started GET "/assets/search_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:35 -0500
+Served asset /search_table.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sortable_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:35 -0500
+Served asset /sortable_table.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tablesorter.js?body=1" for 127.0.0.1 at 2013-04-06 13:39:35 -0500
+Served asset /jquery.tablesorter.js - 304 Not Modified (0ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-04-06 13:42:46 -0500
+Processing by SearchController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" 
+Compiled sortable_table.js  (0ms)  (pid 2758)
+  Rendered search/index.html.erb within layouts/application (6.4ms)
+Compiled application.js  (4ms)  (pid 2758)
+Completed 200 OK in 39ms (Views: 35.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-06 13:42:46 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.css?body=1" for 127.0.0.1 at 2013-04-06 13:42:46 -0500
+Served asset /search.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:46 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:46 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.base.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:46 -0500
+Served asset /gmaps4rails/gmaps4rails.base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.bing.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:46 -0500
+Served asset /gmaps4rails/gmaps4rails.bing.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.googlemaps.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:46 -0500
+Served asset /gmaps4rails/gmaps4rails.googlemaps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.mapquest.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:46 -0500
+Served asset /gmaps4rails/gmaps4rails.mapquest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.openlayers.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:46 -0500
+Served asset /gmaps4rails/gmaps4rails.openlayers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:46 -0500
+Served asset /locations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:46 -0500
+Served asset /search_table.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sortable_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:46 -0500
+Served asset /sortable_table.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.tablesorter.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:46 -0500
+Served asset /jquery.tablesorter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:46 -0500
+Served asset /application.js - 304 Not Modified (15ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-04-06 13:42:51 -0500
+Processing by SearchController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered search/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-06 13:42:52 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:52 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:52 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.base.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:52 -0500
+Served asset /gmaps4rails/gmaps4rails.base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.bing.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:52 -0500
+Served asset /gmaps4rails/gmaps4rails.bing.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.googlemaps.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:52 -0500
+Served asset /gmaps4rails/gmaps4rails.googlemaps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.css?body=1" for 127.0.0.1 at 2013-04-06 13:42:52 -0500
+Served asset /search.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.mapquest.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:52 -0500
+Served asset /gmaps4rails/gmaps4rails.mapquest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.openlayers.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:52 -0500
+Served asset /gmaps4rails/gmaps4rails.openlayers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:52 -0500
+Served asset /locations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:52 -0500
+Served asset /search_table.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sortable_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:52 -0500
+Served asset /sortable_table.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tablesorter.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:52 -0500
+Served asset /jquery.tablesorter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-06 13:42:52 -0500
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-04-06 13:46:08 -0500
+Processing by SearchController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" 
+  Rendered search/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-06 13:46:08 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-06 13:46:08 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search.css?body=1" for 127.0.0.1 at 2013-04-06 13:46:08 -0500
+Served asset /search.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-06 13:46:08 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.base.js?body=1" for 127.0.0.1 at 2013-04-06 13:46:08 -0500
+Served asset /gmaps4rails/gmaps4rails.base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.bing.js?body=1" for 127.0.0.1 at 2013-04-06 13:46:08 -0500
+Served asset /gmaps4rails/gmaps4rails.bing.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.googlemaps.js?body=1" for 127.0.0.1 at 2013-04-06 13:46:08 -0500
+Served asset /gmaps4rails/gmaps4rails.googlemaps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.mapquest.js?body=1" for 127.0.0.1 at 2013-04-06 13:46:08 -0500
+Served asset /gmaps4rails/gmaps4rails.mapquest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.openlayers.js?body=1" for 127.0.0.1 at 2013-04-06 13:46:08 -0500
+Served asset /gmaps4rails/gmaps4rails.openlayers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2013-04-06 13:46:08 -0500
+Served asset /locations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:46:08 -0500
+Served asset /search_table.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sortable_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:46:08 -0500
+Served asset /sortable_table.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tablesorter.js?body=1" for 127.0.0.1 at 2013-04-06 13:46:08 -0500
+Served asset /jquery.tablesorter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-06 13:46:08 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-04-06 13:48:00 -0500
+Processing by SearchController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" [0m
+Compiled sortable_table.js  (0ms)  (pid 2758)
+  Rendered search/index.html.erb within layouts/application (7.7ms)
+Compiled application.js  (4ms)  (pid 2758)
+Completed 200 OK in 74ms (Views: 70.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-06 13:48:00 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-06 13:48:00 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search.css?body=1" for 127.0.0.1 at 2013-04-06 13:48:00 -0500
+Served asset /search.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-06 13:48:00 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.base.js?body=1" for 127.0.0.1 at 2013-04-06 13:48:00 -0500
+Served asset /gmaps4rails/gmaps4rails.base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.bing.js?body=1" for 127.0.0.1 at 2013-04-06 13:48:00 -0500
+Served asset /gmaps4rails/gmaps4rails.bing.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.googlemaps.js?body=1" for 127.0.0.1 at 2013-04-06 13:48:00 -0500
+Served asset /gmaps4rails/gmaps4rails.googlemaps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.mapquest.js?body=1" for 127.0.0.1 at 2013-04-06 13:48:00 -0500
+Served asset /gmaps4rails/gmaps4rails.mapquest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.openlayers.js?body=1" for 127.0.0.1 at 2013-04-06 13:48:00 -0500
+Served asset /gmaps4rails/gmaps4rails.openlayers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2013-04-06 13:48:00 -0500
+Served asset /locations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:48:00 -0500
+Served asset /search_table.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sortable_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:48:00 -0500
+Served asset /sortable_table.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.tablesorter.js?body=1" for 127.0.0.1 at 2013-04-06 13:48:00 -0500
+Served asset /jquery.tablesorter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-06 13:48:00 -0500
+Served asset /application.js - 304 Not Modified (15ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-04-06 13:51:37 -0500
+Processing by SearchController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" 
+  Rendered search/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 18ms (Views: 14.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-06 13:51:37 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.css?body=1" for 127.0.0.1 at 2013-04-06 13:51:37 -0500
+Served asset /search.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:37 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:37 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.base.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:37 -0500
+Served asset /gmaps4rails/gmaps4rails.base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.bing.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:37 -0500
+Served asset /gmaps4rails/gmaps4rails.bing.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.googlemaps.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:37 -0500
+Served asset /gmaps4rails/gmaps4rails.googlemaps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.mapquest.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:37 -0500
+Served asset /gmaps4rails/gmaps4rails.mapquest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.openlayers.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:37 -0500
+Served asset /gmaps4rails/gmaps4rails.openlayers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:37 -0500
+Served asset /locations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:37 -0500
+Served asset /search_table.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sortable_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:37 -0500
+Served asset /sortable_table.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tablesorter.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:37 -0500
+Served asset /jquery.tablesorter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:37 -0500
+Served asset /application.js - 304 Not Modified (39ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-04-06 13:51:39 -0500
+Processing by SearchController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered search/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-06 13:51:39 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:39 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:39 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.base.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:39 -0500
+Served asset /gmaps4rails/gmaps4rails.base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.bing.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:39 -0500
+Served asset /gmaps4rails/gmaps4rails.bing.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.googlemaps.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:39 -0500
+Served asset /gmaps4rails/gmaps4rails.googlemaps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.css?body=1" for 127.0.0.1 at 2013-04-06 13:51:39 -0500
+Served asset /search.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.mapquest.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:39 -0500
+Served asset /gmaps4rails/gmaps4rails.mapquest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.openlayers.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:39 -0500
+Served asset /gmaps4rails/gmaps4rails.openlayers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:39 -0500
+Served asset /locations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:39 -0500
+Served asset /search_table.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sortable_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:39 -0500
+Served asset /sortable_table.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tablesorter.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:39 -0500
+Served asset /jquery.tablesorter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:39 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-04-06 13:51:44 -0500
+Processing by SearchController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  Rendered search/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-06 13:51:44 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:44 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:44 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.base.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:44 -0500
+Served asset /gmaps4rails/gmaps4rails.base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.bing.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:44 -0500
+Served asset /gmaps4rails/gmaps4rails.bing.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.css?body=1" for 127.0.0.1 at 2013-04-06 13:51:44 -0500
+Served asset /search.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.googlemaps.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:44 -0500
+Served asset /gmaps4rails/gmaps4rails.googlemaps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.mapquest.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:44 -0500
+Served asset /gmaps4rails/gmaps4rails.mapquest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.openlayers.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:44 -0500
+Served asset /gmaps4rails/gmaps4rails.openlayers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:44 -0500
+Served asset /locations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:44 -0500
+Served asset /search_table.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sortable_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:44 -0500
+Served asset /sortable_table.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tablesorter.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:44 -0500
+Served asset /jquery.tablesorter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-06 13:51:44 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-04-06 13:59:24 -0500
+Processing by SearchController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+Compiled sortable_table.js  (0ms)  (pid 2758)
+  Rendered search/index.html.erb within layouts/application (5.8ms)
+Compiled application.js  (4ms)  (pid 2758)
+Completed 200 OK in 62ms (Views: 61.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-06 13:59:24 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.css?body=1" for 127.0.0.1 at 2013-04-06 13:59:24 -0500
+Served asset /search.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-06 13:59:24 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-06 13:59:24 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.base.js?body=1" for 127.0.0.1 at 2013-04-06 13:59:24 -0500
+Served asset /gmaps4rails/gmaps4rails.base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.bing.js?body=1" for 127.0.0.1 at 2013-04-06 13:59:24 -0500
+Served asset /gmaps4rails/gmaps4rails.bing.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.googlemaps.js?body=1" for 127.0.0.1 at 2013-04-06 13:59:24 -0500
+Served asset /gmaps4rails/gmaps4rails.googlemaps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.mapquest.js?body=1" for 127.0.0.1 at 2013-04-06 13:59:24 -0500
+Served asset /gmaps4rails/gmaps4rails.mapquest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.openlayers.js?body=1" for 127.0.0.1 at 2013-04-06 13:59:24 -0500
+Served asset /gmaps4rails/gmaps4rails.openlayers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2013-04-06 13:59:24 -0500
+Served asset /locations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:59:24 -0500
+Served asset /search_table.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sortable_table.js?body=1" for 127.0.0.1 at 2013-04-06 13:59:24 -0500
+Served asset /sortable_table.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.tablesorter.js?body=1" for 127.0.0.1 at 2013-04-06 13:59:24 -0500
+Served asset /jquery.tablesorter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-06 13:59:24 -0500
+Served asset /application.js - 304 Not Modified (44ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-04-06 13:59:54 -0500
+Processing by SearchController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" 
+  Rendered search/index.html.erb within layouts/application (20.8ms)
+Completed 500 Internal Server Error in 27ms
+
+ActionView::Template::Error (/home/piratefsh/Dropbox/Development/RoR/Tuter/vendor/assets/javascripts/sorttable.js has a invalid UTF-8 byte sequence):
+    2:     <%= stylesheet_link_tag    "search", :media => "all" %>
+    3:     <%= javascript_include_tag 'sortable_table.js' %>
+    4:     <%= javascript_include_tag 'search_table.js' %>
+    5:     <%= javascript_include_tag 'sorttable.js' %>
+    6: <% end %>
+    7: <h1>Find A Tutor</h1>
+    8: <div id = "sidebar">
+  app/views/search/index.html.erb:5:in `block in _app_views_search_index_html_erb___2684247044750526951_44495760'
+  app/views/search/index.html.erb:1:in `_app_views_search_index_html_erb___2684247044750526951_44495760'
+  app/controllers/search_controller.rb:17:in `index'
+
+
+  Rendered /home/piratefsh/.gem/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.0ms)
+  Rendered /home/piratefsh/.gem/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/piratefsh/.gem/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-06 14:00:12 -0500
+Processing by HomeController#index as HTML
+  [1m[36mLocation Load (0.1ms)[0m  [1mSELECT "locations".* FROM "locations" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "locations".* FROM "locations" 
+  Rendered /home/piratefsh/.gem/ruby/1.9.1/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (0.9ms)
+  Rendered home/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-06 14:00:12 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-06 14:00:12 -0500
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-06 14:00:12 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.base.js?body=1" for 127.0.0.1 at 2013-04-06 14:00:12 -0500
+Served asset /gmaps4rails/gmaps4rails.base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.bing.js?body=1" for 127.0.0.1 at 2013-04-06 14:00:12 -0500
+Served asset /gmaps4rails/gmaps4rails.bing.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.googlemaps.js?body=1" for 127.0.0.1 at 2013-04-06 14:00:12 -0500
+Served asset /gmaps4rails/gmaps4rails.googlemaps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.mapquest.js?body=1" for 127.0.0.1 at 2013-04-06 14:00:12 -0500
+Served asset /gmaps4rails/gmaps4rails.mapquest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.openlayers.js?body=1" for 127.0.0.1 at 2013-04-06 14:00:12 -0500
+Served asset /gmaps4rails/gmaps4rails.openlayers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2013-04-06 14:00:12 -0500
+Served asset /locations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_table.js?body=1" for 127.0.0.1 at 2013-04-06 14:00:12 -0500
+Served asset /search_table.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sortable_table.js?body=1" for 127.0.0.1 at 2013-04-06 14:00:12 -0500
+Served asset /sortable_table.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tablesorter.js?body=1" for 127.0.0.1 at 2013-04-06 14:00:12 -0500
+Served asset /jquery.tablesorter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-06 14:00:12 -0500
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-06 14:00:12 -0500
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails.css?body=1" for 127.0.0.1 at 2013-04-06 14:00:12 -0500
+Served asset /gmaps4rails.css - 304 Not Modified (0ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-04-06 14:00:14 -0500
+Processing by SearchController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered search/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (/home/piratefsh/Dropbox/Development/RoR/Tuter/vendor/assets/javascripts/sorttable.js has a invalid UTF-8 byte sequence):
+    2:     <%= stylesheet_link_tag    "search", :media => "all" %>
+    3:     <%= javascript_include_tag 'sortable_table.js' %>
+    4:     <%= javascript_include_tag 'search_table.js' %>
+    5:     <%= javascript_include_tag 'sorttable.js' %>
+    6: <% end %>
+    7: <h1>Find A Tutor</h1>
+    8: <div id = "sidebar">
+  app/views/search/index.html.erb:5:in `block in _app_views_search_index_html_erb___2684247044750526951_44495760'
+  app/views/search/index.html.erb:1:in `_app_views_search_index_html_erb___2684247044750526951_44495760'
+  app/controllers/search_controller.rb:17:in `index'
+
+
+  Rendered /home/piratefsh/.gem/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.1ms)
+  Rendered /home/piratefsh/.gem/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/piratefsh/.gem/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.4ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-04-06 14:00:47 -0500
+Processing by SearchController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  Rendered search/index.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (/home/piratefsh/Dropbox/Development/RoR/Tuter/vendor/assets/javascripts/sorttable.js has a invalid UTF-8 byte sequence):
+    2:     <%= stylesheet_link_tag    "search", :media => "all" %>
+    3:     <%= javascript_include_tag 'sortable_table.js' %>
+    4:     <%= javascript_include_tag 'search_table.js' %>
+    5:     <%= javascript_include_tag 'sorttable.js' %>
+    6: <% end %>
+    7: <h1>Find A Tutor</h1>
+    8: <div id = "sidebar">
+  app/views/search/index.html.erb:5:in `block in _app_views_search_index_html_erb___2684247044750526951_44495760'
+  app/views/search/index.html.erb:1:in `_app_views_search_index_html_erb___2684247044750526951_44495760'
+  app/controllers/search_controller.rb:17:in `index'
+
+
+  Rendered /home/piratefsh/.gem/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+  Rendered /home/piratefsh/.gem/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/piratefsh/.gem/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.6ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-04-06 14:02:22 -0500
+Processing by SearchController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered search/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (/home/piratefsh/Dropbox/Development/RoR/Tuter/vendor/assets/javascripts/sorttable.js has a invalid UTF-8 byte sequence):
+    2:     <%= stylesheet_link_tag    "search", :media => "all" %>
+    3:     <%= javascript_include_tag 'sortable_table.js' %>
+    4:     <%= javascript_include_tag 'search_table.js' %>
+    5:     <%= javascript_include_tag 'sorttable.js' %>
+    6: <% end %>
+    7: <h1>Find A Tutor</h1>
+    8: <div id = "sidebar">
+  app/views/search/index.html.erb:5:in `block in _app_views_search_index_html_erb___2684247044750526951_44495760'
+  app/views/search/index.html.erb:1:in `_app_views_search_index_html_erb___2684247044750526951_44495760'
+  app/controllers/search_controller.rb:17:in `index'
+
+
+  Rendered /home/piratefsh/.gem/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+  Rendered /home/piratefsh/.gem/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/piratefsh/.gem/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.5ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-04-06 14:02:22 -0500
+Processing by SearchController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" 
+  Rendered search/index.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (/home/piratefsh/Dropbox/Development/RoR/Tuter/vendor/assets/javascripts/sorttable.js has a invalid UTF-8 byte sequence):
+    2:     <%= stylesheet_link_tag    "search", :media => "all" %>
+    3:     <%= javascript_include_tag 'sortable_table.js' %>
+    4:     <%= javascript_include_tag 'search_table.js' %>
+    5:     <%= javascript_include_tag 'sorttable.js' %>
+    6: <% end %>
+    7: <h1>Find A Tutor</h1>
+    8: <div id = "sidebar">
+  app/views/search/index.html.erb:5:in `block in _app_views_search_index_html_erb___2684247044750526951_44495760'
+  app/views/search/index.html.erb:1:in `_app_views_search_index_html_erb___2684247044750526951_44495760'
+  app/controllers/search_controller.rb:17:in `index'
+
+
+  Rendered /home/piratefsh/.gem/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.1ms)
+  Rendered /home/piratefsh/.gem/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/piratefsh/.gem/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.0ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-04-06 14:02:42 -0500
+Processing by SearchController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" [0m
+Compiled sorttable.js  (0ms)  (pid 2758)
+  Rendered search/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-06 14:02:43 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-06 14:02:43 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-06 14:02:43 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.base.js?body=1" for 127.0.0.1 at 2013-04-06 14:02:43 -0500
+Served asset /gmaps4rails/gmaps4rails.base.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.bing.js?body=1" for 127.0.0.1 at 2013-04-06 14:02:43 -0500
+Served asset /gmaps4rails/gmaps4rails.bing.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.css?body=1" for 127.0.0.1 at 2013-04-06 14:02:43 -0500
+Served asset /search.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.googlemaps.js?body=1" for 127.0.0.1 at 2013-04-06 14:02:43 -0500
+Served asset /gmaps4rails/gmaps4rails.googlemaps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.mapquest.js?body=1" for 127.0.0.1 at 2013-04-06 14:02:43 -0500
+Served asset /gmaps4rails/gmaps4rails.mapquest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sorttable.js?body=1" for 127.0.0.1 at 2013-04-06 14:02:43 -0500
+Served asset /sorttable.js - 200 OK (1ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.openlayers.js?body=1" for 127.0.0.1 at 2013-04-06 14:02:43 -0500
+Served asset /gmaps4rails/gmaps4rails.openlayers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2013-04-06 14:02:43 -0500
+Served asset /locations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_table.js?body=1" for 127.0.0.1 at 2013-04-06 14:02:43 -0500
+Served asset /search_table.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sortable_table.js?body=1" for 127.0.0.1 at 2013-04-06 14:02:43 -0500
+Served asset /sortable_table.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tablesorter.js?body=1" for 127.0.0.1 at 2013-04-06 14:02:43 -0500
+Served asset /jquery.tablesorter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-06 14:02:43 -0500
+Served asset /application.js - 304 Not Modified (34ms)

@@ -2,6 +2,7 @@
     <%= stylesheet_link_tag    "search", :media => "all" %>
     <%= javascript_include_tag 'sortable_table.js' %>
     <%= javascript_include_tag 'search_table.js' %>
+    <%= javascript_include_tag 'sorttable.js' %>
 <% end %>
 <h1>Find A Tutor</h1>
 <div id = "sidebar">
@@ -58,7 +59,7 @@
 
 <div id="results">
     <h2>Results</h2>
-    <table id="results_table"> 
+    <table id="results_table" class="sortable"> 
     <thead> 
     <tr> 
         <th>Last Name</th> 
@@ -85,7 +86,7 @@
         <td>Helen C White</td> 
         <td>5pm-6pm</td> 
         <td>Drop-In</td> 
-        <td>$50.00</td> 
+        <td><%= user.email%></td> 
         <td>No</td> 
     </tr>     
 
