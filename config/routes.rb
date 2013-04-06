@@ -1,11 +1,14 @@
 Tuter::Application.routes.draw do
 
-  resources :locations
-
   devise_for :users
+  devise_scope :user do
+    match "/users/sign_out" => "devise/sessions#destroy"
+    match "/users/sign_in" => "devise/sessions#create"
+  end
 
   root :to => "home#index"
 
+  resources :locations
 
   # Omniauth routes
   match '/users/auth/:provider/callback', to: 'sessions#create'
@@ -13,8 +16,6 @@ Tuter::Application.routes.draw do
 
 
   # User Signup Routes
-  match "/signup" => "signup#signup"
-  match "/login" =>"login#login"
   match "/user" => "user#user"
 
   match "/search" => "search#index"

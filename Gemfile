@@ -9,6 +9,7 @@ gem 'certified'
 gem 'annotate'
 # gem 'thin'
 gem 'gmaps4rails'
+gem 'role_model'
 
 group :production do
 	gem 'pg'
@@ -17,7 +18,6 @@ group :development, :test do
 	gem 'sqlite3'
 	gem 'webrick'
 	# gem 'debugger'
-	# gem 'therubyracer'
 end
 gem 'execjs'
 

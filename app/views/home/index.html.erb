@@ -20,9 +20,9 @@
 
         <h2>Sign up</h2>
         <ul class="button_list">
-            <li>Tutor</li>
-            <li>Student</li>
-            <li>Organization</li>
+            <li><%= link_to "Tutor", "users/sign_up?role=tutor" %></li>
+            <li><%= link_to "Student", "users/sign_up?role=student" %></li>
+            <li><%= link_to "Organization", "users/sign_up?role=org" %></li>
         </ul>
 
         <h2>

@@ -5,18 +5,17 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :validatable,
          :recoverable, :rememberable, :trackable, :omniauthable
 
-  has_one :student_role
-  has_one :tutor_role
-  has_one :organization_role
   # has_one :location
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, 
-                  :first_name, :last_name, :desc, :provider, :uid
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
+                  :first_name, :last_name, :desc, :provider, :uid, :student, :tutor, :org
 
   # Setup creation validation
   validates :first_name, :last_name, :email, :presence => true
 
+  include RoleModel
+  roles = :student, :tutor, :org
 
   def self.from_omniauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
@@ -35,5 +34,4 @@ class User < ActiveRecord::Base
   def password_required?
     super && provider.blank?
   end
-
 end
