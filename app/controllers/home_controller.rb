@@ -8,4 +8,5 @@ class HomeController < ApplicationController
       format.json { render json: @locations }
     end
   end
+
 end
