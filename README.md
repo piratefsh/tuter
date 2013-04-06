@@ -1,4 +1,4 @@
-# Tuter: The Ultimate Tutor Finder App
+# Tuter: The Ultimate Tutor Finder App :thumbsup:
 v1.0 02-21-2013
 
 **_Tuter_ is now in 2nd phase of development** :smile:
