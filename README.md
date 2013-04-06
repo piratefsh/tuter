@@ -18,7 +18,7 @@ $ rake db:seed
 $ rails server
 ```
 
-## To Run Web App Locally
+## To Run Web App Locally :trollface:
 Visit **localhost:3000** on your browser
 
 ## Hosted
