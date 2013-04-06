@@ -7,7 +7,7 @@ gem 'devise'
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'certified'
 gem 'annotate'
-gem 'thin'
+# gem 'thin'
 gem 'gmaps4rails'
 
 group :production do
@@ -16,10 +16,11 @@ end
 group :development, :test do
 	gem 'sqlite3'
 	gem 'webrick'
-	gem 'debugger'
+	# gem 'debugger'
+	# gem 'therubyracer'
 end
 gem 'execjs'
-gem 'therubyracer'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
