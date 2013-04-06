@@ -44,7 +44,7 @@
 <div id="profileButtons" onload="generateProfileButtons()"></div>
 </form>
 
-<%= image_tag("blank_profile.png", :alt => "Profile Picture") %>
+<%= image_tag(current_user.photo, :alt => "Profile Picture") %>
 <br/><br/>
 
 <script type="JavaScript">
