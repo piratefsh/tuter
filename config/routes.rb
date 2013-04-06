@@ -3,7 +3,6 @@ Tuter::Application.routes.draw do
   devise_for :users
   devise_scope :user do
     match "/users/sign_out" => "devise/sessions#destroy"
-    match "/users/sign_in" => "devise/sessions#create"
   end
 
   root :to => "home#index"
