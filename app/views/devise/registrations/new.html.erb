@@ -1,5 +1,5 @@
-
-<%= stylesheet_link_tag  "form_style", :media => "all" %>
+<%= content_for :header do%>
+<% end %>
 
 <h2>Tuter Registration - <%= params[:role].humanize %></h2>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
