@@ -1,7 +1,7 @@
 <%= content_for :header do%>
     <%= stylesheet_link_tag    "search", :media => "all" %>
-    <%= javascript_include_tag 'sortable_table.js' %>
     <%= javascript_include_tag 'search_table.js' %>
+    <%= javascript_include_tag 'sorttable.js' %>
 <% end %>
 <h1>Find A Tutor</h1>
 <div id = "sidebar">
@@ -25,14 +25,20 @@
             <input type="text" name="course"/>
         </div>
         <div class="form_element">
+            <label>Name</label>
+            <label class="helper_text">Tutor's Name</label>
+            <input type="text" name="name"/>
+        </div>
+
+        <div class="form_element">
             <label>Type</label>
             
             <div class="checkbox_group">
-                <input type="checkbox" value="drop in" name="dropin"/>
-                <label class="checkbox" for="dropin">Drop in</label>
+                <input type="checkbox" value="Drop-In" name="dropin"/>
+                <label class="checkbox" for="dropin">Drop-in</label>
             </div>
             <div class="checkbox_group">
-                <input type="checkbox" name="group"/>
+                <input type="checkbox" value="Group" name="group"/>
                 <label class="checkbox"for="group">Group</label>
             </div>
         </div>
@@ -40,25 +46,26 @@
         <div class="form_element">
             <label>Rate</label>
             <br/>
-            <select>
+            <select name="rates">
                 <% @rates.each do |range| %>
                     <option><%= range %></option>
                 <% end %>
             </select>
         </div>
 
-        <div class="form_element">
+       <!--  <div class="form_element">
             <label>Organization</label>
             <label class="helper_text">Tutoring Organizations</label>
             <input type="text" name="organization"/>
-        </div>
+        </div> -->
         <input value="Search!" type="submit"/>
     </form>
 </div>
 
 <div id="results">
     <h2>Results</h2>
-    <table id="results_table"> 
+    <p>Click on headers to sort rows</p>
+    <table id="results_table" class="sortable"> 
     <thead> 
     <tr> 
         <th>Last Name</th> 
@@ -80,16 +87,18 @@
     <tr> 
         <td><%= user.first_name %></td> 
         <td><%= user.last_name %></td> 
-        <td>CS302</td> 
+        <td><%= randomCourse() %></td> 
         <td>Group</td> 
-        <td>Helen C White</td> 
+        <td><%= randomLocation() %></td> 
         <td>5pm-6pm</td> 
         <td>Drop-In</td> 
-        <td>$50.00</td> 
+        <td><%= randomRate(@rates) %></td> 
         <td>No</td> 
     </tr>     
 
     <% end %>
     </tbody> 
     </table> 
+
+    <p id="no_results">No matching results. Please try other terms.</p>
 </div>
