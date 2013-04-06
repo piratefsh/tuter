@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+
   def index
     @locations = Location.all
     @json = Location.all.to_gmaps4rails
@@ -7,4 +8,6 @@ class HomeController < ApplicationController
       format.json { render json: @locations }
     end
   end
+
+  
 end
