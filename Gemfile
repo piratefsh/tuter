@@ -9,6 +9,7 @@ gem 'certified'
 gem 'annotate'
 # gem 'thin'
 gem 'gmaps4rails'
+gem 'role_model'
 
 group :production do
 	gem 'pg'
@@ -17,7 +18,6 @@ group :development, :test do
 	gem 'sqlite3'
 	gem 'webrick'
 	# gem 'debugger'
-	# gem 'therubyracer'
 end
 gem 'execjs'
 
@@ -29,7 +29,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
+
 
   gem 'uglifier', '>= 1.0.3'
 end

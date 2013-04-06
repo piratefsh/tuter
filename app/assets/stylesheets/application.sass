@@ -49,6 +49,13 @@ div
         margin: 0 auto
         width: $content_width
         padding: $big_space
+
+    &#home_sidebar
+        a
+            color: $white
+            text-decoration: none
+            &:hover
+                color: $light_blue
 header
     //@include gradient($blue, $darker_blue)
     background-color: $blue
@@ -86,8 +93,6 @@ nav
             float: left
             li 
                 border-right: 1px solid $darker_blue
-
-
 
 section, footer
     padding: $medium_space

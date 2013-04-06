@@ -1,3 +1,29 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :integer          not null, primary key
+#  email                  :string(255)      default(""), not null
+#  encrypted_password     :string(255)      default(""), not null
+#  reset_password_token   :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default(0)
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string(255)
+#  last_sign_in_ip        :string(255)
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  first_name             :string(255)
+#  last_name              :string(255)
+#  desc                   :text
+#  uid                    :integer
+#  provider               :string(255)
+#  oauth_token            :string(255)
+#  oauth_expires_at       :datetime
+#
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -5,18 +31,18 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :validatable,
          :recoverable, :rememberable, :trackable, :omniauthable
 
-  has_one :student_role
-  has_one :tutor_role
-  has_one :organization_role
   # has_one :location
 
+
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, 
-                  :first_name, :last_name, :desc, :provider, :uid
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
+                  :first_name, :last_name, :desc, :provider, :uid, :student, :tutor, :org
 
   # Setup creation validation
   validates :first_name, :last_name, :email, :presence => true
 
+  include RoleModel
+  roles = :student, :tutor, :org
 
   def self.from_omniauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
@@ -36,4 +62,5 @@ class User < ActiveRecord::Base
     super && provider.blank?
   end
 
+  
 end

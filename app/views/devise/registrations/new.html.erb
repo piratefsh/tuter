@@ -1,7 +1,9 @@
+<%= content_for :header do%>
+    <%= stylesheet_link_tag    "form_style", :media => "all" %>
 
-<%= stylesheet_link_tag  "form_style", :media => "all" %>
+<% end %>
 
-<h2>Register With Tuter</h2>
+<h2>Tuter Registration - <%= params[:role].humanize %></h2>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %> 
 
@@ -25,10 +27,20 @@
   <%= f.text_area :desc %></div>
 
   <!-- Student Fields -->
+  <% if params[:role]=="student"%>
+    <%= f.hidden_field :student, :value => true %>
+  <% end %>
 
   <!--  Tutor Fields-->
-
+  <% if params[:role]=="tutor"%>
+    <%= f.hidden_field :tutor, :value => true %>
+  <% end %>
+  
   <!-- Org Fields -->
+  <% if params[:role]=="org"%>
+    <%= f.hidden_field :org, :value => true %>
+  <% end %>
+
   <div class="form_element">
   <label class="spacer"></label>
   <%= f.submit "Sign up" %>

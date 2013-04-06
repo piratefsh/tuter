@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130406163118) do
+ActiveRecord::Schema.define(:version => 20130406204809) do
+
+  create_table "courses", :force => true do |t|
+    t.string   "name"
+    t.integer  "course_ID"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.integer  "group_ID"
+    t.text     "desc"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "locations", :force => true do |t|
     t.string   "name"
@@ -27,6 +42,14 @@ ActiveRecord::Schema.define(:version => 20130406163118) do
     t.datetime "updated_at",        :null => false
     t.integer  "organization_ID"
     t.string   "organization_name"
+  end
+
+  create_table "programs", :force => true do |t|
+    t.string   "name"
+    t.integer  "program_ID"
+    t.text     "desc"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "student_roles", :force => true do |t|
@@ -48,30 +71,7 @@ ActiveRecord::Schema.define(:version => 20130406163118) do
     t.boolean  "transportation"
   end
 
-  create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-    t.string   "first_name"
-    t.string   "last_name"
-    t.text     "desc"
-    t.integer  "uid"
-    t.string   "provider"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
-    t.string   "photo"
-  end
-
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+# Could not dump table "users" because of following StandardError
+#   Unknown type 'bool' for column 'student'
 
 end
