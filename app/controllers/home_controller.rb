@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+
   def index
     @locations = Location.all
     @json = Location.all.to_gmaps4rails
