@@ -41,6 +41,7 @@ $(document).ready(function(){
         }
     });
 
+    //set onClick or keyup for search fields
     for(var name in column)
     {
         $("input[name=" + name +"]").keyup(instantSearchFunction);
@@ -49,7 +50,6 @@ $(document).ready(function(){
 
     //set search function for  rates selector
     $("select[name=rates]").click(instantSearchFunction);
-    $("input[name=group]").click(instantSearchFunction);
 
     function instantSearchFunction()
     {
