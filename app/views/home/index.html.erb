@@ -1,5 +1,5 @@
 <%= content_for :header do%>
-    <%= stylesheet_link_tag "home", "gmaps4rails", :media => "all" %>    
+    <%= stylesheet_link_tag "home", "gmaps4rails", :media => "all" %>
 <% end %>
 
 <p>Pardon the dust, site under construction!</p>
@@ -20,9 +20,9 @@
 
         <h2>Sign up</h2>
         <ul class="button_list">
-            <li>Tutor</li>
-            <li>Student</li>
-            <li>Organization</li>
+              <%= link_to  "users/sign_up?role=tutor" do%><li>Tutor</li><% end %>
+              <%= link_to  "users/sign_up?role=student" do%><li>Student</li><% end %>
+              <%= link_to  "users/sign_up?role=org" do%><li>Organization</li><% end %>
         </ul>
 
         <h2>
