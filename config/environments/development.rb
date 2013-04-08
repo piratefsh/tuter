@@ -38,7 +38,7 @@ Tuter::Application.configure do
   # We don't want DB access or model initialization on precompile in Heroku
   config.assets.initialize_on_precompile = false;
 
-  config.action_mailer.default_url_options = { :host => 'http://localhost:3000'}
+  # config.action_mailer.default_url_options = { :host => 'http://localhost:3000'}
 
   
 end
