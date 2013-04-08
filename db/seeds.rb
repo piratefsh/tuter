@@ -14,7 +14,7 @@ User.create(first_name: 'Trever', last_name: 'Johnson',
             student: 'true', tutor: 'true', org: 'true')
 User.create(first_name: 'Josh', last_name: 'Serbus',
             email:'serbus@tuter.me', password:'PASSWORD'
-            student: 'true', tutor: 'true', org: 'true')
+            student: => true, tutor: => true, org: => true)
 User.create(first_name: 'Faiz', last_name: 'Lurman',
             email:'faiz@tuter.me', password:'PASSWORD'
             student: 'true', tutor: 'true', org: 'true')
