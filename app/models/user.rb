@@ -48,6 +48,8 @@ class User < ActiveRecord::Base
   # default => :email and :password must be presence 
   validates :first_name, :last_name, :presence => true
 
+  has_and_belongs_to_many :groups
+
   def self.from_omniauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
   		user.provider = auth.provider
