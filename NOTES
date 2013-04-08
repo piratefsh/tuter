@@ -1,11 +1,3 @@
-Summary of changes:
-Gemfile:
-gem 'webrick'
-gem 'debugger'
-gem 'thin'
-gem 'annotate'
-gem 'gmaps4rails'
-
 Useful commands for development...
 $ heroku git:remote -a tuter
 $ git push heroku master
