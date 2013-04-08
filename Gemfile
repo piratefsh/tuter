@@ -31,6 +31,8 @@ gem 'gmaps4rails', '~> 1.5.6'
 gem 'role_model'
 gem 'guard'
 gem 'simplecov', :require => false, :group => :test
+
+
 group :production do
 	gem 'pg'
 end 
