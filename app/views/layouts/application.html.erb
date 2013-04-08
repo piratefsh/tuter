@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Tuter</title>
-  <%= stylesheet_link_tag    "application.css", :media => "all" %>
-  <%= javascript_include_tag "jquery-1.9.0.js" %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <%= content_for :header%>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> 
@@ -45,7 +45,7 @@
           <%= yield :scripts %>
         </div>
     <footer>
-        <p>Questions, feedback or problems? Contact us at <a href="mailto:admin@tuter.me">admin@tuter.me</a></p>
+        Questions, feedback or problems? Contact us at <a href="mailto:admin@tuter.me">admin@tuter.me</a>
     </footer>
 </body>
 </html>
