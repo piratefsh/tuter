@@ -1,16 +1,31 @@
+# Users authentication 
+#  https://github.com/plataformatec/devise 
+#   gem 'devise'
+#  https://github.com/mkdynamic/omniauth-facebook 
+#   gem 'omniauth-facebook'
+#   gem 'role-model'
+#
+# Annotate models, tests, routes
+#  https://github.com/ctran/annotate_models
+#   gem 'annotate'
+#
+# Google Maps
+#  https://github.com/apneadiving/Google-Maps-for-Rails
+#   gem 'gmaps4rails'
+
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 gem 'ruby'
 gem 'heroku'
-gem 'devise'
+gem 'devise', '~> 2.2.3'
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'certified'
 gem 'annotate'
 # gem 'thin'
-gem 'gmaps4rails'
+gem 'gmaps4rails', '~> 1.5.6'
 gem 'role_model'
-
+gem 'guard'
 group :production do
 	gem 'pg'
 end 

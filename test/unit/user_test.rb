@@ -22,6 +22,10 @@
 #  provider               :string(255)
 #  oauth_token            :string(255)
 #  oauth_expires_at       :datetime
+#  photo                  :string(255)
+#  student                :bool
+#  tutor                  :bool
+#  org                    :bool
 #
 
 require 'test_helper'
@@ -33,7 +37,7 @@ class UserTest < ActiveSupport::TestCase
  		user.first_name = 'AnotherFaiz'
  		user.last_name  = 'AnotherLurman'
  		user.email      = 'Anotherfaiz@tuter.me'
-        user.password   = 'PASSWORD' 		
-        assert user.valid?, 'Should pass now'
+    user.password   = 'PASSWORD' 		
+    assert user.valid?, 'Should pass now'
  	end 	
 end
