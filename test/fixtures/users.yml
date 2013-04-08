@@ -23,13 +23,12 @@
 #  oauth_token            :string(255)
 #  oauth_expires_at       :datetime
 #  photo                  :string(255)
-#  student                :bool
-#  tutor                  :bool
-#  org                    :bool
+#  student                :boolean
+#  tutor                  :boolean
+#  org                    :boolean
 #
 
 faiz: 
   first_name: Faiz
   last_name: Lurman
   email: faiz@tuter.me
-  password: PASSWORD

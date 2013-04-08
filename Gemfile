@@ -12,6 +12,10 @@
 # Google Maps
 #  https://github.com/apneadiving/Google-Maps-for-Rails
 #   gem 'gmaps4rails'
+#
+# Code coverage
+#  https://github.com/colszowka/simplecov
+#   gem 'simplecov'
 
 source 'https://rubygems.org'
 
@@ -26,6 +30,7 @@ gem 'annotate'
 gem 'gmaps4rails', '~> 1.5.6'
 gem 'role_model'
 gem 'guard'
+gem 'simplecov', :require => false, :group => :test
 group :production do
 	gem 'pg'
 end 
