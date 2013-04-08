@@ -38,7 +38,11 @@
 <div id="profileButtons" onload="generateProfileButtons()"></div>
 </form>
 
-<%= image_tag(current_user.photo, :alt => "Profile Picture") %>
+<% if current_user.photo? %>
+	<%= image_tag(current_user.photo, :alt => "Profile Picture") %>
+<% else %>
+	<%= image_tag("/images/def_profile_pic.jpg", :alt => "Profile Picture")%>
+<% end %>
 <br/><br/>
 
 <script type="JavaScript">
