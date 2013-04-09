@@ -3,6 +3,7 @@ Tuter::Application.routes.draw do
   devise_for :users
   devise_scope :user do
     match "/users/sign_out" => "devise/sessions#destroy"
+    match "/dashboard" => "dashboard#dashboard"
   end
 
   root :to => "home#index"
@@ -19,9 +20,11 @@ Tuter::Application.routes.draw do
   match "/user" => "user#user"
   match "/search" => "search#index"
   match "/search/index" => "search#index"
+  match "/dashboard" => "home#index"
+  
 
 
-  match "/dashboard" =>"dashboard"
+
 
 
 

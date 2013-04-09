@@ -1,0 +1,47 @@
+<div id='Tutor_Content_View_Options'>
+					<div id='Groups_Button'></div>
+					<div id='Search_Students'></div>
+				</div>
+
+				<div id='Groups_View'>
+					<div id='Add_Group_Button'>
+						<form action=''>
+							<input type='submit' value='Add Group' id='Add Group'>
+						</form>
+					</div>
+
+					<div id='Current_Groups_Table'></div>
+					<table>
+						<tr>
+							<th>Group Name</th>
+							<th>Courses</th>
+							<th>Tutor</th>
+							<th>Students</th>
+							<th>Schedule</th>
+							<th>Location</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+						<% groups.each do |group| %>
+  							<tr>
+  								<th><%= group.name %></th>
+  								<th><%= group.courses %></th>
+  								<th><%= group.tutor %></th>
+  								<th><%= group.students %></th>
+  								<th><%= group.schedule %></th>
+  								<th><%= group.location %></th>
+  								<th><form><input type="submit" name="Edit"></form></th>
+  								<th><form><input type="submit" name="Remove"></form></th>
+  							</tr>
+						<% end %>
+					</div>
+
+				<div id='Search_Students_View'>
+					<form>
+						<input type='text' id='name'>
+						<input type='text' id='course'>
+						<input type='text' id='location'>
+						<input type='text' id='schedule'>
+						<input type='submit' id='Search_Students'>
+					</form>
+				</div>			

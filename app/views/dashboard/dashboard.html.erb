@@ -1,7 +1,6 @@
-<%= stylesheet_link_tag    "dashboard", :media => "all" %>
-
+<%= stylesheet_link_tag "dashboard", :media => "all" %>
 <div id="profile_sidebar">
-	<div id="profile_picture"><%= image_tag(current_user.photo, :alt => "Profile Picture") %></div><br/>
+	<!-- <div id="profile_picture"><%= image_tag(current_user.photo, :alt => "Profile Picture") %></div><br/> -->
 	<div id="name"><%=current_user.first_name%> <%=current_user.last_name%></div><br/>
 	<div id="affiliation"></div><br/>
 	<div id="contact"><a href="mainto:<%=current_user.email%>"><%=current_user.email%></div><br/>
@@ -22,25 +21,19 @@
 
 		<div id="student_tab" >
 			<% if current_user.student? %>
-				<%= render 'studentTab' %>
+				<%= render 'studentTab' %>s
 			<% else %>
 				<%= render 'notStudentTab' %>
-<			% end %>
+		<% end %>
 		</div>
-
-
-
-
 
 		<div id="tuter_tab" >
 			<% if current_user.tutor? %>
 				<%= render 'tutorTab' %>
 			<% else %>
 				<%= render 'notTutorTab' %>
-<			% end %>
+		<% end %>
 		</div>
-
-
 
 
 		<div id="org_tab" >
@@ -48,7 +41,7 @@
 				<%= render 'orgTab' %>
 			<% else %>
 				<%= render 'notOrgTab' %>
-<			% end %>
+		<% end %>
 		</div>
 
 
