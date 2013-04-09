@@ -6,19 +6,18 @@ Tuter::Application.routes.draw do
   end
 
   root :to => "home#index"  
+  resources :groups
 
   # Omniauth routes
   match '/users/auth/:provider/callback', to: 'sessions#create'
   match '/users/auth/failure', to: redirect('/')
 
-
   # User Signup Routes
   match "/user" => "user#user"
-
   match "/search" => "search#index"
   match "/search/index" => "search#index"
 
-
+  # Group Management Routes
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -68,8 +67,7 @@ Tuter::Application.routes.draw do
   #   end
 
   # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  
+  # just remember to delete public/index.html.  
 
   # See how all your routes lay out with "rake routes"
 
