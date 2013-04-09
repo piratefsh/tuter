@@ -2,7 +2,7 @@
     <%= stylesheet_link_tag "home", "gmaps4rails", :media => "all" %>
 <% end %>
 
-<p>Pardon the dust, site under construction!</p>
+<p style="font-style: italic">Pardon the dust, site under construction!</p>
 
 <ul class="horizontal_links">
     <li><a>About</a></li>
@@ -10,7 +10,7 @@
     <li><a>Blog</a></li>
 </ul>
 
-<h1 class="inline">Tuter</h1>
+<h1 class="inline">Tuter:</h1>
 <h2 class="inline">The Ultimate Tutor Finder</h2>
 
 <div>
@@ -29,7 +29,7 @@
     </div>
 
     <div id="map_div">
-        <h2 class="first_h">Map</h2>
+        <h2 class="first_h">Tutors Near You</h2>
         <div id="google_map">
         	<%= gmaps4rails(@json) %>
         </div>
