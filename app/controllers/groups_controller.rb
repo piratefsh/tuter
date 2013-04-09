@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
 	def index
 		@groups = Group.all
+		@group = Group.new
 
 		respond_to do |format|
 			format.html
