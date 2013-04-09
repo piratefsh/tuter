@@ -26,6 +26,7 @@
 #  student                :boolean
 #  tutor                  :boolean
 #  org                    :boolean
+#  fb_profile             :string(255)
 #
 
 require 'test_helper'

@@ -5,9 +5,7 @@ Tuter::Application.routes.draw do
     match "/users/sign_out" => "devise/sessions#destroy"
   end
 
-  root :to => "home#index"
-
-  resources :locations
+  root :to => "home#index"  
 
   # Omniauth routes
   match '/users/auth/:provider/callback', to: 'sessions#create'
