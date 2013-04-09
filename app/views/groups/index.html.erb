@@ -1,0 +1,13 @@
+<p>Group Index Page</p>
+
+<%= link_to 'Create New Group (cool people only)', new_group_path %>
+
+<br />
+
+<%= @groups.each do |group| %>
+	<div class="group">
+		<p><%= group.name.humanize %><p>
+	</div>
+	<br />
+
+<% end %>
