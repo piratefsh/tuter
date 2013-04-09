@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
 
+  # helper_method :current_user
+
   def index
     @locations = Location.all
     @json = Location.all.to_gmaps4rails

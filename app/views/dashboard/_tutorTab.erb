@@ -1,0 +1,32 @@
+<div id='Tutor_Content_View_Options'>
+					<div id='Groups_Button'></div>
+					<div id='Search_Students'></div>
+				</div>
+
+				<div id='Groups_View'>
+					<div id='Add_Group_Button'>
+						<form action=''>
+							<input type='submit' value='Add Group' id='Add Group'>
+						</form>
+					</div>
+
+					<div id='Current_Groups_Table'></div>
+					<script>
+						htmlString='';
+						htmlString='<table><tr><th>Group Name</th><th>Courses</th><th>Tutor</th><th>Students</th><th>Schedule</th><th>Location</th><th>Edit</th><th>Delete</th></tr>';
+						for each group in Current_Groups{
+							message+='<tr><td>'' + group.name+'</td><td>'+group.courses + '</td><td><a href='tuterLink'>group.tutor.name</a></td><td>' +group.students +'</td><td>'+group.schedule + '</td><td>' + group.schedule + '</td><td>'+group.location + '</td><td><form action='post'><input type=submit value='Edit Group' id='group.name'></form></td><td><form action='post'><input type=submit value='Delete Group' id='group.name'>+'</form></td></tr>';
+						}
+						getElementbyID(Current_Groups_Table).innerHTML=message;
+					</script>
+				</div>
+
+				<div id='Search_Students_View'>
+					<form>
+						<input type='text' id='name'>
+						<input type='text' id='course'>
+						<input type='text' id='location'>
+						<input type='text' id='schedule'>
+						<input type='submit' id='Search_Students'>
+					</form>
+				</div>			

@@ -20,6 +20,8 @@ Tuter::Application.routes.draw do
   match "/search" => "search#index"
   match "/search/index" => "search#index"
 
+  match "/dashboard" =>"dashboard"
+
 
 
   # The priority is based upon order of creation:

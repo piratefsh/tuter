@@ -22,6 +22,10 @@
 #  provider               :string(255)
 #  oauth_token            :string(255)
 #  oauth_expires_at       :datetime
+#  photo                  :string(255)
+#  student                :boolean
+#  tutor                  :boolean
+#  org                    :boolean
 #
 
 class User < ActiveRecord::Base
@@ -39,7 +43,8 @@ class User < ActiveRecord::Base
                   :first_name, :last_name, :desc, :provider, :uid, :student, :tutor, :org
 
   # Setup creation validation
-  validates :first_name, :last_name, :email, :presence => true
+  # default => :email and :password must be presence 
+  validates :first_name, :last_name, :presence => true
 
   include RoleModel
   roles = :student, :tutor, :org

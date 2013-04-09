@@ -82,6 +82,7 @@
     <tbody> 
 
     <% @users.each do |user| %>
+        <% if user.tutor? %>
     
     <tr> 
         <td><%= user.first_name %></td> 
@@ -94,6 +95,7 @@
         <td><%= randomRate(@rates) %></td> 
     </tr>     
 
+        <% end %>
     <% end %>
     </tbody> 
     </table> 
