@@ -25,14 +25,6 @@ Tuter::Application.routes.draw do
   
 
 
-
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> ddb2ef465c5b05de2a418948f48f398f236cac7e
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

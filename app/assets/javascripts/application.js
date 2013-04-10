@@ -13,7 +13,5 @@
 //= require jquery
 //= require jquery-ui
 //= require_tree .
-//= require gmaps4rails/gmaps4.rails.base
-//= require gmaps4rails/googlemaps.js
 
 
