@@ -30,6 +30,8 @@
         <%= link_to "Manage Tutoring Groups", groups_path %>
     <% end %>
     <% if current_user.role? :org %> <li>Organization</li><% end %>
+
+    <% current_user.roles %>
 </ul>
 <br/>
 
