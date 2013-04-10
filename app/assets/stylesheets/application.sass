@@ -28,6 +28,13 @@ $profile_sidebar_width: 210px
     -khtml-border-radius: $radius
     border-radius: $radius
 
+@mixin border_bottom ($color)
+    border-bottom: 1px solid $color
+
+@mixin center 
+    margin:
+        left: auto 
+        right: auto
 @mixin gradient($color1, $color2)
     background-color: $color1
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color1), to($color2))

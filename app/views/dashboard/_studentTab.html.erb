@@ -1,35 +1,39 @@
-<div id='student_content_View_Options'>
-						<div id='Current_Groups_Button'></div>
-						<div id='Watchlist_Button'></div>
-				</div>
+<div class="secondary_tabs" id='student_content_View_Options'>
+	<div id='Current_Groups_View'>
+		<div id='Add_Group_Button'>
+			<form action=''>
+				<input type='submit' value='Add Group' id='Add Group'>
+			</form>
+		</div>
 
-				<div id='Current_Groups_View'>
-					<div id='Add_Group_Button'>
-						<form action=''>
-							<input type='submit' value='Add Group' id='Add Group'>
-						</form>
-					</div>
-
-					<div id='Current_Groups_Table'></div>
-						<script>
-							htmlString='';
-							htmlString='<table><tr><th>Group Name</th><th>Courses</th><th>Tutor</th><th>Students</th><th>Schedule</th><th>Location</th><th>Delete</th></tr>';
-							for each group in Current_Groups{
-								message+='<tr><td>' + group.name+'</td><td>'+group.courses + '</td><td><a href='tuterLink'>group.tutor.name</a></td><td>'' +group.students +'</td><td>'+group.schedule + '</td><td>' + group.schedule + '</td><td>'+group.location + '</td><td><form action='post'><input type=submit value='Remove' id='group.name'>+'</form></td></tr>';
-							}
-							getElementbyID(Current_Groups_Table).innerHTML=message;
-						</script>
-					
-				</div>
-
-
-				<div id='Watchlist_View'>
-					<div id='Add_Watchlist'>
-						<form action=''>
-							<input type='submit' value='Add to Watchlist' id='Add to Watchlist' href='/search'>
-						</form>
-					</div>
-					<div id='Watchlist_Table'></div>
-
-						
-				</div>";
+		<div id='Current_Groups_Table'>
+			
+			<table>
+				<tr>
+					<th>Group Name</th>
+					<th>Courses</th>
+					<th>Tutor</th>
+					<th>Students</th>
+					<th>Schedule</th>
+					<th>Location</th>
+					<th>Delete</th>
+				</tr>
+				<%- @groups.each do |group| %>
+					<tr>
+						<td><%= group.name %></td>
+						<%- if false %>
+						<td>group.courses</td>
+						<td><a href='tuterLink'>group.tutor.name</a></td>
+						<td>group.students</td>
+						<td>group.schedule</td>
+						<td>group.schedule</td>
+						<td>group.location</td>
+						<td>
+							<input type=submit value='Remove'/></td>
+						<% end %>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>

@@ -14,7 +14,7 @@
 	</ul>
 	<div id="student_tab" >
 		<% if current_user.role? :student %>
-			<%= render 'studentTab' %>s
+			<%= render 'studentTab' %>
 		<% else %>
 			<%= render 'notStudentTab' %>
 		<% end %>

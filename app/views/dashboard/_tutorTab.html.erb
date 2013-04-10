@@ -1,3 +1,7 @@
+<%= content_for :header do %>
+    <% stylesheet_link_tag 'table_style',:media => :all %>
+<% end %>
+
 <div class="tabs">
     <ul class="secondary_tabs">
         <li><a href="#groups_view">Groups</a></li>
@@ -6,7 +10,7 @@
     <div id='groups_view'>
         <input type='submit' value='Add Group' id='Add Group'/>
     	<div id='Current_Groups_Table'>
-        	<table>
+        	<table class="small_button">
         		<tr>
         			<th>Group Name</th>
 <!--         			<th>Courses</th>
@@ -19,17 +23,18 @@
         		</tr>
         		<% @groups.each do |group| %>
     				<tr>
-    					<th><%= group.name %></th>
+    					<td><%= group.name %>
+                            <p><%= group.desc %></p></td>
                         <% if false %>
 
-    					<th><%= group.courses %></th>
-    					<th><%= group.tutor %></th>
-    					<th><%= group.students %></th>
-    					<th><%= group.schedule %></th>
-    					<th><%= group.location %></th>
+    					<td><%= group.courses %></td>
+    					<td><%= group.tutor %></td>
+    					<td><%= group.students %></td>
+    					<td><%= group.schedule %></td>
+    					<td><%= group.location %></td>
                         <% end %>
-    					<th><form><input type="submit" name="Edit"/></form></th>
-    					<th><form><input type="submit" name="Remove"/></form></th>
+    					<td><input type="button" value="Edit"/></td>
+    					<td><input type="button" value="Remove"/></td>
     				</tr>
         		<% end %>
             </table>
