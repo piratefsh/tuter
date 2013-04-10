@@ -19,11 +19,8 @@ div
         float: right
         clear: right
         margin: $big_space
-
         div
             background-color: $light_grey
-            width: auto
-            display: block
 
             div, ul
                 float: none
@@ -46,12 +43,13 @@ div
                 color: $white
 
         ul.secondary_tabs
+            display: table
+            width: 100%
             list-style: none
-            width: auto
-            display: block
             li
                 @include tab_li
-                display: inline-block
+                display: table-cell
+                text-align: center
                 border: 1px solid $grey
                 
             a
@@ -62,17 +60,14 @@ div
 
     &#spacer
         height: $big_space
-    // &#tutor_tabs
-    //     div
-    //         border: 1px solid $grey
-    //     table
-    //         background-color: $light_blue
-.ui-tabs-active
+.ui-state-default
+    background-color: $white
+.ui-tabs-active, .ui-state-active
     background-color: $light_blue
     a 
         color: $white
 .ui-state-hover 
-    background-color: $blue 
+    background-color: $red 
     a 
         color: $white
 .ui-tabs-anchor
