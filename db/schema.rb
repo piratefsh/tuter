@@ -11,7 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130408224641) do
+ActiveRecord::Schema.define(:version => 20130410033758) do
+
+  create_table "abilities", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "courses", :force => true do |t|
     t.string   "name"
@@ -48,6 +53,11 @@ ActiveRecord::Schema.define(:version => 20130408224641) do
     t.string   "name"
     t.integer  "program_ID"
     t.text     "desc"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "roles", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -92,10 +102,8 @@ ActiveRecord::Schema.define(:version => 20130408224641) do
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.string   "photo"
-    t.boolean  "student"
-    t.boolean  "tutor"
-    t.boolean  "org"
     t.string   "fb_profile"
+    t.integer  "roles_mask"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

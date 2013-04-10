@@ -1,49 +1,38 @@
-<%= stylesheet_link_tag "dashboard", :media => "all" %>
-<div id="profile_sidebar">
-	<!-- <div id="profile_picture"><%= image_tag(current_user.photo, :alt => "Profile Picture") %></div><br/> -->
-	<div id="name"><%=current_user.first_name%> <%=current_user.last_name%></div><br/>
-	<div id="affiliation"></div><br/>
-	<div id="contact"><a href="mainto:<%=current_user.email%>"><%=current_user.email%></div><br/>
-	<div id="social_media"></div><br/>
-	<div id="edit_profile">
-		<form>
-			<input type="submit" name="edit" value="Edit Profile" />
-		</form>
-	</div><br/>
-	<div id="search"></div>
-</div>
 
+<% content_for :header do %>
+	<%= stylesheet_link_tag "dashboard", :media => "all" %>
+	<%= javascript_include_tag "dashboard"%>
+	
+<% end %>
+<%= render 'user/user_profile_sidebar' %>
 
-
-
-<div id="center_pane">
-	<div id="tabs">
-
-		<div id="student_tab" >
-			<% if current_user.student? %>
-				<%= render 'studentTab' %>s
-			<% else %>
-				<%= render 'notStudentTab' %>
+<div class="tabs" id="main_tab_container">
+	<ul id="main_tabs">
+		<li><a href="#student_tab">Student</a></li>
+		<li><a href="#tutor_tab">Tutor</a></li>
+		<li><a href="#org_tab">Organization</a></li>
+	</ul>
+	<div id="student_tab" >
+		<% if current_user.role? :student %>
+			<%= render 'studentTab' %>s
+		<% else %>
+			<%= render 'notStudentTab' %>
 		<% end %>
-		</div>
+	</div>
 
-		<div id="tuter_tab" >
-			<% if current_user.tutor? %>
-				<%= render 'tutorTab' %>
-			<% else %>
-				<%= render 'notTutorTab' %>
+	<div id="tutor_tab" >
+		<% if current_user.role? :tutor %>
+			<%= render 'tutorTab' %>
+		<% else %>
+			<%= render 'notTutorTab' %>
 		<% end %>
-		</div>
+	</div>
 
-
-		<div id="org_tab" >
-			<% if current_user.org? %>
-				<%= render 'orgTab' %>
-			<% else %>
-				<%= render 'notOrgTab' %>
+	<div id="org_tab" >
+		<% if current_user.role? :org %>
+			<%= render 'orgTab' %>
+		<% else %>
+			<%= render 'notOrgTab' %>
 		<% end %>
-		</div>
-
-
 	</div>
 </div>

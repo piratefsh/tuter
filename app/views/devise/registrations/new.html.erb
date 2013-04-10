@@ -3,11 +3,23 @@
 
 <% end %>
 
-<h2>Tuter Registration - <%= params[:role].humanize %></h2>
+<h2>Tuter Registration - <%= params[:type].humanize %></h2>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %> 
 
 <div class="centered_form" >
+  <% for role in User::ROLES %>
+        <% if role != :admin %>
+          <% if role == params[:type] %>
+            <%= check_box_tag "user[roles][#{role}]", role, true, {:name => "user[roles][]"} %>
+          <% else %>
+            <%= check_box_tag "user[roles][#{role}]", role, false, {:name => "user[roles][]"}%>
+          <% end %>
+          <%= label_tag "user_roles_#{role}", role.humanize %><br />
+        <% end %> 
+  <% end %>
+  <%= hidden_field_tag "user[roles][]", "" %>
+  
   <div class="form_element"><%= f.label :first_name%>
   <%= f.text_field :first_name, :autofocus => true%></div>
 
@@ -26,20 +38,18 @@
   <div class="form_element"><%= f.label "Short Description of Yourself" %>
   <%= f.text_area :desc %></div>
 
-  <!-- Student Fields -->
+    <!-- Student Fields -->
   <% if params[:role]=="student"%>
-    <%= f.hidden_field :student, :value => true %>
   <% end %>
 
   <!--  Tutor Fields-->
   <% if params[:role]=="tutor"%>
-    <%= f.hidden_field :tutor, :value => true %>
   <% end %>
-  
   <!-- Org Fields -->
   <% if params[:role]=="org"%>
-    <%= f.hidden_field :org, :value => true %>
   <% end %>
+
+  
 
   <div class="form_element">
   <label class="spacer"></label>

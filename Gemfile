@@ -32,6 +32,7 @@ gem 'role_model'
 gem 'guard'
 gem 'simplecov', :require => false, :group => :test
 gem 'rb-readline'
+gem 'cancan', '~> 1.6.0'
 
 group :production do
 	gem 'pg'
@@ -50,9 +51,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-
-
-
 
   gem 'uglifier', '>= 1.0.3'
 end
