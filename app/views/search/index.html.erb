@@ -82,7 +82,7 @@
     <tbody> 
 
     <% @users.each do |user| %>
-        <% if user.tutor? %>
+        <% if user.role? :tutor %>
     
     <tr> 
         <td><%= user.first_name %></td> 
