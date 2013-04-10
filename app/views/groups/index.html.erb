@@ -4,16 +4,16 @@
     <%= javascript_include_tag "groups", :media => "all" %>
 <% end %>
 <h1> My Groups</h1>
+<div class="group">
+    <ul>
+    <%- @groups.each do |group| %>
+            <li><strong><%= group.name %></strong>
+                <p><%= group.desc %></p></li>
+    <% end%>
+    </ul>
+</div>
 <div id="buttons">
     <input type="button" id="create_new" value="Create New"></input>
     <input type="input" id="search" placeholder="Search Groups">
 </div>
 <div id="new_group" style="display:none"><%= render 'new' %></div>
-<div class="group">
-    <ul>
-    <%= @groups.each do |group| %>
-            <li><strong><%= group.name %></strong>
-                <p><%= group.desc %></p></li>
-    <% end %>
-    </ul>
-</div>

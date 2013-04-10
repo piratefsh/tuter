@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
 	def index
 		@groups = Group.all
-		@new_group = Group.new
+		@new_group = Group.new(params[:group])
 		@tutors = Array.new
 
 		respond_to do |format|
