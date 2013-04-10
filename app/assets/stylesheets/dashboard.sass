@@ -1,15 +1,81 @@
 @import "./application"
 @import "./form_style"
 
-div#profile_sidebar
+div#profile
     padding: $big_space * 2
-    width: 250px
+    width: 230px
     float: left
     background-color: $light_grey
     height: 100%
+    margin: $big_space
+    h2
+        padding: 0
+        margin: 0
+        margin-bottom: $medium_space
+    ul 
+        list-style: none
+
+@mixin custom_a
+    text-decoration: none
+    font-size: large
+
+@mixin tab_li
+    display: inline
+    margin-right: -4px
+    padding: $medium_space
+    border: 1px solid $light_grey
+
+div
+    $div_width: $content_width - $sidebar_width - 7 * $big_space
+    &.tabs
+        float: right
+        clear: right
+        margin: $big_space
+
+        div
+            background-color: $light_grey
+            width: auto
+            display: block
+
+            div, ul
+                float: none
+                padding: $medium_space
+            // margin-top: 0
+            // padding: $big_space * 1
+
+        ul#main_tabs
+            list-style: none
+            display: block
+
+            li 
+                @include tab_li
+                background-color: $blue
 
 
-div#Current_Groups_Button
-    align: center
-    background-color: $light_blue
-    height: 30px
+            a
+                @include custom_a
+                font-weight: bold
+                color: $white
+
+        ul.secondary_tabs
+            list-style: none
+            width: auto
+            display: block
+            li
+                @include tab_li
+                display: inline-block
+                border: 1px solid $grey
+                
+            a
+                @include custom_a
+    &#main_tab_container
+        width: $div_width
+        
+
+    &#spacer
+        height: $big_space
+    // &#tutor_tabs
+    //     div
+    //         border: 1px solid $grey
+    //     table
+    //         background-color: $light_blue
