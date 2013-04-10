@@ -1,20 +1,25 @@
 @import './application'
 @import './form_style'
 div
+    clear: both
     &.grey
     &.group
+
         margin: $medium_space
         background-color: $light-grey
         margin-left: $big_space * 4
-        width: 500px
         ul 
             list-style: none
 
             li
                 padding: $big_space
                 border-bottom: 1px solid $grey
-
-
+        p 
+            margin: 0
+            font-size: small
+    &#buttons
+        float: right
+        padding: $big_space
     &#new_group 
         background-color: $light-grey
         width: 400px

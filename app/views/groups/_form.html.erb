@@ -1,8 +1,11 @@
-<%= form_for(@group) do |f| %>
-
-	<div class="field">
-		<%= f.label :name %>
-		<%= f.text_field :name %>
+<%= form_for(@new_group) do |f| %>
+    <div class="field form_element">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+    	<div class="field form_element">
+		<%= f.label 'Description' %>
+		<%= f.text_field :desc %>
 	</div>
 	
 	<div class="actions">
