@@ -7,8 +7,16 @@
 <div class="group">
     <ul>
     <%- @groups.each do |group| %>
+    <!--Don't show groups with no names -->
+        <% if group.name.length > 0 %>
             <li><strong><%= group.name %></strong>
-                <p><%= group.desc %></p></li>
+                <p><% if group.desc %>
+                        <%= group.desc %>
+                    <% else %>
+                        No description
+                    <% end %>
+                </p></li>
+        <% end %>
     <% end%>
     </ul>
 </div>
