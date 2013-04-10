@@ -4,12 +4,24 @@
     <%= javascript_include_tag "groups", :media => "all" %>
 <% end %>
 <h1> My Groups</h1>
-<input type="button" id="create_new" value="Create New"></input>
-<div id="new_group" style="display:none"><%= render 'new' %></div>
 <div class="group">
     <ul>
-    <%= @groups.each do |group| %>
-            <li><%= group.name.humanize %></li>
-    <% end %>
+    <%- @groups.each do |group| %>
+    <!--Don't show groups with no names -->
+        <% if group.name.length > 0 %>
+            <li><strong><%= group.name %></strong>
+                <p><% if group.desc %>
+                        <%= group.desc %>
+                    <% else %>
+                        No description
+                    <% end %>
+                </p></li>
+        <% end %>
+    <% end%>
     </ul>
 </div>
+<div id="buttons">
+    <input type="button" id="create_new" value="Create New"></input>
+    <input type="input" id="search" placeholder="Search Groups">
+</div>
+<div id="new_group" style="display:none"><%= render 'new' %></div>

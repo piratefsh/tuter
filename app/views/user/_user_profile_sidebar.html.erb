@@ -12,16 +12,6 @@
 <% else %>
     <%= image_tag("/images/def_profile_pic.jpg", :alt => "Profile Picture")%>
 <% end %>
-<br/><br/>
-
-<script type="JavaScript">
-    //for each affiliation that user belongs to 
-    //for(var i; i<numOrgs; i++){
-        //echo <div><a href="orgpage">Affiliation NAME</a></div> -- <div>Affiliation Type (Student/Tutor)</div>
-    //}
-
-</script>
-
 <h3>Roles:</h3>
 <ul>
     <% if current_user.role? :student %> <li>Student</li> <% end %>

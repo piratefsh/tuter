@@ -9,22 +9,25 @@
         	<table>
         		<tr>
         			<th>Group Name</th>
-        			<th>Courses</th>
+<!--         			<th>Courses</th>
         			<th>Tutor</th>
         			<th>Students</th>
         			<th>Schedule</th>
-        			<th>Location</th>
+        			<th>Location</th> -->
         			<th>Edit</th>
         			<th>Delete</th>
         		</tr>
         		<% @groups.each do |group| %>
     				<tr>
     					<th><%= group.name %></th>
+                        <% if false %>
+
     					<th><%= group.courses %></th>
     					<th><%= group.tutor %></th>
     					<th><%= group.students %></th>
     					<th><%= group.schedule %></th>
     					<th><%= group.location %></th>
+                        <% end %>
     					<th><form><input type="submit" name="Edit"/></form></th>
     					<th><form><input type="submit" name="Remove"/></form></th>
     				</tr>

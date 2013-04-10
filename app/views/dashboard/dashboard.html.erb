@@ -13,7 +13,7 @@
 		<li><a href="#org_tab">Organization</a></li>
 	</ul>
 	<div id="student_tab" >
-		<% if current_user.student? %>
+		<% if current_user.role? :student %>
 			<%= render 'studentTab' %>s
 		<% else %>
 			<%= render 'notStudentTab' %>
@@ -21,7 +21,7 @@
 	</div>
 
 	<div id="tutor_tab" >
-		<% if current_user.tutor? %>
+		<% if current_user.role? :tutor %>
 			<%= render 'tutorTab' %>
 		<% else %>
 			<%= render 'notTutorTab' %>
@@ -29,7 +29,7 @@
 	</div>
 
 	<div id="org_tab" >
-		<% if current_user.org? %>
+		<% if current_user.role? :org %>
 			<%= render 'orgTab' %>
 		<% else %>
 			<%= render 'notOrgTab' %>
