@@ -13,4 +13,5 @@
 class Program < ActiveRecord::Base
   attr_accessible :desc, :name, :program_ID
   has_many :groups
+  has_many :users, :through => :groups
 end
