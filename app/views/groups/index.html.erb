@@ -1,13 +1,27 @@
-<p>Group Index Page</p>
 
-<%= link_to 'Create New Group (cool people only)', new_group_path %>
-
-<br />
-
-<%= @groups.each do |group| %>
-	<div class="group">
-		<p><%= group.name.humanize %><p>
-	</div>
-	<br />
-
+<% content_for :header do %>
+    <%= stylesheet_link_tag "groups", :media => "all" %>
+    <%= javascript_include_tag "groups", :media => "all" %>
 <% end %>
+<h1> My Groups</h1>
+<div class="group">
+    <ul>
+    <%- @groups.each do |group| %>
+    <!--Don't show groups with no names -->
+        <% if group.name.length > 0 %>
+            <li><strong><%= group.name %></strong>
+                <p><% if group.desc %>
+                        <%= group.desc %>
+                    <% else %>
+                        No description
+                    <% end %>
+                </p></li>
+        <% end %>
+    <% end%>
+    </ul>
+</div>
+<div id="buttons">
+    <input type="button" id="create_new" value="Create New"></input>
+    <input type="input" id="search" placeholder="Search Groups">
+</div>
+<div id="new_group" style="display:none"><%= render 'new' %></div>

@@ -41,14 +41,18 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
-                  :first_name, :last_name, :desc, :provider, :uid, 
-                  :student, :tutor, :org
+                  :first_name, :last_name, :desc, :provider, :uid, :roles
 
   # Setup creation validation
-  # default => :email and :password must be presence 
+  # default => :email and :password must be present 
   validates :first_name, :last_name, :presence => true
 
-  has_many :groups
+  ROLES = %w[student tutor org]
+  has_and_belongs_to_many :roles
+
+  has_one :tutor_role
+  has_one :student_role
+  has_one :org_role
 
   def self.from_omniauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
@@ -69,5 +73,25 @@ class User < ActiveRecord::Base
     super && provider.blank?
   end
 
-  
+  def role?(role)
+    roles.include? role.to_s
+  end
+
+  def role_symbols
+    roles.map do |role|
+      role.name.to_sym
+    end
+  end
+
+  def roles=(roles)
+    self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.inject(0, :+)
+  end
+
+  def roles
+    ROLES.reject do |r|
+      ((roles_mask || 0) & 2**ROLES.index(r)).zero?
+    end
+  end
+
+
 end

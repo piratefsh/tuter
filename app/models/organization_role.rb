@@ -12,7 +12,7 @@
 class OrganizationRole < ActiveRecord::Base
 
 	belongs_to :user
-  # has_many :program
+  	has_many :programs
 
 	attr_accessible :organization_ID, :organization_name
 

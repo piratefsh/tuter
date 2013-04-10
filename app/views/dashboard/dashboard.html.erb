@@ -1,0 +1,38 @@
+
+<% content_for :header do %>
+	<%= stylesheet_link_tag "dashboard", :media => "all" %>
+	<%= javascript_include_tag "dashboard"%>
+	
+<% end %>
+<%= render 'user/user_profile_sidebar' %>
+
+<div class="tabs" id="main_tab_container">
+	<ul id="main_tabs">
+		<li><a href="#student_tab">Student</a></li>
+		<li><a href="#tutor_tab">Tutor</a></li>
+		<li><a href="#org_tab">Organization</a></li>
+	</ul>
+	<div id="student_tab" >
+		<% if current_user.role? :student %>
+			<%= render 'studentTab' %>s
+		<% else %>
+			<%= render 'notStudentTab' %>
+		<% end %>
+	</div>
+
+	<div id="tutor_tab" >
+		<% if current_user.role? :tutor %>
+			<%= render 'tutorTab' %>
+		<% else %>
+			<%= render 'notTutorTab' %>
+		<% end %>
+	</div>
+
+	<div id="org_tab" >
+		<% if current_user.role? :org %>
+			<%= render 'orgTab' %>
+		<% else %>
+			<%= render 'notOrgTab' %>
+		<% end %>
+	</div>
+</div>

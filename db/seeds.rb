@@ -7,17 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create(first_name: 'Sher Minn', last_name: 'Chong',
-            email:'sherminn@tuter.me', password: 'PASSWORD',
-            student: 'true', tutor: 'true', org: 'true')
+            email:'sherminn@tuter.me', password: 'PASSWORD')
 User.create(first_name: 'Trever', last_name: 'Johnson',
-            email: 'tjjo@hd.wisc.edu', password: 'PASSWORD',
-            student: 'true', tutor: 'true', org: 'true')
+            email: 'tjjo@hd.wisc.edu', password:'PASSWORD')
 User.create(first_name: 'Josh', last_name: 'Serbus',
-            email: 'serbus@tuter.me', password: 'PASSWORD',
-            student: 'true', tutor: 'true', org: 'true')
+            email:'serbus@tuter.me', password:'PASSWORD')
 User.create(first_name: 'Faiz', last_name: 'Lurman',
-            email: 'faiz@tuter.me', password: 'PASSWORD',
-            student: 'true', tutor: 'true', org: 'true')
+            email:'faiz@tuter.me', password:'PASSWORD')
 User.create(first_name: 'Adam', last_name: 'Thorson',
-            email: 'adthorson@tuter.me', password: 'PASSWORD',
-            student: 'true', tutor: 'true', org: 'true')
+            email:'adthorson@tuter.me', password:'PASSWORD')

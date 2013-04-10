@@ -1,0 +1,12 @@
+$(document).ready(function()
+{
+    $('#create_new').click(function()
+    {
+        $("div#new_group").show();
+    });
+    $('#cancel_create').click(function(e)
+    {
+        e.preventDefault();
+        $("div#new_group").hide();
+    });
+});

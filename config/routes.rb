@@ -3,9 +3,12 @@ Tuter::Application.routes.draw do
   devise_for :users
   devise_scope :user do
     match "/users/sign_out" => "devise/sessions#destroy"
+    match "/dashboard" => "dashboard#dashboard"
   end
+  root :to => "home#index"
 
-  root :to => "home#index"  
+  resources :users
+  resources :locations
   resources :groups
 
   # Omniauth routes
@@ -18,6 +21,8 @@ Tuter::Application.routes.draw do
   match "/search/index" => "search#index"
 
   # Group Management Routes
+	
+  match "/dashboard" => "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -75,34 +80,3 @@ Tuter::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 end
-#== Route Map
-# Generated on 09 Apr 2013 16:30
-#
-#             user_session POST   /users/sign_in(.:format)                 devise/sessions#create
-#     destroy_user_session DELETE /users/sign_out(.:format)                devise/sessions#destroy
-#  user_omniauth_authorize        /users/auth/:provider(.:format)          devise/omniauth_callbacks#passthru {:provider=>/(?!)/}
-#   user_omniauth_callback        /users/auth/:action/callback(.:format)   devise/omniauth_callbacks#(?-mix:(?!))
-#            user_password POST   /users/password(.:format)                devise/passwords#create
-#        new_user_password GET    /users/password/new(.:format)            devise/passwords#new
-#       edit_user_password GET    /users/password/edit(.:format)           devise/passwords#edit
-#                          PUT    /users/password(.:format)                devise/passwords#update
-# cancel_user_registration GET    /users/cancel(.:format)                  devise/registrations#cancel
-#        user_registration POST   /users(.:format)                         devise/registrations#create
-#    new_user_registration GET    /users/sign_up(.:format)                 devise/registrations#new
-#   edit_user_registration GET    /users/edit(.:format)                    devise/registrations#edit
-#                          PUT    /users(.:format)                         devise/registrations#update
-#                          DELETE /users(.:format)                         devise/registrations#destroy
-#           users_sign_out        /users/sign_out(.:format)                devise/sessions#destroy
-#                     root        /                                        home#index
-#                   groups GET    /groups(.:format)                        groups#index
-#                          POST   /groups(.:format)                        groups#create
-#                new_group GET    /groups/new(.:format)                    groups#new
-#               edit_group GET    /groups/:id/edit(.:format)               groups#edit
-#                    group GET    /groups/:id(.:format)                    groups#show
-#                          PUT    /groups/:id(.:format)                    groups#update
-#                          DELETE /groups/:id(.:format)                    groups#destroy
-#                                 /users/auth/:provider/callback(.:format) sessions#create
-#       users_auth_failure        /users/auth/failure(.:format)            :controller#:action
-#                     user        /user(.:format)                          user#user
-#                   search        /search(.:format)                        search#index
-#             search_index        /search/index(.:format)                  search#index

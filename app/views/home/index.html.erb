@@ -20,19 +20,23 @@
     <h2 class="first_h">Find Tutors</h2>
     <input type="text" name="search"/>
 
-    <h2>Sign up</h2>
-    <ul class="button_list">
-      <%= link_to "users/sign_up?role=tutor"   do %><li>Tutor       </li><% end %>
-      <%= link_to "users/sign_up?role=student" do %><li>Student     </li><% end %>
-      <%= link_to "users/sign_up?role=org"     do %><li>Organization</li><% end %>
-    </ul>
-    <h2>
-  </div>
-  
-  <div id="map_div">
-    <h2 class="first_h">Tutors Near You</h2>
-    <div id="google_map">
-      <%= gmaps4rails(@json) %>
+
+        <h2>Sign up</h2>
+        <ul class="button_list">
+              <%= link_to  "users/sign_up?type=tutor" do%><li>Tutor</li><% end %>
+              <%= link_to  "users/sign_up?type=student" do%><li>Student</li><% end %>
+              <%= link_to  "users/sign_up?type=org" do%><li>Organization</li><% end %>
+        </ul>
+
+        <h2>
+    </div>
+
+    <div id="map_div">
+        <h2 class="first_h">Tutors Near You</h2>
+        <div id="google_map">
+        	<%= gmaps4rails(@json) %>
+        </div>
+
     </div>
   </div>
 </div>

@@ -1,0 +1,40 @@
+<div id='Org_Content_View_Options'>
+						<div id='Students and Tutors'></div>
+						<div id='Programs'></div>
+				</div>
+
+				<div id='Org_Students_Tutors'>
+
+				</div>
+
+				<div id='Org_Programs'>
+					<div id='Add_Program_Button'>
+						<form action=''>
+							<input type='submit' value='Add Program' id='Add Program'>
+						</form>
+					</div>
+
+					<table>
+						<tr>
+							<th>Program Name</th>
+							<th>Program Decription</th>
+							<th>Program Tyoe</th>
+							<th>Number of Tutors</th>
+							<th>Number of Students</th>
+							<th>Details</th>
+							<th>Remove</th>
+						</tr>
+						<% programs.each do |program| %>
+  							<tr>
+  								<th><%= program.name %></th>
+  								<th><%= program.descrip %></th>
+  								<th><%= program.type %></th>
+  								<th><%= program.tutors %></th>
+  								<th><%= program.students %></th>
+  								<th><%= program.details %></th>
+  								<th><form><input type="submit" name="Remove"></form></th>
+  							</tr>
+						<% end %>
+					</table>
+
+				</div>
