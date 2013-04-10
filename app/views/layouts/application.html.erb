@@ -21,8 +21,11 @@
 
                   <%= link_to  "/search" do%><li>Find a Tutor</li><% end %>
 
-                  <%= link_to new_user_registration_url+ "?role=tutor" do%><li>Be a Tutor</li><% end %>
-                  
+                  <% if current_user %>
+                    <!-- Need link to adding a tutor role to user, putting off until later -->
+                  <% else %>
+                    <%= link_to new_user_registration_url + "?role=tutor" do%><li>Be a Tutor</li><% end %>
+                  <% end %>
                   <%= link_to "/search" do%><li>Tutoring Organizations</li><%end %>
                 </ul>
 

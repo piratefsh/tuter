@@ -11,10 +11,12 @@
 #  transportation :boolean
 #
 
-class StudentRole < ActiveRecord::Base
+class StudentRole < User
 
 	belongs_to :user
-
+	has_many :groups
 
 	attr_accessible :student_ID, :age, :year_in_school, :transportation
+
+	
 end

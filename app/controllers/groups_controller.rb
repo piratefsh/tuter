@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
 	def index
 		@groups = Group.all
+		@tutors = Array.new
 
 		respond_to do |format|
 			format.html
@@ -15,7 +16,7 @@ class GroupsController < ApplicationController
 		end
 	end
 
-	def create 
+	def create a
 		@group = Group.new(params[:group])
 
 		respond_to do |format|
@@ -25,11 +26,27 @@ class GroupsController < ApplicationController
 		end
 	end 
 
+	def show
+		@group = Group.find(params[:id])
+
+		respond_to do |format|
+			format.html
+		end
+	end
+
 	def destroy
+		@group = Group.find(params[:id])
+
+		@group.destroy 
+
+		respond_to do |format|
+			format.html { redirect_to groups_url }
+		end
+
 	end
 
 	def edit
-		# @group = Group.find(params[:group_id])
+		@group = Group.find(params[:id])
 
 		respond_to do |format|
 			format.html
