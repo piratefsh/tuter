@@ -14,7 +14,7 @@
     border: 1px solid $light_grey
 
 div
-    $div_width: $content_width - $profile_sidebar_width - 7 * $big_space
+    $div_width: $content_width - $profile_sidebar_width - 5 * $big_space
     &.tabs
         float: right
         clear: right
@@ -40,7 +40,10 @@ div
 
         ul.secondary_tabs
             display: table
-            width: 100%
+            width: 95% //so tabs don't overflow due to added padding
+            margin:
+                left: auto
+                right: auto
             list-style: none
             li
                 @include tab_li
