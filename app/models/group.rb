@@ -11,12 +11,11 @@
 #
 
 class Group < ActiveRecord::Base
-  attr_accessible :desc, :group_ID, :name, :location
+  attr_accessible :desc, :id, :name, :location
   belongs_to :program
  
-  has_many :users
+  has_many :student_ids
+  has_many :tutor_ids
   has_many :roles
-
-  
 
 end

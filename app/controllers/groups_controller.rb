@@ -1,8 +1,7 @@
 class GroupsController < ApplicationController
 	def index
 		@groups = Group.all
-		@group = Group.new(params[:group])
-		@tutors = Array.new
+		@group = Group.new
 
 		respond_to do |format|
 			format.html
@@ -11,16 +10,6 @@ class GroupsController < ApplicationController
 
 	def new
 		@group = Group.new
-		@students = User.all.role? :student
-		@tutors = User.all.role? :tutor
-
-		student.each do |student|
-			# code to add student ids to group student ids
-		end
-
-		tutors.each do |tutor|
-			# code to add tutors to group tutor ids
-		end
 
 		respond_to do |format|
 			format.html
@@ -29,16 +18,22 @@ class GroupsController < ApplicationController
 
 	def create
 		@group = Group.new(params[:group])
+		@sids = params[:group][:student_ids]
+
+		@group.student_ids = @sids
+		
+
 
 		respond_to do |format|
 			if @group.save
-				format.html { redirect_to dashboard_path }
+				format.html { redirect_to @group }
 			end	
 		end
 	end 
 
 	def show
 		@group = Group.find(params[:id])
+		@sids = @group.student_ids
 
 		respond_to do |format|
 			format.html
