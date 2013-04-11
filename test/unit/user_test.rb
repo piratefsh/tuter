@@ -30,15 +30,24 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
- 	test "user_creation" do
- 		user = User.new
- 		assert !user.valid?, 'Must have first_name, last_name, email, password'
- 		user.first_name = 'AnotherFaiz'
- 		user.last_name  = 'AnotherLurman'
- 		user.email      = 'Anotherfaiz@tuter.me'
-    user.password   = 'PASSWORD'
-    # p user.errors 		
-    assert user.valid?, 'Should pass now'
-    assert user.save
- 	end 	
+  test "user_creation" do
+    user = User.new
+    assert user.invalid?, 'Must have first_name, last_name, email, password'
+    user.first_name = 'AnotherFaiz'
+    user.last_name  = 'AnotherLurman'
+    user.email      = 'AnotherFaiz@tuter.me'
+    user.password   = 'PASSWORD'    
+    assert user.valid?, 'Should be able to create user'
+    assert user.save, 'Should save into the database'
+  end
+
+  test "user_deletion" do
+    user = User.find_by_email('NotFoundFaiz@tuter.me')
+    assert user.nil?, 'Should not exist'
+    user = User.find_by_email('AnotherFaiz@tuter.me')
+    p user
+    # assert !user.nil?, 'Should exist'
+    # assert user.destroy, 'Should succeed'
+  end
+
 end

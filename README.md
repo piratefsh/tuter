@@ -5,6 +5,7 @@ v1.0 02-21-2013
 
 ## An Introduction :blush:
 **_Tuter_** is an online tutoring management system developed by a team of 5 cool humans.
+![ScreenShot](https://raw.github.com/tuter/app/assets/images/FaizLurman.jpg)
 
 Notes: 
 
@@ -21,5 +22,5 @@ $ rails server
 ## To Run Web App Locally :trollface:
 Visit **localhost:3000** on your browser
 
-## Hosted
+## Live Demo
 http://tuter.heroku.com

@@ -36,7 +36,6 @@ class User < ActiveRecord::Base
 
   has_one :location
 
-
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
                   :first_name, :last_name, :desc, :provider, :uid, :roles
@@ -47,11 +46,7 @@ class User < ActiveRecord::Base
 
   ROLES = %w[student tutor org]
   has_and_belongs_to_many :roles
-
-  has_one :tutor_role
-  has_one :student_role
-  has_one :org_role
-
+  
   def self.from_omniauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
   		user.provider = auth.provider

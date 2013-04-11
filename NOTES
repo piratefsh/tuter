@@ -10,3 +10,5 @@ $ heroku logs --tail
 Unit testing
 Modify the data for test database (db/test.sqlite3) in test/fixtures
 $ rake test:units
+$ rake test TEST=path_to_test_file
+.errors.full_messages
