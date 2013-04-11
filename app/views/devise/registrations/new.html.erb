@@ -36,20 +36,7 @@
   <%= f.password_field :password_confirmation %></div>
 
   <div class="form_element"><%= f.label "Short Description of Yourself" %>
-  <%= f.text_area :desc %></div>
-
-    <!-- Student Fields -->
-  <% if params[:role]=="student"%>
-  <% end %>
-
-  <!--  Tutor Fields-->
-  <% if params[:role]=="tutor"%>
-  <% end %>
-  <!-- Org Fields -->
-  <% if params[:role]=="org"%>
-  <% end %>
-
-  
+  <%= f.text_area :desc %></div>  
 
   <div class="form_element">
   <label class="spacer"></label>

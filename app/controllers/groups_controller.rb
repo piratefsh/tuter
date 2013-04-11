@@ -11,6 +11,16 @@ class GroupsController < ApplicationController
 
 	def new
 		@group = Group.new
+		@students = User.all.role? :student
+		@tutors = User.all.role? :tutor
+
+		student.each do |student|
+			# code to add student ids to group student ids
+		end
+
+		tutors.each do |tutor|
+			# code to add tutors to group tutor ids
+		end
 
 		respond_to do |format|
 			format.html
