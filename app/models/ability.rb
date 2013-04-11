@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: abilities
+#
+#  id         :integer          not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Ability < ActiveRecord::Base
   # attr_accessible :title, :body
 

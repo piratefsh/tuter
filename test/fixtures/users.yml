@@ -23,10 +23,8 @@
 #  oauth_token            :string(255)
 #  oauth_expires_at       :datetime
 #  photo                  :string(255)
-#  student                :boolean
-#  tutor                  :boolean
-#  org                    :boolean
 #  fb_profile             :string(255)
+#  roles_mask             :integer
 #
 
 faiz: 
