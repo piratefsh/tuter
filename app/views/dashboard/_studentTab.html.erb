@@ -1,51 +1,20 @@
-				<div id='student_content_View_Options'>
-						<div id='Current_Groups_Button'></div>
-
-						<div id='Watchlist_Button'></div>
-				</div>
-
-				<div id='Current_Groups_View'>
-					<div id='Add_Group_Button'>
-						<form action=''>
-							<input type='submit' value='Add Group' id='Add Group'>
-						</form>
-					</div>
-
-					<div id='Current_Groups_Table'></div>
-						
-					<table>
-						<tr>
-							<th>Group Name</th>
-							<th>Courses</th>
-							<th>Tutor</th>
-							<th>Students</th>
-							<th>Schedule</th>
-							<th>Location</th>
-							<th>Delete</th>
-						</tr>
-						<% @groups.each do |group| %>
-  							<tr>
-  								<th><%= group.name %></th>
-  								<th><%= group.courses %></th>
-  								<th><%= group.tutor %></th>
-  								<th><%= group.students %></th>
-  								<th><%= group.schedule %></th>
-  								<th><%= group.location %></th>
-  								<th><form><input type="submit" name="Remove"></form></th>
-  							</tr>
-						<% end %>
-					</table>
-					
-				</div>
+<div class="tabs" id='student_content_View_Options'>
+	<ul class="secondary_tabs">
+		<li><a href="#current_groups">My Groups</a></li>
+		<li><a href="#watchlist">Tutor Watchlist</a></li>
+	</ul>
 
 
-				<div id='Watchlist_View'>
-					<div id='Add_Watchlist'>
-						<form action=''>
-							<input type='submit' value='Add to Watchlist' id='Add to Watchlist' href='/search'>
-						</form>
-					</div>
-					<div id='Watchlist_Table'></div>
+	<div id='current_groups' class="small_button">
+		<h2>My Groups</h2>
+		<%= render 'groups_tab' %>
+	</div>
 
-						
-				</div>";
+
+	<div id='watchlist'>
+		<h2>Watchlisted Tutors</h2>
+		<p>//Coming soon</p>
+	</div>
+	
+</div>
+

@@ -1,52 +1,23 @@
+<%= content_for :header do %>
+    <% stylesheet_link_tag 'groups',:media => :all %>
+    <% javascript_include_tag 'groups' %>
+    <% stylesheet_link_tag 'table_style',:media => :all %>
+<% end %>
+
 <div class="tabs">
     <ul class="secondary_tabs">
         <li><a href="#groups_view">Groups</a></li>
         <li><a href="#search_students_view">Students</a></li>
     </ul>
-    <div id='groups_view'>
-        <input type='submit' value='Add Group' id='Add Group'/>
-    	<div id='Current_Groups_Table'>
-        	<table>
-        		<tr>
-        			<th>Group Name</th>
-<!--         			<th>Courses</th>
-        			<th>Tutor</th>
-        			<th>Students</th>
-        			<th>Schedule</th>
-        			<th>Location</th> -->
-        			<th>Edit</th>
-        			<th>Delete</th>
-        		</tr>
-        		<% @groups.each do |group| %>
-    				<tr>
-    					<th><%= group.name %></th>
-                        <% if false %>
-
-    					<th><%= group.courses %></th>
-    					<th><%= group.tutor %></th>
-    					<th><%= group.students %></th>
-    					<th><%= group.schedule %></th>
-    					<th><%= group.location %></th>
-                        <% end %>
-    					<th><form><input type="submit" name="Edit"/></form></th>
-    					<th><form><input type="submit" name="Remove"/></form></th>
-    				</tr>
-        		<% end %>
-            </table>
-    	</div>
+    <div id='groups_view'  class="small_button">
+        <h2>My Groups</h2>
+        <%= render 'groups_tab' %>
     </div>
 
 
     <div id='search_students_view'>
-<!--     	<form>
-    		<input type='text' id='name'/>
-    		<input type='text' id='course'/>
-    		<input type='text' id='location'/>
-    		<input type='text' id='schedule'/>
-    		<input type='submit' id='Search_Students'/>
-    	</form> -->
-        <p>Duis volutpat condimentum pellentesque. Proin ultrices mi diam, eget consequat diam. Etiam id nibh in arcu commodo lobortis sit amet in turpis. Aenean ultricies fermentum nibh, sit amet sollicitudin enim varius at. Vivamus convallis diam at sapien viverra mollis. Duis ac ullamcorper augue. Duis luctus felis sed tortor ullamcorper nec condimentum augue tincidunt. Pellentesque at ipsum mi, nec vulputate mi. Nulla suscipit congue sapien sed bibendum. In tempor ipsum non sem porta nec sodales nulla facilisis.
-        </p>
+        <h2>Search Students</h2>
+        <p>//Coming soon</p>
     </div> 
 </div>
 >>>>>>> ea7a464354dbba16a8da0132368f3c01a023641d
