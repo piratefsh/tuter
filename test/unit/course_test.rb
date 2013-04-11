@@ -12,7 +12,15 @@
 require 'test_helper'
 
 class CourseTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "create_course" do
+    course = Course.new
+    assert course.invalid?, 'Must have name'
+    course.name = 'PHI 101'
+    assert course.valid?, 'Should be able to create course'
+    assert course.save, 'Should save into the database'
+  end
+
+  test "delete_course" do
+  	
+  end
 end
