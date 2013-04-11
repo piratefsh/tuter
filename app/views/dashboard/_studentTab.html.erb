@@ -6,26 +6,7 @@
 
 	<div id='current_groups' class="small_button">
 		<h2>My Groups</h2>
-		<input type='submit' value='Add Group' id='Add Group'/>
-		<table>
-			<tr>
-				<th>Group Name</th>
-				<th>Tutor</th>
-				<th>Students</th>
-				<th>Location</th>
-				<th>Delete</th>
-			</tr>
-			<%- @groups.each do |group| %>
-				<tr>
-					<td><%= group.name %><p><%= group.desc %></p></td>
-					<td><a href='tuterLink'>group.tutor.name</a></td>
-					<td>group.students</td>
-					<td>group.location</td>
-					<td>
-						<input type=button value='Remove'/></td>
-				</tr>
-			<% end %>
-		</table>
+		<%= render 'groups_tab' %>
 	</div>
 
 	<div id='watchlist'>

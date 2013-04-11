@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
 	def index
 		@groups = Group.all
-		@new_group = Group.new(params[:group])
+		@group = Group.new(params[:group])
 		@tutors = Array.new
 
 		respond_to do |format|
@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
 
 		respond_to do |format|
 			if @group.save
-				format.html { redirect_to groups_path }
+				format.html { redirect_to dashboard_path }
 			end	
 		end
 	end 
@@ -51,6 +51,15 @@ class GroupsController < ApplicationController
 
 		respond_to do |format|
 			format.html
+		end
+	end
+
+	def update
+		@group = Group.find(params[:id])
+
+		@group.update_attributes(params[:group])
+		respond_to do |format|
+			format.html {redirect_to dashboard_path}
 		end
 	end
 end
