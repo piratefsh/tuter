@@ -3,10 +3,16 @@
         <%= f.label :name %>
         <%= f.text_field :name %>
     </div>
-	<div class="field form_element">
-		<%= f.label 'Description' %>
-		<%= f.text_field :desc %>
-	</div>
+    <div class="field form_element">
+        <%= f.label 'Description' %>
+        <%= f.text_field :desc %>
+    </div>
+
+    <div class="field form_element">
+        <%= f.label :location %>
+        <%= f.text_field :location %>
+
+    </div>
 	
 	<div class="actions small_button float_right">
     	<%= f.submit %>
