@@ -4,7 +4,7 @@ class DashboardController < ApplicationController
     def dashboard
         @groups = Group.all
         @programs = Program.all
-        @new_group = Group.new(params[:group])
+        @group = Group.new(params[:group])
         respond_to do |format|
             format.html
         end
@@ -15,6 +15,13 @@ class DashboardController < ApplicationController
 
         respond_to do |format|
             format.html {redirect_to dashboard_path}
+        end
+    end
+
+    def edit_group 
+        @group = Group.find(params[:id])
+        respond_to do |format|
+            format.html {redirect_to edit_group}
         end
     end
 

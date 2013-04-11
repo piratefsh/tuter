@@ -50,9 +50,11 @@ div
                 @include tab_li
                 display: table-cell
                 text-align: center
-                
             a
                 @include custom_a
+
+    &#group_controls
+        display: block
 
     &#main_tab_container
         width: $div_width
@@ -64,7 +66,9 @@ div
         background-color: $white
         clear: both
         width: 400px
+        padding: $big_space 
         @include center
+        margin-top: $medium_space
 
     
 .secondary_tabs
@@ -98,3 +102,15 @@ div
     .ui-tabs-anchor
         color: $dark-grey
         font-weight: bold
+
+table 
+    input[type="submit"]
+        background-color: $grey
+        display: inline
+        float: right
+
+
+input 
+    &.create_new 
+        float: left
+        margin-bottom: $big_space

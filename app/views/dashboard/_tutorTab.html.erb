@@ -1,48 +1,22 @@
+
+<%= content_for :header do %>
+    <% stylesheet_link_tag 'groups',:media => :all %>
+    <% javascript_include_tag 'groups' %>
+    <% stylesheet_link_tag 'table_style',:media => :all %>
+<% end %>
+
 <div class="tabs">
     <ul class="secondary_tabs">
-        <li><%= link_to "Groups", groups_path%></li>
+        <li><%= link_to "Groups", groups_path %></li>
         <li><a href="#search_students_view">Students</a></li>
     </ul>
     <div id='groups_view'  class="small_button">
         <h2>My Groups</h2>
-        <input type='submit' value='Add Group' id='Add Group'/>
-        <div id="new_group" ><%= render 'groups/form' %></div>
-    	<div id='Current_Groups_Table'>
-        	<table class="small_button">
-        		<tr>
-        			<th>Group Name</th>
-                    <th>Tutors</th>
-                    <th>Students</th>
-        			<!-- <th>Courses</th>
-        			<th>Schedule</th>
-        			<th>Location</th> -->
-        			<th>Edit</th>
-        			<th>Delete</th>
-        		</tr>
-        		<% @groups.each do |group| %>
-    				<tr>
-    					<td><%= group.name %>
-                            <p><%= group.desc %></p></td>
-                        <td></td>
-                        <td></td>
-
-                        <% if false %>
-
-    					<td><%= group.courses %></td>
-    					<td><%= group.tutor %></td>
-    					<td><%= group.students %></td>
-    					<td><%= group.schedule %></td>
-    					<td><%= group.location %></td>
-                        <% end %>
-    					<td><input type="button" value="Edit"/></td>
-    					<td><%= button_to "Delete", {:action => :delete_group, :id => group.id}%></td>
-    				</tr>
-        		<% end %>
-            </table>
-    	</div>
+        <%= render 'groups_tab' %>
     </div>
 
     <div id='search_students_view'>
         <h2>Search Students</h2>
+        <p>//Coming soon</p>
     </div> 
 </div>
