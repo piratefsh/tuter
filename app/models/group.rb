@@ -15,6 +15,7 @@ class Group < ActiveRecord::Base
   belongs_to :program
  
   has_many :users
+  has_many :roles
 
   
 

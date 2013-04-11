@@ -1,3 +1,4 @@
+
 <%= content_for :header do %>
     <% stylesheet_link_tag 'groups',:media => :all %>
     <% javascript_include_tag 'groups' %>
@@ -6,7 +7,7 @@
 
 <div class="tabs">
     <ul class="secondary_tabs">
-        <li><a href="#groups_view">Groups</a></li>
+        <li><%= link_to "Groups", groups_path %></li>
         <li><a href="#search_students_view">Students</a></li>
     </ul>
     <div id='groups_view'  class="small_button">

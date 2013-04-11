@@ -39,7 +39,6 @@ class User < ActiveRecord::Base
 
   # has_one :location
 
-
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
                   :first_name, :last_name, :desc, :provider, :uid, :roles
@@ -51,10 +50,6 @@ class User < ActiveRecord::Base
   ROLES = %w[student tutor org]
   has_and_belongs_to_many :roles
 
-  has_one :tutor_role
-  has_one :student_role
-  has_one :org_role
-
   def self.from_omniauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
   		user.provider = auth.provider
@@ -65,13 +60,21 @@ class User < ActiveRecord::Base
       user.photo = auth.info.image
       user.fb_profile = auth.info.urls.Facebook
   		user.oauth_token = auth.credentials.token 
-  		user.oauth_expires_at  = Time.at(auth.credentials.expires_at) 	
+  		user.oauth_expires_at  = Time.at(auth.credentials.expires_at) 
   		user.save!
   	end	
   end 
 
   def password_required?
     super && provider.blank?
+  end
+
+  def update_with_password(params, *options)
+    if encrypted_password.blank?
+      update_attributes(params, *options)
+    else
+      super
+    end
   end
 
   def role?(role)
@@ -93,6 +96,4 @@ class User < ActiveRecord::Base
       ((roles_mask || 0) & 2**ROLES.index(r)).zero?
     end
   end
-
-
 end
