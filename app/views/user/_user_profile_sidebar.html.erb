@@ -34,9 +34,6 @@
 <div>Tutor Rating: <a>**** (4)</a></div>
 <br/>
 
-<%= link_to "Edit Profile", edit_user_registration_path(current_user) %>
+<%= button_to "Edit Profile",edit_user_registration_path(current_user),:method => "get" %>
 
-<form>
-    <input type="submit" name="edit" value="Edit Profile" />
-</form>
 </div>
