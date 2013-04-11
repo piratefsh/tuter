@@ -16,6 +16,5 @@ class Group < ActiveRecord::Base
  
   has_many :student_ids
   has_many :tutor_ids
-  has_many :roles
 
 end
