@@ -1,5 +1,5 @@
   <div class="group_controls">
-            <input type='submit' id="create_new" value='Add Group' id='Add Group'/>
+            <input type='submit' class="create_new" value='Add Group' id='Add Group'/>
             <div id="new_group" style="display:none"><%= render 'groups/form' %></div>
         </div>
         <div id='Current_Groups_Table'>
@@ -11,8 +11,8 @@
                     <!-- <th>Courses</th>
                     <th>Schedule</th>
                     <th>Location</th> -->
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th></th>
+                    <th></th>
                 </tr>
                 <% @groups.each do |group| %>
                     <tr>
@@ -22,7 +22,6 @@
                         <td></td>
 
                         <% if false %>
-
                         <td><%= group.courses %></td>
                         <td><%= group.tutor %></td>
                         <td><%= group.students %></td>

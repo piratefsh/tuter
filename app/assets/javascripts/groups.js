@@ -1,8 +1,8 @@
 $(document).ready(function()
 {
-    $('#create_new').click(function()
-    {
-        var form = $("div#new_group")
+    $('.create_new').click(function()
+    {   console.log('click')
+        var form = $("div#new_group", $(this).parent("div"))
         if(!form.is(":visible"))
             form.show();
         else
@@ -10,7 +10,8 @@ $(document).ready(function()
     });
     $('#cancel_create').click(function(e)
     {
+        var form = $("div#new_group", $(this).parent())
         e.preventDefault();
-        $("div#new_group").hide();
+        form.hide();
     });
 });
