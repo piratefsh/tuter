@@ -1,11 +1,4 @@
 class DashboardController < ApplicationController
-
-  def dashboard
-    @groups = Group.all
-    @programs = Program.all
-    respond_to do |format|
-        format.html
-
   helper_method :delete_group
 
     def dashboard
@@ -36,7 +29,5 @@ class DashboardController < ApplicationController
         respond_to do |format|
             format.html {redirect_to dashboard_path}
         end
-
     end
 end
-

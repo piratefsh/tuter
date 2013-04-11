@@ -5,6 +5,7 @@ Tuter::Application.routes.draw do
     match "/users/sign_out" => "devise/sessions#destroy"
     match "/dashboard" => "dashboard#dashboard"
   end
+
   root :to => "home#index"
 
   resources :users
@@ -30,11 +31,9 @@ Tuter::Application.routes.draw do
 
   # User Signup Routes
   match "/user" => "user#user"
-  match "/search" => "search#index"
-  match "/search/index" => "search#index"
   match "/dashboard" => "home#index"
+  
 
-  # Group Management Routes  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -84,7 +83,8 @@ Tuter::Application.routes.draw do
   #   end
 
   # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.  
+  # just remember to delete public/index.html.
+  
 
   # See how all your routes lay out with "rake routes"
 
@@ -92,8 +92,10 @@ Tuter::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 end
+
+
 #== Route Map
-# Generated on 11 Apr 2013 14:13
+# Generated on 09 Apr 2013 19:37
 #
 #             user_session POST   /users/sign_in(.:format)                 devise/sessions#create
 #     destroy_user_session DELETE /users/sign_out(.:format)                devise/sessions#destroy
@@ -110,15 +112,7 @@ end
 #                          PUT    /users(.:format)                         devise/registrations#update
 #                          DELETE /users(.:format)                         devise/registrations#destroy
 #           users_sign_out        /users/sign_out(.:format)                devise/sessions#destroy
-#                dashboard        /dashboard(.:format)                     dashboard#dashboard
 #                     root        /                                        home#index
-#                    users GET    /users(.:format)                         users#index
-#                          POST   /users(.:format)                         users#create
-#                 new_user GET    /users/new(.:format)                     users#new
-#                edit_user GET    /users/:id/edit(.:format)                users#edit
-#                     user GET    /users/:id(.:format)                     users#show
-#                          PUT    /users/:id(.:format)                     users#update
-#                          DELETE /users/:id(.:format)                     users#destroy
 #                locations GET    /locations(.:format)                     locations#index
 #                          POST   /locations(.:format)                     locations#create
 #             new_location GET    /locations/new(.:format)                 locations#new
@@ -135,7 +129,6 @@ end
 #                          DELETE /groups/:id(.:format)                    groups#destroy
 #                                 /users/auth/:provider/callback(.:format) sessions#create
 #       users_auth_failure        /users/auth/failure(.:format)            :controller#:action
-#                                 /user(.:format)                          user#user
+#                     user        /user(.:format)                          user#user
 #                   search        /search(.:format)                        search#index
 #             search_index        /search/index(.:format)                  search#index
-#                                 /dashboard(.:format)                     home#index
