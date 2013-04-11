@@ -56,6 +56,23 @@ form
         textarea
             @include form_input_style
             height: 150px
+        div.checkbox_group
+            display: table
+            clear: left
+            padding-left: $big_space
+            label
+                display: table-cell
+                vertical-align: middle
+                padding: 0
+                padding-left: $medium_space
+                text-align: left
+            input
+                padding: 0
+                margin: 0
+                float: left
+                display: table-cell
+                height: 20px
+                vertical-align: -3px
 input
     @include form_input_style
 
@@ -94,17 +111,3 @@ input.cancel
 .helper_text
     font-size: small
 
-div.checkbox_group
-    display: table
-    clear: left
-    label
-        display: table-cell
-        vertical-align: middle
-        padding: 0
-        padding-left: $big_space
-        text-align: left
-    input
-        float: left
-        display: table-cell
-        height: 20px
-        vertical-align: -3px
