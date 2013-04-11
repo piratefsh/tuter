@@ -1,4 +1,5 @@
 <%= content_for :header do %>
+    <% stylesheet_link_tag 'groups',:media => :all %>
     <% stylesheet_link_tag 'table_style',:media => :all %>
 <% end %>
 
@@ -7,15 +8,17 @@
         <li><a href="#groups_view">Groups</a></li>
         <li><a href="#search_students_view">Students</a></li>
     </ul>
-    <div id='groups_view'>
+    <div id='groups_view'  class="small_button">
+        <h2>My Groups</h2>
         <input type='submit' value='Add Group' id='Add Group'/>
+        <div id="new_group" ><%= render 'groups/form' %></div>
     	<div id='Current_Groups_Table'>
         	<table class="small_button">
         		<tr>
         			<th>Group Name</th>
-<!--         			<th>Courses</th>
-        			<th>Tutor</th>
-        			<th>Students</th>
+                    <th>Tutors</th>
+                    <th>Students</th>
+        			<!-- <th>Courses</th>
         			<th>Schedule</th>
         			<th>Location</th> -->
         			<th>Edit</th>
@@ -25,6 +28,9 @@
     				<tr>
     					<td><%= group.name %>
                             <p><%= group.desc %></p></td>
+                        <td></td>
+                        <td></td>
+
                         <% if false %>
 
     					<td><%= group.courses %></td>
@@ -34,7 +40,7 @@
     					<td><%= group.location %></td>
                         <% end %>
     					<td><input type="button" value="Edit"/></td>
-    					<td><input type="button" value="Remove"/></td>
+    					<td><%= button_to "Delete", {:action => :delete_group, :id => group.id}%></td>
     				</tr>
         		<% end %>
             </table>
@@ -42,14 +48,6 @@
     </div>
 
     <div id='search_students_view'>
-<!--     	<form>
-    		<input type='text' id='name'/>
-    		<input type='text' id='course'/>
-    		<input type='text' id='location'/>
-    		<input type='text' id='schedule'/>
-    		<input type='submit' id='Search_Students'/>
-    	</form> -->
-        <p>Duis volutpat condimentum pellentesque. Proin ultrices mi diam, eget consequat diam. Etiam id nibh in arcu commodo lobortis sit amet in turpis. Aenean ultricies fermentum nibh, sit amet sollicitudin enim varius at. Vivamus convallis diam at sapien viverra mollis. Duis ac ullamcorper augue. Duis luctus felis sed tortor ullamcorper nec condimentum augue tincidunt. Pellentesque at ipsum mi, nec vulputate mi. Nulla suscipit congue sapien sed bibendum. In tempor ipsum non sem porta nec sodales nulla facilisis.
-        </p>
+        <h2>Search Students</h2>
     </div> 
 </div>

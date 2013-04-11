@@ -19,6 +19,12 @@ Tuter::Application.routes.draw do
     end
   end
 
+  resources :dashboard do
+    collection do 
+      post 'delete_group'
+    end 
+  end
+
   # Omniauth routes
   match '/users/auth/:provider/callback', to: 'sessions#create'
   match '/users/auth/failure', to: redirect('/')

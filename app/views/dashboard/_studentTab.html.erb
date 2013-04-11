@@ -1,39 +1,35 @@
-<div class="secondary_tabs" id='student_content_View_Options'>
-	<div id='Current_Groups_View'>
-		<div id='Add_Group_Button'>
-			<form action=''>
-				<input type='submit' value='Add Group' id='Add Group'>
-			</form>
-		</div>
+<div class="tabs" id='student_content_View_Options'>
+	<ul class="secondary_tabs">
+		<li><a href="#current_groups">My Groups</a></li>
+		<li><a href="#watchlist">Tutor Watchlist</a></li>
+	</ul>
 
-		<div id='Current_Groups_Table'>
-			
-			<table>
+	<div id='current_groups' class="small_button">
+		<h2>My Groups</h2>
+		<input type='submit' value='Add Group' id='Add Group'/>
+		<table>
+			<tr>
+				<th>Group Name</th>
+				<th>Tutor</th>
+				<th>Students</th>
+				<th>Location</th>
+				<th>Delete</th>
+			</tr>
+			<%- @groups.each do |group| %>
 				<tr>
-					<th>Group Name</th>
-					<th>Courses</th>
-					<th>Tutor</th>
-					<th>Students</th>
-					<th>Schedule</th>
-					<th>Location</th>
-					<th>Delete</th>
+					<td><%= group.name %><p><%= group.desc %></p></td>
+					<td><a href='tuterLink'>group.tutor.name</a></td>
+					<td>group.students</td>
+					<td>group.location</td>
+					<td>
+						<input type=button value='Remove'/></td>
 				</tr>
-				<%- @groups.each do |group| %>
-					<tr>
-						<td><%= group.name %></td>
-						<%- if false %>
-						<td>group.courses</td>
-						<td><a href='tuterLink'>group.tutor.name</a></td>
-						<td>group.students</td>
-						<td>group.schedule</td>
-						<td>group.schedule</td>
-						<td>group.location</td>
-						<td>
-							<input type=submit value='Remove'/></td>
-						<% end %>
-					</tr>
-				<% end %>
-			</table>
-		</div>
+			<% end %>
+		</table>
 	</div>
+
+	<div id='watchlist'>
+		<h2>Watchlisted Tutors</h2>
+	</div>
+	
 </div>

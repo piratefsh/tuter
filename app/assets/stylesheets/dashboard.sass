@@ -1,7 +1,6 @@
 @import "./application"
-@import "./form_style"
 @import "./user_profile"
-
+@import "./form_style"
 
 @mixin custom_a
     text-decoration: none
@@ -13,15 +12,17 @@
     padding: $medium_space
     border: 1px solid $light_grey
 
+h2
+    margin-left: $big_space
 div
     $div_width: $content_width - $profile_sidebar_width - 5 * $big_space
     &.tabs
         float: right
         clear: right
-        div
+        > div
             background-color: $light_grey
             display: block
-            div, ul
+            > div, ul
                 float: none
                 padding: $medium_space
             // margin-top: 0
@@ -58,6 +59,13 @@ div
 
     &#spacer
         height: $big_space
+
+    &#new_group 
+        background-color: $white
+        clear: both
+        width: 400px
+        @include center
+
     
 .secondary_tabs
     .ui-state-default
