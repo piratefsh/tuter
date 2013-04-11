@@ -18,7 +18,7 @@ class GroupsController < ApplicationController
 
 	def create
 		@group = Group.new(params[:group])
-		@sids = params[:group][:student_ids]
+		# @sids = params[:group][:student_ids]
 
 		# @group.student_ids = @sids
 

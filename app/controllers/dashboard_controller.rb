@@ -33,4 +33,3 @@ class DashboardController < ApplicationController
         end
     end
 end
-

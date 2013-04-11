@@ -1,8 +1,8 @@
 <%= content_for :header do%>
-    <%= stylesheet_link_tag    "search", :media => "all" %>
-    <%= javascript_include_tag 'search_table.js' %>
-    <%= javascript_include_tag 'sorttable.js' %>
+  <%= stylesheet_link_tag    "search", :media => "all" %>
+  <%= javascript_include_tag "sorttable", "search_table" %>  
 <% end %>
+
 <h1>Find A Tutor</h1>
 <div id = "sidebar">
     <h2>Search</h2>
@@ -13,44 +13,44 @@
             <input id="keyword_search" type="text" name="general_search" value="<%= params[:search_all] %>">
         </div> 
 
-        <div class="form_element">
-            <label>Location</label>
-            <label class="helper_text">Zip code</label>
-            <input type="text" name="location"/>
-        </div>
+      <div class="form_element">
+        <label>Location</label>
+        <label class="helper_text">Zip code</label>
+        <input type="text" name="location"/>
+      </div>
+
+      <div class="form_element">
+        <label>Course</label>
+        <label class="helper_text">Course code</label>
+        <input type="text" name="course"/>
+      </div>
+      <div class="form_element">
+        <label>Name</label>
+        <label class="helper_text">Tutor's Name</label>
+        <input type="text" name="name"/>
+      </div>
 
         <div class="form_element">
-            <label>Course</label>
-            <label class="helper_text">Course code</label>
-            <input type="text" name="course"/>
-        </div>
-        <div class="form_element">
-            <label>Name</label>
-            <label class="helper_text">Tutor's Name</label>
-            <input type="text" name="name"/>
-        </div>
-
-        <div class="form_element">
-            <label>Type</label>
+          <label>Type</label>
             
-            <div class="checkbox_group">
-                <input type="checkbox" value="Drop-In" name="dropin"/>
-                <label class="checkbox" for="dropin">Drop-in</label>
-            </div>
-            <div class="checkbox_group">
-                <input type="checkbox" value="Group" name="group"/>
-                <label class="checkbox"for="group">Group</label>
-            </div>
+          <div class="checkbox_group">
+            <input type="checkbox" value="Drop-In" name="dropin"/>
+            <label class="checkbox" for="dropin">Drop-in</label>
+          </div>
+          <div class="checkbox_group">
+            <input type="checkbox" value="Group" name="group"/>
+            <label class="checkbox"for="group">Group</label>
+          </div>
         </div>
         
         <div class="form_element">
-            <label>Rate</label>
-            <br/>
-            <select name="rates">
-                <% @rates.each do |range| %>
-                    <option><%= range %></option>
-                <% end %>
-            </select>
+          <label>Rate</label>
+          <br/>
+          <select name="rates">
+            <% @rates.each do |range| %>
+              <option><%= range %></option>
+            <% end %>
+          </select>
         </div>
 
        <!--  <div class="form_element">
@@ -63,23 +63,23 @@
 </div>
 
 <div id="results">
-    <h2>Results</h2>
-    <p>Click on headers to sort rows</p>
-    <table id="results_table" class="sortable"> 
-    <thead> 
-    <tr> 
-        <th>Last Name</th> 
-        <th>First Name</th> 
-        <th>Course</th> 
-        <th>Groups</th> 
-        <th>Location</th> 
-        <th>Availability</th> 
-        <th>Type</th> 
-        <th>Rate</th> 
-    </tr> 
-    </thead> 
+  <h2>Results</h2>
+  <p>Click on headers to sort rows</p>
+  <table id="results_table" class="sortable"> 
+  <thead> 
+  <tr> 
+    <th>Last Name</th> 
+    <th>First Name</th> 
+    <th>Course</th> 
+    <th>Groups</th> 
+    <th>Location</th> 
+    <th>Availability</th> 
+    <th>Type</th> 
+    <th>Rate</th> 
+  </tr> 
+  </thead> 
 
-    <tbody> 
+  <tbody> 
 
     <% @users.each do |user| %>
         <% if user.role? :tutor %>
@@ -100,5 +100,5 @@
     </tbody> 
     </table> 
 
-    <p id="no_results">No matching results. Please try other terms.</p>
+  <p id="no_results">No matching results. Please try other terms.</p>
 </div>

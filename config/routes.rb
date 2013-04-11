@@ -29,7 +29,6 @@ Tuter::Application.routes.draw do
   match '/users/auth/:provider/callback', to: 'sessions#create'
   match '/users/auth/failure', to: redirect('/')
 
-
   # User Signup Routes
   match "/user" => "user#user"
   match "/dashboard" => "home#index"

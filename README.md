@@ -6,6 +6,8 @@ v1.0 02-21-2013
 ## An Introduction :blush:
 **_Tuter_** is an online tutoring management system developed by a team of 5 cool humans.
 
+![Logo](app/assets/images/Tuter.png?raw=true)
+
 Notes: 
 
  - **Linux** users need to uncomment `gem 'therubyracer'` in the Gemfile. 
@@ -21,5 +23,5 @@ $ rails server
 ## To Run Web App Locally :trollface:
 Visit **localhost:3000** on your browser
 
-## Hosted
+## Live Demo
 http://tuter.heroku.com

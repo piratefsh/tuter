@@ -1,13 +1,15 @@
 <%= content_for :header do%>
-    <%= stylesheet_link_tag "home", "gmaps4rails", :media => "all" %>
+  <%= stylesheet_link_tag "home", "gmaps4rails", :media => "all" %>
+  <%= javascript_include_tag "gmaps4rails/gmaps4rails.base", 
+                             "gmaps4rails/gmaps4rails.googlemaps" %>
 <% end %>
 
 <p style="font-style: italic">Pardon the dust, site under construction!</p>
 
 <ul class="horizontal_links">
-    <li><a>About</a></li>
-    <li><a>Contact</a></li>
-    <li><a>Blog</a></li>
+  <li><a> About   </a></li>
+  <li><a> Contact </a></li>
+  <li><a> Blog    </a></li>
 </ul>
 
 <h1 class="inline">Tuter:</h1>
@@ -19,20 +21,19 @@
         <input type="text"  name="search_all_field"/>
         <input type="button" id="search_all" value="Go!"/>
 
-        <h2>Sign up</h2>
-        <ul class="button_list">
-              <%= link_to  "users/sign_up?type=tutor" do%><li>Tutor</li><% end %>
-              <%= link_to  "users/sign_up?type=student" do%><li>Student</li><% end %>
-              <%= link_to  "users/sign_up?type=org" do%><li>Organization</li><% end %>
-        </ul>
+    <h2>Sign up</h2>
+    <ul class="button_list">
+      <%= link_to "users/sign_up?type=tutor" do%><li>Tutor</li><% end %>
+      <%= link_to "users/sign_up?type=student" do%><li>Student</li><% end %>
+      <%= link_to "users/sign_up?type=org" do%><li>Organization</li><% end %>
+    </ul>
+    <h2>
+  </div>
 
-        <h2>
+  <div id="map_div">
+    <h2 class="first_h">Tutors Near You</h2>
+    <div id="google_map">
+      <%= gmaps4rails(@json) %>
     </div>
-
-    <div id="map_div">
-        <h2 class="first_h">Tutors Near You</h2>
-        <div id="google_map">
-        	<%= gmaps4rails(@json) %>
-        </div>
-    </div>
+  </div>
 </div>

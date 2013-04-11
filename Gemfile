@@ -25,8 +25,6 @@ gem 'heroku'
 gem 'devise', '~> 2.2.3'
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'certified'
-gem 'annotate'
-# gem 'thin'
 gem 'gmaps4rails', '~> 1.5.6'
 gem 'role_model'
 gem 'guard'
@@ -36,13 +34,15 @@ gem 'cancan', '~> 1.6.0'
 
 group :production do
 	gem 'pg'
+	gem 'thin'
 end 
 group :development, :test do
 	gem 'sqlite3'
 	gem 'webrick'
-	# gem 'debugger'
+	gem 'debugger'
+	gem 'annotate'
 end
-gem 'execjs'
+# gem 'execjs'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -51,11 +51,8 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
+  gem 'therubyracer'
   gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
