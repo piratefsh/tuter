@@ -6,24 +6,30 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %> 
 
+<!-- Check boxes where user can select which roles he/she wants on his/her account -->
 <div class="centered_form" >
+  <div class="form_element">
+    <label>Roles</label>
   <% for role in User::ROLES %>
-        <% if role != :admin %>
-          <% if role == params[:type] %>
-            <%= check_box_tag "user[roles][#{role}]", role, true, {:name => "user[roles][]"} %>
-          <% else %>
-            <%= check_box_tag "user[roles][#{role}]", role, false, {:name => "user[roles][]"}%>
-          <% end %>
-          <%= label_tag "user_roles_#{role}", role.humanize %><br />
-        <% end %> 
+        <div class="checkbox_group">
+          <% if role != :admin %>
+            <% if role == params[:type] %>
+              <%= check_box_tag "user[roles][#{role}]", role, true, {:name => "user[roles][]"} %>
+            <% else %>
+              <%= check_box_tag "user[roles][#{role}]", role, false, {:name => "user[roles][]"}%>
+            <% end %>
+            <%= label_tag "user_roles_#{role}", role.humanize %><br />
+          <% end %> 
+        </div>
   <% end %>
+  </div>
   <%= hidden_field_tag "user[roles][]", "" %>
   
   <div class="form_element"><%= f.label :first_name %>
   <%= f.text_field :first_name, :autofocus => true%></div>
 
   <div class="form_element"><%= f.label :last_name %>
-  <%= f.text_field :last_name%></div>
+  <%= f.text_field :last_name%></div> 
 
   <div class="form_element"><%= f.label :email %>
   <%= f.email_field :email %></div>

@@ -1,3 +1,9 @@
+<!-- Partial for table of groups -->
+
+<% content_for :header do %>
+    <% stylesheet_link_tag 'table_style',:media => :all %>
+<% end %>
+
   <div class="group_controls">
             <input type='submit' class="create_new" value='Add Group' id='Add Group'/>
             <div id="new_group" style="display:none"><%= render 'groups/form' %></div>
