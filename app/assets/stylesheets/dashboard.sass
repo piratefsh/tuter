@@ -1,7 +1,6 @@
 @import "./application"
-@import "./form_style"
 @import "./user_profile"
-
+@import "./form_style"
 
 @mixin custom_a
     text-decoration: none
@@ -13,16 +12,17 @@
     padding: $medium_space
     border: 1px solid $light_grey
 
+h2
+    margin-left: $big_space
 div
-    $div_width: $content_width - $sidebar_width - 7 * $big_space
+    $div_width: $content_width - $profile_sidebar_width - 5 * $big_space
     &.tabs
         float: right
         clear: right
-        margin: $big_space
-        div
+        > div
             background-color: $light_grey
-
-            div, ul
+            display: block
+            > div, ul
                 float: none
                 padding: $medium_space
             // margin-top: 0
@@ -30,47 +30,87 @@ div
 
         ul#main_tabs
             list-style: none
-            display: block
+            display: table
 
             li 
                 @include tab_li
-                background-color: $blue
-
-
+                display: table-cell
             a
                 @include custom_a
                 font-weight: bold
-                color: $white
 
         ul.secondary_tabs
             display: table
-            width: 100%
+            width: 95% //so tabs don't overflow due to added padding
+            margin:
+                left: auto
+                right: auto
             list-style: none
             li
                 @include tab_li
                 display: table-cell
                 text-align: center
-                border: 1px solid $grey
-                
             a
                 @include custom_a
+
+    &#group_controls
+        display: block
+
     &#main_tab_container
         width: $div_width
-        
 
     &#spacer
         height: $big_space
-        
-.ui-state-default
-    background-color: $white
-.ui-tabs-active, .ui-state-active
-    background-color: $light_blue
-    a 
-        color: $white
-.ui-state-hover 
-    background-color: $red 
-    a 
-        color: $white
-.ui-tabs-anchor
-    color: $dark-grey
-    font-weight: bold
+
+    &#new_group 
+        background-color: $white
+        clear: both
+        width: 400px
+        padding: $big_space 
+        @include center
+        margin-top: $medium_space
+
+    
+.secondary_tabs
+    .ui-state-default
+        background-color: $white
+    .ui-tabs-active, .ui-state-active
+        background-color: $red
+        a 
+            color: $white
+    .ui-state-hover 
+        background-color: $grey 
+        a 
+            color: $white
+    .ui-tabs-anchor
+        color: $dark-grey
+        font-weight: bold  
+
+#main_tabs
+    .ui-state-default
+        background-color: $white
+        a 
+            color: $grey
+    .ui-tabs-active, .ui-state-active
+        background-color: $light_grey
+        a 
+            color: $red
+    .ui-state-hover 
+        background-color: $red 
+        a 
+            color: $white
+    .ui-tabs-anchor
+        color: $dark-grey
+        font-weight: bold
+
+table 
+    input[type="submit"]
+        background-color: $grey
+        display: inline
+        float: right
+
+
+input 
+    &.create_new 
+        float: left
+        margin-bottom: $big_space

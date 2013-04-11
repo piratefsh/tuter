@@ -7,11 +7,11 @@
 <div id = "sidebar">
     <h2>Search</h2>
     <form method="get">
-      <div class="form_element">
-        <label>Search All</label>
-        <label class="helper_text">Search any</label>
-        <input id="keyword_search" type="text" name="general_search"/>
-      </div> 
+        <div class="form_element">
+            <label>Search All</label>
+            <label class="helper_text">Search any</label>
+            <input id="keyword_search" type="text" name="general_search" value="<%= params[:search_all] %>">
+        </div> 
 
       <div class="form_element">
         <label>Location</label>
@@ -82,7 +82,7 @@
   <tbody> 
 
     <% @users.each do |user| %>
-        <% if user.tutor? %>
+        <% if user.role? :tutor %>
     
     <tr> 
         <td><%= user.first_name %></td> 

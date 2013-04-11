@@ -1,0 +1,38 @@
+  <div class="group_controls">
+            <input type='submit' class="create_new" value='Add Group' id='Add Group'/>
+            <div id="new_group" style="display:none"><%= render 'groups/form' %></div>
+        </div>
+        <div id='Current_Groups_Table'>
+            <table class="small_button">
+                <tr>
+                    <th>Group Name</th>
+                    <th>Tutors</th>
+                    <th>Students</th>
+<!--                     <th>Courses</th>
+                    <th>Schedule</th> -->
+                    <th>Location</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <% @groups.each do |group| %>
+                    <tr>
+                        <td><%= group.name %>
+                            <p><%= group.desc %></p></td>
+                        <td></td>
+                        <td></td>
+                        <td><%= group.location %></td>
+                        <td></td>
+
+                        <% if false %>
+                        <td><%= group.courses %></td>
+                        <td><%= group.tutor %></td>
+                        <td><%= group.students %></td>
+                        <td><%= group.schedule %></td>
+                        <% end %>
+                        <td><%= button_to "Edit", edit_group_path(group), :method => :get%></td>
+                        <td><%= button_to "Delete", {:action => :delete_group, :id => group.id}%></td>
+                    </tr>
+                <% end %>
+            </table>
+        </div>

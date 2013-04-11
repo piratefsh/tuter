@@ -10,6 +10,19 @@ Tuter::Application.routes.draw do
   resources :users
   resources :locations
   resources :groups
+  resources :search
+
+  resources :home do
+    member do 
+      get 'search_tutors'
+    end
+  end
+
+  resources :dashboard do
+    collection do 
+      post 'delete_group'
+    end 
+  end
 
   # Omniauth routes
   match '/users/auth/:provider/callback', to: 'sessions#create'
@@ -19,10 +32,9 @@ Tuter::Application.routes.draw do
   match "/user" => "user#user"
   match "/search" => "search#index"
   match "/search/index" => "search#index"
-
-  # Group Management Routes
-	
   match "/dashboard" => "home#index"
+
+  # Group Management Routes  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
