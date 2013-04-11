@@ -21,11 +21,13 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
+  <!-- Only require user password if they haven't logged in through facebook-->
   <% if f.object.encrypted_password.present? %>
     <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password %></div>
   <% end %>
 
+  <!-- User can update roles associated with account -->
   <div>
   <label>Roles</label>
   <% for role in User::ROLES %>

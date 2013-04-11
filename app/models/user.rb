@@ -47,6 +47,7 @@ class User < ActiveRecord::Base
   # default => :email and :password must be present 
   validates :first_name, :last_name, :presence => true
 
+  # define user roles and association
   ROLES = %w[student tutor org]
   has_and_belongs_to_many :roles
 
@@ -69,6 +70,7 @@ class User < ActiveRecord::Base
     super && provider.blank?
   end
 
+  # update user attributes - handles omniauth users without passwords, as well as devise users with passwords
   def update_with_password(params, *options)
     if encrypted_password.blank?
       update_attributes(params, *options)
@@ -77,16 +79,19 @@ class User < ActiveRecord::Base
     end
   end
 
+  # check if user has a given role
   def role?(role)
     roles.include? role.to_s
   end
 
+  # return list of symbols that represent user roles
   def role_symbols
     roles.map do |role|
       role.name.to_sym
     end
   end
 
+  # define user bitmask to represent which roles the user has
   def roles=(roles)
     self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.inject(0, :+)
   end
