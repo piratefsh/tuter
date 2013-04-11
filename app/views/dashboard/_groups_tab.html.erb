@@ -8,9 +8,9 @@
                     <th>Group Name</th>
                     <th>Tutors</th>
                     <th>Students</th>
-                    <!-- <th>Courses</th>
-                    <th>Schedule</th>
-                    <th>Location</th> -->
+<!--                     <th>Courses</th>
+                    <th>Schedule</th> -->
+                    <th>Location</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -20,13 +20,14 @@
                             <p><%= group.desc %></p></td>
                         <td></td>
                         <td></td>
+                        <td><%= group.location %></td>
+                        <td></td>
 
                         <% if false %>
                         <td><%= group.courses %></td>
                         <td><%= group.tutor %></td>
                         <td><%= group.students %></td>
                         <td><%= group.schedule %></td>
-                        <td><%= group.location %></td>
                         <% end %>
                         <td><%= button_to "Edit", edit_group_path(group), :method => :get%></td>
                         <td><%= button_to "Delete", {:action => :delete_group, :id => group.id}%></td>

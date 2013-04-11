@@ -1,6 +1,5 @@
 <%= content_for :header do%>
     <%= stylesheet_link_tag    "form_style", :media => "all" %>
-
 <% end %>
 
 <h2>Tuter Registration</h2>
@@ -20,10 +19,10 @@
   <% end %>
   <%= hidden_field_tag "user[roles][]", "" %>
   
-  <div class="form_element"><%= f.label :first_name%>
+  <div class="form_element"><%= f.label :first_name %>
   <%= f.text_field :first_name, :autofocus => true%></div>
 
-  <div class="form_element"><%= f.label :last_name%>
+  <div class="form_element"><%= f.label :last_name %>
   <%= f.text_field :last_name%></div>
 
   <div class="form_element"><%= f.label :email %>
