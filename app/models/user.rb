@@ -51,10 +51,6 @@ class User < ActiveRecord::Base
   ROLES = %w[student tutor org]
   has_and_belongs_to_many :roles
 
-  has_one :tutor_role
-  has_one :student_role
-  has_one :org_role
-
   def self.from_omniauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
   		user.provider = auth.provider
@@ -65,7 +61,7 @@ class User < ActiveRecord::Base
       user.photo = auth.info.image
       user.fb_profile = auth.info.urls.Facebook
   		user.oauth_token = auth.credentials.token 
-  		user.oauth_expires_at  = Time.at(auth.credentials.expires_at) 	
+  		user.oauth_expires_at  = Time.at(auth.credentials.expires_at) 
   		user.save!
   	end	
   end 
