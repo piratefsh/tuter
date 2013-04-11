@@ -51,6 +51,9 @@ $(document).ready(function(){
     //set search function for  rates selector
     $("select[name=rates]").click(instantSearchFunction);
 
+    //if search all field already populated, perform search
+    $("input#keyword_search").trigger('keyup');
+
     function instantSearchFunction()
     {
         var whichCol = column[$(this).attr("name")];
