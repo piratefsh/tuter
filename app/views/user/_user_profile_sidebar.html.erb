@@ -1,4 +1,6 @@
-
+<% content_for :header do %>
+    <% stylesheet_link_tag "user_profile", :media => "all" %>
+<% end %>
 <div id="profile">
     <!-- Display User Profile Picture-->
     <% if current_user.photo? %>
