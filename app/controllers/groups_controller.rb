@@ -20,13 +20,11 @@ class GroupsController < ApplicationController
 		@group = Group.new(params[:group])
 		@sids = params[:group][:student_ids]
 
-		@group.student_ids = @sids
-		
-
+		# @group.student_ids = @sids
 
 		respond_to do |format|
 			if @group.save
-				format.html { redirect_to @group }
+				format.html { redirect_to dashboard_path }
 			end	
 		end
 	end 
