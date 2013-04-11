@@ -51,8 +51,6 @@ GEM
       railties (~> 3.1)
       warden (~> 1.2.1)
     erubis (2.7.0)
-    eventmachine (1.0.3)
-    eventmachine (1.0.3-x86-mingw32)
     excon (0.20.1)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -98,8 +96,6 @@ GEM
     multi_json (1.7.2)
     multipart-post (1.2.0)
     netrc (0.7.7)
-    node (0.0.2)
-      eventmachine
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -203,7 +199,6 @@ DEPENDENCIES
   guard
   heroku
   jquery-rails
-  node
   omniauth-facebook (~> 1.4.1)
   pg
   rails (= 3.2.3)

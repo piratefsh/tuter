@@ -39,7 +39,6 @@ class User < ActiveRecord::Base
 
   # has_one :location
 
-
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
                   :first_name, :last_name, :desc, :provider, :uid, :roles
@@ -70,6 +69,14 @@ class User < ActiveRecord::Base
     super && provider.blank?
   end
 
+  def update_with_password(params, *options)
+    if encrypted_password.blank?
+      update_attributes(params, *options)
+    else
+      super
+    end
+  end
+
   def role?(role)
     roles.include? role.to_s
   end
@@ -89,6 +96,4 @@ class User < ActiveRecord::Base
       ((roles_mask || 0) & 2**ROLES.index(r)).zero?
     end
   end
-
-
 end
