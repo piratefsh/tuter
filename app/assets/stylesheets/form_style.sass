@@ -39,23 +39,23 @@ form, div.centered_form
 @mixin tablecell_vertical
     display: table-cell
     vertical-align: middle
+form
+    > div, div.form_element
+        display: table
+        padding-bottom: $big_space
+        input 
+            @include tablecell_vertical
 
-div.form_element
-    display: table
-    padding-bottom: $big_space
-    input 
-        @include tablecell_vertical
+        label
+            @include tablecell_vertical
+            padding: 0
+            margin: 0
+            width: 100px
+            text-align: right
 
-    label
-        @include tablecell_vertical
-        padding: 0
-        margin: 0
-        width: 100px
-        text-align: right
-
-    textarea
-        @include form_input_style
-        height: 150px
+        textarea
+            @include form_input_style
+            height: 150px
 input
     @include form_input_style
 
@@ -81,6 +81,30 @@ div#error_explanation
         &[type="button"], &[type="submit"]
             padding: $medium_space
             font-size: small
+            display: inline
+            margin: 
+                top: $medium_space
+    &.unimp //not highlighted, non impt button 
+        input 
+            background-color: $grey
 
 input.cancel
     background-color: $grey
+
+.helper_text
+    font-size: small
+
+div.checkbox_group
+    display: table
+    clear: left
+    label
+        display: table-cell
+        vertical-align: middle
+        padding: 0
+        padding-left: $big_space
+        text-align: left
+    input
+        float: left
+        display: table-cell
+        height: 20px
+        vertical-align: -3px
