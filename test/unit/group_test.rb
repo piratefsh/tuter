@@ -16,5 +16,8 @@ class GroupTest < ActiveSupport::TestCase
   test "create_group" do
     group = Group.new
     assert group.invalid?, 'Must have name and location'
+    p group.errors
+    group.name = 'PHI 101'
+
   end
 end

@@ -23,9 +23,9 @@ class ProgramTest < ActiveSupport::TestCase
 
   test "delete_program" do
   	Program.create(:name=>"Economics")
-  	program = program.find_by_name("Mathematics")
+  	program = Program.find_by_name("Mathematics")
   	assert program.nil?, 'Should not exist'
-  	program = program.find_by_name("Economics")
+  	program = Program.find_by_name("Economics")
   	assert !program.nil?, 'Should exist'
   	# assert program.destroy, 'Should delete from database'
   end
