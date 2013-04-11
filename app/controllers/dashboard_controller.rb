@@ -10,6 +10,7 @@ class DashboardController < ApplicationController
         end
     end
 
+    #delete group from database
     def delete_group 
         Group.destroy(params[:id])
 
@@ -18,6 +19,7 @@ class DashboardController < ApplicationController
         end
     end
 
+    #GET edit group view
     def edit_group 
         @group = Group.find(params[:id])
         respond_to do |format|
