@@ -12,10 +12,7 @@
 
 class Group < ActiveRecord::Base
   attr_accessible :desc, :group_ID, :name, :location
-  belongs_to :program
- 
-  has_many :users
-
-  
-
+  belongs_to :program 
+  has_many :users  
+  validates :name, :location, :presence => true
 end

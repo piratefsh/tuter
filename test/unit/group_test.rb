@@ -13,7 +13,8 @@
 require 'test_helper'
 
 class GroupTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "create_group" do
+    group = Group.new
+    assert group.invalid?, 'Must have name and location'
+  end
 end

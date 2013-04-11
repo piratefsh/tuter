@@ -81,7 +81,7 @@ Tuter::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 end
 #== Route Map
-# Generated on 10 Apr 2013 21:08
+# Generated on 11 Apr 2013 14:13
 #
 #             user_session POST   /users/sign_in(.:format)                 devise/sessions#create
 #     destroy_user_session DELETE /users/sign_out(.:format)                devise/sessions#destroy
