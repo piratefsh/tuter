@@ -13,20 +13,6 @@
 		var tableAnchor=document.getElementById('profileButtons');
 		tableAnchor.innerHTML=htmlString;
 	}-->
-<% content_for :header do %>
-    <% stylesheet_link_tag "user_profile", :media => "all" %>
-    <% stylesheet_link_tag "reviews", :media => "all" %>
-<% end %>
-<script type="JavaScript">
-
-	function generateProfileButtons(){
-		var htmlString="";
-		htmlstring+="<input type=\"submit\" name=\"student\" value=\"Student Profile\">";
-		htmlstring+="<input type=\"submit\" name=\"tutor\" value=\"Tutor Profile\">";
-		htmlstring+="<input type=\"submit\" name=\"org\" value=\"Organization Profile\">";
-		var tableAnchor=document.getElementById('profileButtons');
-		tableAnchor.innerHTML=htmlString;
-	}
 		 
 </script>
 
