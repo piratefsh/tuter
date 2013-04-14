@@ -11,7 +11,7 @@ class SearchController < ApplicationController
 
     respond_to do |format|
         format.html #search/index/html.erb
-        format.json {render :json => @users}
+        format.json {render :json => @users(:only => [:first_name, :last_name, :email])}
 
     end
   end
