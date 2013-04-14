@@ -5,13 +5,13 @@ class SearchController < ApplicationController
 
   def index
     @rates = Array.new
-    @users = User.all
+    @tutors = User.all.role? :tutor
 
     initRates(@rates)
 
     respond_to do |format|
         format.html #search/index/html.erb
-        format.json {render :json => @users(:only => [:first_name, :last_name, :email])}
+        format.json {render :json => @tutors(:only => [:first_name, :last_name, :email]) }
 
     end
   end
