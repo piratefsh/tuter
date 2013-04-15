@@ -339,3 +339,55 @@ Binary data inserted for `string` type on column `encrypted_password`
   [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'NotFoundFaiz@tuter.me' LIMIT 1
   [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
   [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 06:55:29', '2013-04-15 06:55:29', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 06:55:29', '2013-04-15 06:55:29', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 06:55:30', '2013-04-15 06:55:30', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 06:55:30', '2013-04-15 06:55:30', 298486374)[0m
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (26.0ms)[0m  [1mINSERT INTO "courses" ("course_ID", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["course_ID", nil], ["created_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00], ["name", "PHI 101"], ["updated_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "groups" ("created_at", "desc", "group_ID", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00], ["desc", nil], ["group_ID", nil], ["location", nil], ["name", "PHI 101"], ["updated_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" WHERE "groups"."name" = 'CS 302' LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mProgram Load (1.0ms)[0m  [1mSELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Mathematics' LIMIT 1[0m
+  [1m[35mProgram Load (0.0ms)[0m  SELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Economics' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$okL3S3dEvDgV3PtEuf.g6u0EnsZnzqKkLk8Q43yreK76Ciyne7sey"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["uid", nil], ["updated_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$L95U7MjnT5zspelYeaTwauYu913lCE4iW.QPMvY4IzIUOV7Ffba/i"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["uid", nil], ["updated_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'NotFoundFaiz@tuter.me' LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction

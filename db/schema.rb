@@ -43,13 +43,6 @@ ActiveRecord::Schema.define(:version => 20130411182243) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "organization_roles", :force => true do |t|
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-    t.integer  "organization_ID"
-    t.string   "organization_name"
-  end
-
   create_table "programs", :force => true do |t|
     t.string   "name"
     t.integer  "program_ID"
@@ -69,29 +62,10 @@ ActiveRecord::Schema.define(:version => 20130411182243) do
     t.integer  "sid"
   end
 
-  create_table "student_roles", :force => true do |t|
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.integer  "student_ID"
-    t.integer  "age"
-    t.string   "year_in_school"
-    t.boolean  "transportation"
-  end
-
   create_table "tutor_ids", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "tid"
-  end
-
-  create_table "tutor_roles", :force => true do |t|
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.integer  "tutor_ID"
-    t.integer  "age"
-    t.string   "year_in_school"
-    t.float    "rating"
-    t.boolean  "transportation"
   end
 
   create_table "users", :force => true do |t|
