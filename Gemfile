@@ -52,12 +52,6 @@ end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-<<<<<<< HEAD
-=======
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
->>>>>>> b1ffc3972e3ffc37743de6d280aba6a06531263d
   gem 'uglifier', '>= 1.0.3'
   
   # http://gembundler.com/v1.2/man/gemfile.5.html#PLATFORMS-platforms-
