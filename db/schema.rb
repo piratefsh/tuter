@@ -43,13 +43,6 @@ ActiveRecord::Schema.define(:version => 20130411182243) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "organization_roles", :force => true do |t|
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-    t.integer  "organization_ID"
-    t.string   "organization_name"
-  end
-
   create_table "programs", :force => true do |t|
     t.string   "name"
     t.integer  "program_ID"
@@ -75,19 +68,6 @@ ActiveRecord::Schema.define(:version => 20130411182243) do
     t.integer  "tid"
   end
 
-<<<<<<< HEAD
-=======
-  create_table "tutor_roles", :force => true do |t|
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.integer  "tutor_ID"
-    t.integer  "age"
-    t.string   "year_in_school"
-    t.float    "rating"
-    t.boolean  "transportation"
-  end
-
->>>>>>> b1ffc3972e3ffc37743de6d280aba6a06531263d
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
