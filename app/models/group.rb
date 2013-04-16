@@ -16,5 +16,10 @@ class Group < ActiveRecord::Base
  
   has_many :student_ids
   has_many :tutor_ids
+<<<<<<< HEAD
   validates :name, :location, :presence => true
 end
+=======
+
+end
+>>>>>>> b1ffc3972e3ffc37743de6d280aba6a06531263d
