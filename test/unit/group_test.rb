@@ -14,7 +14,7 @@ require 'test_helper'
 
 class GroupTest < ActiveSupport::TestCase
   test "create_group" do
-    group = Group.new
+    group = Group.new    
     assert group.invalid?, 'Must have name and location'    
     group.name = 'PHI 101'
     group.location = 'Chemistry B220'
@@ -22,8 +22,11 @@ class GroupTest < ActiveSupport::TestCase
     assert group.save, 'Should save into the database'
   end
   test "delete_group" do
-  	Group.create(:name=>'PHI 101')
+  	Group.create(:name=>'PHI 101', :location=>'Chemistry B220')
   	group = Group.find_by_name('CS 302')
   	assert group.nil?
+  	group = Group.find_by_name('PHI 101')
+  	assert !group.nil?, 'Should exist'
+    # assert group.destroy, 'Should delete from database'
   end
 end

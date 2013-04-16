@@ -16,5 +16,5 @@ class Group < ActiveRecord::Base
  
   has_many :student_ids
   has_many :tutor_ids
-
+  validates :name, :location, :presence => true
 end

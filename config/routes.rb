@@ -95,40 +95,70 @@ end
 
 
 #== Route Map
-# Generated on 09 Apr 2013 19:37
+# Generated on 15 Apr 2013 17:33
 #
-#             user_session POST   /users/sign_in(.:format)                 devise/sessions#create
-#     destroy_user_session DELETE /users/sign_out(.:format)                devise/sessions#destroy
-#  user_omniauth_authorize        /users/auth/:provider(.:format)          devise/omniauth_callbacks#passthru {:provider=>/(?!)/}
-#   user_omniauth_callback        /users/auth/:action/callback(.:format)   devise/omniauth_callbacks#(?-mix:(?!))
-#            user_password POST   /users/password(.:format)                devise/passwords#create
-#        new_user_password GET    /users/password/new(.:format)            devise/passwords#new
-#       edit_user_password GET    /users/password/edit(.:format)           devise/passwords#edit
-#                          PUT    /users/password(.:format)                devise/passwords#update
-# cancel_user_registration GET    /users/cancel(.:format)                  devise/registrations#cancel
-#        user_registration POST   /users(.:format)                         devise/registrations#create
-#    new_user_registration GET    /users/sign_up(.:format)                 devise/registrations#new
-#   edit_user_registration GET    /users/edit(.:format)                    devise/registrations#edit
-#                          PUT    /users(.:format)                         devise/registrations#update
-#                          DELETE /users(.:format)                         devise/registrations#destroy
-#           users_sign_out        /users/sign_out(.:format)                devise/sessions#destroy
-#                     root        /                                        home#index
-#                locations GET    /locations(.:format)                     locations#index
-#                          POST   /locations(.:format)                     locations#create
-#             new_location GET    /locations/new(.:format)                 locations#new
-#            edit_location GET    /locations/:id/edit(.:format)            locations#edit
-#                 location GET    /locations/:id(.:format)                 locations#show
-#                          PUT    /locations/:id(.:format)                 locations#update
-#                          DELETE /locations/:id(.:format)                 locations#destroy
-#                   groups GET    /groups(.:format)                        groups#index
-#                          POST   /groups(.:format)                        groups#create
-#                new_group GET    /groups/new(.:format)                    groups#new
-#               edit_group GET    /groups/:id/edit(.:format)               groups#edit
-#                    group GET    /groups/:id(.:format)                    groups#show
-#                          PUT    /groups/:id(.:format)                    groups#update
-#                          DELETE /groups/:id(.:format)                    groups#destroy
-#                                 /users/auth/:provider/callback(.:format) sessions#create
-#       users_auth_failure        /users/auth/failure(.:format)            :controller#:action
-#                     user        /user(.:format)                          user#user
-#                   search        /search(.:format)                        search#index
-#             search_index        /search/index(.:format)                  search#index
+#                 user_session POST   /users/sign_in(.:format)                 devise/sessions#create
+#         destroy_user_session DELETE /users/sign_out(.:format)                devise/sessions#destroy
+#      user_omniauth_authorize        /users/auth/:provider(.:format)          devise/omniauth_callbacks#passthru {:provider=>/(?!)/}
+#       user_omniauth_callback        /users/auth/:action/callback(.:format)   devise/omniauth_callbacks#(?-mix:(?!))
+#                user_password POST   /users/password(.:format)                devise/passwords#create
+#            new_user_password GET    /users/password/new(.:format)            devise/passwords#new
+#           edit_user_password GET    /users/password/edit(.:format)           devise/passwords#edit
+#                              PUT    /users/password(.:format)                devise/passwords#update
+#     cancel_user_registration GET    /users/cancel(.:format)                  devise/registrations#cancel
+#            user_registration POST   /users(.:format)                         devise/registrations#create
+#        new_user_registration GET    /users/sign_up(.:format)                 devise/registrations#new
+#       edit_user_registration GET    /users/edit(.:format)                    devise/registrations#edit
+#                              PUT    /users(.:format)                         devise/registrations#update
+#                              DELETE /users(.:format)                         devise/registrations#destroy
+#               users_sign_out        /users/sign_out(.:format)                devise/sessions#destroy
+#                    dashboard        /dashboard(.:format)                     dashboard#dashboard
+#                         root        /                                        home#index
+#                        users GET    /users(.:format)                         users#index
+#                              POST   /users(.:format)                         users#create
+#                     new_user GET    /users/new(.:format)                     users#new
+#                    edit_user GET    /users/:id/edit(.:format)                users#edit
+#                         user GET    /users/:id(.:format)                     users#show
+#                              PUT    /users/:id(.:format)                     users#update
+#                              DELETE /users/:id(.:format)                     users#destroy
+#                    locations GET    /locations(.:format)                     locations#index
+#                              POST   /locations(.:format)                     locations#create
+#                 new_location GET    /locations/new(.:format)                 locations#new
+#                edit_location GET    /locations/:id/edit(.:format)            locations#edit
+#                     location GET    /locations/:id(.:format)                 locations#show
+#                              PUT    /locations/:id(.:format)                 locations#update
+#                              DELETE /locations/:id(.:format)                 locations#destroy
+#                       groups GET    /groups(.:format)                        groups#index
+#                              POST   /groups(.:format)                        groups#create
+#                    new_group GET    /groups/new(.:format)                    groups#new
+#                   edit_group GET    /groups/:id/edit(.:format)               groups#edit
+#                        group GET    /groups/:id(.:format)                    groups#show
+#                              PUT    /groups/:id(.:format)                    groups#update
+#                              DELETE /groups/:id(.:format)                    groups#destroy
+#                 search_index GET    /search(.:format)                        search#index
+#                              POST   /search(.:format)                        search#create
+#                   new_search GET    /search/new(.:format)                    search#new
+#                  edit_search GET    /search/:id/edit(.:format)               search#edit
+#                       search GET    /search/:id(.:format)                    search#show
+#                              PUT    /search/:id(.:format)                    search#update
+#                              DELETE /search/:id(.:format)                    search#destroy
+#           search_tutors_home GET    /home/:id/search_tutors(.:format)        home#search_tutors
+#                   home_index GET    /home(.:format)                          home#index
+#                              POST   /home(.:format)                          home#create
+#                     new_home GET    /home/new(.:format)                      home#new
+#                    edit_home GET    /home/:id/edit(.:format)                 home#edit
+#                         home GET    /home/:id(.:format)                      home#show
+#                              PUT    /home/:id(.:format)                      home#update
+#                              DELETE /home/:id(.:format)                      home#destroy
+# delete_group_dashboard_index POST   /dashboard/delete_group(.:format)        dashboard#delete_group
+#              dashboard_index GET    /dashboard(.:format)                     dashboard#index
+#                              POST   /dashboard(.:format)                     dashboard#create
+#                new_dashboard GET    /dashboard/new(.:format)                 dashboard#new
+#               edit_dashboard GET    /dashboard/:id/edit(.:format)            dashboard#edit
+#                              GET    /dashboard/:id(.:format)                 dashboard#show
+#                              PUT    /dashboard/:id(.:format)                 dashboard#update
+#                              DELETE /dashboard/:id(.:format)                 dashboard#destroy
+#                                     /users/auth/:provider/callback(.:format) sessions#create
+#           users_auth_failure        /users/auth/failure(.:format)            :controller#:action
+#                                     /user(.:format)                          user#user
+#                                     /dashboard(.:format)                     home#index
