@@ -22,6 +22,8 @@ Notes:
  - **Linux** users need to uncomment `gem 'therubyracer'` in the Gemfile. 
 
 ## To Run Server on a machine with Rails 3.2.X and Ruby 1.9.X installed.
+
+For instructions on how to install Ruby on Rails on your local machine, visit the <a href="http://rubyonrails.org/download">Getting Started with Rails</a> site.
 ```
 $ rake db:migrate
 $ rake db:seed
