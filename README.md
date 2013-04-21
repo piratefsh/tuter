@@ -15,6 +15,8 @@ Josh Serbus (serbus@wisc.edu)
 Adam Thorson (adthorson@wisc.edu)
 Faiz Lurman (lirman@wisc.edu)
 
+![Logo](app/assets/images/Tuter.png?raw=true)
+
 Notes: 
 
  - **Linux** users need to uncomment `gem 'therubyracer'` in the Gemfile. 
@@ -29,5 +31,5 @@ $ rails server
 ## To Run Web App Locally 
 Visit **localhost:3000** on your browser with a rails server running on your local machine.
 
-## Hosted
+## Live Demo
 http://tuter.herokuapp.com

@@ -1,35 +1,3 @@
-	<!--function generateProfileButtons(){
-		var htmlstring="";
-		if(current_user.has_one(StudentRole)){
-			htmlstring+="<input type=\"submit\" name=\"student\" value=\"Student Profile\">";
-		}
-		if(current_user.has_one(TutorRole)){
-			htmlstring+="<input type=\"submit\" name=\"tutor\" value=\"Tutor Profile\">";
-		}
-		if(current_user.has_one(OrganizationRole)){
-			htmlstring+="<input type=\"submit\" name=\"org\" value=\"Organization Profile\">";
-		}			
-
-		var tableAnchor=document.getElementById('profileButtons');
-		tableAnchor.innerHTML=htmlString;
-	}-->
-<% content_for :header do %>
-    <% stylesheet_link_tag "user_profile", :media => "all" %>
-    <% stylesheet_link_tag "reviews", :media => "all" %>
-<% end %>
-<script type="JavaScript">
-
-	function generateProfileButtons(){
-		var htmlString="";
-		htmlstring+="<input type=\"submit\" name=\"student\" value=\"Student Profile\">";
-		htmlstring+="<input type=\"submit\" name=\"tutor\" value=\"Tutor Profile\">";
-		htmlstring+="<input type=\"submit\" name=\"org\" value=\"Organization Profile\">";
-		var tableAnchor=document.getElementById('profileButtons');
-		tableAnchor.innerHTML=htmlString;
-	}
-		 
-</script>
-
 <%= render 'user_profile_sidebar' %>
 
 <div id="reviews_container">

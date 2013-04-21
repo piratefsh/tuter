@@ -23,23 +23,32 @@
 #  oauth_token            :string(255)
 #  oauth_expires_at       :datetime
 #  photo                  :string(255)
-#  student                :boolean
-#  tutor                  :boolean
-#  org                    :boolean
+#  fb_profile             :string(255)
+#  roles_mask             :integer
 #
 
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
- 	test "user_creation" do
- 		user = User.new
- 		assert !user.valid?, 'Must have first_name, last_name, email, password'
- 		user.first_name = 'AnotherFaiz'
- 		user.last_name  = 'AnotherLurman'
- 		user.email      = 'Anotherfaiz@tuter.me'
-    user.password   = 'PASSWORD'
-    # p user.errors 		
-    assert user.valid?, 'Should pass now'
-    assert user.save
- 	end 	
+  test "create_user" do
+    user = User.new
+    assert user.invalid?, 'Must have first_name, last_name, email, password'
+    user.first_name = 'Faiz'
+    user.last_name  = 'Lurman'
+    user.email      = 'faiz@tuter.me'
+    user.password   = 'PASSWORD'    
+    assert user.valid?, 'Should be able to create user'
+    assert user.save, 'Should save into the database'
+  end
+
+  test "delete_user" do
+    User.create(:first_name=>"Faiz",:last_name=>"Lurman",
+                :email=>"faiz@tuter.me",:password=>"PASSWORD")
+    user = User.find_by_email('NotFoundFaiz@tuter.me')
+    assert user.nil?, 'Should not exist'
+    user = User.find_by_email('faiz@tuter.me')
+    assert !user.nil?, 'Should exist'
+    # assert user.destroy, 'Should delete from database'
+  end
+
 end

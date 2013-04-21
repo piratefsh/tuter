@@ -17,17 +17,14 @@
 #  updated_at             :datetime         not null
 #  first_name             :string(255)
 #  last_name              :string(255)
-#  photo                  :string
-#  fb_profile             :string
 #  desc                   :text
 #  uid                    :integer
 #  provider               :string(255)
 #  oauth_token            :string(255)
 #  oauth_expires_at       :datetime
 #  photo                  :string(255)
-#  student                :boolean
-#  tutor                  :boolean
-#  org                    :boolean
+#  fb_profile             :string(255)
+#  roles_mask             :integer
 #
 
 class User < ActiveRecord::Base
@@ -37,7 +34,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :validatable,
          :recoverable, :rememberable, :trackable, :omniauthable
 
-  # has_one :location
+  has_one :location
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 

@@ -10,3 +10,18 @@ $ heroku logs --tail
 Unit testing
 Modify the data for test database (db/test.sqlite3) in test/fixtures
 $ rake test:units
+$ rake test TEST=path_to_test_file
+.errors.full_messages
+
+user = User.create(:first_name=>"Faiz",:last_name=>"Lurman",:email=>"faiz@tuter.me",:password=>"PASSWORD")
+
+Notes to Josh
+http://stackoverflow.com/questions/8586848/has-and-belongs-to-many-gives-no-such-table-error
+If your using has_and_belongs_to_many you alsways need an association table which holds the id pairs for you. By convention this table is called like plural of both tables joined! In your example contacts_dossiers.
+
+You need to create this table. Create a migration and create the table like this:
+
+create_table :contacts_dossiers, :id => false do |f|
+     f.integer :contact_id, :dossier_id
+end
+Then migrate the table and everything should work!
