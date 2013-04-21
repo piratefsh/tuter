@@ -5,7 +5,7 @@ v2.0 04-11-2013 <br />
 **_Tuter_ is now in 2nd phase of development** 
 
 ## An Introduction 
-**_Tuter_** is an online tutoring management system developed by a team of 5 students at the University of Wisconsin - Madison. The app was developed as a semester project for CS 638 - Software Engineering, taught by Professor Benjamin Liblit (http://pages.cs.wisc.edu/~liblit/) in the Spring of 2013. 
+**_Tuter_** is an online tutoring management system developed by a team of 5 students at the University of Wisconsin - Madison. The app was developed as a semester project for CS 638 - Software Engineering, taught by Professor <a href="http://pages.cs.wisc.edu/~liblit/">Benjamin Liblit</a> in the Spring of 2013. 
 
 Team Members:
 
