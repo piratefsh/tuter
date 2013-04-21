@@ -13,7 +13,7 @@ Sher Minn Chong (schong7@wisc.edu) <br />
 Trever Johnson (tjjohnson5@wisc.edu) <br />
 Josh Serbus (serbus@wisc.edu) <br />
 Adam Thorson (adthorson@wisc.edu) <br />
-Faiz Lurman (lirman@wisc.edu) <br />
+Faiz Lurman (lurman@wisc.edu) <br />
 
 ![Logo](app/assets/images/Tuter.png?raw=true)
 
