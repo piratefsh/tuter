@@ -9,11 +9,11 @@ v2.0 04-11-2013
 
 Team Members:
 
-Sher Minn Chong (schong7@wisc.edu)
-Trever Johnson (tjjohnson5@wisc.edu)
-Josh Serbus (serbus@wisc.edu)
-Adam Thorson (adthorson@wisc.edu)
-Faiz Lurman (lirman@wisc.edu)
+Sher Minn Chong (schong7@wisc.edu) <br />
+Trever Johnson (tjjohnson5@wisc.edu) <br />
+Josh Serbus (serbus@wisc.edu) <br />
+Adam Thorson (adthorson@wisc.edu) <br />
+Faiz Lurman (lirman@wisc.edu) <br />
 
 ![Logo](app/assets/images/Tuter.png?raw=true)
 
