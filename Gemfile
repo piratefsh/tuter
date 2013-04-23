@@ -19,7 +19,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
-gem 'ruby', '~>0.1.0'
+gem 'ruby'
 gem 'heroku'
 gem 'devise', '~> 2.2.3'
 gem 'omniauth-facebook', '~> 1.4.1'
