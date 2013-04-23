@@ -3,8 +3,11 @@ class DashboardController < ApplicationController
 
     def dashboard
         @groups = Group.all
+        @group = Group.new
         @programs = Program.all
-        @group = Group.new(params[:group])
+        student_id = @group.student_ids.build
+        tutor_id = @group.tutor_ids.build
+
         respond_to do |format|
             format.html
         end

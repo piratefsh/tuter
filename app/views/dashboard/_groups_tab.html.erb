@@ -21,19 +21,35 @@
                 <th></th>
                 <th></th>
             </tr>
-            <% @groups.each do |group| %>
+            <% @groups.reverse.each do |group| %>
                 <tr>
                     <td><%= group.name %>
                         <p><%= group.desc %></p></td>
-                    <td></td>
-                    <td></td>
+
+                    <td>
+                        <% if group.tutor_ids.empty? %>
+                            No Tutor Found
+                        <% else %>
+                            <% group.tutor_ids.all.each do |tutor| %>
+                                <%= User.find(tutor.tid).first_name %>
+                            <% end %> 
+                        <% end %>
+                        
+                    </td>
+                    <td>
+                       <% unless group.student_ids.empty? %>
+                            <% group.student_ids.all.each do |student| %>
+                                <%= User.find(student.sid).first_name %>
+                            <% end %>
+                        <% end %>
+                    </td>
                     <td><%= group.location %></td>
                     <td></td>
 
                     <% if false %>
                     <td><%= group.courses %></td>
                     <td><%= group.tutor %></td>
-                    <td><%= group.students %></td>
+                    <td><%= group.student_ids.first %></td>
                     <td><%= group.schedule %></td>
                     <% end %>
                     <td><%= button_to "Edit", edit_group_path(group), :method => :get%></td>
