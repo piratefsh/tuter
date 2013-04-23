@@ -23,7 +23,7 @@
             </tr>
             <% @groups.reverse.each do |group| %>
                 <tr>
-                    <td><%= group.name %>
+                    <td><%= link_to group.name, group %>
                         <p><%= group.desc %></p></td>
 
                     <td>
