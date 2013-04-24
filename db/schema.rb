@@ -74,6 +74,8 @@ ActiveRecord::Schema.define(:version => 20130424034815) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "sid"
+    t.integer  "gid"
+    t.integer  "group_id"
   end
 
   create_table "student_roles", :force => true do |t|
@@ -89,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20130424034815) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "tid"
+    t.integer  "group_id"
   end
 
   create_table "tutor_roles", :force => true do |t|

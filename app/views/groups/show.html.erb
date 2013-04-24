@@ -1,5 +1,15 @@
-<p>This is the show group page for <%= @group.name %></p>
+<h2><%= @group.name.humanize %></h2>
 
-<%= link_to "Edit Group", edit_group_path(@group) %> | <br />
+Tutors:<br />
+<% @group.tutor_ids.all.each do |tutor| %>
+	<%= User.find(tutor.tid).first_name %> <%= User.find(tutor.tid).last_name %><br />
+<% end %>
+<br />
 
-<%= link_to "Delete Group", @group, method: :delete %>
+Students:<br />
+<% @group.student_ids.all.each do |student| %>
+	<%= User.find(student.sid).first_name %> <%= User.find(student.sid).last_name %><br />
+<% end %>
+
+<br />
+<%= link_to "Edit Group", edit_group_path(@group) %> | <%= link_to "Delete Group", @group, method: :delete %>
