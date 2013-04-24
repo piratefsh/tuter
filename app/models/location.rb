@@ -17,6 +17,9 @@ class Location < ActiveRecord::Base
   acts_as_gmappable :latitude => 'latitude', :longitude => 'longitude',
   :process_geocoding => :geocode?, :address => 'address', :normalized_address => 'address',
   :msg => 'Sorry, not even Google could figure out where that is'
+
+  belongs_to :user
+  
   def geocode?
     (!address.blank? && (latitude.blank? || longitude.blank?)) || address_changed?
   end

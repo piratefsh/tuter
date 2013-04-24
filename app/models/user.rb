@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
-                  :first_name, :last_name, :desc, :provider, :uid, :roles
+                  :first_name, :last_name, :desc, :provider, :uid, :roles, :location, :location_attributes
 
   # Setup creation validation
   # default => :email and :password must be present 
@@ -48,6 +48,12 @@ class User < ActiveRecord::Base
   ROLES = %w[student tutor org]
   has_and_belongs_to_many :roles
 
+  accepts_nested_attributes_for :location
+
+  def with_location
+    self.build_location
+    self
+  end
   def self.from_omniauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
   		user.provider = auth.provider
