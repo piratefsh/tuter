@@ -11,10 +11,10 @@
     <% end %>
 
     <h2><%=current_user.first_name %> <%=current_user.last_name %></h2>
-
+    <p><%=current_user.desc %></p>
     <h3>Personal Information</h3>
-    <div>Age: 22</div>
-    <div>Year in School: Senior</div>
+    <div>Age: <%=current_user.age %></div>
+    <div>Year in School: <%=current_user.year %></div>
     <div>Transportation: Bus, Walk</div>
     <div>Tutor Rating: <a>**** (4)</a></div>
 

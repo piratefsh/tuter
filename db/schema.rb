@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130424034815) do
+ActiveRecord::Schema.define(:version => 20130424163554) do
 
   create_table "abilities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(:version => 20130424034815) do
   create_table "courses", :force => true do |t|
     t.string   "name"
     t.integer  "course_ID"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "user_id"
+    t.string   "course_code"
   end
 
   create_table "groups", :force => true do |t|
@@ -126,6 +128,10 @@ ActiveRecord::Schema.define(:version => 20130424034815) do
     t.string   "photo"
     t.string   "fb_profile"
     t.integer  "roles_mask"
+    t.integer  "course_ID"
+    t.integer  "age"
+    t.string   "year"
+    t.string   "transportation"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -26,7 +26,6 @@
 
     <div class="field form_element">
         <%= f.fields_for :tutor_ids do |tutorBuilder| %>
-            <%= tutorBuilder.label :tid %>
             <%= render "groups/tutorFields", :f => tutorBuilder %>
         <% end %>
     </div>

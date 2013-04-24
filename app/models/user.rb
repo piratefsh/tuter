@@ -38,7 +38,8 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
-                  :first_name, :last_name, :desc, :provider, :uid, :roles, :location, :location_attributes
+                  :first_name, :last_name, :desc, :provider, :uid, :roles, :location, :location_attributes,
+                  :age, :transportation, :year
 
   # Setup creation validation
   # default => :email and :password must be present 

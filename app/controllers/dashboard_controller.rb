@@ -2,11 +2,16 @@ class DashboardController < ApplicationController
   helper_method :delete_group
 
     def dashboard
-        @groups = Group.all
         @group = Group.new
         @programs = Program.all
         student_id = @group.student_ids.build
         tutor_id = @group.tutor_ids.build
+
+        @groups = Group.all
+        @tutor_groups = @groups.select{|f| 
+            f.tutor_ids.select{ |id| 
+                id.tid == current_user.id}
+            }
 
         respond_to do |format|
             format.html

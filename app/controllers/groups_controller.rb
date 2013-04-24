@@ -4,7 +4,6 @@ class GroupsController < ApplicationController
 		@group = Group.find(params[:id])
 		@students = Student_id.find(:id => params[:id])
 		@tutors = User.find(params[:tutor_ids])
-
 		#@tids = params[:tutor_ids].each { |tid| }
 
 		respond_to do |format|

@@ -1,3 +1,4 @@
 
 <%= f.label "Students" %>
-<%= f.text_field :sid %>
+<% @students = User.all.role? :student %>
+<%= select(@group, :sid, @students) %>

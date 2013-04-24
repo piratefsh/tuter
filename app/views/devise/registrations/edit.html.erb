@@ -36,6 +36,20 @@
   <%= hidden_field_tag "user[roles][]", "" %>
   </div>
     <!-- Only require user password if they haven't logged in through facebook-->
+
+  <div>
+    <%= f.label :age %>
+    <%= select(:user, :age, 18..80) %></div>
+
+  <div>
+    <%= f.label :year %>
+    <%= select(:user, :year, ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate', 'Others']) %></div>
+
+  <div>
+    <%= f.label "Short Description of Yourself" %>
+    <%= f.text_area :desc %></div>
+
+  <hr/>
   <% if f.object.encrypted_password.present? %>
     <div><%= f.label "Enter password to confirm changes" %> 
     <%= f.password_field :current_password %><br /></div>
