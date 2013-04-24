@@ -5,7 +5,7 @@ class SearchController < ApplicationController
 
   def index
     @rates = Array.new
-    @tutors = User.all.role? :tutor
+    # @tutors = User.all.role? :tutor
     @users = User.all
 
     initRates(@rates)

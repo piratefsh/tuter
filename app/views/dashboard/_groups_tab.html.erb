@@ -28,7 +28,7 @@
 
                     <td>
                         <% if group.tutor_ids.empty? %>
-                            No Tutor Found
+                            -
                         <% else %>
                             <% group.tutor_ids.all.each do |tutor| %>
                                 <%= User.find(tutor.tid).first_name %>
@@ -37,7 +37,9 @@
                         
                     </td>
                     <td>
-                       <% unless group.student_ids.empty? %>
+                        <% if group.student_ids.empty? %>
+                            -
+                         <% else group.student_ids.empty? %>
                             <% group.student_ids.all.each do |student| %>
                                 <%= User.find(student.sid).first_name %>
                             <% end %>
