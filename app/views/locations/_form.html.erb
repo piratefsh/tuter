@@ -1,3 +1,4 @@
+<h3>Update Location</h3>
 <%= form_for [resource_name, resource.with_location], :url => registration_path(resource_name) do |f| %>
 
   <% f.fields_for :location do |loc| %>
@@ -16,6 +17,11 @@
     <div class="field">
       <%= loc.label :latitude %><br />
       <%= loc.text_field :latitude %>
+    </div>
+
+    <div class="action">
+      <label></label>
+      <%= loc.submit %>
     </div>
   <% end %>
 <% end %>
