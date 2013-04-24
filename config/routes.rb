@@ -1,4 +1,4 @@
-Tuter::Application.routes.draw do
+Tuter::Application.routes.draw do  
 
   devise_for :users
   devise_scope :user do
@@ -8,7 +8,7 @@ Tuter::Application.routes.draw do
 
   root :to => "home#index"
 
-  resources :users
+  # resources :users
   resources :locations
   resources :groups
   resources :search
@@ -32,12 +32,7 @@ Tuter::Application.routes.draw do
   # User Signup Routes
   match "/user" => "user#user"
   match "/dashboard" => "home#index"
-  
-
-
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
-
+ 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
@@ -81,21 +76,14 @@ Tuter::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  
-
-  # See how all your routes lay out with "rake routes"
-
+ 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 end
 
-
 #== Route Map
-# Generated on 15 Apr 2013 17:33
+# Generated on 23 Apr 2013 22:12
 #
 #                 user_session POST   /users/sign_in(.:format)                 devise/sessions#create
 #         destroy_user_session DELETE /users/sign_out(.:format)                devise/sessions#destroy
@@ -114,13 +102,6 @@ end
 #               users_sign_out        /users/sign_out(.:format)                devise/sessions#destroy
 #                    dashboard        /dashboard(.:format)                     dashboard#dashboard
 #                         root        /                                        home#index
-#                        users GET    /users(.:format)                         users#index
-#                              POST   /users(.:format)                         users#create
-#                     new_user GET    /users/new(.:format)                     users#new
-#                    edit_user GET    /users/:id/edit(.:format)                users#edit
-#                         user GET    /users/:id(.:format)                     users#show
-#                              PUT    /users/:id(.:format)                     users#update
-#                              DELETE /users/:id(.:format)                     users#destroy
 #                    locations GET    /locations(.:format)                     locations#index
 #                              POST   /locations(.:format)                     locations#create
 #                 new_location GET    /locations/new(.:format)                 locations#new
@@ -160,5 +141,5 @@ end
 #                              DELETE /dashboard/:id(.:format)                 dashboard#destroy
 #                                     /users/auth/:provider/callback(.:format) sessions#create
 #           users_auth_failure        /users/auth/failure(.:format)            :controller#:action
-#                                     /user(.:format)                          user#user
+#                         user        /user(.:format)                          user#user
 #                                     /dashboard(.:format)                     home#index

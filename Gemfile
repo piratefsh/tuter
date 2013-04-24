@@ -20,18 +20,16 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
-gem 'ruby'
-gem 'heroku'
 gem 'devise', '~> 2.2.3'
 gem 'omniauth-facebook', '~> 1.4.1'
-gem 'certified'
+# gem 'certified'
 gem 'gmaps4rails', '~> 1.5.6'
-gem 'role_model'
+#gem 'role_model'
 gem 'guard'
 gem 'simplecov', :require => false, :group => :test
-gem 'rb-readline'
 gem 'cancan', '~> 1.6.0'
-gem 'rails_admin'
+#gem 'rails_admin'
+#gem 'activeadmin'
 
 group :production do
   gem 'pg'
