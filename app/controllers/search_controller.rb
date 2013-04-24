@@ -5,8 +5,15 @@ class SearchController < ApplicationController
 
   def index
     @rates = Array.new
-    # @tutors = User.all.role? :tutor
+    @tutors = Array.new
+
     @users = User.all
+
+    @users.each do |u|
+      if u.role? :tutor 
+        @tutors.push(u)
+      end
+    end
 
     initRates(@rates)
 
