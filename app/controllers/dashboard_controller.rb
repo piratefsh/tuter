@@ -7,12 +7,16 @@ class DashboardController < ApplicationController
         student_id = @group.student_ids.build
         tutor_id = @group.tutor_ids.build
 
-        @groups = Group.all
-        @tutor_groups = @groups.select{|f| 
-            f.tutor_ids.select{ |id| 
-                id.tid == current_user.id}
-            }
+        @tutor_groups = Array.new
 
+        Group.all.select do |group|
+            group.tutor_ids.all.each do |tutor|
+                if current_user.id == tutor.tid
+                    @tutor_groups << group
+                end
+            end
+        end
+        
         respond_to do |format|
             format.html
         end

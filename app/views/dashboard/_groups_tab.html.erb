@@ -28,7 +28,7 @@
 
                     <td>
                         <% if group.tutor_ids.empty? %>
-                            -
+                            
                         <% else %>
                             <% group.tutor_ids.all.each do |tutor| %>
                                 <%= User.find(tutor.tid).first_name %>
