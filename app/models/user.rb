@@ -35,11 +35,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :omniauthable
 
   has_one :location
+  has_many :courses
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
                   :first_name, :last_name, :desc, :provider, :uid, :roles, :location, :location_attributes,
-                  :age, :transportation, :year
+                  :age, :transportation, :year, :courses, :courses_attributes
 
   # Setup creation validation
   # default => :email and :password must be present 
@@ -49,10 +50,14 @@ class User < ActiveRecord::Base
   ROLES = %w[student tutor org]
   has_and_belongs_to_many :roles
 
-  accepts_nested_attributes_for :location
+  accepts_nested_attributes_for :location, :courses
 
   def with_location
     self.build_location
+    self
+  end
+  def with_course
+    self.courses.build
     self
   end
   def self.from_omniauth(auth)
@@ -77,7 +82,7 @@ class User < ActiveRecord::Base
   # update user attributes - handles omniauth users without passwords, as well as devise users with passwords
   def update_with_password(params, *options)
     if encrypted_password.blank?
-      update_attributes(params, *options)
+      update_attributes!(params, *options)
     else
       super
     end

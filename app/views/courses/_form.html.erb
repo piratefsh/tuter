@@ -1,9 +1,8 @@
 <h3>Update Courses</h3>
-<%= form_for @course do |f| %>
-
+<%= form_for [resource_name, resource.with_course], :url => registration_path(resource_name)  do |f| %>
   <% f.fields_for :courses do |c| %>
     <div class="field">
-      <%= c.label :name %><br />
+      <%= c.label :name %>
       <%= c.text_field :name %>
     </div>
     <div class="action">
