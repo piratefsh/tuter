@@ -3,6 +3,7 @@ class DashboardController < ApplicationController
 
     def dashboard
         @group = Group.new
+        @course = @group.build_course
         @programs = Program.all
         student_id = @group.student_ids.build
         tutor_id = @group.tutor_ids.build

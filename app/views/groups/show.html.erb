@@ -1,15 +1,18 @@
 <h2><%= @group.name.humanize %></h2>
-
-Tutors:<br />
+<h3>Course: </h3>
+<%= @group.course.name %>
+<h3>Tutors:</h3>
+<ul>
 <% @group.tutor_ids.all.each do |tutor| %>
-	<%= User.find(tutor.tid).first_name %> <%= User.find(tutor.tid).last_name %><br />
+    <li><%= User.find(tutor.tid).first_name %> <%= User.find(tutor.tid).last_name %></li>
 <% end %>
-<br />
-
-Students:<br />
+</ul>
+<h3>Students:</h3>
+<ul>
 <% @group.student_ids.all.each do |student| %>
 	<%= User.find(student.sid).first_name %> <%= User.find(student.sid).last_name %><br />
 <% end %>
+</ul>
 
-<br />
+
 <%= link_to "Edit Group", edit_group_path(@group) %> | <%= link_to "Delete Group", @group, method: :delete %>

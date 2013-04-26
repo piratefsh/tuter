@@ -11,10 +11,10 @@ Tuter::Application.routes.draw do
   resources :groups do
     resources :student_ids
     resources :tutor_ids
+    resources :courses
   end
 
   resources :locations
-  resources :groups
   resources :search
 
   resources :home do

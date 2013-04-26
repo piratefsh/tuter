@@ -41,7 +41,9 @@
                             -
                          <% else group.student_ids.empty? %>
                             <% group.student_ids.all.each do |student| %>
-                                <%= User.find(student.sid).first_name %>
+                                <% if student.sid %>
+                                    <%= User.find(student.sid).first_name %>
+                                <% end %>
                             <% end %>
                         <% end %>
                     </td>

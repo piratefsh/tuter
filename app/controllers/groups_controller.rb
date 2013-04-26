@@ -13,6 +13,7 @@ class GroupsController < ApplicationController
 
 	def new
 		@group = Group.new
+		@course = @group.build_course
 		student_id = @group.student_ids.build
 		tutor_id = @group.tutor_ids.build
 
@@ -60,7 +61,7 @@ class GroupsController < ApplicationController
 
 	def update
 		@group = Group.find(params[:id])
-
+		@course = @group.course
 		@group.update_attributes(params[:group])
 		respond_to do |format|
 			format.html {redirect_to dashboard_path}
