@@ -53,12 +53,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :location, :courses
 
   def with_location
-    self.build_location
-    self
-  end
-  def with_course
-    self.courses.build
-    self
+    self.location.build
   end
   def self.from_omniauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|

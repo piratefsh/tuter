@@ -37,11 +37,6 @@ ActiveRecord::Schema.define(:version => 20130426181709) do
     t.string   "location"
   end
 
-  create_table "location_users", :force => true do |t|
-    t.integer "lid"
-    t.integer "uid"
-  end
-
   create_table "locations", :force => true do |t|
     t.string   "name"
     t.string   "address"
@@ -77,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20130426181709) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "sid"
+    t.integer  "gid"
     t.integer  "group_id"
   end
 
