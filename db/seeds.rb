@@ -7,15 +7,21 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create(first_name: 'Sher Minn', last_name: 'Chong',
-            email:'sherminn@tuter.me', password: 'PASSWORD')
+            email:'sherminn@tuter.me', password: 'PASSWORD', roles: %w[tutor student org])
 User.create(first_name: 'Trever', last_name: 'Johnson',
-            email: 'tjjo@hd.wisc.edu', password:'PASSWORD')
+            email: 'tjjo@hd.wisc.edu', password:'PASSWORD', roles: %w[tutor student org])
 User.create(first_name: 'Josh', last_name: 'Serbus',
             email:'serbus@tuter.me', password:'PASSWORD')
 User.create(first_name: 'Faiz', last_name: 'Lurman',
             email:'faiz@tuter.me', password:'PASSWORD')
 User.create(first_name: 'Adam', last_name: 'Thorson',
             email:'adthorson@tuter.me', password:'PASSWORD')
+User.create(first_name: 'Mike', last_name: 'Cheah',
+            email:'cheah@tuter.me', password:'PASSWORD', roles: %w[tutor student org])
+User.create(first_name: 'Aedan', last_name: 'Swanesbury',
+            email:'aedan@tuter.me', password:'PASSWORD', roles: %w[tutor student org])
+User.create(first_name: 'Canan', last_name: 'Swanesbury',
+            email:'canan@tuter.me', password:'PASSWORD', roles: %w[tutor student org])
 
 Group.create(name: 'PHI 101', desc:'Philosophy Tutoring Group')
 Group.create(name: 'MATH 211', desc:'I tutor Math to students')
