@@ -54,6 +54,11 @@ class User < ActiveRecord::Base
 
   def with_location
     self.location.build
+    self
+  end
+  def with_course
+    self.courses.build
+    self
   end
   def self.from_omniauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
