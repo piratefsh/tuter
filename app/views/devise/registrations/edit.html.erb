@@ -44,7 +44,22 @@
   <div>
     <%= f.label :year %>
     <%= select(:user, :year, ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate', 'Others']) %></div>
+  <% if current_user.role? :tutor%>
+  <div>
+    <% rates_array = Array.new
+        start_rate  = 0
+        end_rate    = 100
+        interval    = 10
+        i = start_rate
 
+        until end_rate < i
+            rates_array.push("$#{i} - $#{i + interval}")
+            i += interval
+        end%>
+    <%= f.label :rate%>
+    <%= select(:user, :rate, rates_array, {:include_blank => '-'}) %>
+  </div>
+  <% end %>
   <div>
     <%= f.label "Short Description of Yourself" %>
     <%= f.text_area :desc %></div>
@@ -60,6 +75,7 @@
       <%= render "locations/form", :f => locBuilder %>
     <% end %>
   </div> 
+
 
   <div><label></label><%= f.submit "Update" %></div>
 <% end %>

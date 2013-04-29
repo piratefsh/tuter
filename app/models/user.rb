@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
                   :first_name, :last_name, :desc, :provider, :uid, :roles, :location, :location_attributes,
-                  :age, :transportation, :year, :courses, :courses_attributes
+                  :age, :transportation, :year, :courses, :courses_attributes, :rate
 
   # Setup creation validation
   # default => :email and :password must be present 
@@ -60,6 +60,20 @@ class User < ActiveRecord::Base
     self.courses.build
     self
   end
+
+  def initRates (rates)
+    start_rate  = 0
+    end_rate    = 100
+    interval    = 10
+    i = start_rate
+
+    until end_rate < i
+        rates.push("$#{i} - $#{i + interval}")
+        i += interval
+    end
+    rates
+  end
+
   def self.from_omniauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
   		user.provider = auth.provider

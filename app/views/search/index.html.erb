@@ -81,8 +81,6 @@
   <tbody> 
 
     <% @tutors.each do |user| %>
-        <% if user.role? :tutor %>
-    
     <tr> 
         <td><%= user.first_name %></td> 
         <td><%= user.last_name %></td> 
@@ -96,10 +94,8 @@
         <td><%= randomLocation() %></td> 
         <td>5pm-6pm</td> 
         <td>Drop-In</td> 
-        <td><%= randomRate(@rates) %></td> 
+        <td><%= user.rate %></td> 
     </tr>     
-
-        <% end %>
     <% end %>
     </tbody> 
     </table> 
