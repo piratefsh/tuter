@@ -1,0 +1,15 @@
+$(document).ready(function()
+{
+    //onlick of Go!  button link to search page
+    $('input[type=button]#search_all').click(function()
+    {
+        var url = "/search/?search_all=" + $("input#search_all_field").val()
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function(data){
+                window.location.href = "" + url
+            }
+        })
+    });
+});
