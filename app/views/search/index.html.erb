@@ -32,15 +32,13 @@
 
         <div class="form_element">
           <label>Type</label>
-            
+          
+          <% Group.group_types.each do |t| %>  
           <div class="checkbox_group">
-            <input type="checkbox" value="Drop-In" name="dropin"/>
-            <label class="checkbox" for="dropin">Drop-in</label>
+            <input type="checkbox" value=<%=t.humanize%> name=<%=t.humanize%>/>
+            <label class="checkbox" for="<%=t.humanize%>"><%=t.humanize%></label>
           </div>
-          <div class="checkbox_group">
-            <input type="checkbox" value="Group" name="group"/>
-            <label class="checkbox"for="group">Group</label>
-          </div>
+          <% end %>
         </div>
         
         <div class="form_element">
@@ -93,7 +91,7 @@
         </td> 
         <td><%= randomLocation() %></td> 
         <td>5pm-6pm</td> 
-        <td>Group</td> 
+        <td><%= get_types(user).join(', ')%></td> 
         <td><%= if user.rate? 
                   user.rate 
                 else 

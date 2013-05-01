@@ -14,7 +14,7 @@
 
     </div>    <div class="field form_element">
         <%= f.label 'Group Type' %>
-        <%= select(:group, :type, ['Drop-In', 'Group', 'One-on-one'])%>
+        <%= select(:group, :group_type, Group.group_types)%>
     </div>
 
     <div class="field form_element">

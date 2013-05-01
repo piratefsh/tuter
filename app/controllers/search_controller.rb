@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
 
-  helper_method :randomCourse, :randomLocation
+  helper_method :randomCourse, :randomLocation, :get_types
 
 
   def index
@@ -27,6 +27,30 @@ class SearchController < ApplicationController
     end
   end
 
+  #get types of groups that tutor has
+  def get_types(u)
+    types = Array.new
+
+    get_users_groups(u).each do |g|
+      types << g.group_type
+    end
+
+    types
+  end
+
+  def get_users_groups(u)
+    groups = Array.new
+
+    Group.all.select do |group|
+      group.tutor_ids.all.each do |tutor|
+        if u.id == tutor.tid
+          groups << group
+        end
+      end
+    end
+      groups
+  end
+  #get courses in tutor's groups
   def get_courses(u, courses)
     # add courses that tutor has 
     Group.all.select do |group|
