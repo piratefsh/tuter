@@ -37,11 +37,6 @@ ActiveRecord::Schema.define(:version => 20130429025008) do
     t.string   "location"
   end
 
-  create_table "location_users", :force => true do |t|
-    t.integer "lid"
-    t.integer "uid"
-  end
-
   create_table "locations", :force => true do |t|
     t.string   "name"
     t.string   "address"
