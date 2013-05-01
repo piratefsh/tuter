@@ -79,8 +79,10 @@
   <tbody> 
 
     <% @tutors.each do |user| %>
-    <tr> 
-        <td><%= user.last_name %></td> 
+    <tr> <td>
+    <%= link_to user_path user do %>
+        <%= user.last_name %>
+    <% end %>     </td> 
         <td><%= user.first_name %></td> 
         <td>
           <%= if user.courses.any?
@@ -97,7 +99,7 @@
                 else 
                   '-' 
                 end%></td> 
-    </tr>     
+    </tr>
     <% end %>
     </tbody> 
     </table> 
