@@ -82,8 +82,8 @@
 
     <% @tutors.each do |user| %>
     <tr> 
-        <td><%= user.first_name %></td> 
         <td><%= user.last_name %></td> 
+        <td><%= user.first_name %></td> 
         <td>
           <%= if @courses[user.id].any?
                 @courses[user.id].join(', ') 
@@ -93,8 +93,12 @@
         </td> 
         <td><%= randomLocation() %></td> 
         <td>5pm-6pm</td> 
-        <td>Drop-In</td> 
-        <td><%= user.rate %></td> 
+        <td>Group</td> 
+        <td><%= if user.rate? 
+                  user.rate 
+                else 
+                  '-' 
+                end%></td> 
     </tr>     
     <% end %>
     </tbody> 
