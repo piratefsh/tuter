@@ -11,6 +11,13 @@ class DashboardController < ApplicationController
 
         @tutor_groups = Array.new
 
+        @students = Array.new
+        User.all.each do |u|
+            if u.role? :student 
+                @students << [u.last_name, u.id]
+            end
+        end
+
         Group.all.select do |group|
             group.tutor_ids.all.each do |tutor|
                 if current_user.id == tutor.tid

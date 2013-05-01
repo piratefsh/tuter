@@ -31,21 +31,27 @@
                         <% if group.tutor_ids.empty? %>
                             
                         <% else %>
+                        <ul>
                             <% group.tutor_ids.all.each do |tutor| %>
-                                <%= User.find(tutor.tid).first_name %>
+                                    <%u = User.find(tutor.tid)%>
+                               <li> <%= u.last_name + ', ' + u.first_name %></li>
                             <% end %> 
+                        </ul>
                         <% end %>
                         
                     </td>
                     <td>
                         <% if group.student_ids.empty? %>
                             -
-                         <% else group.student_ids.empty? %>
+                         <% else%>
+                            <ul>
                             <% group.student_ids.all.each do |student| %>
                                 <% if student.sid %>
-                                    <%= User.find(student.sid).first_name %>
+                                <%u = User.find(student.sid)%>
+                                   <li> <%= u.last_name + ', ' + u.first_name %></li>
                                 <% end %>
                             <% end %>
+                            </ul>
                         <% end %>
                     </td>
                     <td><%= group.location %></td>

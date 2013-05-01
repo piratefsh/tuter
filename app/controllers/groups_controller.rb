@@ -52,7 +52,13 @@ class GroupsController < ApplicationController
 	end
 
 	def edit
+		@students = StudentId.all_students
 		@group = Group.find(params[:id])
+		student_id = @group.student_ids
+
+		if not student_id
+			student_id = @group.student_ids.build
+		end
 
 		respond_to do |format|
 			format.html
@@ -62,6 +68,7 @@ class GroupsController < ApplicationController
 	def update
 		@group = Group.find(params[:id])
 		@course = @group.course
+
 		@group.update_attributes(params[:group])
 		respond_to do |format|
 			format.html {redirect_to dashboard_path}
