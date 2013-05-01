@@ -20,12 +20,11 @@
                 <th>Location</th>
                 <th></th>
                 <th></th>
-                <th></th>
             </tr>
             <% @tutor_groups.reverse.each do |group| %>
                 <tr>
                     <td><%= link_to group.name, group %>
-                        <p><%= group.desc %></p></td>
+                        <p><%= group.group_type + ': ' + group.desc %></p></td>
 
                     <td>
                         <% if group.tutor_ids.empty? %>
@@ -63,8 +62,7 @@
                     <td><%= group.student_ids.first %></td>
                     <td><%= group.schedule %></td>
                     <% end %>
-                    <td><%= button_to "Edit", edit_group_path(group), :method => :get%></td>
-                    <td><%= button_to "Delete", {:action => :delete_group, :id => group.id}%></td>
+                    <td><%= button_to "Edit", edit_group_path(group), :method => :get%><%= button_to "Delete", {:action => :delete_group, :id => group.id}%></td>
                 </tr>
 
             <%end %>
