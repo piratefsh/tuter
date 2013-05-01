@@ -14,7 +14,12 @@
 require 'test_helper'
 
 class LocationTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "create_location" do
+    location = Location.new    
+    location.name = 'Union South'    
+    location.address = 'Union South Madison'
+    location.geocode?    
+    location.gmaps4rails_address
+    location.gmaps4rails_infowindow 
+  end
 end

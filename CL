@@ -1,0 +1,11 @@
+Change List: Looks Good To Me?
+1. Gemfile
+   Check it out!
+   added gem 'rails_admin'
+   added gem 'better_errors'  
+         gem 'binding_of_caller'
+   added unless RUBY_PLATFORM=~ /mingw/ to compromise for non-Window user
+   tell me if it works...
+2. .gitignore
+   added Gemfile.lock, so we have to run bundle install each time we pull,
+   hopefully not much of an inconvenience

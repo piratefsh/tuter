@@ -339,3 +339,971 @@ Binary data inserted for `string` type on column `encrypted_password`
   [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'NotFoundFaiz@tuter.me' LIMIT 1
   [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
   [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 06:55:29', '2013-04-15 06:55:29', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 06:55:29', '2013-04-15 06:55:29', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 06:55:30', '2013-04-15 06:55:30', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 06:55:30', '2013-04-15 06:55:30', 298486374)[0m
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (26.0ms)[0m  [1mINSERT INTO "courses" ("course_ID", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["course_ID", nil], ["created_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00], ["name", "PHI 101"], ["updated_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "groups" ("created_at", "desc", "group_ID", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00], ["desc", nil], ["group_ID", nil], ["location", nil], ["name", "PHI 101"], ["updated_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" WHERE "groups"."name" = 'CS 302' LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mProgram Load (1.0ms)[0m  [1mSELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Mathematics' LIMIT 1[0m
+  [1m[35mProgram Load (0.0ms)[0m  SELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Economics' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$okL3S3dEvDgV3PtEuf.g6u0EnsZnzqKkLk8Q43yreK76Ciyne7sey"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["uid", nil], ["updated_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$L95U7MjnT5zspelYeaTwauYu913lCE4iW.QPMvY4IzIUOV7Ffba/i"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["uid", nil], ["updated_at", Mon, 15 Apr 2013 06:55:30 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'NotFoundFaiz@tuter.me' LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (2.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:13:33', '2013-04-15 22:13:33', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:13:33', '2013-04-15 22:13:33', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:13:34', '2013-04-15 22:13:34', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:13:34', '2013-04-15 22:13:34', 298486374)[0m
+  [1m[35m (12.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" 
+  Rendered groups/_form.html.erb (27.0ms)
+  Rendered groups/_new.html.erb (32.0ms)
+  Rendered groups/index.html.erb within layouts/application (202.0ms)
+Completed 500 Internal Server Error in 627ms
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:18:45', '2013-04-15 22:18:45', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:18:45', '2013-04-15 22:18:45', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:18:46', '2013-04-15 22:18:46', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:18:46', '2013-04-15 22:18:46', 298486374)[0m
+  [1m[35m (10.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:22:25', '2013-04-15 22:22:25', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:22:25', '2013-04-15 22:22:25', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:22:25', '2013-04-15 22:22:25', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:22:25', '2013-04-15 22:22:25', 298486374)[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (2.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:25:41', '2013-04-15 22:25:41', 980190962)[0m
+  [1m[35mFixture Insert (1.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:25:41', '2013-04-15 22:25:41', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:25:42', '2013-04-15 22:25:42', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:25:42', '2013-04-15 22:25:42', 298486374)[0m
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-15 17:25:42 -0500
+Processing by HomeController#index as HTML
+  [1m[35mLocation Load (0.0ms)[0m  SELECT "locations".* FROM "locations" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "locations".* FROM "locations" [0m
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (2.0ms)
+  Rendered home/index.html.erb within layouts/application (241.0ms)
+Completed 200 OK in 543ms (Views: 540.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:28:47', '2013-04-15 22:28:47', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:28:47', '2013-04-15 22:28:47', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:28:47', '2013-04-15 22:28:47', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:28:47', '2013-04-15 22:28:47', 298486374)[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (2.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:31:46', '2013-04-15 22:31:46', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:31:46', '2013-04-15 22:31:46', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (1.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:31:46', '2013-04-15 22:31:46', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:31:46', '2013-04-15 22:31:46', 298486374)[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:38:57', '2013-04-15 22:38:57', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:38:57', '2013-04-15 22:38:57', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:38:58', '2013-04-15 22:38:58', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:38:58', '2013-04-15 22:38:58', 298486374)[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/groups" for 127.0.0.1 at 2013-04-15 17:38:58 -0500
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" 
+  Rendered groups/_form.html.erb (29.0ms)
+  Rendered groups/_new.html.erb (33.0ms)
+  Rendered groups/index.html.erb within layouts/application (175.0ms)
+Completed 200 OK in 493ms (Views: 484.0ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:44:06', '2013-04-15 22:44:06', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:44:06', '2013-04-15 22:44:06', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:44:07', '2013-04-15 22:44:07', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:44:07', '2013-04-15 22:44:07', 298486374)[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/groupss" for 127.0.0.1 at 2013-04-15 17:44:07 -0500
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:53:19', '2013-04-15 22:53:19', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:53:19', '2013-04-15 22:53:19', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:53:20', '2013-04-15 22:53:20', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:53:20', '2013-04-15 22:53:20', 298486374)[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/groups" for 127.0.0.1 at 2013-04-15 17:53:20 -0500
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" 
+  Rendered groups/_form.html.erb (21.0ms)
+  Rendered groups/_new.html.erb (24.0ms)
+  Rendered groups/index.html.erb within layouts/application (167.0ms)
+Completed 200 OK in 475ms (Views: 467.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:59:25', '2013-04-15 22:59:25', 980190962)[0m
+  [1m[35mFixture Insert (1.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 22:59:25', '2013-04-15 22:59:25', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:59:25', '2013-04-15 22:59:25', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 22:59:25', '2013-04-15 22:59:25', 298486374)[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/groups" for 127.0.0.1 at 2013-04-15 17:59:25 -0500
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" 
+  Rendered groups/_form.html.erb (23.0ms)
+  Rendered groups/_new.html.erb (26.0ms)
+  Rendered groups/index.html.erb within layouts/application (167.0ms)
+Completed 200 OK in 461ms (Views: 453.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 23:05:38', '2013-04-15 23:05:38', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 23:05:38', '2013-04-15 23:05:38', 298486374)
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 23:05:39', '2013-04-15 23:05:39', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 23:05:39', '2013-04-15 23:05:39', 298486374)[0m
+  [1m[35m (12.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/groups" for 127.0.0.1 at 2013-04-15 18:05:39 -0500
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" 
+  Rendered groups/_form.html.erb (37.0ms)
+  Rendered groups/_new.html.erb (42.0ms)
+  Rendered groups/index.html.erb within layouts/application (279.0ms)
+Completed 200 OK in 782ms (Views: 765.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (2.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 23:11:35', '2013-04-15 23:11:35', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 23:11:35', '2013-04-15 23:11:35', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 23:11:35', '2013-04-15 23:11:35', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 23:11:35', '2013-04-15 23:11:35', 298486374)[0m
+  [1m[35m (12.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/groups" for 127.0.0.1 at 2013-04-15 18:11:36 -0500
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" 
+  Rendered groups/_form.html.erb (25.0ms)
+  Rendered groups/_new.html.erb (28.0ms)
+  Rendered groups/index.html.erb within layouts/application (193.0ms)
+Completed 200 OK in 541ms (Views: 532.0ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 23:29:13', '2013-04-15 23:29:13', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 23:29:13', '2013-04-15 23:29:13', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 23:29:14', '2013-04-15 23:29:14', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 23:29:14', '2013-04-15 23:29:14', 298486374)[0m
+  [1m[35m (10.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/groups" for 127.0.0.1 at 2013-04-15 18:29:14 -0500
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" 
+  Rendered groups/_form.html.erb (27.0ms)
+  Rendered groups/_new.html.erb (33.0ms)
+  Rendered groups/index.html.erb within layouts/application (179.0ms)
+Completed 200 OK in 505ms (Views: 494.0ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 23:41:45', '2013-04-15 23:41:45', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 23:41:45', '2013-04-15 23:41:45', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 23:41:45', '2013-04-15 23:41:45', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 23:41:45', '2013-04-15 23:41:45', 298486374)[0m
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/groups" for 127.0.0.1 at 2013-04-15 18:41:46 -0500
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" 
+  Rendered groups/_form.html.erb (31.0ms)
+  Rendered groups/_new.html.erb (35.0ms)
+  Rendered groups/index.html.erb within layouts/application (203.0ms)
+Completed 200 OK in 593ms (Views: 572.0ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 23:48:04', '2013-04-15 23:48:04', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 23:48:04', '2013-04-15 23:48:04', 298486374)
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 23:48:04', '2013-04-15 23:48:04', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 23:48:04', '2013-04-15 23:48:04', 298486374)[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/groups" for 127.0.0.1 at 2013-04-15 18:48:05 -0500
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" 
+  Rendered groups/_form.html.erb (24.0ms)
+  Rendered groups/_new.html.erb (28.0ms)
+  Rendered groups/index.html.erb within layouts/application (177.0ms)
+Completed 200 OK in 518ms (Views: 509.0ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 23:53:07', '2013-04-15 23:53:07', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 23:53:07', '2013-04-15 23:53:07', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 23:53:08', '2013-04-15 23:53:08', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 23:53:08', '2013-04-15 23:53:08', 298486374)[0m
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/groups" for 127.0.0.1 at 2013-04-15 18:53:08 -0500
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" 
+  Rendered groups/_form.html.erb (25.0ms)
+  Rendered groups/_new.html.erb (29.0ms)
+  Rendered groups/index.html.erb within layouts/application (186.0ms)
+Completed 200 OK in 514ms (Views: 503.0ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 23:56:54', '2013-04-15 23:56:54', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-15 23:56:54', '2013-04-15 23:56:54', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 23:56:55', '2013-04-15 23:56:55', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-15 23:56:55', '2013-04-15 23:56:55', 298486374)[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/groups" for 127.0.0.1 at 2013-04-15 18:56:55 -0500
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" 
+  Rendered groups/_form.html.erb (26.0ms)
+  Rendered groups/_new.html.erb (31.0ms)
+  Rendered groups/index.html.erb within layouts/application (178.0ms)
+Completed 200 OK in 492ms (Views: 483.0ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 00:20:25', '2013-04-16 00:20:25', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 00:20:25', '2013-04-16 00:20:25', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 00:20:26', '2013-04-16 00:20:26', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 00:20:26', '2013-04-16 00:20:26', 298486374)[0m
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/groups" for 127.0.0.1 at 2013-04-15 19:20:26 -0500
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" 
+  Rendered groups/_form.html.erb (27.0ms)
+  Rendered groups/_new.html.erb (32.0ms)
+  Rendered groups/index.html.erb within layouts/application (172.0ms)
+Completed 200 OK in 473ms (Views: 465.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 00:25:39', '2013-04-16 00:25:39', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 00:25:39', '2013-04-16 00:25:39', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 00:25:39', '2013-04-16 00:25:39', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 00:25:39', '2013-04-16 00:25:39', 298486374)[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/groups" for 127.0.0.1 at 2013-04-15 19:25:40 -0500
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" 
+  Rendered groups/_form.html.erb (24.0ms)
+  Rendered groups/_new.html.erb (27.0ms)
+  Rendered groups/index.html.erb within layouts/application (174.0ms)
+Completed 200 OK in 486ms (Views: 478.0ms | ActiveRecord: 1.0ms)
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 00:33:35', '2013-04-16 00:33:35', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 00:33:35', '2013-04-16 00:33:35', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 00:33:35', '2013-04-16 00:33:35', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 00:33:35', '2013-04-16 00:33:35', 298486374)[0m
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (32.0ms)[0m  [1mINSERT INTO "courses" ("course_ID", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["course_ID", nil], ["created_at", Tue, 16 Apr 2013 00:33:35 UTC +00:00], ["name", "PHI 101"], ["updated_at", Tue, 16 Apr 2013 00:33:35 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "groups" ("created_at", "desc", "group_ID", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 00:33:35 UTC +00:00], ["desc", nil], ["group_ID", nil], ["location", nil], ["name", "PHI 101"], ["updated_at", Tue, 16 Apr 2013 00:33:35 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" WHERE "groups"."name" = 'CS 302' LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 00:33:36 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Tue, 16 Apr 2013 00:33:36 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Tue, 16 Apr 2013 00:33:36 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Tue, 16 Apr 2013 00:33:36 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mProgram Load (0.0ms)[0m  [1mSELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Mathematics' LIMIT 1[0m
+  [1m[35mProgram Load (0.0ms)[0m  SELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Economics' LIMIT 1
+  [1m[36m (2.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 00:33:36 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$nT/2Oc9oS25cz1alYp73mO3gEGOYYWGuLP8wJAyJk/d4vfk8OVitG"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["uid", nil], ["updated_at", Tue, 16 Apr 2013 00:33:36 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 00:33:36 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$ODRhWk5.E0bzAzFkrgtUTuue90YC1pDdJgVbAR6BTGO1nM1rDn0Ii"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["uid", nil], ["updated_at", Tue, 16 Apr 2013 00:33:36 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'NotFoundFaiz@tuter.me' LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (2.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (3.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 00:35:05', '2013-04-16 00:35:05', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 00:35:05', '2013-04-16 00:35:05', 298486374)
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 00:35:06', '2013-04-16 00:35:06', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 00:35:06', '2013-04-16 00:35:06', 298486374)[0m
+  [1m[35m (10.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/groups" for 127.0.0.1 at 2013-04-15 19:35:07 -0500
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" 
+  Rendered groups/_form.html.erb (80.0ms)
+  Rendered groups/_new.html.erb (95.0ms)
+  Rendered groups/index.html.erb within layouts/application (739.0ms)
+Completed 200 OK in 1822ms (Views: 1797.1ms | ActiveRecord: 2.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 00:43:00', '2013-04-16 00:43:00', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 00:43:00', '2013-04-16 00:43:00', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 00:43:01', '2013-04-16 00:43:01', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 00:43:01', '2013-04-16 00:43:01', 298486374)[0m
+  [1m[35m (13.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (31.0ms)[0m  [1mINSERT INTO "courses" ("course_ID", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["course_ID", nil], ["created_at", Tue, 16 Apr 2013 00:43:01 UTC +00:00], ["name", "PHI 101"], ["updated_at", Tue, 16 Apr 2013 00:43:01 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "groups" ("created_at", "desc", "group_ID", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 00:43:01 UTC +00:00], ["desc", nil], ["group_ID", nil], ["location", nil], ["name", "PHI 101"], ["updated_at", Tue, 16 Apr 2013 00:43:01 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" WHERE "groups"."name" = 'CS 302' LIMIT 1
+  [1m[36m (2.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 00:43:01 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Tue, 16 Apr 2013 00:43:01 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Tue, 16 Apr 2013 00:43:01 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Tue, 16 Apr 2013 00:43:01 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mProgram Load (0.0ms)[0m  [1mSELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Mathematics' LIMIT 1[0m
+  [1m[35mProgram Load (0.0ms)[0m  SELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Economics' LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 00:43:02 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$vvdU4WHWV00WFGZ52urLBuYIu.7ZitvG8htbjd.tCuaiFu6Y2Z2UC"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["uid", nil], ["updated_at", Tue, 16 Apr 2013 00:43:02 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 00:43:02 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$feK6CZrXOc7BLKkItnyFgOsMZKbbqitvJmHE18sA6VlzFIHZXQTPa"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["uid", nil], ["updated_at", Tue, 16 Apr 2013 00:43:02 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'NotFoundFaiz@tuter.me' LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (2.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 00:47:25', '2013-04-16 00:47:25', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 00:47:25', '2013-04-16 00:47:25', 298486374)
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 00:47:26', '2013-04-16 00:47:26', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 00:47:26', '2013-04-16 00:47:26', 298486374)[0m
+  [1m[35m (7.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (32.0ms)[0m  [1mINSERT INTO "groups" ("created_at", "desc", "group_ID", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 16 Apr 2013 00:47:26 UTC +00:00], ["desc", nil], ["group_ID", nil], ["location", nil], ["name", "PHI 101"], ["updated_at", Tue, 16 Apr 2013 00:47:26 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mGroup Load (0.0ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE "groups"."name" = 'CS 302' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 00:52:18', '2013-04-16 00:52:18', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 00:52:18', '2013-04-16 00:52:18', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 00:52:18', '2013-04-16 00:52:18', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 00:52:18', '2013-04-16 00:52:18', 298486374)[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (28.0ms)[0m  [1mINSERT INTO "groups" ("created_at", "desc", "group_ID", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 16 Apr 2013 00:52:18 UTC +00:00], ["desc", nil], ["group_ID", nil], ["location", nil], ["name", "PHI 101"], ["updated_at", Tue, 16 Apr 2013 00:52:18 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mGroup Load (0.0ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE "groups"."name" = 'CS 302' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 00:56:20', '2013-04-16 00:56:20', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 00:56:20', '2013-04-16 00:56:20', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 00:56:21', '2013-04-16 00:56:21', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 00:56:21', '2013-04-16 00:56:21', 298486374)[0m
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (28.0ms)[0m  [1mINSERT INTO "groups" ("created_at", "desc", "group_ID", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 16 Apr 2013 00:56:21 UTC +00:00], ["desc", nil], ["group_ID", nil], ["location", "Chemistry B220"], ["name", "PHI 101"], ["updated_at", Tue, 16 Apr 2013 00:56:21 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mGroup Load (0.0ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE "groups"."name" = 'CS 302' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 01:07:04', '2013-04-16 01:07:04', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 01:07:04', '2013-04-16 01:07:04', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 01:07:04', '2013-04-16 01:07:04', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 01:07:04', '2013-04-16 01:07:04', 298486374)[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (28.0ms)[0m  [1mINSERT INTO "groups" ("created_at", "desc", "group_ID", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 16 Apr 2013 01:07:04 UTC +00:00], ["desc", nil], ["group_ID", nil], ["location", "Chemistry B220"], ["name", "PHI 101"], ["updated_at", Tue, 16 Apr 2013 01:07:04 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mGroup Load (0.0ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE "groups"."name" = 'CS 302' LIMIT 1[0m
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" WHERE "groups"."name" = 'PHI 101' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 01:30:58', '2013-04-16 01:30:58', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 01:30:58', '2013-04-16 01:30:58', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 01:30:59', '2013-04-16 01:30:59', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 01:30:59', '2013-04-16 01:30:59', 298486374)[0m
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (30.0ms)[0m  [1mINSERT INTO "groups" ("created_at", "desc", "group_ID", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 16 Apr 2013 01:30:59 UTC +00:00], ["desc", nil], ["group_ID", nil], ["location", "Chemistry B220"], ["name", "PHI 101"], ["updated_at", Tue, 16 Apr 2013 01:30:59 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (2.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "groups" ("created_at", "desc", "group_ID", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 01:30:59 UTC +00:00], ["desc", nil], ["group_ID", nil], ["location", "Chemistry B220"], ["name", "PHI 101"], ["updated_at", Tue, 16 Apr 2013 01:30:59 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mGroup Load (1.0ms)[0m  SELECT "groups".* FROM "groups" WHERE "groups"."name" = 'CS 302' LIMIT 1
+  [1m[36mGroup Load (1.0ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE "groups"."name" = 'PHI 101' LIMIT 1[0m
+  [1m[35m (2.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 02:02:46', '2013-04-16 02:02:46', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 02:02:46', '2013-04-16 02:02:46', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 02:02:47', '2013-04-16 02:02:47', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 02:02:47', '2013-04-16 02:02:47', 298486374)[0m
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 02:08:47', '2013-04-16 02:08:47', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 02:08:47', '2013-04-16 02:08:47', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 02:08:48', '2013-04-16 02:08:48', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 02:08:48', '2013-04-16 02:08:48', 298486374)[0m
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 02:15:10', '2013-04-16 02:15:10', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 02:15:10', '2013-04-16 02:15:10', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 02:15:10', '2013-04-16 02:15:10', 980190962)
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 02:15:10', '2013-04-16 02:15:10', 298486374)[0m
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 02:34:30', '2013-04-16 02:34:30', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 02:34:30', '2013-04-16 02:34:30', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 02:34:31', '2013-04-16 02:34:31', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 02:34:31', '2013-04-16 02:34:31', 298486374)[0m
+  [1m[35m (14.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 02:38:05', '2013-04-16 02:38:05', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 02:38:05', '2013-04-16 02:38:05', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 02:38:05', '2013-04-16 02:38:05', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 02:38:05', '2013-04-16 02:38:05', 298486374)[0m
+  [1m[35m (11.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 02:42:26', '2013-04-16 02:42:26', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 02:42:26', '2013-04-16 02:42:26', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 02:42:27', '2013-04-16 02:42:27', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 02:42:27', '2013-04-16 02:42:27', 298486374)[0m
+  [1m[35m (14.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (2.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 02:49:57', '2013-04-16 02:49:57', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 02:49:57', '2013-04-16 02:49:57', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 02:49:58', '2013-04-16 02:49:58', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 02:49:58', '2013-04-16 02:49:58', 298486374)[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 02:56:23', '2013-04-16 02:56:23', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 02:56:23', '2013-04-16 02:56:23', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 02:56:23', '2013-04-16 02:56:23', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 02:56:23', '2013-04-16 02:56:23', 298486374)[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (2.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:01:56', '2013-04-16 03:01:56', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:01:56', '2013-04-16 03:01:56', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:01:56', '2013-04-16 03:01:56', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:01:56', '2013-04-16 03:01:56', 298486374)[0m
+  [1m[35m (11.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:07:04', '2013-04-16 03:07:04', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:07:04', '2013-04-16 03:07:04', 298486374)
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:07:05', '2013-04-16 03:07:05', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:07:05', '2013-04-16 03:07:05', 298486374)[0m
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:10:09', '2013-04-16 03:10:09', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:10:09', '2013-04-16 03:10:09', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:10:10', '2013-04-16 03:10:10', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:10:10', '2013-04-16 03:10:10', 298486374)[0m
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:13:58', '2013-04-16 03:13:58', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:13:58', '2013-04-16 03:13:58', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (1.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:13:59', '2013-04-16 03:13:59', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:13:59', '2013-04-16 03:13:59', 298486374)[0m
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:19:32', '2013-04-16 03:19:32', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:19:32', '2013-04-16 03:19:32', 298486374)
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:19:33', '2013-04-16 03:19:33', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:19:33', '2013-04-16 03:19:33', 298486374)[0m
+  [1m[35m (11.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:24:46', '2013-04-16 03:24:46', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:24:46', '2013-04-16 03:24:46', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:24:46', '2013-04-16 03:24:46', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:24:46', '2013-04-16 03:24:46', 298486374)[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:33:16', '2013-04-16 03:33:16', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:33:16', '2013-04-16 03:33:16', 298486374)
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:33:16', '2013-04-16 03:33:16', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:33:16', '2013-04-16 03:33:16', 298486374)[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (40.0ms)[0m  [1mINSERT INTO "courses" ("course_ID", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["course_ID", nil], ["created_at", Tue, 16 Apr 2013 03:33:16 UTC +00:00], ["name", "PHI 101"], ["updated_at", Tue, 16 Apr 2013 03:33:16 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "groups" ("created_at", "desc", "group_ID", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 03:33:16 UTC +00:00], ["desc", nil], ["group_ID", nil], ["location", "Chemistry B220"], ["name", "PHI 101"], ["updated_at", Tue, 16 Apr 2013 03:33:16 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "groups" ("created_at", "desc", "group_ID", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 16 Apr 2013 03:33:16 UTC +00:00], ["desc", nil], ["group_ID", nil], ["location", "Chemistry B220"], ["name", "PHI 101"], ["updated_at", Tue, 16 Apr 2013 03:33:16 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mGroup Load (0.0ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE "groups"."name" = 'CS 302' LIMIT 1[0m
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" WHERE "groups"."name" = 'PHI 101' LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 03:33:16 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Tue, 16 Apr 2013 03:33:16 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Tue, 16 Apr 2013 03:33:16 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Tue, 16 Apr 2013 03:33:16 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mProgram Load (0.0ms)[0m  [1mSELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Mathematics' LIMIT 1[0m
+  [1m[35mProgram Load (0.0ms)[0m  SELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Economics' LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 03:33:17 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$3FdkSY/lpEU7jh.YBdPPB.Dd1liGv8UTCBvgX.g7AjNfyF0/QXUHG"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["uid", nil], ["updated_at", Tue, 16 Apr 2013 03:33:17 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 03:33:17 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$7O6pfZj3WL4WH6PBVNpU6uYXDdfU1/6QOfV/rPcADmXSz6T3Dt7gm"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["uid", nil], ["updated_at", Tue, 16 Apr 2013 03:33:17 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'NotFoundFaiz@tuter.me' LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:34:24', '2013-04-16 03:34:24', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:34:24', '2013-04-16 03:34:24', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (1.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:34:25', '2013-04-16 03:34:25', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:34:25', '2013-04-16 03:34:25', 298486374)[0m
+  [1m[35m (11.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/groups" for 127.0.0.1 at 2013-04-15 22:34:25 -0500
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" 
+  Rendered groups/_form.html.erb (53.0ms)
+  Rendered groups/_new.html.erb (83.0ms)
+  Rendered groups/index.html.erb within layouts/application (373.0ms)
+Completed 200 OK in 928ms (Views: 917.1ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:45:37', '2013-04-16 03:45:37', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:45:37', '2013-04-16 03:45:37', 298486374)
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:45:38', '2013-04-16 03:45:38', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:45:38', '2013-04-16 03:45:38', 298486374)[0m
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/organizations" for 127.0.0.1 at 2013-04-15 22:45:38 -0500
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (2.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:54:22', '2013-04-16 03:54:22', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:54:22', '2013-04-16 03:54:22', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:54:22', '2013-04-16 03:54:22', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:54:22', '2013-04-16 03:54:22', 298486374)[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (28.0ms)[0m  [1mINSERT INTO "courses" ("course_ID", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["course_ID", nil], ["created_at", Tue, 16 Apr 2013 03:54:22 UTC +00:00], ["name", "PHI 101"], ["updated_at", Tue, 16 Apr 2013 03:54:22 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "groups" ("created_at", "desc", "group_ID", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 03:54:22 UTC +00:00], ["desc", nil], ["group_ID", nil], ["location", "Chemistry B220"], ["name", "PHI 101"], ["updated_at", Tue, 16 Apr 2013 03:54:22 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "groups" ("created_at", "desc", "group_ID", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 16 Apr 2013 03:54:22 UTC +00:00], ["desc", nil], ["group_ID", nil], ["location", "Chemistry B220"], ["name", "PHI 101"], ["updated_at", Tue, 16 Apr 2013 03:54:22 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mGroup Load (1.0ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE "groups"."name" = 'CS 302' LIMIT 1[0m
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" WHERE "groups"."name" = 'PHI 101' LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 03:54:23 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Tue, 16 Apr 2013 03:54:23 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Tue, 16 Apr 2013 03:54:23 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Tue, 16 Apr 2013 03:54:23 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mProgram Load (0.0ms)[0m  [1mSELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Mathematics' LIMIT 1[0m
+  [1m[35mProgram Load (0.0ms)[0m  SELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Economics' LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 03:54:23 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$sZnuSN8w03vNlXxVO34B8ukQNWVt9oGYIPwEK3ZTH69hTAar36I1y"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["uid", nil], ["updated_at", Tue, 16 Apr 2013 03:54:23 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 03:54:23 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$MD2YP222tN4qRNEAbDqkdue40yVz2R7tEOKxTpmHpEJV6CByn/DoW"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["uid", nil], ["updated_at", Tue, 16 Apr 2013 03:54:23 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'NotFoundFaiz@tuter.me' LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (2.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:55:34', '2013-04-16 03:55:34', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 03:55:34', '2013-04-16 03:55:34', 298486374)
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:55:35', '2013-04-16 03:55:35', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 03:55:35', '2013-04-16 03:55:35', 298486374)[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/groups" for 127.0.0.1 at 2013-04-15 22:55:35 -0500
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (1.0ms)[0m  SELECT "groups".* FROM "groups" 
+  Rendered groups/_form.html.erb (24.0ms)
+  Rendered groups/_new.html.erb (28.0ms)
+  Rendered groups/index.html.erb within layouts/application (186.0ms)
+Completed 200 OK in 525ms (Views: 514.0ms | ActiveRecord: 1.0ms)
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 04:40:32', '2013-04-16 04:40:32', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 04:40:32', '2013-04-16 04:40:32', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 04:40:32', '2013-04-16 04:40:32', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 04:40:32', '2013-04-16 04:40:32', 298486374)[0m
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (37.0ms)[0m  [1mINSERT INTO "courses" ("course_ID", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["course_ID", nil], ["created_at", Tue, 16 Apr 2013 04:40:32 UTC +00:00], ["name", "PHI 101"], ["updated_at", Tue, 16 Apr 2013 04:40:32 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "groups" ("created_at", "desc", "group_ID", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 04:40:33 UTC +00:00], ["desc", nil], ["group_ID", nil], ["location", "Chemistry B220"], ["name", "PHI 101"], ["updated_at", Tue, 16 Apr 2013 04:40:33 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "groups" ("created_at", "desc", "group_ID", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 16 Apr 2013 04:40:33 UTC +00:00], ["desc", nil], ["group_ID", nil], ["location", "Chemistry B220"], ["name", "PHI 101"], ["updated_at", Tue, 16 Apr 2013 04:40:33 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mGroup Load (0.0ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE "groups"."name" = 'CS 302' LIMIT 1[0m
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" WHERE "groups"."name" = 'PHI 101' LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 04:40:33 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Tue, 16 Apr 2013 04:40:33 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Tue, 16 Apr 2013 04:40:33 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Tue, 16 Apr 2013 04:40:33 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mProgram Load (0.0ms)[0m  [1mSELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Mathematics' LIMIT 1[0m
+  [1m[35mProgram Load (0.0ms)[0m  SELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Economics' LIMIT 1
+  [1m[36m (2.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 04:40:33 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$cEC7m.rE9SBwZqTq1.G1tOiPPdhIK.sYHEl1Wqyxc/Q/dJGAgFzvq"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["uid", nil], ["updated_at", Tue, 16 Apr 2013 04:40:33 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 16 Apr 2013 04:40:33 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$S0IcJnVgDW2DwnqLxaSHKuWv5IcNQ8MqI68CJGBaJWBY3nUSPv/Ou"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["uid", nil], ["updated_at", Tue, 16 Apr 2013 04:40:33 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'NotFoundFaiz@tuter.me' LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (2.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 04:41:48', '2013-04-16 04:41:48', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "student_ids" ("created_at", "updated_at", "id") VALUES ('2013-04-16 04:41:48', '2013-04-16 04:41:48', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 04:41:49', '2013-04-16 04:41:49', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tutor_ids" ("tid", "created_at", "updated_at", "id") VALUES (NULL, '2013-04-16 04:41:49', '2013-04-16 04:41:49', 298486374)[0m
+  [1m[35m (7.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/groups" for 127.0.0.1 at 2013-04-15 23:41:49 -0500
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" 
+  Rendered groups/_form.html.erb (24.0ms)
+  Rendered groups/_new.html.erb (29.0ms)
+  Rendered groups/index.html.erb within layouts/application (242.0ms)
+Completed 200 OK in 574ms (Views: 562.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m

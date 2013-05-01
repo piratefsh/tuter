@@ -38,11 +38,6 @@ ActiveRecord::Schema.define(:version => 20130501034921) do
     t.string   "group_type"
   end
 
-  create_table "location_users", :force => true do |t|
-    t.integer "lid"
-    t.integer "uid"
-  end
-
   create_table "locations", :force => true do |t|
     t.string   "name"
     t.string   "address"
@@ -52,13 +47,6 @@ ActiveRecord::Schema.define(:version => 20130501034921) do
     t.datetime "updated_at",  :null => false
     t.string   "location_ID"
     t.integer  "user_id"
-  end
-
-  create_table "organization_roles", :force => true do |t|
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-    t.integer  "organization_ID"
-    t.string   "organization_name"
   end
 
   create_table "programs", :force => true do |t|
@@ -81,30 +69,11 @@ ActiveRecord::Schema.define(:version => 20130501034921) do
     t.integer  "group_id"
   end
 
-  create_table "student_roles", :force => true do |t|
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.integer  "student_ID"
-    t.integer  "age"
-    t.string   "year_in_school"
-    t.boolean  "transportation"
-  end
-
   create_table "tutor_ids", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "tid"
     t.integer  "group_id"
-  end
-
-  create_table "tutor_roles", :force => true do |t|
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.integer  "tutor_ID"
-    t.integer  "age"
-    t.string   "year_in_school"
-    t.float    "rating"
-    t.boolean  "transportation"
   end
 
   create_table "users", :force => true do |t|
@@ -118,6 +87,10 @@ ActiveRecord::Schema.define(:version => 20130501034921) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "first_name"
@@ -137,6 +110,7 @@ ActiveRecord::Schema.define(:version => 20130501034921) do
     t.string   "rate"
   end
 
+  add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 

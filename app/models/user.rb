@@ -29,10 +29,11 @@
 
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
+  # :token_authenticatable, 
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :validatable,
-         :recoverable, :rememberable, :trackable, :omniauthable
+         :recoverable, :rememberable, :trackable, :omniauthable,
+         :confirmable
 
   has_one :location
   has_many :courses
@@ -43,7 +44,7 @@ class User < ActiveRecord::Base
                   :age, :transportation, :year, :courses, :courses_attributes, :rate
 
   # Setup creation validation
-  # default => :email and :password must be present 
+  # Devise's default => :email and :password must be present 
   validates :first_name, :last_name, :presence => true
 
   # define user roles and association

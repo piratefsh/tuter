@@ -34,5 +34,4 @@ class Group < ActiveRecord::Base
   def self.group_types
     ['Drop-In', 'Group', 'One-on-one']
   end
-
 end
