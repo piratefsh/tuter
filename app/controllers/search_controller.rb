@@ -14,8 +14,6 @@ class SearchController < ApplicationController
     @users.each do |u|
       if u.role? :tutor 
         @tutors.push(u)
-        @courses[u.id] = Array.new
-        get_courses(u, @courses)
       end
     end
 
@@ -49,20 +47,6 @@ class SearchController < ApplicationController
       end
     end
       groups
-  end
-  #get courses in tutor's groups
-  def get_courses(u, courses)
-    # add courses that tutor has 
-    Group.all.select do |group|
-      group.tutor_ids.all.each do |tutor|
-        if u.id == tutor.tid
-            course = group.course
-            if course 
-              courses[u.id] << course.name
-            end
-        end
-      end
-    end
   end
   
   def init_rates (rates)

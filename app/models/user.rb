@@ -124,4 +124,18 @@ class User < ActiveRecord::Base
       ((roles_mask || 0) & 2**ROLES.index(r)).zero?
     end
   end
+
+  def courses
+    courses = Array.new
+     # add courses that tutor has 
+    Group.all.select do |group|
+      group.tutor_ids.all.each do |tutor|
+        if (self.id == tutor.tid) and group.course 
+            courses << group.course.name
+        end
+      end
+    end
+    courses
+  end
+
 end

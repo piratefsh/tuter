@@ -13,7 +13,7 @@
     <h2><%=current_user.first_name %> <%=current_user.last_name %></h2>
     <p><%=current_user.desc %></p>
     <h3>Courses</h3>
-    <%= current_user.courses %>
+    <p><%= current_user.courses.join(' <br/> ').html_safe %></p>
     <h3>Personal Information</h3>
     <% if current_user.age? %>
         <div>Age: <%=current_user.age %></div>

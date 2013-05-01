@@ -83,8 +83,8 @@
         <td><%= user.last_name %></td> 
         <td><%= user.first_name %></td> 
         <td>
-          <%= if @courses[user.id].any?
-                @courses[user.id].join(', ') 
+          <%= if user.courses.any?
+                user.courses.join(', ') 
                 else 
                   '-'
               end %>
