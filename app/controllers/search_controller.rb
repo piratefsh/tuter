@@ -30,7 +30,9 @@ class SearchController < ApplicationController
     types = Array.new
 
     get_users_groups(u).each do |g|
-      types << g.group_type
+      if not types.include?(g.group_type)
+        types << g.group_type
+      end
     end
 
     types
