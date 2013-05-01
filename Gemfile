@@ -3,7 +3,6 @@
 #   gem 'devise'
 #  https://github.com/mkdynamic/omniauth-facebook
 #   gem 'omniauth-facebook'
-#   gem 'role-model'
 #
 # Annotate models, tests, routes
 #  https://github.com/ctran/annotate_models
@@ -36,6 +35,7 @@ group :production do
   gem 'thin'
 end
 group :development, :test do
+	gem 'letter_opener'
   gem 'sqlite3'
   gem 'webrick'
   gem 'debugger'

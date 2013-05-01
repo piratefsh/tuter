@@ -36,10 +36,12 @@ class User < ActiveRecord::Base
          :confirmable
 
   has_one :location
+  has_many :courses
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
-                  :first_name, :last_name, :desc, :provider, :uid, :roles
+                  :first_name, :last_name, :desc, :provider, :uid, :roles, :location, :location_attributes,
+                  :age, :transportation, :year, :courses, :courses_attributes, :rate
 
   # Setup creation validation
   # Devise's default => :email and :password must be present 
@@ -48,6 +50,30 @@ class User < ActiveRecord::Base
   # define user roles and association
   ROLES = %w[student tutor org]
   has_and_belongs_to_many :roles
+
+  accepts_nested_attributes_for :location, :courses
+
+  def with_location
+    self.location.build
+    self
+  end
+  def with_course
+    self.courses.build
+    self
+  end
+
+  def initRates (rates)
+    start_rate  = 0
+    end_rate    = 100
+    interval    = 10
+    i = start_rate
+
+    until end_rate < i
+        rates.push("$#{i} - $#{i + interval}")
+        i += interval
+    end
+    rates
+  end
 
   def self.from_omniauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
@@ -71,7 +97,7 @@ class User < ActiveRecord::Base
   # update user attributes - handles omniauth users without passwords, as well as devise users with passwords
   def update_with_password(params, *options)
     if encrypted_password.blank?
-      update_attributes(params, *options)
+      update_attributes!(params, *options)
     else
       super
     end

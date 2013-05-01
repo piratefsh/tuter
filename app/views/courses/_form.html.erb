@@ -1,0 +1,13 @@
+<h3>Update Courses</h3>
+<%= form_for [@group, @group.build_course]  do |f| %>
+  <% f.fields_for :courses do |c| %>
+    <div class="field">
+      <%= c.label :name %>
+      <%= c.text_field :name %>
+    </div>
+    <div class="action">
+      <label></label>
+      <%= c.submit %>
+    </div>
+  <% end %>
+<% end %>

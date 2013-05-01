@@ -1,7 +1,10 @@
 class GroupsController < ApplicationController
 	def index
 		@groups = Group.all
-		@group = Group.new
+		@group = Group.find(params[:id])
+		@students = Student_id.find(:id => params[:id])
+		@tutors = User.find(params[:tutor_ids])
+		#@tids = params[:tutor_ids].each { |tid| }
 
 		respond_to do |format|
 			format.html
@@ -10,6 +13,9 @@ class GroupsController < ApplicationController
 
 	def new
 		@group = Group.new
+		@course = @group.build_course
+		student_id = @group.student_ids.build
+		tutor_id = @group.tutor_ids.build
 
 		respond_to do |format|
 			format.html
@@ -18,9 +24,6 @@ class GroupsController < ApplicationController
 
 	def create
 		@group = Group.new(params[:group])
-		# @sids = params[:group][:student_ids]
-
-		# @group.student_ids = @sids
 
 		respond_to do |format|
 			if @group.save
@@ -31,7 +34,6 @@ class GroupsController < ApplicationController
 
 	def show
 		@group = Group.find(params[:id])
-		@sids = @group.student_ids
 
 		respond_to do |format|
 			format.html
@@ -59,7 +61,7 @@ class GroupsController < ApplicationController
 
 	def update
 		@group = Group.find(params[:id])
-
+		@course = @group.course
 		@group.update_attributes(params[:group])
 		respond_to do |format|
 			format.html {redirect_to dashboard_path}

@@ -3,11 +3,11 @@
 //Mapping of input field to table column
 var column = new Array();
 column['name'] = 2;
-column['location'] = 5;
+column['location'] = 4;
 column['course'] = 3;
-column['rates'] = 8;
-column['dropin'] = 7;
-column['group'] = 7;
+column['rates'] = 7;
+column['dropin'] = 6;
+column['group'] = 6;
 
 // When document is ready: this gets fired before body onload <img src='http://blogs.digitss.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> 
 $(document).ready(function(){
@@ -56,15 +56,15 @@ $(document).ready(function(){
 
     function instantSearchFunction()
     {
+
         var whichCol = column[$(this).attr("name")];
-        if( $(this).val() != "")
+        if( (!$(this).is(':checkbox') && $(this).val() != "") || ($(this).is(':checkbox') && $(this).is(':checked')))
         {
             // Show only matching TR, hide rest of them
             $("tbody>tr", table).hide();
 
             //only find for matches in given column
             var matching = $("td:nth-child(" + whichCol + "):contains-ci('" + $(this).val() + "')", table);
-
             //show no matches p when no results
             if(matching.size() > 0)
             {

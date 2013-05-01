@@ -11,11 +11,25 @@
 #
 
 class Group < ActiveRecord::Base
-  attr_accessible :desc, :id, :name, :location
+  attr_accessible :desc, :id, :name, :location, :student_ids_attributes, :tutor_ids_attributes, :tutor_ids, :course, :course_attributes
   belongs_to :program
  
   has_many :student_ids
   has_many :tutor_ids
+  has_one :course
+  after_destroy :cleanup
+
+  validates :name, :presence => true
+  accepts_nested_attributes_for :student_ids
+  accepts_nested_attributes_for :tutor_ids
+  accepts_nested_attributes_for :course
+
+  private
+
+  def cleanup
+  	self.tutor_ids.destroy_all
+  	self.student_ids.destroy_all
+  end
 
   validates :name, :location, :presence => true
 end

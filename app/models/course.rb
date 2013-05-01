@@ -12,4 +12,6 @@
 class Course < ActiveRecord::Base
   attr_accessible :course_ID, :name
   validates :name, :presence => true
+  belongs_to :user
+  belongs_to :group
 end

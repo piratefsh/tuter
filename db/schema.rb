@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130411182243) do
+ActiveRecord::Schema.define(:version => 20130429025008) do
 
   create_table "abilities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -21,8 +21,11 @@ ActiveRecord::Schema.define(:version => 20130411182243) do
   create_table "courses", :force => true do |t|
     t.string   "name"
     t.integer  "course_ID"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "user_id"
+    t.string   "course_code"
+    t.integer  "group_id"
   end
 
   create_table "groups", :force => true do |t|
@@ -34,13 +37,20 @@ ActiveRecord::Schema.define(:version => 20130411182243) do
     t.string   "location"
   end
 
+  create_table "location_users", :force => true do |t|
+    t.integer "lid"
+    t.integer "uid"
+  end
+
   create_table "locations", :force => true do |t|
     t.string   "name"
     t.string   "address"
     t.float    "longitude"
     t.float    "latitude"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "location_ID"
+    t.integer  "user_id"
   end
 
   create_table "programs", :force => true do |t|
@@ -60,12 +70,14 @@ ActiveRecord::Schema.define(:version => 20130411182243) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "sid"
+    t.integer  "group_id"
   end
 
   create_table "tutor_ids", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "tid"
+    t.integer  "group_id"
   end
 
   create_table "users", :force => true do |t|
@@ -95,6 +107,11 @@ ActiveRecord::Schema.define(:version => 20130411182243) do
     t.string   "photo"
     t.string   "fb_profile"
     t.integer  "roles_mask"
+    t.integer  "course_ID"
+    t.integer  "age"
+    t.string   "year"
+    t.string   "transportation"
+    t.string   "rate"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

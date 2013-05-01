@@ -2,6 +2,7 @@
   <%= stylesheet_link_tag "home", "gmaps4rails", :media => "all" %>
   <%= javascript_include_tag "gmaps4rails/gmaps4rails.base", 
                              "gmaps4rails/gmaps4rails.googlemaps" %>
+  <%= javascript_include_tag "home.js" %>
 <% end %>
 
 <p style="font-style: italic">Pardon the dust, site under construction!</p>
@@ -18,7 +19,7 @@
 <div>
     <div id="home_sidebar" class=" small_button">
         <h2 class="first_h">Find Tutors</h2>
-        <input type="text"  name="search_all_field"/>
+        <input type="text"  id="search_all_field"/>
         <input type="button" id="search_all" value="Go!"/>
 
     <h2>Sign up</h2>

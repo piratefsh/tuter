@@ -3,7 +3,7 @@
 <% end %>
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+<%= form_for([resource, resource.with_course], :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="form_element">
@@ -21,15 +21,10 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <!-- Only require user password if they haven't logged in through facebook-->
-  <% if f.object.encrypted_password.present? %>
-    <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password %></div>
-  <% end %>
+
 
   <!-- User can update roles associated with account -->
-  <div>
-  <label>Roles</label>
+  <div><label>Roles</label>
   <% for role in User::ROLES %>
         <% if role != :admin %>
         <div class="checkbox_group">
@@ -40,8 +35,49 @@
   <% end %>
   <%= hidden_field_tag "user[roles][]", "" %>
   </div>
+    <!-- Only require user password if they haven't logged in through facebook-->
+
+  <div>
+    <%= f.label :age %>
+    <%= select(:user, :age, 18..80) %></div>
+
+  <div>
+    <%= f.label :year %>
+    <%= select(:user, :year, ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate', 'Others']) %></div>
+  <% if current_user.role? :tutor%>
+  <div>
+    <% rates_array = Array.new
+        start_rate  = 0
+        end_rate    = 100
+        interval    = 10
+        i = start_rate
+
+        until end_rate < i
+            rates_array.push("$#{i} - $#{i + interval}")
+            i += interval
+        end%>
+    <%= f.label :rate%>
+    <%= select(:user, :rate, rates_array, {:include_blank => '-'}) %>
+  </div>
+  <% end %>
+  <div>
+    <%= f.label "Short Description of Yourself" %>
+    <%= f.text_area :desc %></div>
+
+  <hr/>
+  <% if f.object.encrypted_password.present? %>
+    <div><%= f.label "Enter password to confirm changes" %> 
+    <%= f.password_field :current_password %><br /></div>
+  <% end %>
+
+  <div>
+    <%= f.fields_for :location do |locBuilder| %>
+      <%= render "locations/form", :f => locBuilder %>
+    <% end %>
+  </div> 
+
+
   <div><label></label><%= f.submit "Update" %></div>
 <% end %>
-
 <h3>Cancel my account</h3>
     <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.
