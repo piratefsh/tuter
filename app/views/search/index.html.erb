@@ -30,12 +30,12 @@
         <input type="text" name="name"/>
       </div>
 
-        <div class="form_element">
+        <div class="form_element" id="group_types">
           <label>Type</label>
           
           <% Group.group_types.each do |t| %>  
           <div class="checkbox_group">
-            <input type="checkbox" value=<%=t.humanize%> name=<%=t.humanize%>/>
+            <input type="checkbox" value=<%=t%> name=<%= t %> />
             <label class="checkbox" for="<%=t.humanize%>"><%=t.humanize%></label>
           </div>
           <% end %>
