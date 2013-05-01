@@ -13,10 +13,10 @@ class DayAvailabilitiesController < ApplicationController
   # GET /day_availabilities/1
   # GET /day_availabilities/1.json
   def show
-    @day_availability = DayAvailability.find(params[:id])
+    @week = WeekAvailability.find(params[:week_availability_id])
 
     respond_to do |format|
-      format.html # show.html.erb
+       format.html { redirect_to @week}
       format.json { render json: @day_availability }
     end
   end
@@ -40,15 +40,14 @@ class DayAvailabilitiesController < ApplicationController
   # POST /day_availabilities
   # POST /day_availabilities.json
   def create
-    @day_availability = DayAvailability.new(params[:day_availability])
+    @week = WeekAvailability.find(params[:week_availability_id])
+    @day_availability = @week.day_availabilities.new(params[:day_availability])
 
     respond_to do |format|
       if @day_availability.save
-        format.html { redirect_to @day_availability, notice: 'Day availability was successfully created.' }
-        format.json { render json: @day_availability, status: :created, location: @day_availability }
+        format.html { redirect_to @week, notice: 'Added availability' }
       else
         format.html { render action: "new" }
-        format.json { render json: @day_availability.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,15 +55,15 @@ class DayAvailabilitiesController < ApplicationController
   # PUT /day_availabilities/1
   # PUT /day_availabilities/1.json
   def update
-    @day_availability = DayAvailability.find(params[:id])
+    @week = WeekAvailability.find(params[:week_availability_id])
+    @day_availability = @week.day_availabilities.new(params[:day_availability])
 
     respond_to do |format|
       if @day_availability.update_attributes(params[:day_availability])
-        format.html { redirect_to @day_availability, notice: 'Day availability was successfully updated.' }
+        format.html { redirect_to @week, notice: 'Successfully updated schedule.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @day_availability.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -72,11 +71,12 @@ class DayAvailabilitiesController < ApplicationController
   # DELETE /day_availabilities/1
   # DELETE /day_availabilities/1.json
   def destroy
+    @week = WeekAvailability.find(params[:week_availability_id])
     @day_availability = DayAvailability.find(params[:id])
     @day_availability.destroy
 
     respond_to do |format|
-      format.html { redirect_to day_availabilities_url }
+      format.html { redirect_to @week }
       format.json { head :no_content }
     end
   end

@@ -19,12 +19,10 @@
     <%= select(:week_availability, :avail_type, WeekAvailability.avail_types) %>
   </div>
 
-  <%= fields_for :day_availability do |d| %>
-    <%= render 'day_availabilities/form', :f => d %>
-  <% end %>
 
   <div class="actions">
     <label></label>
-    <%= f.submit "Create" %>
+    <%= f.submit "Update"%>
   </div>
 <% end %>
+

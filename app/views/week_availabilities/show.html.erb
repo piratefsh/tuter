@@ -1,5 +1,23 @@
-<p id="notice"><%= notice %></p>
+<%= content_for :header do %>
+  <%= stylesheet_link_tag "schedule" %>
+<% end %>
+<h2>My Schedule</h2>
+<table class="schedule">
+    <th>Day</th>
+    <th>Start</th>
+    <th>End</th>
+    <%@week_availability.day_availabilities.each do |d| %>
+        <tr>
+            <td><%=DayAvailability.days[Integer(d.day)][0]%></td>
+            <td><%=d.start_time.to_time.strftime("%H:%M:%S")%></td>
+            <td><%=d.end_time.to_time.strftime("%H:%M:%S")%></td>
+        </tr>
+    <% end %>
+</table>
 
-
+<div class="new_time_slot">
+<%= render 'day_availabilities/form' %>
+</div>
 <%= link_to 'Edit', edit_week_availability_path(@week_availability) %> |
 <%= link_to 'Back', week_availabilities_path %>
+

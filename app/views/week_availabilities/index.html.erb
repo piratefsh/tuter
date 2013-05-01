@@ -2,16 +2,19 @@
 
 <table>
   <tr>
-    <th></th>
+    <th>Type</th>
+    <th>Time Slots</th>
     <th></th>
     <th></th>
   </tr>
 
-<% @week_availabilities.each do |week_availability| %>
+<% @week_availabilities.each do |w| %>
   <tr>
-    <td><%= link_to 'Show', week_availability %></td>
-    <td><%= link_to 'Edit', edit_week_availability_path(week_availability) %></td>
-    <td><%= link_to 'Destroy', week_availability, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= w.avail_type %></td>
+    <td><%= w.day_availabilities.size %></td>
+    <td><%= link_to 'Show', w %></td>
+    <td><%= link_to 'Edit', edit_week_availability_path(w) %></td>
+    <td><%= link_to 'Destroy', w, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>

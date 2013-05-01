@@ -1,14 +1,25 @@
+<%= content_for :header do %>
+  <%= stylesheet_link_tag "form_style" %>
+<% end %>
+
+<%= form_for [@week_availability, @week_availability.day_availabilities.build] do |f|%>
 <div>
     <%= f.label :day %>
-    <%= f.select :day, Date::DAYNAMES.zip((0..6).to_a) %>
+    <%= f.select :day, DayAvailability.days %>
 </div>
 
 <div>
     <%= f.label :start_time %>
-    <%= f.time_select :day %>
+    <%= f.time_select :start_time, { :minute_step => 15} %>
 </div>
 
 <div>
     <%= f.label :end_time %>
-    <%= f.time_select :day %>
+    <%= f.time_select :end_time, { :minute_step => 15}%>
 </div>
+
+<div class="small_button">
+    <label></label>
+    <%= f.submit "Add" %>
+</div>
+<% end %>

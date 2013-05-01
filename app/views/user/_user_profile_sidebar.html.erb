@@ -35,10 +35,10 @@
     <div><a href="mailto:<%=@user.email%>"><%= @user.email %></a></div>
     <div><% if @user.fb_profile %><%= link_to "Facebook Profile", @user.fb_profile %><% end %></div>
     <!-- Button to edit user profile -->
+    <h3>Schedule</h3>
+    <%= link_to "View", week_availabilities_path %>
         <div class="small_button unimp">
         <%= button_to "Edit Profile", edit_user_registration_path(@user), :method=> :get %>
         </div>
 
-    <h3>Schedule</h3>
-    <%= link_to "New Schedule", new_week_availability_path %>
 </div>
