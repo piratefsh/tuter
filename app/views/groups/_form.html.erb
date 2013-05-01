@@ -11,6 +11,10 @@
     <div class="field form_element">
         <%= f.label 'Description' %>
         <%= f.text_field :desc %>
+
+    </div>    <div class="field form_element">
+        <%= f.label 'Group Type' %>
+        <%= select(:group, :type, ['Drop-In', 'Group', 'One-on-one'])%>
     </div>
 
     <div class="field form_element">

@@ -9,6 +9,7 @@
     <div id="new_group" style="display:none"><%= render 'groups/form' %></div>
     </div>
     <div id='Current_Groups_Table'>
+        <%if @tutor_groups.any? %>
         <table class="small_button">
             <tr>
                 <th>Group Name</th>
@@ -59,6 +60,10 @@
                     <td><%= button_to "Edit", edit_group_path(group), :method => :get%></td>
                     <td><%= button_to "Delete", {:action => :delete_group, :id => group.id}%></td>
                 </tr>
-            <% end %>
+
+            <%end %>
         </table>
+            <% else %>
+                <p>You don't have any groups yet. Add some!</p>
+            <% end %>
     </div>

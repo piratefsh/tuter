@@ -11,7 +11,7 @@
 #
 
 class Group < ActiveRecord::Base
-  attr_accessible :desc, :id, :name, :location, :student_ids_attributes, :tutor_ids_attributes, :tutor_ids, :course, :course_attributes
+  attr_accessible :desc, :id, :name, :location, :student_ids_attributes, :tutor_ids_attributes, :tutor_ids, :course, :course_attributes, :type
   belongs_to :program
  
   has_many :student_ids

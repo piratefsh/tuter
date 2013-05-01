@@ -99,7 +99,6 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.1)
     mime-types (1.23)
-    minitest (4.3.2)
     multi_json (1.7.2)
     multipart-post (1.2.0)
     netrc (0.7.7)
@@ -121,8 +120,6 @@ GEM
     pg (0.15.1)
     pg (0.15.1-x86-mingw32)
     polyglot (0.3.3)
-    prototype-rails (3.2.1)
-      rails (~> 3.2)
     pry (0.9.12.1)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -217,10 +214,8 @@ DEPENDENCIES
   guard
   heroku
   jquery-rails
-  minitest (= 4.3.2)
   omniauth-facebook (~> 1.4.1)
   pg
-  prototype-rails
   rails (= 3.2.3)
   rb-readline
   role_model
