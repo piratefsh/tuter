@@ -14,6 +14,7 @@ Tuter::Application.routes.draw do
     resources :courses
   end
 
+  resources :user
   resources :locations
   resources :search
 

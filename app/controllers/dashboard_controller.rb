@@ -2,6 +2,7 @@ class DashboardController < ApplicationController
   helper_method :delete_group
 
     def dashboard
+        @user = current_user
         @group = Group.new
         @course = @group.build_course
         @programs = Program.all
