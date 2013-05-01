@@ -29,14 +29,13 @@ Tuter::Application.routes.draw do
       post 'delete_group'
     end 
   end
-
+  resources :week_availabilities
+  resources :week_availability do
+    resources :day_availability
+  end
   # Omniauth routes
   match '/users/auth/:provider/callback', to: 'sessions#create'
   match '/users/auth/failure', to: redirect('/')
-
-  # User Signup Routes
-  match "/user" => "user#user"
-  match "/dashboard" => "home#index"
  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

@@ -1,0 +1,21 @@
+<h1>Listing week_availabilities</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @week_availabilities.each do |week_availability| %>
+  <tr>
+    <td><%= link_to 'Show', week_availability %></td>
+    <td><%= link_to 'Edit', edit_week_availability_path(week_availability) %></td>
+    <td><%= link_to 'Destroy', week_availability, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Week availability', new_week_availability_path %>

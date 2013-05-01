@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130501034921) do
+ActiveRecord::Schema.define(:version => 20130501185826) do
 
   create_table "abilities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(:version => 20130501034921) do
     t.integer  "user_id"
     t.string   "course_code"
     t.integer  "group_id"
+  end
+
+  create_table "day_availabilities", :force => true do |t|
+    t.string   "day"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.integer  "week_availability_id"
   end
 
   create_table "groups", :force => true do |t|
@@ -113,5 +122,11 @@ ActiveRecord::Schema.define(:version => 20130501034921) do
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "week_availabilities", :force => true do |t|
+    t.string   "avail_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

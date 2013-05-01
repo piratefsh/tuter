@@ -1,0 +1,30 @@
+<%= content_for :header do %>
+  <%= stylesheet_link_tag "form_style" %>
+<% end %>
+
+<%= form_for(@week_availability) do |f| %>  <% if @week_availability.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@week_availability.errors.count, "error") %> prohibited this week_availability from being saved:</h2>
+
+      <ul>
+      <% @week_availability.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label "Schedule Type" %>
+    <%= select(:week_availability, :avail_type, WeekAvailability.avail_types) %>
+  </div>
+
+  <%= fields_for :day_availability do |d| %>
+    <%= render 'day_availabilities/form', :f => d %>
+  <% end %>
+
+  <div class="actions">
+    <label></label>
+    <%= f.submit "Create" %>
+  </div>
+<% end %>

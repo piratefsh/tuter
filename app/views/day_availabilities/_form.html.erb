@@ -1,0 +1,14 @@
+<div>
+    <%= f.label :day %>
+    <%= f.select :day, Date::DAYNAMES.zip((0..6).to_a) %>
+</div>
+
+<div>
+    <%= f.label :start_time %>
+    <%= f.time_select :day %>
+</div>
+
+<div>
+    <%= f.label :end_time %>
+    <%= f.time_select :day %>
+</div>
