@@ -25,3 +25,7 @@ create_table :contacts_dossiers, :id => false do |f|
      f.integer :contact_id, :dossier_id
 end
 Then migrate the table and everything should work!
+
+Readings on nested attributes:
+Enabling nested attributes on a one-to-one association allows you to create the 
+"member" and "avatar" in one go:

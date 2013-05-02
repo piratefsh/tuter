@@ -13,6 +13,8 @@
 
 class Location < ActiveRecord::Base
   attr_accessible :address, :latitude, :longitude, :name
+  belongs_to :user, :inverse_of => :location
+  validates_presence_of :user
   
   acts_as_gmappable :latitude => 'latitude', :longitude => 'longitude',
   :process_geocoding => :geocode?, :address => 'address', :normalized_address => 'address',

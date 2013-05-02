@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :omniauthable,
          :confirmable
 
-  has_one :location
+  has_one :location, :inverse_of => :user
   has_many :courses
 
   # Setup accessible (or protected) attributes for your model
@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
   ROLES = %w[student tutor org]
   has_and_belongs_to_many :roles
 
-  accepts_nested_attributes_for :location, :courses
+  accepts_nested_attributes_for :location, :courses, :allow_destroy => true
 
   def with_location
     self.location.build
