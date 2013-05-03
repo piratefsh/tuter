@@ -13,7 +13,7 @@
     <h2><%=@user.first_name %> <%=@user.last_name %></h2>
     <p><%=@user.desc %></p>
     <h3>Courses</h3>
-    <p><%= @user.courses.join(' <br/> ').html_safe %></p>
+    <p><%= @user.courses.join(' <br/> ').upcase.html_safe %></p>
     <h3>Personal Information</h3>
     <% if @user.age? %>
         <div>Age: <%=@user.age %></div>

@@ -4,10 +4,6 @@
     <% stylesheet_link_tag 'table_style',:media => :all %>
 <% end %>
 
-  <div class="group_controls">
-    <input type='submit' class="create_new" value='Add Group' id='Add Group'/>
-    <div id="new_group" style="display:none"><%= render 'groups/form' %></div>
-    </div>
     <div id='Current_Groups_Table'>
         <%if @tutor_groups.any? %>
         <table class="small_button">
@@ -18,6 +14,7 @@
 <!--                     <th>Courses</th>
                 <th>Schedule</th> -->
                 <th>Location</th>
+                <th></th>
                 <th></th>
                 <th></th>
             </tr>
@@ -62,7 +59,7 @@
                     <td><%= group.student_ids.first %></td>
                     <td><%= group.schedule %></td>
                     <% end %>
-                    <td><%= button_to "Edit", edit_group_path(group), :method => :get%><%= button_to "Delete", {:action => :delete_group, :id => group.id}%></td>
+                    <td><%= button_to "Edit", edit_group_path(group), :method => :get%></td><td><%= button_to "Delete", {:action => :delete_group, :id => group.id}%></td>
                 </tr>
 
             <%end %>
@@ -70,4 +67,9 @@
             <% else %>
                 <p>You don't have any groups yet. Add some!</p>
             <% end %>
+    </div>
+
+    <div  class="group_controls">
+    <input type='submit' class="create_new" value='Add Group' id='Add Group'/>
+    <div id="new_group" style="display:none"><%= render 'groups/form' %></div>
     </div>

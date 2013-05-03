@@ -86,7 +86,7 @@
         <td><%= user.first_name %></td> 
         <td>
           <%= if user.courses.any?
-                user.courses.join(', ') 
+                user.courses.join(', ').upcase
                 else 
                   '-'
               end %>

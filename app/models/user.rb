@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :location, :courses
 
   def with_location
-    self.location.build
+    self.build_location
     self
   end
   def with_course

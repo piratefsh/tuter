@@ -10,6 +10,10 @@ table.schedule
         background-color: $red
     td 
         text-align: center
+    tr
+        background-color: rgba($light_grey, 0.8)
+        &:nth-child(even)
+            background-color: rgba($white, 0.8)
 
 div.new_time_slot
     margin: 
@@ -19,3 +23,11 @@ div.new_time_slot
         width: 100%
         div, label, select, input
             display: inline
+
+        div 
+            margin-right: $medium_space
+            padding: $medium_space * 2
+            background-color: $light_grey
+
+ul#days
+    display: none

@@ -29,11 +29,11 @@ Tuter::Application.routes.draw do
       post 'delete_group'
     end 
   end
-  resources :day_availability
-  resources :week_availabilities
-  resources :week_availability do
+
+  resources :week_availabilities do
     resources :day_availabilities
   end
+  
   # Omniauth routes
   match '/users/auth/:provider/callback', to: 'sessions#create'
   match '/users/auth/failure', to: redirect('/')

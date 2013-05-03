@@ -5,19 +5,17 @@ class DayAvailabilitiesController < ApplicationController
     @day_availabilities = DayAvailability.all
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @day_availabilities }
+      format.html {redirect_to @day_availabilities.week_availability}
+      # format.json { render json: @day_availability }
     end
   end
 
   # GET /day_availabilities/1
   # GET /day_availabilities/1.json
   def show
-    @week = WeekAvailability.find(params[:week_availability_id])
-
     respond_to do |format|
-       format.html { redirect_to @week}
-      format.json { render json: @day_availability }
+       format.html 
+      # format.json { render json: @day_availability }
     end
   end
 
@@ -28,13 +26,14 @@ class DayAvailabilitiesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @day_availability }
+      # format.json { render json: @day_availability }
     end
   end
 
   # GET /day_availabilities/1/edit
   def edit
     @day_availability = DayAvailability.find(params[:id])
+    @week_availability = @day_availability.week_availability
   end
 
   # POST /day_availabilities
@@ -45,7 +44,7 @@ class DayAvailabilitiesController < ApplicationController
 
     respond_to do |format|
       if @day_availability.save
-        format.html { redirect_to @week, notice: 'Added availability' }
+        format.html {redirect_to @week}
       else
         format.html { render action: "new" }
       end
@@ -55,13 +54,13 @@ class DayAvailabilitiesController < ApplicationController
   # PUT /day_availabilities/1
   # PUT /day_availabilities/1.json
   def update
-    @week = WeekAvailability.find(params[:week_availability_id])
-    @day_availability = @week.day_availabilities.new(params[:day_availability])
+    @day = DayAvailability.find(params[:id])
+    @week = @day.week_availability
 
     respond_to do |format|
-      if @day_availability.update_attributes(params[:day_availability])
-        format.html { redirect_to @week, notice: 'Successfully updated schedule.' }
-        format.json { head :no_content }
+      if @day.update_attributes(params[:day_availability])
+        redirect_to @week, notice: 'Successfully updated schedule.'
+        # format.json { head :no_content }
       else
         format.html { render action: "edit" }
       end
