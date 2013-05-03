@@ -19,6 +19,8 @@
     <%= select(:week_availability, :avail_type, WeekAvailability.avail_types) %>
   </div>
 
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+
 
   <div class="actions">
     <label></label>

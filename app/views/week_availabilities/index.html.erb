@@ -5,6 +5,7 @@
 
 <table class="schedule">
   <tr>
+    <th>Owner</th>
     <th>Type</th>
     <th>Time Slots</th>
     <th>Show</th>
@@ -15,6 +16,7 @@
 
 <% @week_availabilities.each do |w| %>
   <tr>
+    <td><%=User.find(w.user_id).last_name %></td>
     <td><%= w.avail_type %></td>
     <td><%= w.day_availabilities.size %></td>
     <td><%= link_to 'Show', w %></td>
