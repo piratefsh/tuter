@@ -73,6 +73,13 @@ form
                 display: table-cell
                 height: 20px
                 vertical-align: -3px
+
+        div.radio_button_group
+            input   
+                display: inline
+            label
+                text-align: left
+                display: inline
 input, select
     @include form_input_style
 
@@ -100,8 +107,7 @@ div#error_explanation
             padding: $medium_space
             font-size: small
             display: inline
-            margin: 
-                top: $medium_space
+            float: none
     //not highlighted, non impt button 
     &.unimp 
         input 
@@ -113,3 +119,11 @@ input.cancel
 .helper_text
     font-size: small
 
+div.button_group 
+    overflow: auto
+    form 
+        width: auto
+        float: right
+    div
+        margin: 0
+        padding: 0

@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
                   :first_name, :last_name, :desc, :provider, :uid, :roles, :location, :location_attributes,
-                  :age, :transportation, :year, :courses, :courses_attributes, :rate
+                  :age, :transportation, :year, :courses, :courses_attributes, :rate, :time_zone
 
   # Setup creation validation
   # Devise's default => :email and :password must be present 
@@ -54,8 +54,19 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :location, :courses
 
+  def self.years
+    ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate', 'Others']
+  end
+  
+  def full_name
+    self.first_name + " " + self.last_name
+  end
+  def self.age_range
+    18..80
+  end
+
   def with_location
-    self.location.build
+    self.build_location
     self
   end
   def with_course

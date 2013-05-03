@@ -1,17 +1,41 @@
-<h2><%= @group.name.humanize %></h2>
-<h3>Course: </h3>
-<%= @group.course.name %>
-<h3>Tutors:</h3>
-<ul>
-<% @group.tutor_ids.all.each do |tutor| %>
-    <li><%= User.find(tutor.tid).first_name %> <%= User.find(tutor.tid).last_name %></li>
+<%= content_for :header do %>
+    <%= stylesheet_link_tag 'groups' %>
 <% end %>
-</ul>
-<h3>Students:</h3>
-<ul>
-<% @group.student_ids.all.each do |student| %>
-	<%= User.find(student.sid).first_name %> <%= User.find(student.sid).last_name %><br />
-<% end %>
-</ul>
+<div class="single_group">
 
+<div>
+    <h2><%= @group.name.humanize %></h2>
+</div>
+
+<div>
+    <h3>Course: </h3>
+    <ul><li><%= @group.course.name %></li></ul>
+</div>
+
+<div>
+    <h3>Location: </h3>
+    <ul><li><%= @group.location %></li></ul>
+</div>
+
+<div>
+    <h3>Tutors:</h3>
+    <ul>
+    <% @group.tutor_ids.all.each do |tutor| %>
+        <li><%= User.find(tutor.tid).first_name %> <%= User.find(tutor.tid).last_name %></li>
+    <% end %>
+    </ul>
+</div>
+
+<div>
+    <h3>Students:</h3>
+    <ul>
+    <% @group.student_ids.all.each do |student| %>
+        <%= User.find(student.sid).first_name %> <%= User.find(student.sid).last_name %><br />
+    <% end %>
+    </ul>
+</div>
+
+<br />
 <%= link_to "Edit Group", edit_group_path(@group) %> | <%= link_to "Delete Group", @group, method: :delete %>
+
+</div>

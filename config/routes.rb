@@ -1,5 +1,7 @@
 Tuter::Application.routes.draw do  
 
+  resources :reviews
+
   devise_for :users
   devise_scope :user do
     match "/users/sign_out" => "devise/sessions#destroy"
@@ -31,9 +33,19 @@ Tuter::Application.routes.draw do
     end 
   end
 
+  resources :day_availabilities
+  
+  resources :week_availabilities do
+    resources :day_availabilities
+    resources :day_availability
+  end
+
+  resources :reviews
+  
   # Omniauth routes
   match '/users/auth/:provider/callback', to: 'sessions#create'
   match '/users/auth/failure', to: redirect('/')
+
 
   # User Signup Routes
   match "/user" => "user#user"
@@ -41,6 +53,7 @@ Tuter::Application.routes.draw do
 
   # Organization List Page
   match "/organizations" => "organizations#index"
+
  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

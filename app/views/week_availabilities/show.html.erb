@@ -1,0 +1,29 @@
+<%= content_for :header do %>
+  <%= stylesheet_link_tag "schedule" %>
+  <%= javascript_include_tag "schedule" %>
+<% end %>
+<h2>My Schedule</h2>
+<table class="schedule">
+    <th>Time/Day</th>
+    <% DayAvailability.days.each do |d| %>
+    <th><%= d[0].humanize %></th>
+    <% end -%>
+</table>
+
+<ul id="days">
+<%@week_availability.day_availabilities.each do |d| %>
+    <li>   
+        <p class="link"><%=link_to edit_week_availability_day_availability_path(@week_availability, d)%>
+        <p class="day"><%=DayAvailability.days[Integer(d.day)][0]%></p>
+        <p class="start_time"><%= format_time(d.start_time)%></p>
+        <p class="end_time"><%=format_time(d.end_time)%></p>
+    </li>
+<% end %>
+</ul>   
+
+<div class="new_time_slot">
+<%= render 'day_availabilities/form' %>
+</div>
+<%= link_to 'Edit', edit_week_availability_path(@week_availability) %> |
+<%= link_to 'Back', week_availabilities_path %>
+

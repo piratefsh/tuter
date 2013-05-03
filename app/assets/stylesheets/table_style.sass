@@ -1,6 +1,7 @@
 @import './application'
 
 table 
+    width: 100%
     clear: both
     @include center
     border-collapse: collapse
@@ -8,13 +9,17 @@ table
         @include border_bottom ($grey)
         th 
             border-bottom: 2px solid $grey
+            border-top: 2px solid $grey
         td, th
             padding: $medium_space 
+            text-align: center
 
         &:nth-child(even)
-            background-color: rgba($white, 0.8)
+            background-color: rgba($light-grey, 0.8)
     p 
         margin: 0
         padding: $little_space
         font-size: small
         font-style: italic
+
+

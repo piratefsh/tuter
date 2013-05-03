@@ -13,7 +13,7 @@
     <h2><%=@user.first_name %> <%=@user.last_name %></h2>
     <p><%=@user.desc %></p>
     <h3>Courses</h3>
-    <p><%= @user.courses.join(' <br/> ').html_safe %></p>
+    <p><%= @user.courses.join(' <br/> ').upcase.html_safe %></p>
     <h3>Personal Information</h3>
     <% if @user.age? %>
         <div>Age: <%=@user.age %></div>
@@ -35,7 +35,14 @@
     <div><a href="mailto:<%=@user.email%>"><%= @user.email %></a></div>
     <div><% if @user.fb_profile %><%= link_to "Facebook Profile", @user.fb_profile %><% end %></div>
     <!-- Button to edit user profile -->
-        <div class="small_button unimp">
-        <%= button_to "Edit Profile", edit_user_registration_path(@user), :method=> :get %>
-        </div>
+    <h3>Schedule</h3>
+    <%= link_to "View", week_availabilities_path(:user_id => @user.id) %>
+
+    <!-- Only display edit user option for own profile -->
+    <% if current_user and @user.id == current_user.id %>
+    <div class="small_button unimp">
+    <%= button_to "Edit Profile", edit_user_registration_path(@user), :method=> :get %>
+    </div>
+    <% end %>
+
 </div>

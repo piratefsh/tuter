@@ -3,7 +3,7 @@
 <% end %>
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for([resource], :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+<%= form_for([resource, resource.with_location], :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="form_element">
@@ -39,11 +39,11 @@
 
   <div>
     <%= f.label :age %>
-    <%= select(:user, :age, 18..80) %></div>
+    <%= select(:user, :age, User.age_range, {:include_blank => :true}) %></div>
 
   <div>
     <%= f.label :year %>
-    <%= select(:user, :year, ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate', 'Others']) %></div>
+    <%= select(:user, :year, User.years, {:include_blank => :true}) %></div>
   <% if current_user.role? :tutor%>
   <div>
     <% rates_array = Array.new
@@ -60,6 +60,11 @@
     <%= select(:user, :rate, rates_array, {:include_blank => '-'}) %>
   </div>
   <% end %>
+
+  <div>
+    <%= f.label :time_zone %>
+    <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones %>
+  </div>
   <div>
     <%= f.label "Short Description of Yourself" %>
     <%= f.text_area :desc %></div>
@@ -69,12 +74,6 @@
     <div><%= f.label "Enter password to confirm changes" %> 
     <%= f.password_field :current_password %><br /></div>
   <% end %>
-
-  <div>
-    <%= f.fields_for :location do |locBuilder| %>
-      <%= render "locations/form", :f => locBuilder %>
-    <% end %>
-  </div> 
 
 
   <div><label></label><%= f.submit "Update" %></div>
