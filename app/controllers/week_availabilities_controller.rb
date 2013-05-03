@@ -1,7 +1,7 @@
 class WeekAvailabilitiesController < ApplicationController
   
   
-  helper_method :adjust_to_utc
+  helper_method :format_time
 
   # GET /week_availabilities
   # GET /week_availabilities.json
@@ -85,7 +85,7 @@ class WeekAvailabilitiesController < ApplicationController
     end
   end
 
-  def adjust_to_utc(time)
-    time.in_time_zone(current_user.time_zone)
+  def format_time(d)
+     d.to_time.in_time_zone(current_user.time_zone).strftime(DayAvailability.time_format)
   end
 end
