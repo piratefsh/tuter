@@ -8,3 +8,4 @@ en:
         day_availability:
             create: "Add"
             update: "Update"
+            edit: "Save"

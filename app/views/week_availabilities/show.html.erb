@@ -13,7 +13,7 @@
 <ul id="days">
 <%@week_availability.day_availabilities.each do |d| %>
     <li>   
-        <p class="link"><%=link_to edit_week_availability_day_availability_path(d)%></p>
+        <p class="link"><%=link_to edit_week_availability_day_availability_path(@week_availability, d)%>
         <p class="day"><%=DayAvailability.days[Integer(d.day)][0]%></p>
         <p class="start_time"><%= d.start_time.to_time.strftime("%H:%M")%></p>
         <p class="end_time"><%=d.end_time.to_time.strftime("%H:%M")%></p>

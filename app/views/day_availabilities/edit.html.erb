@@ -1,6 +1,7 @@
-<h1>Editing day_availability</h1>
+<h1>Editing Time Slot</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @day_availability %> |
-<%= link_to 'Back', day_availability_path %>
+ <div class="small_button unimp">
+            <%= button_to "Delete", [@day_availability.week_availability, @day_availability],:data => { :confirm => "Are you sure?" }, :method => :delete %>
+</div>
+ <%= link_to 'Back', week_availability_path %>

@@ -1,4 +1,4 @@
-class DayAvailabilitiesController < ApplicationController
+class DayAvailabilitiesController < WeekAvailabilitiesController
   # GET /day_availabilities
   # GET /day_availabilities.json
   def index

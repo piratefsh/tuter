@@ -32,6 +32,7 @@ Tuter::Application.routes.draw do
 
   resources :week_availabilities do
     resources :day_availabilities
+    resources :day_availability
   end
   
   # Omniauth routes
