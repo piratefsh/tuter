@@ -10,6 +10,14 @@ table.schedule
         background-color: $red
     td 
         text-align: center
+        &:hover
+            background-color: rgba($red, 0.6)
+            a
+                color: $white
+        a 
+            text-decoration: none
+            color: $dark_grey
+            font-weight: bold
     tr
         background-color: rgba($light_grey, 0.8)
         &:nth-child(even)
@@ -31,3 +39,4 @@ div.new_time_slot
 
 ul#days
     display: none
+
