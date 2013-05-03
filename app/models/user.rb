@@ -53,6 +53,14 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :location, :courses
 
+  def self.years
+    ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate', 'Others']
+  end
+  
+  def self.age_range
+    18..80
+  end
+
   def with_location
     self.build_location
     self

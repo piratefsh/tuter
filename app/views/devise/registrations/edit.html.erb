@@ -39,11 +39,11 @@
 
   <div>
     <%= f.label :age %>
-    <%= select(:user, :age, 18..80) %></div>
+    <%= select(:user, :age, User.age_range, {:include_blank => :true}) %></div>
 
   <div>
     <%= f.label :year %>
-    <%= select(:user, :year, ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate', 'Others']) %></div>
+    <%= select(:user, :year, User.years, {:include_blank => :true}) %></div>
   <% if current_user.role? :tutor%>
   <div>
     <% rates_array = Array.new
