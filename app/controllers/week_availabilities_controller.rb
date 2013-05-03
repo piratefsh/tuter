@@ -3,7 +3,7 @@ class WeekAvailabilitiesController < ApplicationController
   # GET /week_availabilities.json
   def index
     @week_availabilities = WeekAvailability.where("user_id = ?", params[:user_id])
-
+    @user = User.find(params[:user_id])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @week_availabilities }

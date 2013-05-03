@@ -92,7 +92,7 @@
               end %>
         </td> 
         <td><%= randomLocation() %></td> 
-        <td>5pm-6pm</td> 
+        <td><%= link_to "View", week_availabilities_path(:user_id => user.id) %></td> 
         <td><%= get_types(user).join(', ')%></td> 
         <td><%= if user.rate? 
                   user.rate 

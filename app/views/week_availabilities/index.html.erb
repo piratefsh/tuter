@@ -3,6 +3,7 @@
 <% end %>
 <h1>Schedules</h1>
 
+<% if @week_availabilities.any? %>
 <table class="schedule">
   <tr>
     <th>Owner</th>
@@ -25,7 +26,11 @@
   </tr>
 <% end %>
 </table>
-
+<% else %>
+  <p><%= @user.first_name + " " + @user.last_name %> does not have any schedules yet</p>
+<% end %>
 <br />
 
-<%= link_to 'New Schedule', new_week_availability_path %>
+<% if @user.id == current_user.id %>
+  <%= link_to 'New Schedule', new_week_availability_path %>
+<% end %>
