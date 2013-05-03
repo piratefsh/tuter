@@ -2,7 +2,7 @@
   <%= stylesheet_link_tag "form_style" %>
 <% end %>
 
-<%= form_for [@week_availability, @week_availability.day_availabilities.build] do |f|%>
+<%= form_for [@week_availability, @day_availability] do |f|%>
 <div>
     <%= f.label :day %>
     <%= f.select :day, DayAvailability.days %>
@@ -22,5 +22,4 @@
     <label></label>
     <%= f.submit%>
 </div>
- <div class="small_button unimp">
 <% end %>

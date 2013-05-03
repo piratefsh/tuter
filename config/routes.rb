@@ -30,6 +30,8 @@ Tuter::Application.routes.draw do
     end 
   end
 
+  resources :day_availabilities
+  
   resources :week_availabilities do
     resources :day_availabilities
     resources :day_availability

@@ -1,7 +1,9 @@
-<h1>Editing Time Slot</h1>
+<h1>Edit Time Slot</h1>
 
 <%= render 'form' %>
+<h3>Delete Time Slot</h3>
  <div class="small_button unimp">
+    <label></label>
             <%= button_to "Delete", [@day_availability.week_availability, @day_availability],:data => { :confirm => "Are you sure?" }, :method => :delete %>
 </div>
  <%= link_to 'Back', week_availability_path %>

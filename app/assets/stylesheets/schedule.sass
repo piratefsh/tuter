@@ -33,9 +33,14 @@ div.new_time_slot
             display: inline
 
         div 
-            margin-right: $medium_space
+            margin-right: $big_space
             padding: $medium_space * 2
             background-color: $light_grey
+
+            @include rounded_corners(4px)
+
+            &:last-child
+                background-color: $white
 
 ul#days
     display: none

@@ -14,7 +14,7 @@ class WeekAvailabilitiesController < ApplicationController
   # GET /week_availabilities/1.json
   def show
     @week_availability = WeekAvailability.find(params[:id])
-
+    @day_availability = DayAvailability.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @week_availability }

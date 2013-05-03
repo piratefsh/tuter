@@ -22,6 +22,7 @@ class DayAvailabilitiesController < WeekAvailabilitiesController
   # GET /day_availabilities/new
   # GET /day_availabilities/new.json
   def new
+    @week_availability = WeekAvailability.find(params[:week_availability_id])
     @day_availability = DayAvailability.new
 
     respond_to do |format|
@@ -55,11 +56,11 @@ class DayAvailabilitiesController < WeekAvailabilitiesController
   # PUT /day_availabilities/1.json
   def update
     @day = DayAvailability.find(params[:id])
-    @week = @day.week_availability
+    @week = WeekAvailability.find(params[:week_availability_id])
 
     respond_to do |format|
       if @day.update_attributes(params[:day_availability])
-        redirect_to @week, notice: 'Successfully updated schedule.'
+        format.html {redirect_to @week, notice: 'Successfully updated schedule.'}
         # format.json { head :no_content }
       else
         format.html { render action: "edit" }
