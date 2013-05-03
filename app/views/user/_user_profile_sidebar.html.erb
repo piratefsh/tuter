@@ -36,7 +36,7 @@
     <div><% if @user.fb_profile %><%= link_to "Facebook Profile", @user.fb_profile %><% end %></div>
     <!-- Button to edit user profile -->
     <h3>Schedule</h3>
-    <%= link_to "View", week_availabilities_path %>
+    <%= link_to "View", week_availabilities_path(:user_id => @user.id) %>
 
     <!-- Only display edit user option for own profile -->
     <% if @user.id == current_user.id %>

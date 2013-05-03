@@ -2,7 +2,7 @@ class WeekAvailabilitiesController < ApplicationController
   # GET /week_availabilities
   # GET /week_availabilities.json
   def index
-    @week_availabilities = WeekAvailability.all
+    @week_availabilities = WeekAvailability.where("user_id = ?", params[:user_id])
 
     respond_to do |format|
       format.html # index.html.erb
