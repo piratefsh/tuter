@@ -1,4 +1,8 @@
 class WeekAvailabilitiesController < ApplicationController
+  
+  
+  helper_method :adjust_to_utc
+
   # GET /week_availabilities
   # GET /week_availabilities.json
   def index
@@ -79,5 +83,9 @@ class WeekAvailabilitiesController < ApplicationController
       format.html { redirect_to week_availabilities_url }
       format.json { head :no_content }
     end
+  end
+
+  def adjust_to_utc(time)
+    time.in_time_zone(current_user.time_zone)
   end
 end

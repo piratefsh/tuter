@@ -6,4 +6,9 @@ class DayAvailability < ActiveRecord::Base
   def self.days
     Date::DAYNAMES.zip((0..6).to_a)
   end
+
+  def self.time_format
+    format = "%I:%M %p"
+  end
+
 end
