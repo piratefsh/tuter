@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130503042256) do
+ActiveRecord::Schema.define(:version => 20130503192529) do
 
   create_table "abilities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -117,6 +117,7 @@ ActiveRecord::Schema.define(:version => 20130503042256) do
     t.string   "year"
     t.string   "transportation"
     t.string   "rate"
+    t.string   "time_zone"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

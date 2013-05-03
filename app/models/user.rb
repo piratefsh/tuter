@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
                   :first_name, :last_name, :desc, :provider, :uid, :roles, :location, :location_attributes,
-                  :age, :transportation, :year, :courses, :courses_attributes, :rate
+                  :age, :transportation, :year, :courses, :courses_attributes, :rate, :time_zone
 
   # Setup creation validation
   # Devise's default => :email and :password must be present 
