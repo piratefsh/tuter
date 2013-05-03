@@ -30,12 +30,12 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, 
-  # :lockable, :timeoutable and :omniauthable
+  # :lockable, :timeoutable
   devise :database_authenticatable, :registerable, :validatable,
          :recoverable, :rememberable, :trackable, :omniauthable,
          :confirmable
 
-  has_one :location, :inverse_of => :user
+  # has_one :location, :inverse_of => :user
   has_many :courses
 
   # Setup accessible (or protected) attributes for your model
@@ -51,12 +51,12 @@ class User < ActiveRecord::Base
   ROLES = %w[student tutor org]
   has_and_belongs_to_many :roles
 
-  accepts_nested_attributes_for :location, :courses, :allow_destroy => true
+  accepts_nested_attributes_for :courses, :allow_destroy => true
 
-  def with_location
-    self.location.build
-    self
-  end
+  # def with_location
+    # self.location.build
+    # self
+  # end
   def with_course
     self.courses.build
     self
