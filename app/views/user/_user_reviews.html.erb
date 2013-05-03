@@ -12,9 +12,12 @@
                 * 
             <%end%></span>
             <span class="review_content"><%= r.content%></span>
+            <% if r.recommend %>
+                <span class="review_recommended">Recommended Tutor.<br/></span>
+            <% end %>
             <span class="review_reviewer">by <%= link_to user_path :id=> r.reviewer_id do %>
                 <%= User.find(r.reviewer_id).full_name %>
-                <% end %>
+                <% end %></span>
             </span><span class="time"><%= r.created_at.to_time.in_time_zone(current_user.time_zone).strftime("%d %b %Y")%></span></p>
 
         </li>
