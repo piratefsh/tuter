@@ -20,12 +20,14 @@ class DashboardController < ApplicationController
         end
 
         Group.all.select do |group|
+            #groups that user is a tutor for
             group.tutor_ids.all.each do |tutor|
                 if current_user.id == tutor.tid
                     @tutor_groups << group
                 end
             end
 
+            #groups that user is a student in
             group.student_ids.all.each do |student|
                 if current_user.id == student.sid 
                     @student_groups << group 
