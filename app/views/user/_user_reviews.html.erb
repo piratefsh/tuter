@@ -19,7 +19,11 @@
                 <%= User.find(r.reviewer_id).full_name %>
                 <% end %></span>
             </span><span class="time"><%= r.created_at.to_time.in_time_zone(current_user.time_zone).strftime("%d %b %Y")%></span></p>
-
+            <% if r.reviewer_id.equal?(current_user.id) %>
+            <div class="small_button unimp button_group">
+                <%= button_to "Delete", r,:data => { :confirm => "Are you sure?" }, :method => :delete %>
+            </div>
+            <% end %>
         </li>
     <% end %>
 </ul>

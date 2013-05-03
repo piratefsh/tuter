@@ -14,9 +14,10 @@ class ReviewsController < ApplicationController
   # GET /reviews/1.json
   def show
     @review = Review.find(params[:id])
+    @user = User.find(@review.user_id)
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html {redirect_to @user}
       format.json { render json: @review }
     end
   end
@@ -73,10 +74,11 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/1.json
   def destroy
     @review = Review.find(params[:id])
+    @user = User.find(@review.user_id)
     @review.destroy
 
     respond_to do |format|
-      format.html { redirect_to reviews_url }
+      format.html { redirect_to @user }
       format.json { head :no_content }
     end
   end
