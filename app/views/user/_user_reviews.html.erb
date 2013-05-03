@@ -18,8 +18,8 @@
             <span class="review_reviewer">by <%= link_to user_path :id=> r.reviewer_id do %>
                 <%= User.find(r.reviewer_id).full_name %>
                 <% end %></span>
-            </span><span class="time"><%= r.created_at.to_time.in_time_zone(current_user.time_zone).strftime("%d %b %Y")%></span></p>
-            <% if r.reviewer_id.equal?(current_user.id) %>
+            </span><span class="time"><%= r.created_at.to_time.in_time_zone(Time.zone).strftime("%d %b %Y")%></span></p>
+            <% if current_user and r.reviewer_id.equal?(current_user.id) %>
             <div class="small_button unimp button_group">
                 <%= button_to "Delete", r,:data => { :confirm => "Are you sure?" }, :method => :delete %>
             </div>
@@ -27,7 +27,8 @@
         </li>
     <% end %>
 </ul>
-
+    <% if current_user %>
     <h3>Add Review</h3>
     <%= render "reviews/form" %>
+    <% end %>
 </div>
