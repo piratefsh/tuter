@@ -12,30 +12,29 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
+    <%= f.hidden_field :user_id,  :value=>@user.id%>
   </div>
   <div class="field">
-    <%= f.label :reviewer_id %><br />
-    <%= f.number_field :reviewer_id %>
+    <%= f.hidden_field :reviewer_id, :value=> current_user.id %>
   </div>
   <div class="field">
-    <%= f.label :rating %><br />
-    <%= f.number_field :rating %>
+    <%= f.label :rating %>
+    <%= f.select :rating, (1..5) %>
   </div>
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :content %><br />
+    <%= f.label :content %>
     <%= f.text_field :content %>
   </div>
   <div class="field">
-    <%= f.label :recommend %><br />
+    <%= f.label "Recommended?" %>
     <%= f.check_box :recommend %>
   </div>
   <div class="actions">
+    <label></label>
     <%= f.submit %>
   </div>
 <% end %>
