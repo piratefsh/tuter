@@ -37,6 +37,7 @@ class User < ActiveRecord::Base
 
   has_one :location
   has_many :courses
+  has_one :organization
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 

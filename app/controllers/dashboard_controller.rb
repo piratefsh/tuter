@@ -6,6 +6,7 @@ class DashboardController < ApplicationController
         @group = Group.new
         @course = @group.build_course
         @programs = Program.all
+        @organization = Organization.new
         student_id = @group.student_ids.build
         tutor_id = @group.tutor_ids.build
 
@@ -35,20 +36,6 @@ class DashboardController < ApplicationController
     def delete_group 
         Group.destroy(params[:id])
 
-        respond_to do |format|
-            format.html {redirect_to dashboard_path}
-        end
-    end
-
-    #GET edit group view
-    def edit_group 
-        @group = Group.find(params[:id])
-        respond_to do |format|
-            format.html {redirect_to edit_group}
-        end
-    end
-
-    def create_group 
         respond_to do |format|
             format.html {redirect_to dashboard_path}
         end

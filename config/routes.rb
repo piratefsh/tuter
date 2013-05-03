@@ -17,6 +17,7 @@ Tuter::Application.routes.draw do
   resources :user
   resources :locations
   resources :search
+  resources :organizations
 
   resources :home do
     member do 
@@ -37,6 +38,9 @@ Tuter::Application.routes.draw do
   # User Signup Routes
   match "/user" => "user#user"
   match "/dashboard" => "home#index"
+
+  # Organization List Page
+  match "/organizations" => "organizations#index"
  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

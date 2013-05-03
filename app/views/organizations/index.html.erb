@@ -1,0 +1,22 @@
+<%= content_for :header do%>
+  <%= stylesheet_link_tag    "search", :media => "all" %>
+  <%= javascript_include_tag "sorttable", "search_table" %>  
+<% end %>
+
+<h1>Organization Index Page</h1>
+<ul>
+<% if current_user and current_user.role? :org%>
+	<li><%= link_to "/dashboard" do%>Create Organization<% end %></li>
+<% end %>
+</ul>
+<div id="the_organizations">
+	<h2>Organizations</h2>
+	<% @organizations.each do |organization| %>
+	<tr><td>
+		<%= organization.name %></td>
+		<td>
+		<%= link_to 'Show', organization %></td>
+	</tr>
+	<br />
+</div>
+<% end %>

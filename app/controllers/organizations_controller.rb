@@ -1,6 +1,7 @@
 class OrganizationsController < ApplicationController
   def index
-    @groups = Organization.all
+    @organizations = Organization.all
+    @user = current_user
 
     respond_to do |format|
       format.html
@@ -8,7 +9,7 @@ class OrganizationsController < ApplicationController
   end
 
   def new
-    @group = Group.new
+    @organization = Organization.new
 
     respond_to do |format|
       format.html
@@ -16,14 +17,22 @@ class OrganizationsController < ApplicationController
   end
 
   def create 
-    @group = Group.new(params[:group])
+    @organization = Organization.new(params[:organization])
 
     respond_to do |format|
-      if @group.save
-        format.html { redirect_to groups_path }
+      if @organization.save
+        format.html { redirect_to dashboard_path }
       end 
     end
   end 
+
+  def show
+    @organization = Organization.find(params[:id])
+
+    respond_to do |format|
+      format.html
+    end
+  end
 
   def destroy
   end
