@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  reviewer_id: 1
+  rating: 1
+  title: MyString
+  content: MyString
+  recommend: false
+
+two:
+  user_id: 1
+  reviewer_id: 1
+  rating: 1
+  title: MyString
+  content: MyString
+  recommend: false

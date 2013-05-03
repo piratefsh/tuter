@@ -3,5 +3,21 @@
 <% end %>
 <div id="reviews">
 <h1>Reviews</h1>
-<p>Coming soon.</p>
+<ul>
+    <% @reviews.each do |r| %>
+        <li>
+            <h4><%= r.title %></h4>
+            <p class="review">
+            <span class="review_content"><%= r.content%></span>
+            <span class="review_reviewer">by <%= link_to user_path :id=> r.reviewer_id do %>
+                <%= User.find(r.reviewer_id).full_name %>
+                <% end %>
+            </span><span class="time"><%= r.created_at.to_time.in_time_zone(current_user.time_zone).strftime("%d %b %Y")%></span></p>
+
+        </li>
+    <% end %>
+</ul>
+
+    <h3>Add Review</h3>
+    <%= render "reviews/form" %>
 </div>

@@ -16,5 +16,31 @@ div#reviews_container
         h1 
             margin-top: 0
 
+        ul 
+            list-style-type: none
+            li 
+                background-color: $white
+                padding: $big_space
+                margin-bottom: $medium_space
+
+                span
+                    font-size: small
+                    &.review_content
+                        display: block
+                        font-size: medium
+                    &.time 
+                        font-style: italic
+                        float: right
+                        color: $grey
+
+
+
+            p, h4
+                margin: 0
+                padding: $little_space
+            h4 
+                border-bottom: 1px solid $light_grey
+
+
 div#profile
     display: table-cell

@@ -57,6 +57,9 @@ class User < ActiveRecord::Base
     ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate', 'Others']
   end
   
+  def full_name
+    self.first_name + " " + self.last_name
+  end
   def self.age_range
     18..80
   end

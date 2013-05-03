@@ -1,5 +1,7 @@
 Tuter::Application.routes.draw do  
 
+  resources :reviews
+
   devise_for :users
   devise_scope :user do
     match "/users/sign_out" => "devise/sessions#destroy"
@@ -36,6 +38,8 @@ Tuter::Application.routes.draw do
     resources :day_availabilities
     resources :day_availability
   end
+
+  resources :reviews
   
   # Omniauth routes
   match '/users/auth/:provider/callback', to: 'sessions#create'
