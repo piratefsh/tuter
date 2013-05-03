@@ -1,6 +1,5 @@
 <%= content_for :header do%>
-  <%= stylesheet_link_tag    "search", :media => "all" %>
-  <%= javascript_include_tag "sorttable", "search_table" %>  
+  
 <% end %>
 
 <h1>Organization Index Page</h1>
@@ -11,12 +10,21 @@
 </ul>
 <div id="the_organizations">
 	<h2>Organizations</h2>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Show</th>
+			<th>Owner</th>
+		</tr>
 	<% @organizations.each do |organization| %>
 	<tr><td>
 		<%= organization.name %></td>
 		<td>
 		<%= link_to 'Show', organization %></td>
+		<td>
+			<%= User.find(organization.user_id).last_name%>
+			</td>
 	</tr>
-	<br />
-</div>
 <% end %>
+</table>
+</div>

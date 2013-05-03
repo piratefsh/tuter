@@ -37,6 +37,10 @@ class OrganizationsController < ApplicationController
   def destroy
   end
 
+  def down
+    drop_table :organizations
+  end
+
   def edit
     # @group = Group.find(params[:group_id])
 
