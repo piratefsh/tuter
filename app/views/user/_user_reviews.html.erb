@@ -27,9 +27,13 @@
         </li>
     <% end %>
 </ul>
-    <% if current_user and @user.role? :tutor %>
-    <h3>Add Review</h3>
-    <%= render "reviews/form" %>
+    <% if @user.role? :tutor %>
+        <%if current_user %>
+            <h3>Add Review</h3>
+            <%= render "reviews/form" %>
+        <% else %>
+            <h3> Log In to add a review. </h3>
+        <% end %>
     <% else %> <p>This user is not a tutor</p>
     <% end %>
 </div>
