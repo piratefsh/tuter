@@ -25,5 +25,5 @@
 <%= render 'day_availabilities/form' %>
 </div>
 <%= link_to 'Edit', edit_week_availability_path(@week_availability) %> |
-<%= link_to 'Back', week_availabilities_path %>
+<%= link_to 'Back', user_path(@week_availability.user_id) %>
 
