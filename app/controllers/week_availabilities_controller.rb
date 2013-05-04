@@ -81,7 +81,7 @@ class WeekAvailabilitiesController < ApplicationController
     @week_availability.destroy
 
     respond_to do |format|
-      format.html { redirect_to week_availabilities_url }
+      format.html { redirect_to week_availabilities_url(:user_id => @week_availability.user_id)}
       format.json { head :no_content }
     end
   end

@@ -48,11 +48,26 @@ $(document).ready(function()
         var link = $('p.link a', t).html()
 
         var startHour = parseInt(start.substring(0, 2))
-        if(start.indexOf('P') >= 0) startHour += 12
-        var thisTr = timeRows[startHour]
+        var endHour = parseInt(end.substring(0, 2))
+        var hourDiff = endHour - startHour
 
-        var all = $('<a></a>').html(start + " to " + end).attr('href', link)
-        $($('td', thisTr).get(dayColHash[day])).html(all)
+        var thisTr = timeRows[startHour]
+        var timeIn12Hr = convert24Hrto12Hr(start) + " to " + convert24Hrto12Hr(end)
+        var all = $('<a></a>').html(timeIn12Hr).attr('href', link)
+
+        $($('td', thisTr).get(dayColHash[day])).html(all).attr('rowspan', hourDiff).attr('class', 'busy')
  
    }
 })
+
+//for format HH:MM AP
+function convert24Hrto12Hr(time)
+{
+    var hour = parseInt(time.substring(0, 2))
+    var newHour = hour
+    if(hour > 12)
+        newHour = hour - 12
+
+    return "" + newHour + time.substring(2)
+
+}

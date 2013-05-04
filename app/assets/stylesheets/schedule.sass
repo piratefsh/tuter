@@ -7,7 +7,7 @@ table.schedule
     th 
         padding: $big_space
         color: $white
-        background-color: $red
+        background-color: $grey
     td 
         text-align: center
         &:hover
@@ -23,7 +23,9 @@ table.schedule
             background-color: $light_grey 
             color: $grey
             font-weight: bold
-
+        &.busy
+            background-color: $light_blue
+            padding: $medium_space
     tr
         background-color: rgba($light_grey, 0.8)
         &:nth-child(even)

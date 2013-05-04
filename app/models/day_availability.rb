@@ -8,7 +8,7 @@ class DayAvailability < ActiveRecord::Base
   end
 
   def self.time_format
-    format = "%I:%M %p"
+    format = "%H:%M %p"
   end
 
 end
