@@ -18,10 +18,23 @@ table.schedule
             text-decoration: none
             color: $dark_grey
             font-weight: bold
+
+        &:first-child
+            background-color: $light_grey 
+            color: $grey
+            font-weight: bold
+
     tr
         background-color: rgba($light_grey, 0.8)
         &:nth-child(even)
             background-color: rgba($white, 0.8)
+
+        height: 50px
+
+        &.pm_row
+            td:first-child
+                background-color: $grey 
+                color: $white 
 
 div.new_time_slot
     margin: 

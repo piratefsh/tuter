@@ -11,7 +11,7 @@
 </table>
 
 <ul id="days">
-<%@week_availability.day_availabilities.each do |d| %>
+<%@days.each do |d| %>
     <li>   
         <p class="link"><%=link_to edit_week_availability_day_availability_path(@week_availability, d)%>
         <p class="day"><%=DayAvailability.days[Integer(d.day)][0]%></p>
