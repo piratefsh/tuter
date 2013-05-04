@@ -1,7 +1,7 @@
 
 
 <%= form_for(@review) do |f| %>
-  <% if session[:errors].any? %>
+  <% if session[:errors] %>
     <div id="error_explanation">
       <h2><%= pluralize(session[:errors].count, "error") %> prohibited this review from being saved:</h2>
 
