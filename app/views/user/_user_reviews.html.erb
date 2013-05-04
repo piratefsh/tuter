@@ -3,37 +3,37 @@
 <% end %>
 <div id="reviews">
 <h1>Reviews</h1>
-<ul>
-    <% @reviews.each do |r| %>
-        <li>
-            <h4><%= r.title %></h4>
-            <p class="review">
-            <span class="review_rating"><% r.rating.times do %>
-                * 
-            <%end%></span>
-            <span class="review_content"><%= r.content%></span>
-            <% if r.recommend %>
-                <span class="review_recommended">Recommended Tutor.<br/></span>
-            <% end %>
-            <span class="review_reviewer">by <%= link_to user_path :id=> r.reviewer_id do %>
-                <%= User.find(r.reviewer_id).full_name %>
-                <% end %></span>
-            </span><span class="time"><%= r.created_at.to_time.in_time_zone(Time.zone).strftime("%d %b %Y")%></span></p>
-            <% if current_user and r.reviewer_id.equal?(current_user.id) %>
-            <div class="small_button unimp button_group">
-                <%= button_to "Delete", r,:data => { :confirm => "Are you sure?" }, :method => :delete %>
-            </div>
-            <% end %>
-        </li>
-    <% end %>
-</ul>
     <% if @user.role? :tutor %>
+        <ul>
+            <% @reviews.each do |r| %>
+                <li>
+                    <h4><%= r.title %></h4>
+                    <p class="review">
+                    <span class="review_rating"><% r.rating.times do %>
+                        * 
+                    <%end%></span>
+                    <span class="review_content"><%= r.content%></span>
+                    <% if r.recommend %>
+                        <span class="review_recommended">Recommended Tutor.<br/></span>
+                    <% end %>
+                    <span class="review_reviewer">by <%= link_to user_path :id=> r.reviewer_id do %>
+                        <%= User.find(r.reviewer_id).full_name %>
+                        <% end %></span>
+                    </span><span class="time"><%= r.created_at.to_time.in_time_zone(Time.zone).strftime("%d %b %Y")%></span></p>
+                    <% if current_user and r.reviewer_id.equal?(current_user.id) %>
+                    <div class="small_button unimp button_group">
+                        <%= button_to "Delete", r,:data => { :confirm => "Are you sure?" }, :method => :delete %>
+                    </div>
+                    <% end %>
+                </li>
+            <% end %>
+        </ul>
         <%if current_user %>
             <h3>Add Review</h3>
             <%= render "reviews/form" %>
-        <% else %>
-            <h3> Log In to add a review. </h3>
-        <% end %>
-    <% else %> <p>This user is not a tutor</p>
+    <% else %>
+        <h3> Log In to add a review. </h3>
+    <% end %>
+<% else %> <p>This user is not a tutor</p>
     <% end %>
 </div>
