@@ -1,17 +1,19 @@
 
 
 <%= form_for(@review) do |f| %>
-  <% if session[:errors] %>
+<% if flash[:notice] -%>
+  <p class="notice"><%= flash[:notice] %></p>
+<% end -%>
+<% if flash[:errors] -%>
     <div id="error_explanation">
-      <h2><%= pluralize(session[:errors].count, "error") %> prohibited this review from being saved:</h2>
-
-      <ul>
-      <% session[:errors].full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <h2><%= pluralize(flash[:errors].count,  "Error" )%></h2>
+    <ul>
+      <% flash[:errors].full_messages.each do |e| %>
+      <li><%= e%></li>
       <% end %>
       </ul>
     </div>
-  <% end %>
+<% end -%>
 
   <div class="field">
     <%= f.hidden_field :user_id,  :value => @user.id%>

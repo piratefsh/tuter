@@ -45,12 +45,10 @@ class ReviewsController < ApplicationController
     @user = User.find(@review.user_id)
     respond_to do |format|
       if @review.save
-        session[:errors] = nil
         format.html { redirect_to @review, notice: 'Review was successfully created.' }
         format.json { render json: @review, status: :created, location: @review }
       else
-        session[:errors] = @review.errors
-        format.html { redirect_to @user, :review => @review}
+        format.html { redirect_to @user, :flash => {:errors => @review.errors}}
         format.json { render json: @review.errors, status: :unprocessable_entity }
       end
     end
