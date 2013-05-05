@@ -68,25 +68,25 @@ User.create(first_name: 'Dorothea', last_name: 'Sweem', roles: %w[tutor],
 
 
 # Student User Seeds
-User.create(first_name: 'Roger', last_name: 'Seid', roles: %w[student]
+User.create(first_name: 'Roger', last_name: 'Seid', roles: %w[student],
 			email: 'roger@seid.com', password: 'PASSWORD')
-User.create(first_name: 'Dollie', last_name: 'Daquino', roles: %w[student]
+User.create(first_name: 'Dollie', last_name: 'Daquino', roles: %w[student],
 			email: 'dollie@daquino.com', password: 'PASSWORD')
-User.create(first_name: 'Eva', last_name: 'Seahorn', roles: %w[student]
+User.create(first_name: 'Eva', last_name: 'Seahorn', roles: %w[student],
 			email: 'eva@seahorn.com', password: 'PASSWORD')
-User.create(first_name: 'Mamie', last_name: 'Mcintee', roles: %w[student]
+User.create(first_name: 'Mamie', last_name: 'Mcintee', roles: %w[student],
 			email: 'mamie@mcintee.com', password: 'PASSWORD')
-User.create(first_name: 'Lyndon', last_name: 'Bellerdine', roles: %w[student]
+User.create(first_name: 'Lyndon', last_name: 'Bellerdine', roles: %w[student],
 			email: 'lyndon@bellerdine.com', password: 'PASSWORD')
-User.create(first_name: 'Jacklyn', last_name: 'Emayo', roles: %w[student]
+User.create(first_name: 'Jacklyn', last_name: 'Emayo', roles: %w[student],
 			email: 'jacklyn@emayo.com', password: 'PASSWORD')
-User.create(first_name: 'Rubin', last_name: 'Crotts', roles: %w[student]
+User.create(first_name: 'Rubin', last_name: 'Crotts', roles: %w[student],
 			email: 'rubin@crotts.com', password: 'PASSWORD')
-User.create(first_name: 'Boris', last_name: 'Catino', roles: %w[student]
+User.create(first_name: 'Boris', last_name: 'Catino', roles: %w[student],
 			email: 'boris@catino.com', password: 'PASSWORD')
-User.create(first_name: 'Colin', last_name: 'Altonen', roles: %w[student]
+User.create(first_name: 'Colin', last_name: 'Altonen', roles: %w[student],
 			email: 'colin@altonen.com', password: 'PASSWORD')
-User.create(first_name: 'Kerry', last_name: 'Evertt', roles: %w[student]
+User.create(first_name: 'Kerry', last_name: 'Evertt', roles: %w[student],
 			email: 'kerry@evertt.com', password: 'PASSWORD')
 
 

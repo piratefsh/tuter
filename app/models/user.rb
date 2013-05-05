@@ -32,8 +32,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, 
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :validatable,
-         :recoverable, :rememberable, :trackable, :omniauthable,
-         :confirmable
+         :recoverable, :rememberable, :trackable, :omniauthable
 
   has_one :location
   has_many :courses
@@ -41,7 +40,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
                   :first_name, :last_name, :desc, :provider, :uid, :roles, :location, :location_attributes,
-                  :age, :transportation, :year, :courses, :courses_attributes, :rate, :time_zone
+                  :age, :transportation, :year, :courses, :courses_attributes, :rate, :time_zone, :confirmed_at
 
   # Setup creation validation
   # Devise's default => :email and :password must be present 
@@ -149,5 +148,4 @@ class User < ActiveRecord::Base
     end
     courses
   end
-
 end
