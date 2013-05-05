@@ -25,23 +25,24 @@ gem 'omniauth-facebook', '~> 1.4.1'
 gem 'gmaps4rails', '~> 1.5.6'
 #gem 'role_model'
 gem 'guard'
-gem 'simplecov', :require => false, :group => :test
+# gem 'simplecov', :require => false, :group => :test
 gem 'cancan', '~> 1.6.0'
 #gem 'rails_admin'
 #gem 'activeadmin'
+gem 'rb-readline'
 
 group :production do
   gem 'pg'
-  gem 'thin'
+  # gem 'thin'
 end
 group :development, :test do
 	gem 'letter_opener'
   gem 'sqlite3'
   gem 'webrick'
-  gem 'debugger'
+  # gem 'debugger'
   gem 'annotate'
   gem 'better_errors'
-  gem 'binding_of_caller'
+  # gem 'binding_of_caller'
   gem 'capybara'
 end
 
