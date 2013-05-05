@@ -10,10 +10,6 @@ table.schedule
         background-color: $grey
     td 
         text-align: center
-        &:hover
-            background-color: rgba($red, 0.6)
-            a
-                color: $white
         a 
             text-decoration: none
             color: $dark_grey
@@ -26,6 +22,10 @@ table.schedule
         &.busy
             background-color: $light_blue
             padding: $medium_space
+        &:hover
+            background-color: rgba($red, 0.6)
+            a
+                color: $white
     tr
         background-color: rgba($light_grey, 0.8)
         &:nth-child(even)
