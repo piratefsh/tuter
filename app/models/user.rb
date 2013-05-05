@@ -60,6 +60,7 @@ class User < ActiveRecord::Base
   def full_name
     self.first_name + " " + self.last_name
   end
+
   def self.age_range
     18..80
   end
@@ -73,7 +74,8 @@ class User < ActiveRecord::Base
     self
   end
 
-  def initRates (rates)
+  def self.rates 
+    rates = Array.new
     start_rate  = 0
     end_rate    = 100
     interval    = 10

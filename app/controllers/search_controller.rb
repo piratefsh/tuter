@@ -17,8 +17,6 @@ class SearchController < ApplicationController
       end
     end
 
-    init_rates(@rates)
-
     respond_to do |format|
         format.html #search/index/html.erb
         # format.json {render :json => @tutors(:only => [:first_name, :last_name, :email]) }
@@ -51,22 +49,6 @@ class SearchController < ApplicationController
       groups
   end
   
-  def init_rates (rates)
-    start_rate  = 0
-    end_rate    = 100
-    interval    = 10
-    i = start_rate
-
-    rates << ""
-    
-    until end_rate < i
-        rates << "$#{i} - $#{i + interval}"
-        i += interval
-    end
-
-    rates
-  end
-
   def randomLocation
     loc = ['Helen C White', 'Steenbock Library', 'Memorial Library', 'SAC']
     loc[Random.rand(loc.size)]

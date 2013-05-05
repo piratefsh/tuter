@@ -45,7 +45,8 @@
           <label>Rate</label>
           <br/>
           <select name="rates">
-            <% @rates.each do |range| %>
+              <option></option>
+            <% User.rates.each do |range| %>
               <option><%= range %></option>
             <% end %>
           </select>
