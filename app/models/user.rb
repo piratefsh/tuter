@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :omniauthable,
          :confirmable
 
-  # has_one :location, :inverse_of => :user
+  has_one :location
   has_many :courses
 
   # Setup accessible (or protected) attributes for your model
@@ -51,12 +51,20 @@ class User < ActiveRecord::Base
   ROLES = %w[student tutor org]
   has_and_belongs_to_many :roles
 
-  accepts_nested_attributes_for :courses, :allow_destroy => true
+  accepts_nested_attributes_for :location, :courses, :allow_destroy => true
 
-  # def with_location
-    # self.location.build
-    # self
-  # end
+  def self.years
+    ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate', 'Others']
+  end
+  
+  def self.age_range
+    18..80
+  end
+
+  def with_location
+    self.build_location
+    self
+  end
   def with_course
     self.courses.build
     self
@@ -124,5 +132,17 @@ class User < ActiveRecord::Base
     ROLES.reject do |r|
       ((roles_mask || 0) & 2**ROLES.index(r)).zero?
     end
+  end
+def courses
+    courses = Array.new
+     # add courses that tutor has 
+    Group.all.select do |group|
+      group.tutor_ids.all.each do |tutor|
+        if (self.id == tutor.tid) and group.course 
+            courses << group.course.name
+        end
+      end
+    end
+    courses
   end
 end

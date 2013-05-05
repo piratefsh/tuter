@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
 
-  helper_method :randomCourse, :randomLocation
+  helper_method :randomCourse, :randomLocation, :get_types
 
 
   def index
@@ -14,8 +14,6 @@ class SearchController < ApplicationController
     @users.each do |u|
       if u.role? :tutor 
         @tutors.push(u)
-        @courses[u.id] = Array.new
-        get_courses(u, @courses)
       end
     end
 
@@ -27,18 +25,30 @@ class SearchController < ApplicationController
     end
   end
 
-  def get_courses(u, courses)
-    # add courses that tutor has 
+  #get types of groups that tutor has
+  def get_types(u)
+    types = Array.new
+
+    get_users_groups(u).each do |g|
+      if not types.include?(g.group_type)
+        types << g.group_type
+      end
+    end
+
+    types
+  end
+
+  def get_users_groups(u)
+    groups = Array.new
+
     Group.all.select do |group|
       group.tutor_ids.all.each do |tutor|
         if u.id == tutor.tid
-            course = group.course
-            if course 
-              courses[u.id] << course.name
-            end
+          groups << group
         end
       end
     end
+      groups
   end
   
   def init_rates (rates)

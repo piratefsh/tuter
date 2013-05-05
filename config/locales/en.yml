@@ -3,3 +3,9 @@
 
 en:
   hello: "Hello world"
+  helpers:
+    submit:
+        day_availability:
+            create: "Add"
+            update: "Update"
+            edit: "Save"

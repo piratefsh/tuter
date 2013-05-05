@@ -1,0 +1,36 @@
+<%= content_for :header do %>
+  <%= stylesheet_link_tag "table_style" %>
+<% end %>
+<h1>Schedules</h1>
+
+<% if @week_availabilities.any? %>
+<table class="schedule">
+  <tr>
+    <th>Owner</th>
+    <th>Type</th>
+    <th>Time Slots</th>
+    <th>Show</th>
+    <th>Edit</th>
+    <th>Delete</th>
+
+  </tr>
+
+<% @week_availabilities.each do |w| %>
+  <tr>
+    <td><%=User.find(w.user_id).last_name %></td>
+    <td><%= w.avail_type %></td>
+    <td><%= w.day_availabilities.size %></td>
+    <td><%= link_to 'Show', w %></td>
+    <td><%= link_to 'Edit', edit_week_availability_path(w) %></td>
+    <td><%= link_to 'Delete', w, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+<% else %>
+  <p><%= @user.first_name + " " + @user.last_name %> does not have any schedules yet</p>
+<% end %>
+<br />
+
+<% if @user.id == current_user.id %>
+  <%= link_to 'New Schedule', new_week_availability_path %>
+<% end %>

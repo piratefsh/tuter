@@ -13,6 +13,8 @@ Tuter::Application.routes.draw do
     resources :tutor_ids
     resources :courses
   end
+
+  resources :user
   resources :locations
   resources :search
 
@@ -28,13 +30,16 @@ Tuter::Application.routes.draw do
     end 
   end
 
+  resources :day_availabilities
+  
+  resources :week_availabilities do
+    resources :day_availabilities
+    resources :day_availability
+  end
+  
   # Omniauth routes
   match '/users/auth/:provider/callback', to: 'sessions#create'
   match '/users/auth/failure', to: redirect('/')
-
-  # User Signup Routes
-  match "/user" => "user#user"
-  match "/dashboard" => "home#index"
  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

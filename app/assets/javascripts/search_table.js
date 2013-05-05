@@ -1,16 +1,23 @@
 //Code from: http://blogs.digitss.com/javascript/jquery-javascript/implementing-quick-table-search-using-jquery-filter/
 
-//Mapping of input field to table column
-var column = new Array();
-column['name'] = 2;
-column['location'] = 4;
-column['course'] = 3;
-column['rates'] = 7;
-column['dropin'] = 6;
-column['group'] = 6;
+
 
 // When document is ready: this gets fired before body onload <img src='http://blogs.digitss.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> 
 $(document).ready(function(){
+    //Mapping of input field to table column
+    var column = new Array();
+    column['name'] = 2;
+    column['location'] = 4;
+    column['course'] = 3;
+    column['rates'] = 7;
+
+    //map all types
+    var groupInputs = $('input', '#group_types');
+
+    for(var i = 0; i < groupInputs.size(); i++)
+    {
+        column[$(groupInputs[i]).attr('name')] = 6;
+    }
 
     var table = $('table#results_table')
     $("p#no_results").hide();
@@ -57,6 +64,7 @@ $(document).ready(function(){
     function instantSearchFunction()
     {
 
+        console.log($(this).val())
         var whichCol = column[$(this).attr("name")];
         if( (!$(this).is(':checkbox') && $(this).val() != "") || ($(this).is(':checkbox') && $(this).is(':checked')))
         {

@@ -4,11 +4,8 @@
     <% stylesheet_link_tag 'table_style',:media => :all %>
 <% end %>
 
-  <div class="group_controls">
-    <input type='submit' class="create_new" value='Add Group' id='Add Group'/>
-    <div id="new_group" style="display:none"><%= render 'groups/form' %></div>
-    </div>
     <div id='Current_Groups_Table'>
+        <%if @tutor_groups.any? %>
         <table class="small_button">
             <tr>
                 <th>Group Name</th>
@@ -16,37 +13,44 @@
                 <th>Students</th>
 <!--                     <th>Courses</th>
                 <th>Schedule</th> -->
+                <th>Course</th>
                 <th>Location</th>
-                <th></th>
                 <th></th>
                 <th></th>
             </tr>
             <% @tutor_groups.reverse.each do |group| %>
                 <tr>
                     <td><%= link_to group.name, group %>
-                        <p><%= group.desc %></p></td>
+                        <p><%= group.group_type + ': ' + group.desc %></p></td>
 
                     <td>
                         <% if group.tutor_ids.empty? %>
                             
                         <% else %>
+                        <ul>
                             <% group.tutor_ids.all.each do |tutor| %>
-                                <%= User.find(tutor.tid).first_name %>
+                                    <%u = User.find(tutor.tid)%>
+                               <li> <%= u.last_name + ', ' + u.first_name %></li>
                             <% end %> 
+                        </ul>
                         <% end %>
                         
                     </td>
                     <td>
                         <% if group.student_ids.empty? %>
                             -
-                         <% else group.student_ids.empty? %>
+                         <% else%>
+                            <ul>
                             <% group.student_ids.all.each do |student| %>
                                 <% if student.sid %>
-                                    <%= User.find(student.sid).first_name %>
+                                <%u = User.find(student.sid)%>
+                                   <li> <%= u.last_name + ', ' + u.first_name %></li>
                                 <% end %>
                             <% end %>
+                            </ul>
                         <% end %>
                     </td>
+                    <td><%= group.course.name %></td>
                     <td><%= group.location %></td>
                     <td></td>
 
@@ -56,9 +60,17 @@
                     <td><%= group.student_ids.first %></td>
                     <td><%= group.schedule %></td>
                     <% end %>
-                    <td><%= button_to "Edit", edit_group_path(group), :method => :get%></td>
-                    <td><%= button_to "Delete", {:action => :delete_group, :id => group.id}%></td>
+                    <td><%= button_to "Edit", edit_group_path(group), :method => :get%><%= button_to "Delete", {:action => :delete_group, :id => group.id}%></td>
                 </tr>
-            <% end %>
+
+            <%end %>
         </table>
+            <% else %>
+                <p>You don't have any groups yet. Add some!</p>
+            <% end %>
+    </div>
+
+    <div  class="group_controls">
+    <input type='submit' class="create_new" value='Add Group' id='Add Group'/>
+    <div id="new_group" style="display:none"><%= render 'groups/form' %></div>
     </div>

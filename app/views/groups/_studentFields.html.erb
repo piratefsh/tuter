@@ -1,3 +1,3 @@
 
-<%= f.label "Students" %>
-<%= f.text_field :sid %>
+<%= f.label "Student" %>
+<%= f.select(:sid, @students, {:include_blank => true}) %>
