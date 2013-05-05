@@ -2,7 +2,7 @@
   <%= stylesheet_link_tag "schedule" %>
   <%= javascript_include_tag "schedule" %>
 <% end %>
-<h2>My Schedule</h2>
+<h2><%=@user.full_name%>'s Schedule</h2>
 <div class="legend">
     <table>
       <tr><td><h3>Legend</h3></td><td class="free">Available</td><td class="busy">Busy</td></tr>
@@ -18,7 +18,9 @@
 <ul id="days">
 <%@days.each do |d| %>
     <li>   
+        <% if @user == current_user %>
         <p class="link"><%=link_to edit_week_availability_day_availability_path(@week_availability, d)%>
+        <% end -%>
         <p class="day"><%=DayAvailability.days[Integer(d.day)][0]%></p>
         <p class="start_time"><%= format_time(d.start_time)%></p>
         <p class="end_time"><%=format_time(d.end_time)%></p>

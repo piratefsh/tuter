@@ -4,6 +4,9 @@
 <div id="reviews">
 <h1>Reviews</h1>
     <% if @user.role? :tutor %>
+        <% if @reviews.any? %>
+            <h3>Rating: <%= user_average_rating %></h3>
+        <% end %>
         <ul>
             <% @reviews.each do |r| %>
                 <li>
@@ -29,8 +32,10 @@
             <% end %>
         </ul>
         <%if current_user %>
+        <div class="new_review">
             <h3>Add Review</h3>
             <%= render "reviews/form" %>
+        </div>
     <% else %>
         <h3> Log In to add a review. </h3>
     <% end %>
