@@ -6,4 +6,4 @@
     <label></label>
             <%= button_to "Delete", [@day_availability.week_availability, @day_availability],:data => { :confirm => "Are you sure?" }, :method => :delete %>
 </div>
- <%= link_to 'Back', week_availability_path %>
+ <%= link_to 'Back', week_availability_path(@day_availability.week_availability) %>

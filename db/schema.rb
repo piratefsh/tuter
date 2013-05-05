@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130503223208) do
+ActiveRecord::Schema.define(:version => 20130505000420) do
 
   create_table "abilities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20130503223208) do
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.integer  "week_availability_id"
+    t.boolean  "busy"
   end
 
   create_table "groups", :force => true do |t|
@@ -79,10 +80,10 @@ ActiveRecord::Schema.define(:version => 20130503223208) do
     t.integer  "reviewer_id"
     t.integer  "rating"
     t.string   "title"
-    t.string   "content"
+    t.text     "content",     :limit => 255
     t.boolean  "recommend"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "roles", :force => true do |t|

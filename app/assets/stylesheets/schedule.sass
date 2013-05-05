@@ -1,27 +1,60 @@
 @import ./application
+@mixin color_codes
+    &.free
+        background-color: $light_blue
+        padding: $medium_space
+    &.busy
+        background-color: $red
+    a 
+        text-decoration: none
+        color: $dark_grey
+        font-weight: bold
+
+div.legend
+    h3, table
+        display: inline
+        width: auto
+        float: left
+        margin-bottom: $big_space
+    h3
+        margin: 0
+
+    table tr td
+        @include color_codes
+        padding: $medium_space
+        
 
 table.schedule
-    margin: $big_space* 2 auto
+    margin: $big_space * 2 auto
     width: 100%
 
     th 
         padding: $big_space
         color: $white
-        background-color: $red
+        background-color: $grey
     td 
+        @include color_codes
         text-align: center
+
+        &:first-child
+            background-color: $light_grey 
+            color: $grey
+            font-weight: bold
         &:hover
             background-color: rgba($red, 0.6)
             a
                 color: $white
-        a 
-            text-decoration: none
-            color: $dark_grey
-            font-weight: bold
     tr
         background-color: rgba($light_grey, 0.8)
         &:nth-child(even)
             background-color: rgba($white, 0.8)
+
+        height: 50px
+
+        &.pm_row
+            td:first-child
+                background-color: $grey 
+                color: $white 
 
 div.new_time_slot
     margin: 

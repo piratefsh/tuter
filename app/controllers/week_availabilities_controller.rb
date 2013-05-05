@@ -18,6 +18,7 @@ class WeekAvailabilitiesController < ApplicationController
   # GET /week_availabilities/1.json
   def show
     @week_availability = WeekAvailability.find(params[:id])
+    @days = @week_availability.day_availabilities.sort_by {|d| d.start_time.hour}
     @day_availability = DayAvailability.new
     respond_to do |format|
       format.html # show.html.erb
@@ -80,7 +81,7 @@ class WeekAvailabilitiesController < ApplicationController
     @week_availability.destroy
 
     respond_to do |format|
-      format.html { redirect_to week_availabilities_url }
+      format.html { redirect_to week_availabilities_url(:user_id => @week_availability.user_id)}
       format.json { head :no_content }
     end
   end
