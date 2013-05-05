@@ -1,4 +1,23 @@
 @import ./application
+@mixin color_codes
+    &.free
+        background-color: $light_blue
+        padding: $medium_space
+    &.busy
+        background-color: $red
+
+div.legend
+    h3, table
+        display: inline
+        width: auto
+        float: left
+        margin-bottom: $big_space
+    h3
+        margin: 0
+    table tr td
+        @include color_codes
+        padding: $medium_space
+        
 
 table.schedule
     margin: $big_space* 2 auto
@@ -9,6 +28,7 @@ table.schedule
         color: $white
         background-color: $grey
     td 
+        @include color_codes
         text-align: center
         a 
             text-decoration: none
@@ -19,11 +39,6 @@ table.schedule
             background-color: $light_grey 
             color: $grey
             font-weight: bold
-        &.free
-            background-color: $light_blue
-            padding: $medium_space
-        &.busy
-            background-color: $red
         &:hover
             background-color: rgba($red, 0.6)
             a
