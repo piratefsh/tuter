@@ -1,28 +1,17 @@
-<h3>Update Location</h3>
-<%= form_for [resource_name, resource.with_location], :url => registration_path(resource_name) do |f| %>
+<%= form_for(@location) do |f| %>
+  <% if @location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
 
-  <% f.fields_for :location do |loc| %>
-    <div class="field">
-      <%= loc.label :name %>
-      <%= loc.text_field :name %>
-    </div>
-    <div class="field">
-      <%= loc.label :address %>
-      <%= loc.text_field :address %>
-    </div>
-    <div class="field">
-      <%= loc.label :longitude %>
-      <%= loc.text_field :longitude %>
-    </div>
-    <div class="field">
-      <%= loc.label :latitude %>
-      <%= loc.text_field :latitude %>
-    </div>
-
-    <div class="action">
-      <label></label>
-      <%= loc.submit %>
+      <ul>
+      <% @location.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
-<% end %>
 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
