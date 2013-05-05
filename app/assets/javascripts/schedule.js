@@ -2,6 +2,9 @@ $(document).ready(function()
 {
     var dayColHash = new Array();
     var timeRows = new Array();
+    var colorCode = new Array();
+    colorCode['true'] = 'busy'
+    colorCode['false'] = 'free'
 
     var timeSlots = $('ul#days li')
     var days = $('table.schedule th')
@@ -45,6 +48,7 @@ $(document).ready(function()
         var day = $('p.day', t).html()
         var start = $('p.start_time', t).html()
         var end = $('p.end_time', t).html()
+        var busy = $('p.busy', t).html()
         var link = $('p.link a', t).html()
 
         var startHour = parseInt(start.substring(0, 2))
@@ -55,7 +59,7 @@ $(document).ready(function()
         var timeIn12Hr = convert24Hrto12Hr(start) + " to " + convert24Hrto12Hr(end)
         var all = $('<a></a>').html(timeIn12Hr).attr('href', link)
 
-        $($('td', thisTr).get(dayColHash[day])).html(all).attr('rowspan', hourDiff).attr('class', 'busy')
+        $($('td', thisTr).get(dayColHash[day])).html(all).attr('rowspan', hourDiff).attr('class', colorCode[busy])
  
    }
 })

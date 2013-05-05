@@ -17,6 +17,7 @@
         <p class="day"><%=DayAvailability.days[Integer(d.day)][0]%></p>
         <p class="start_time"><%= format_time(d.start_time)%></p>
         <p class="end_time"><%=format_time(d.end_time)%></p>
+        <p class="busy"><%=d.busy?%></p>
     </li>
 <% end %>
 </ul>   
