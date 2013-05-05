@@ -14,7 +14,7 @@
 		<input type='submit' value='Add Program' id='Add Program'/>
 		<ul class="programs_list">
 			<% @programs.each do |program| %>
-				<li><%= program.name %>
+				<li><h4><%= program.name %></h4>
 					<p>Description:<%= program.descrip %></p>
 					<p>Type:<%= program.type %></p>
 				</li>
