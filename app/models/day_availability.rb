@@ -1,5 +1,5 @@
 class DayAvailability < ActiveRecord::Base
-  attr_accessible :day, :end_time, :reference, :start_time
+  attr_accessible :day, :end_time, :reference, :start_time, :busy
 
   belongs_to :week_availability
 
@@ -8,7 +8,7 @@ class DayAvailability < ActiveRecord::Base
   end
 
   def self.time_format
-    format = "%I:%M %p"
+    format = "%H:%M %p"
   end
 
 end
