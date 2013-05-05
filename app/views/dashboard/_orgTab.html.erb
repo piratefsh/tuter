@@ -24,26 +24,16 @@
 			<input type='submit' value='Add Program' id='Add Program'/>
 			<div id="new_program" ><%= render 'programs/form' %>
 
-			<table>
-				<tr>
-					<th>Program Name</th>
-					<th>Program Decription</th>
-					<th>Program Type</th>
-					<th>Number of Tutors</th>
-					<th>Number of Students</th>
-					<th>Details</th>
-					<th>Remove</th>
-				</tr>
-			
-				<% @programs.each do |program| %>
-					<tr>
-						<th><%= program.name %></th>
-						<th><%= program.desc %></th>
-						<th><form><input type="submit" name="Remove"></form></th>
-						</tr>
-				<% end %>
-			</table>
-		</div>
-	<% end %>
+	<div id='org_programs'>
+		<input type='submit' value='Add Program' id='Add Program'/>
+		<ul class="programs_list">
+			<% @programs.each do |program| %>
+				<li><h4><%= program.name %></h4>
+					<p>Description:<%= program.descrip %></p>
+					<p>Type:<%= program.type %></p>
+				</li>
+			<% end %>
+		</ul>
+	</div>
 </div>
 

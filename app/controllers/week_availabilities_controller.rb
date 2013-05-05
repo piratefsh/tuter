@@ -18,6 +18,7 @@ class WeekAvailabilitiesController < ApplicationController
   # GET /week_availabilities/1.json
   def show
     @week_availability = WeekAvailability.find(params[:id])
+    @user = User.find(@week_availability.user_id)
     @days = @week_availability.day_availabilities.sort_by {|d| d.start_time.hour}
     @day_availability = DayAvailability.new
     respond_to do |format|
@@ -87,6 +88,12 @@ class WeekAvailabilitiesController < ApplicationController
   end
 
   def format_time(d)
-     d.to_time.in_time_zone(current_user.time_zone).strftime(DayAvailability.time_format)
+    zone = Time.zone
+
+    if current_user
+      current_user.time_zone
+    end
+
+    d.to_time.in_time_zone().strftime(DayAvailability.time_format)
   end
 end

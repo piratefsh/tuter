@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20130505214736) do
     t.integer  "user_id"
   end
 
+
   create_table "organizations", :force => true do |t|
     t.string   "name"
     t.text     "desc"
@@ -96,7 +97,17 @@ ActiveRecord::Schema.define(:version => 20130505214736) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "sid"
+    t.integer  "gid"
     t.integer  "group_id"
+  end
+
+  create_table "student_roles", :force => true do |t|
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "student_ID"
+    t.integer  "age"
+    t.string   "year_in_school"
+    t.boolean  "transportation"
   end
 
   create_table "tutor_ids", :force => true do |t|
@@ -104,6 +115,16 @@ ActiveRecord::Schema.define(:version => 20130505214736) do
     t.datetime "updated_at", :null => false
     t.integer  "tid"
     t.integer  "group_id"
+  end
+
+  create_table "tutor_roles", :force => true do |t|
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "tutor_ID"
+    t.integer  "age"
+    t.string   "year_in_school"
+    t.float    "rating"
+    t.boolean  "transportation"
   end
 
   create_table "users", :force => true do |t|
@@ -117,10 +138,6 @@ ActiveRecord::Schema.define(:version => 20130505214736) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "first_name"
@@ -141,7 +158,6 @@ ActiveRecord::Schema.define(:version => 20130505214736) do
     t.string   "time_zone"
   end
 
-  add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
