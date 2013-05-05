@@ -30,7 +30,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, 
-  # :lockable, :timeoutable
+  # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :validatable,
          :recoverable, :rememberable, :trackable, :omniauthable,
          :confirmable
@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
                   :first_name, :last_name, :desc, :provider, :uid, :roles, :location, :location_attributes,
-                  :age, :transportation, :year, :courses, :courses_attributes, :rate
+                  :age, :transportation, :year, :courses, :courses_attributes, :rate, :time_zone
 
   # Setup creation validation
   # Devise's default => :email and :password must be present 
@@ -51,12 +51,15 @@ class User < ActiveRecord::Base
   ROLES = %w[student tutor org]
   has_and_belongs_to_many :roles
 
-  accepts_nested_attributes_for :location, :courses, :allow_destroy => true
+  accepts_nested_attributes_for :location, :courses
 
   def self.years
     ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate', 'Others']
   end
   
+  def full_name
+    self.first_name + " " + self.last_name
+  end
   def self.age_range
     18..80
   end
@@ -133,7 +136,8 @@ class User < ActiveRecord::Base
       ((roles_mask || 0) & 2**ROLES.index(r)).zero?
     end
   end
-def courses
+
+  def courses
     courses = Array.new
      # add courses that tutor has 
     Group.all.select do |group|
@@ -145,4 +149,5 @@ def courses
     end
     courses
   end
+
 end

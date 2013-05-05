@@ -3,6 +3,11 @@
   <%= javascript_include_tag "schedule" %>
 <% end %>
 <h2>My Schedule</h2>
+<div class="legend">
+    <table>
+      <tr><td><h3>Legend</h3></td><td class="free">Available</td><td class="busy">Busy</td></tr>
+    </table>
+</div>
 <table class="schedule">
     <th>Time/Day</th>
     <% DayAvailability.days.each do |d| %>
@@ -11,12 +16,13 @@
 </table>
 
 <ul id="days">
-<%@week_availability.day_availabilities.each do |d| %>
+<%@days.each do |d| %>
     <li>   
         <p class="link"><%=link_to edit_week_availability_day_availability_path(@week_availability, d)%>
         <p class="day"><%=DayAvailability.days[Integer(d.day)][0]%></p>
-        <p class="start_time"><%= d.start_time.to_time.strftime("%H:%M")%></p>
-        <p class="end_time"><%=d.end_time.to_time.strftime("%H:%M")%></p>
+        <p class="start_time"><%= format_time(d.start_time)%></p>
+        <p class="end_time"><%=format_time(d.end_time)%></p>
+        <p class="busy"><%=d.busy?%></p>
     </li>
 <% end %>
 </ul>   
@@ -25,5 +31,5 @@
 <%= render 'day_availabilities/form' %>
 </div>
 <%= link_to 'Edit', edit_week_availability_path(@week_availability) %> |
-<%= link_to 'Back', week_availabilities_path %>
+<%= link_to 'Back', user_path(@week_availability.user_id) %>
 

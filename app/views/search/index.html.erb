@@ -50,13 +50,6 @@
             <% end %>
           </select>
         </div>
-
-       <!--  <div class="form_element">
-            <label>Organization</label>
-            <label class="helper_text">Tutoring Organizations</label>
-            <input type="text" name="organization"/>
-        </div> -->
-        <input value="Search!" type="submit"/>
     </form>
 </div>
 
@@ -70,9 +63,9 @@
     <th>First Name</th> 
     <th>Courses</th> 
     <th>Location</th> 
-    <th>Availability</th> 
     <th>Type</th> 
     <th>Rate</th> 
+    <th>Schedule</th> 
   </tr> 
   </thead> 
 
@@ -92,13 +85,13 @@
               end %>
         </td> 
         <td><%= randomLocation() %></td> 
-        <td><%= link_to "View", week_availabilities_path(:user_id => user.id) %></td> 
         <td><%= get_types(user).join(', ')%></td> 
         <td><%= if user.rate? 
                   user.rate 
                 else 
                   '-' 
                 end%></td> 
+        <td><%= link_to "View", week_availabilities_path(:user_id => user.id) %></td> 
     </tr>
     <% end %>
     </tbody> 

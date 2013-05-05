@@ -60,6 +60,11 @@
     <%= select(:user, :rate, rates_array, {:include_blank => '-'}) %>
   </div>
   <% end %>
+
+  <div>
+    <%= f.label :time_zone %>
+    <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones %>
+  </div>
   <div>
     <%= f.label "Short Description of Yourself" %>
     <%= f.text_area :desc %></div>

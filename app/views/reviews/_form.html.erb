@@ -1,0 +1,45 @@
+
+
+<%= form_for(@review) do |f| %>
+<% if flash[:notice] -%>
+  <p class="notice"><%= flash[:notice] %></p>
+<% end -%>
+<% if flash[:errors] -%>
+    <div id="error_explanation">
+      <h2><%= pluralize(flash[:errors].count,  "Error" )%></h2>
+    <ul>
+      <% flash[:errors].full_messages.each do |e| %>
+      <li><%= e%></li>
+      <% end %>
+      </ul>
+    </div>
+<% end -%>
+
+  <div class="field">
+    <%= f.hidden_field :user_id,  :value => @user.id%>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :reviewer_id, :value => current_user.id %>
+  </div>
+  <div class="field rating">
+    <%= f.label :rating %>
+    <%= f.select :rating, (1..5), {:include_blank => :true} %>
+  </div>
+  <div class="field title">
+    <%= f.text_field :title, {:placeholder=>"Title"}%>
+  </div>
+  <div class="field content">
+    <%= f.text_area :content, {:placeholder =>"Content"}%>
+  </div>
+  <div class="field recommend">
+    <%= f.label "Would you recommend this tutor?" %>
+    <div class="radio_button_group">
+    <%= f.radio_button :recommend, true %><%=f.label "Yes"%>
+    <%= f.radio_button :recommend, false %><%=f.label "No"%>
+  </div>
+  </div>
+  <div class="actions">
+    <label></label>
+    <%= f.submit "Submit Review"%>
+  </div>
+<% end %>

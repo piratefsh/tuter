@@ -9,14 +9,14 @@ $(document).ready(function(){
     column['name'] = 2;
     column['location'] = 4;
     column['course'] = 3;
-    column['rates'] = 7;
+    column['rates'] = 6;
 
     //map all types
     var groupInputs = $('input', '#group_types');
 
     for(var i = 0; i < groupInputs.size(); i++)
     {
-        column[$(groupInputs[i]).attr('name')] = 6;
+        column[$(groupInputs[i]).attr('name')] = 5;
     }
 
     var table = $('table#results_table')

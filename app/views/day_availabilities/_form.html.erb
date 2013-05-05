@@ -10,12 +10,17 @@
 
 <div>
     <%= f.label :start_time %>
-    <%= f.time_select :start_time, { :minute_step => 15, :ampm=>true} %>
+    <%= f.time_select :start_time, {:minute_step=>15, :ampm=>true} %>
 </div>
 
 <div>
     <%= f.label :end_time %>
-    <%= f.time_select :end_time, { :minute_step => 15, :ampm=>true}%>
+    <%= f.time_select :end_time, {:default => (Time.now + 2.hours), :minute_step=>15, :ampm=>true}%>
+</div>
+
+<div>
+    <%= f.label :busy %>
+    <%= check_box "day_availability", :busy%>
 </div>
 
 <div class="small_button">
