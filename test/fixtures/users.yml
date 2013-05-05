@@ -37,33 +37,12 @@
 #  time_zone              :string(255)
 #
 
-require 'test_helper'
+# http://stackoverflow.com/questions/4577737/functional-testing-with-rails-and-devise-what-to-put-in-my-fixtures
 
-class UserTest < ActiveSupport::TestCase
-  test "create_user" do
-    user = User.new
-    assert user.invalid?, 'Must have first_name, last_name, email, password'
-    user.first_name = 'Faiz'
-    user.last_name  = 'Lurman'
-    user.email      = 'faiz@tuter.me'
-    user.password   = 'PASSWORD'    
-    assert user.valid?, 'Should be able to create user'
-    assert user.save, 'Should save into database'
-  end
-
-  test "delete_user" do
-    User.create(:first_name=>"Faiz",:last_name=>"Lurman",
-                :email=>"faiz@tuter.me",:password=>"PASSWORD")
-    user = User.find_by_email('NotFoundFaiz@tuter.me')
-    assert user.nil?, 'Should not exist'
-    user = User.find_by_email('faiz@tuter.me')
-    assert !user.nil?, 'Should exist'
-    assert user.destroy, 'Should delete from database'    
-  end
-  
-  test "existing_user" do
-    user = users(:user1)
-    assert user.valid?
-  end
-
-end
+user1:
+  first_name: 'Peter'
+  last_name: 'Collins'
+  email: 'some@user.com'
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  roles: student
+  roles_mask: 100 

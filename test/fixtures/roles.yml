@@ -1,13 +1,15 @@
 # == Schema Information
 #
-# Table name: tutor_ids
+# Table name: roles
 #
 #  id         :integer          not null, primary key
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  tid        :integer
-#  group_id   :integer
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+student:  
+  id: 100
+  users: user1
 
+tuter:
+  id: 010

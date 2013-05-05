@@ -7,8 +7,7 @@
 #  updated_at :datetime         not null
 #
 
-class Ability < ActiveRecord::Base
-  # attr_accessible :title, :body
+class Ability < ActiveRecord::Base  
 
   include CanCan::Ability
 

@@ -13,6 +13,10 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
+#  confirmation_token     :string(255)
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
+#  unconfirmed_email      :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  first_name             :string(255)
@@ -25,6 +29,12 @@
 #  photo                  :string(255)
 #  fb_profile             :string(255)
 #  roles_mask             :integer
+#  course_ID              :integer
+#  age                    :integer
+#  year                   :string(255)
+#  transportation         :string(255)
+#  rate                   :string(255)
+#  time_zone              :string(255)
 #
 
 class User < ActiveRecord::Base

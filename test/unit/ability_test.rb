@@ -10,7 +10,8 @@
 require 'test_helper'
 
 class AbilityTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "what_can_a_student_do" do
+    student = users(:user1)
+    assert_equal(100, student.roles_mask, 'Should be 100')    
+  end
 end

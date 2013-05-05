@@ -8,6 +8,8 @@
 #  desc       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  location   :string(255)
+#  group_type :string(255)
 #
 
 class Group < ActiveRecord::Base
