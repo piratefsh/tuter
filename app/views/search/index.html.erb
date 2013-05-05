@@ -80,16 +80,12 @@
         <td>
           <%= if user.courses.any?
                 user.courses.join(', ').upcase
-                else 
-                  '-'
               end %>
         </td> 
         <td><%= randomLocation() %></td> 
         <td><%= get_types(user).join(', ')%></td> 
         <td><%= if user.rate? 
                   user.rate 
-                else 
-                  '-' 
                 end%></td> 
         <td><%= link_to "View", week_availabilities_path(:user_id => user.id) %></td> 
     </tr>

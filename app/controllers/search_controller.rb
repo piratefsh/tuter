@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
 
-  helper_method :randomCourse, :randomLocation, :get_types
+  helper_method :randomLocation, :get_types
 
 
   def index
@@ -65,13 +65,6 @@ class SearchController < ApplicationController
     end
 
     rates
-  end
-
-
-  #generates random values for development purposes
-  def randomCourse
-    courses = ['CS 302', 'MAT 211', 'PHY 102', 'PHI 101']
-    courses[Random.rand(courses.size)]
   end
 
   def randomLocation
