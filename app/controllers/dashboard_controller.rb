@@ -5,9 +5,10 @@ class DashboardController < ApplicationController
         @user = current_user
         @group = Group.new
         @course = @group.build_course
-        @programs = Program.all
         @organization = Organization.new
         @organizations = Organization.where(:user_id => current_user.id)
+        @programs = Program.where(:organization_id => @organizations.first.id)
+        @program = Program.new
         student_id = @group.student_ids.build
         tutor_id = @group.tutor_ids.build
 

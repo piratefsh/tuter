@@ -20,6 +20,7 @@ Tuter::Application.routes.draw do
   resources :locations
   resources :search
   resources :organizations
+  resources :programs
 
   resources :home do
     member do 
