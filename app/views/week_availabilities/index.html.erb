@@ -10,8 +10,11 @@
     <th>Type</th>
     <th>Time Slots</th>
     <th>Show</th>
-    <th>Edit</th>
-    <th>Delete</th>
+
+    <% if @user == current_user %>
+      <th>Edit</th>
+      <th>Delete</th>
+    <% end -%>
 
   </tr>
 
@@ -21,8 +24,10 @@
     <td><%= w.avail_type %></td>
     <td><%= w.day_availabilities.size %></td>
     <td><%= link_to 'Show', w %></td>
-    <td><%= link_to 'Edit', edit_week_availability_path(w) %></td>
-    <td><%= link_to 'Delete', w, confirm: 'Are you sure?', method: :delete %></td>
+    <% if @user == current_user %>
+      <td><%= link_to 'Edit', edit_week_availability_path(w) %></td>
+      <td><%= link_to 'Delete', w, confirm: 'Are you sure?', method: :delete %></td>
+    <% end -%>
   </tr>
 <% end %>
 </table>
