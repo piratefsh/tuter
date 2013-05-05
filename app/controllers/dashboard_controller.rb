@@ -7,6 +7,7 @@ class DashboardController < ApplicationController
         @course = @group.build_course
         @programs = Program.all
         @organization = Organization.new
+        @organizations = Organization.where(:user_id => current_user.id)
         student_id = @group.student_ids.build
         tutor_id = @group.tutor_ids.build
 

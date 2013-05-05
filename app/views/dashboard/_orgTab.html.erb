@@ -2,37 +2,39 @@
                     
 <div id='Org_Content_View_Options' class="tabs">
 
-	
-		<input type='submit' class="create_new" value='Add Organization' id='Add Organization'/>
+	<% if not @organizations.any? %>
     	<div id="new_organization" ><%= render 'organizations/form' %>
     	</div>
+    <% end %>
    
-   
+    <% if @organizations.any? %>
+    	<%= link_to @organizations.first do%>
+    	<h2><%= @organizations.first.name %></h2>
+    	<% end %>
+    	<ul class="secondary_tabs">
+		   <li><a href="#org_programs">Programs</a></li>
+		   <li> <a href="#org_students_tutors" >Students and Tutors</a></li>
+    	</ul>
 
-    <ul class="secondary_tabs">
-	   <li><a href="#org_programs">Programs</a></li>
-	   <li> <a href="#org_students_tutors" >Students and Tutors</a></li>
-    </ul>
+		<div id='org_students_tutors'>
+			<p>//Coming soon</p>
+		</div>
 
-	<div id='org_students_tutors'>
-		<p>//Coming soon</p>
-	</div>
+		<div id='org_programs'>
+			<input type='submit' value='Add Program' id='Add Program'/>
 
-	<div id='org_programs'>
-		<input type='submit' value='Add Program' id='Add Program'/>
-
-		<table>
-			<tr>
-				<th>Program Name</th>
-				<th>Program Decription</th>
-				<th>Program Type</th>
-				<th>Number of Tutors</th>
-				<th>Number of Students</th>
-				<th>Details</th>
-				<th>Remove</th>
-			</tr>
+			<table>
+				<tr>
+					<th>Program Name</th>
+					<th>Program Decription</th>
+					<th>Program Type</th>
+					<th>Number of Tutors</th>
+					<th>Number of Students</th>
+					<th>Details</th>
+					<th>Remove</th>
+				</tr>
 			
-			<% @programs.each do |program| %>
+				<% @programs.each do |program| %>
 					<tr>
 						<th><%= program.name %></th>
 						<th><%= program.descrip %></th>
@@ -41,9 +43,10 @@
 						<th><%= program.students %></th>
 						<th><%= program.details %></th>
 						<th><form><input type="submit" name="Remove"></form></th>
-					</tr>
-			<% end %>
-		</table>
-	</div>
+						</tr>
+				<% end %>
+			</table>
+		</div>
+	<% end %>
 </div>
 

@@ -53,7 +53,6 @@ Tuter::Application.routes.draw do
 
   # Organization List Page
   match "/organizations" => "organizations#index"
-
  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
