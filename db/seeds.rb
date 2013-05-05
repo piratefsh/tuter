@@ -25,7 +25,7 @@ User.create(first_name: 'Canan', last_name: 'Swanesbury',
             email:'canan@tuter.me', password:'PASSWORD', roles: %w[tutor student org])
 
 # Tutor User Seeds
-User.create(first_name: 'Essie', last_name: 'Vaill', roles: %w[tutor],
+User.create(first_name: 'Essie', last_name: 'Vaill', roles: %w[tutor], 
 			email: 'essie@vaill.com', password: 'PASSWORD')
 User.create(first_name: 'Billie', last_name: 'Tinnes', roles: %w[tutor],
 			email: 'billie@tinnes.com', password: 'PASSWORD')

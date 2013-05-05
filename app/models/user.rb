@@ -35,12 +35,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :omniauthable
 
   has_one :location
+  has_one :tutor_watchlist
   has_many :courses
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
                   :first_name, :last_name, :desc, :provider, :uid, :roles, :location, :location_attributes,
-                  :age, :transportation, :year, :courses, :courses_attributes, :rate, :time_zone, :confirmed_at
+                  :age, :transportation, :year, :courses, :courses_attributes, :rate, :time_zone
 
   # Setup creation validation
   # Devise's default => :email and :password must be present 
