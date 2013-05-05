@@ -5,6 +5,10 @@
         padding: $medium_space
     &.busy
         background-color: $red
+    a 
+        text-decoration: none
+        color: $dark_grey
+        font-weight: bold
 
 div.legend
     h3, table
@@ -14,13 +18,14 @@ div.legend
         margin-bottom: $big_space
     h3
         margin: 0
+
     table tr td
         @include color_codes
         padding: $medium_space
         
 
 table.schedule
-    margin: $big_space* 2 auto
+    margin: $big_space * 2 auto
     width: 100%
 
     th 
@@ -30,10 +35,6 @@ table.schedule
     td 
         @include color_codes
         text-align: center
-        a 
-            text-decoration: none
-            color: $dark_grey
-            font-weight: bold
 
         &:first-child
             background-color: $light_grey 
