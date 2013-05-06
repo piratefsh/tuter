@@ -28,7 +28,8 @@ class Location < ActiveRecord::Base
     address
   end
 
-  def gmaps4rails_infowindow    
-    '<h4>#{name}</h4>' << '<h4>#{address}</h4>'
+  def gmaps4rails_infowindow   
+    user = User.find(self.user_id)
+    user.full_name
   end
 end
