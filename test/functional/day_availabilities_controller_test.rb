@@ -1,16 +1,18 @@
-# require 'test_helper'
-# 
-# class DayAvailabilitiesControllerTest < ActionController::TestCase
+require 'test_helper'
+
+class DayAvailabilitiesControllerTest < ActionController::TestCase
   # setup do
     # @day_availability = day_availabilities(:one)
   # end
-# 
-  # test "should get index" do
-    # get :index
-    # assert_response :success
-    # assert_not_nil assigns(:day_availabilities)
-  # end
-# 
+
+  test "index" do    
+    visit '/day_availabilities/'
+    assert_routing '/day_availabilities', { :controller => "day_availabilities", :action => "index"} 
+    # assert find_link 'Home'
+    # assert find_link 'Find a Tutor'
+    # assert find_link 'Tutoring Organizations'
+  end
+
   # test "should get new" do
     # get :new
     # assert_response :success
@@ -46,4 +48,4 @@
 # 
     # assert_redirected_to day_availabilities_path
   # end
-# end
+end

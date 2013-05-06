@@ -95,7 +95,7 @@ Tuter::Application.routes.draw do
 end
 
 #== Route Map
-# Generated on 05 May 2013 12:54
+# Generated on 06 May 2013 02:00
 #
 #                                          POST   /reviews(.:format)                                                               reviews#create
 #                               new_review GET    /reviews/new(.:format)                                                           reviews#new
@@ -118,9 +118,6 @@ end
 #                   edit_user_registration GET    /users/edit(.:format)                                                            devise/registrations#edit
 #                                          PUT    /users(.:format)                                                                 devise/registrations#update
 #                                          DELETE /users(.:format)                                                                 devise/registrations#destroy
-#                        user_confirmation POST   /users/confirmation(.:format)                                                    devise/confirmations#create
-#                    new_user_confirmation GET    /users/confirmation/new(.:format)                                                devise/confirmations#new
-#                                          GET    /users/confirmation(.:format)                                                    devise/confirmations#show
 #                           users_sign_out        /users/sign_out(.:format)                                                        devise/sessions#destroy
 #                                dashboard        /dashboard(.:format)                                                             dashboard#dashboard
 #                                     root        /                                                                                home#index

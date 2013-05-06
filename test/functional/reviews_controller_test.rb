@@ -1,16 +1,18 @@
-# require 'test_helper'
-# 
-# class ReviewsControllerTest < ActionController::TestCase
+require 'test_helper'
+
+class ReviewsControllerTest < ActionController::TestCase
   # setup do
     # @review = reviews(:one)
   # end
-# 
-  # test "should get index" do
-    # get :index
-    # assert_response :success
-    # assert_not_nil assigns(:reviews)
-  # end
-# 
+
+  test "index" do    
+    visit '/reviews/'
+    assert_routing '/reviews', { :controller => "reviews", :action => "index"} 
+    # assert find_link 'Home'
+    # assert find_link 'Find a Tutor'
+    # assert find_link 'Tutoring Organizations'
+  end
+
   # test "should get new" do
     # get :new
     # assert_response :success
@@ -46,4 +48,4 @@
 # 
     # assert_redirected_to reviews_path
   # end
-# end
+end

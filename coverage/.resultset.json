@@ -1199,7 +1199,7 @@
         null
       ]
     },
-    "timestamp": 1367819186
+    "timestamp": 1367823838
   },
   "Functional Tests": {
     "coverage": {
@@ -1377,7 +1377,7 @@
         null,
         null,
         1,
-        0,
+        6,
         null,
         null,
         null,
@@ -1498,10 +1498,10 @@
         null,
         null,
         1,
-        0,
+        1,
         null,
-        0,
-        0,
+        1,
+        2,
         null,
         null,
         null,
@@ -1591,8 +1591,8 @@
         null,
         null,
         1,
-        0,
-        0,
+        1,
+        1,
         0,
         0,
         0,
@@ -1739,8 +1739,8 @@
       "C:/Sites/tuter/app/controllers/groups_controller.rb": [
         1,
         1,
-        0,
-        0,
+        2,
+        2,
         0,
         0,
         null,
@@ -1888,11 +1888,11 @@
         null,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         null,
@@ -2093,11 +2093,11 @@
         null,
         null,
         1,
-        0,
+        1,
         null,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
         null,
         null,
         null,
@@ -2401,6 +2401,6 @@
         null
       ]
     },
-    "timestamp": 1367818361
+    "timestamp": 1367823899
   }
 }
