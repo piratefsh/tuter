@@ -28,6 +28,10 @@
     <%= f.text_field :address, {:id => 'gmaps-input-address'}%>
     <div id='gmaps-canvas'></div>
   </div>
+
+  <div>
+    <%= f.hidden_field :user_id, :value=>current_user.id%>
+  </div>
   <div class="actions">
     <label></label>
     <%= f.submit %>

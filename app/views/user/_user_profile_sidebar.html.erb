@@ -12,15 +12,27 @@
 
     <h2><%=@user.first_name %> <%=@user.last_name %></h2>
     <p><%=@user.desc %></p>
+
+
     <h3>Courses</h3>
     <p><%= @user.courses.join(' <br/> ').upcase.html_safe %></p>
     <h3>Personal Information</h3>
+    <div>
     <% if @user.age? %>
-        <div>Age: <%=@user.age %></div>
+        <%=@user.age %> years old,
     <% end %>    
     <% if @user.year? %>
-        <div>Year in School: <%=@user.year %></div>
+        <%=@user.year %>
+    <% end -%>
+    <% if @user_location %>
+        <br />
+        <%= link_to edit_location_path(@user_location) do %>
+        <span class="address"><%= @user_location.address.split(',').join('<br/>').html_safe%></span>
+        <% end %>
+    <% else %>
+        <%= link_to "Add Location", new_location_path %>
     <% end %>
+    </div>
     <!-- <div>Transportation: Bus, Walk</div>
     <div>Tutor Rating: <a>**** (4)</a></div>
  -->
