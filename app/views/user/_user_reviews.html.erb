@@ -31,7 +31,9 @@
                 </li>
             <% end %>
         </ul>
-        <%if current_user %>
+    <% if current_user == @user%>
+        <!-- Don't allow users to add reviews for themselves -->
+    <% elsif current_user %>
         <div class="new_review">
             <h3>Add Review</h3>
             <%= render "reviews/form" %>

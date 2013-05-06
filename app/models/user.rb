@@ -43,6 +43,7 @@ class User < ActiveRecord::Base
                   :first_name, :last_name, :desc, :provider, :uid, :roles, :location, :location_attributes,
                   :age, :transportation, :year, :courses, :courses_attributes, :rate, :time_zone
 
+
   # Setup creation validation
   # Devise's default => :email and :password must be present 
   validates :first_name, :last_name, :presence => true
@@ -51,7 +52,7 @@ class User < ActiveRecord::Base
   ROLES = %w[student tutor org]
   has_and_belongs_to_many :roles
 
-  accepts_nested_attributes_for :location, :courses
+  accepts_nested_attributes_for :courses
 
   def self.years
     ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate', 'Others']
@@ -65,10 +66,6 @@ class User < ActiveRecord::Base
     18..80
   end
 
-  def with_location
-    self.build_location
-    self
-  end
   def with_course
     self.courses.build
     self

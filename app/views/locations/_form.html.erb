@@ -1,28 +1,39 @@
-<h3>Update Location</h3>
-<%= form_for [resource_name, resource.with_location], :url => registration_path(resource_name) do |f| %>
+<%= content_for :header do %>
+  <%= stylesheet_link_tag "locations" %>
+  <%= stylesheet_link_tag "form_style" %>
+  <%= stylesheet_link_tag "gmaps_style" %>
+  <%= javascript_include_tag "gmaps.js" %>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<% end -%>
 
-  <% f.fields_for :location do |loc| %>
-    <div class="field">
-      <%= loc.label :name %>
-      <%= loc.text_field :name %>
-    </div>
-    <div class="field">
-      <%= loc.label :address %>
-      <%= loc.text_field :address %>
-    </div>
-    <div class="field">
-      <%= loc.label :longitude %>
-      <%= loc.text_field :longitude %>
-    </div>
-    <div class="field">
-      <%= loc.label :latitude %>
-      <%= loc.text_field :latitude %>
-    </div>
+<%= form_for(@location) do |f| %>
+  <% if @location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
 
-    <div class="action">
-      <label></label>
-      <%= loc.submit %>
+      <ul>
+      <% @location.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
-<% end %>
 
+  <div>
+    <%= f.label :name%>
+    <%= f.text_field :name%>
+  </div>
+  <div>
+    <%= f.label :address%>
+    <%= f.text_field :address, {:id => 'gmaps-input-address'}%>
+    <div id='gmaps-canvas'></div>
+  </div>
+
+  <div>
+    <%= f.hidden_field :user_id, :value=>current_user.id%>
+  </div>
+  <div class="actions">
+    <label></label>
+    <%= f.submit %>
+  </div>
+<% end %>

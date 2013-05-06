@@ -1,0 +1,33 @@
+#gmaps-canvas {
+  height: 400px;
+
+  border: 1px solid #999;
+  -moz-box-shadow:    0px 0px 5px #ccc;
+  -webkit-box-shadow: 0px 0px 5px #ccc;
+  box-shadow:         0px 0px 5px #ccc;
+}
+
+#gmaps-error {
+  color: #cc0000;
+}
+
+input {
+  width: 500px;
+}
+
+#results {
+  color: #555;
+  padding-top: 10px;
+}
+
+#input {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #ccc;
+}
+#input #gmaps-output-latitude, #input #gmaps-output-longitude {
+  color: green;
+}
+
+.download { float: right; }
+

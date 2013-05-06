@@ -1,25 +1,9 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @location.name %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%= @location.address %>
-</p>
-
-<p>
-  <b>Longitude:</b>
-  <%= @location.longitude %>
-</p>
-
-<p>
-  <b>Latitude:</b>
-  <%= @location.latitude %>
-</p>
-
+<h2><%= @location.name %></h2>
+<p><%= @location.address %></p>
+<p>Lat : <%= @location.latitude %></p>
+<p>Long :<%= @location.longitude %></p>
+<p>Long :<%= User.find(@location.user_id) %></p>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
