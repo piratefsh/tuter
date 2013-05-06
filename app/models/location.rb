@@ -18,6 +18,8 @@ class Location < ActiveRecord::Base
   :process_geocoding => :geocode?, :address => 'address', :normalized_address => 'address',
   :msg => 'Sorry, not even Google could figure out where that is'  
   
+  validates :user_id, :uniqueness => {:message => " has already set location, to update your location, please change from your profile."}
+
   def geocode?
     (!address.blank? && (latitude.blank? || longitude.blank?)) || address_changed?
   end

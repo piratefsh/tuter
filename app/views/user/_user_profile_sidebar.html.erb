@@ -26,10 +26,14 @@
     <% end -%>
     <% if @user_location %>
         <br />
-        <%= link_to edit_location_path(@user_location) do %>
-        <span class="address"><%= @user_location.address.split(',').join('<br/>').html_safe%></span>
+        <% if @user == current_user %>
+            <%= link_to edit_location_path(@user_location) do %>
+            <span class="address"><%= @user_location.address.split(',').join('<br/>').html_safe%></span>
+            <% end %>
+            <% else %>
+            <span class="address"><%= @user_location.address.split(',').join('<br/>').html_safe%></span>
         <% end %>
-    <% else %>
+    <% elsif @user == current_user%>
         <%= link_to "Add Location", new_location_path %>
     <% end %>
     </div>
