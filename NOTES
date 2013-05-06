@@ -12,7 +12,8 @@ Modify the data for test database (db/test.sqlite3) in test/fixtures
 $ rake test:[units | functionals]
 $ rake test TEST=path_to_test_file
 .errors.full_messages
-
+class.instance_methods(false)
+pp (ability.methods - Object.new.methods).sort
 user = User.create(:first_name=>"Faiz",:last_name=>"Lurman",:email=>"faiz@tuter.me",:password=>"PASSWORD")
 
 Notes to Josh

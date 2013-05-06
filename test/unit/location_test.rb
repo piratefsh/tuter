@@ -20,8 +20,8 @@ class LocationTest < ActiveSupport::TestCase
     location = Location.new    
     location.name = 'Union South'    
     location.address = 'Union South Madison'
-    location.geocode?    
-    location.gmaps4rails_address
-    location.gmaps4rails_infowindow 
+    assert location.geocode?    
+    assert_not_nil location.gmaps4rails_address
+    assert_not_nil location.gmaps4rails_infowindow 
   end
 end

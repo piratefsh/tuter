@@ -137,6 +137,7 @@ class User < ActiveRecord::Base
     end
   end
 
+  # http://asciicasts.com/episodes/189-embedded-association
   # define user bitmask to represent which roles the user has
   def roles=(roles)
     self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.inject(0, :+)

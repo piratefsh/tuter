@@ -42,7 +42,31 @@
 user1:
   first_name: 'Peter'
   last_name: 'Collins'
-  email: 'some@user.com'
-  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  email: 'Peter@Collins.com'
+  encrypted_password: <%= User.new.send(:password_digest, 'PASSWORD') %>
   roles: student
-  roles_mask: 100 
+  roles_mask: 1
+  
+user2:
+  first_name: 'Justin'
+  last_name: 'Bob'
+  email: 'justin@bob.tut'
+  encrypted_password: <%= User.new.send(:password_digest, 'PASSWORD') %>
+  roles: tutor
+  roles_mask: 2 
+  
+user3:
+  first_name: 'GUTS'
+  last_name: 'Tutoring'
+  email: 'guts@webmaster.edu'
+  encrypted_password: <%= User.new.send(:password_digest, 'PASSWORD') %>
+  roles: org
+  roles_mask: 4      
+
+user4:
+  first_name: 'Anonymous'
+  last_name: 'Anon'
+  email: 'anon@anon@anon'
+  encrypted_password: <%= User.new.send(:password_digest, 'PASSWORD') %>
+  roles: admin
+  roles_mask: 1000
