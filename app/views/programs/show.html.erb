@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
-<%= link_to 'Edit', edit_program_path(@program) %> |
-<%= link_to 'Back', programs_path %>
+<% if current_user && current_user.id == Organization.where(:id => @program.organization_id).first.user_id %>
+	<%= link_to 'Edit', edit_program_path(@program) %>
+<% end %>

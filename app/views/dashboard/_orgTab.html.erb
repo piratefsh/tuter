@@ -20,20 +20,20 @@
 			<p>//Coming soon</p>
 		</div>
 
-		<div id='org_programs'>
-			<input type='submit' value='Add Program' id='Add Program'/>
-			<div id="new_program" ><%= render 'programs/form' %>
-
 	<div id='org_programs'>
-		<input type='submit' value='Add Program' id='Add Program'/>
 		<ul class="programs_list">
 			<% @programs.each do |program| %>
-				<li><h4><%= program.name %></h4>
-					<p>Description:<%= program.descrip %></p>
-					<p>Type:<%= program.type %></p>
+				<li><%= link_to program do %>
+					<h4><%= program.name %></h4>
+					<% end %>
+					<p>Description:<%= program.desc %></p>
 				</li>
 			<% end %>
 		</ul>
 	</div>
+
+		<div id='org_programs'>
+			<div id="new_program" ><%= render 'programs/form' %>
+	<% end %>
 </div>
 
