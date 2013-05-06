@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: student_ids
+#
+#  id         :integer          not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  sid        :integer
+#  group_id   :integer
+#
+
 class StudentId < ActiveRecord::Base
   attr_accessible :sid, :group_id
 

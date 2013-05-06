@@ -2,17 +2,21 @@
 #
 # Table name: locations
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  address    :string(255)
-#  longitude  :float
-#  latitude   :float
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  address     :string(255)
+#  longitude   :float
+#  latitude    :float
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  location_ID :string(255)
+#  user_id     :integer
 #
 
 class Location < ActiveRecord::Base
   attr_accessible :address, :latitude, :longitude, :name, :user_id
+  # belongs_to :user, :inverse_of => :location
+  # validates_presence_of :user
   
   acts_as_gmappable :latitude => 'latitude', :longitude => 'longitude',
   :process_geocoding => :geocode?, :address => 'address', :normalized_address => 'address',
