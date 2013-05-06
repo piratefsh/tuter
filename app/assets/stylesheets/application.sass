@@ -17,7 +17,7 @@ $lots_of_space: 12px
 $header_padding: 12px
 $content_width: 900px
 $sidebar_width: 250px
-$profile_sidebar_width: 210px
+$profile_sidebar_width: 210px 
 
 @mixin centered_content
     margin: 0 auto
@@ -91,21 +91,21 @@ nav
         li 
             display: inline
             margin: 0
-            padding: $header_padding
 
+        a 
             &:hover
                 background-color: $light_blue
-        a 
             color: $white
             text-decoration: none
+            padding: $header_padding
         
         &#nav_user
             float: right
-            li
+            a
                 border-left: 1px solid $darker_blue
         &#nav_all
             float: left
-            li 
+            a
                 border-right: 1px solid $darker_blue
 
 section, footer
@@ -181,6 +181,8 @@ div#error_explanation
     margin: $medium_space * 2 auto
     width: 80%
 
-    ul li
-        background-color: transparent !important
-        padding: 0 $big_space !important
+    ul 
+        list-style-type: none
+        li
+            background-color: transparent !important
+            padding: 0 $big_space !important

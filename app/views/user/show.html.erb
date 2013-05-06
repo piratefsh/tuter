@@ -1,6 +1,16 @@
+<%= content_for :header do%>
+  <%= stylesheet_link_tag "gmaps4rails", :media => "all" %>
+  <%= javascript_include_tag "gmaps4rails/gmaps4rails.base", 
+                             "gmaps4rails/gmaps4rails.googlemaps",
+                             "gmaps_curr_location" %>
+<% end %>
+
 <%= render 'user_profile_sidebar' %>
 
 <div id="reviews_container">
+    <%if @user_location %>
+        <%= render 'user_location' %>
+    <% end -%>
 	<%= render 'user_reviews' %>
 </div>
 

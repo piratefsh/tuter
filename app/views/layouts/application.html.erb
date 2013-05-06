@@ -34,8 +34,8 @@
                   <% if current_user %>
                     <%= link_to user_path current_user do%><li>Logged in as <%= current_user.first_name + " " + current_user.last_name %>.</li>
                     <% end %>
-                    <li><%= link_to "Dashboard", "/dashboard" %></li>
-                    <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+                   <%= link_to "/dashboard" do%> <li>Dashboard</li> <% end %>
+                   <%= link_to destroy_user_session_path, method: :delete do%><li> Sign Out</li><% end %>
                   <% else %>
                     <li><%= link_to "Log In", new_session_path(User) %></li> 
                     <li><%= link_to "Sign in with Facebook", "/users/auth/facebook" %></li> 
@@ -51,7 +51,7 @@
       </div>
     <footer>
       <p>
-        Questions, feedback or problems? Contact us at <a href="mailto:admin@tuter.me">admin@tuter.me</a></p>
+        Questions, feedback or problems? Contact us at <a href="mailto:info@tuter.me">info@tuter.me</a></p>
     </footer>
 </body>
 </html>

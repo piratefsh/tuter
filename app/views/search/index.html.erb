@@ -45,9 +45,10 @@
           <label>Rate</label>
           <br/>
           <select name="rates">
-            <% @rates.each do |range| %>
-              <option><%= range %></option>
-            <% end %>
+              <option></option>
+              <% User.rates.each do |range| %>
+                <option><%= range %></option>
+              <% end %>
           </select>
         </div>
     </form>
@@ -80,16 +81,13 @@
         <td>
           <%= if user.courses.any?
                 user.courses.join(', ').upcase
-                else 
-                  '-'
               end %>
-        </td> 
-        <td><%= randomLocation() %></td> 
+        </td> <td>
+        <% if loc = Location.where(:user_id => user.id)[0] %>
+        <%= loc.name %><%end%></td> 
         <td><%= get_types(user).join(', ')%></td> 
         <td><%= if user.rate? 
                   user.rate 
-                else 
-                  '-' 
                 end%></td> 
         <td><%= link_to "View", week_availabilities_path(:user_id => user.id) %></td> 
     </tr>

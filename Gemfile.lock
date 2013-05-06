@@ -37,8 +37,6 @@ GEM
     better_errors (0.8.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
-    binding_of_caller (0.7.1)
-      debug_inspector (>= 0.0.1)
     builder (3.0.4)
     cancan (1.6.9)
     capybara (2.1.0)
@@ -55,23 +53,17 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
-    columnize (0.3.6)
-    daemons (1.1.9)
-    debug_inspector (0.0.2)
-    debugger (1.5.0)
-      columnize (>= 0.3.1)
-      debugger-linecache (~> 1.2.0)
-      debugger-ruby_core_source (~> 1.2.0)
-    debugger-linecache (1.2.0)
-    debugger-ruby_core_source (1.2.0)
     devise (2.2.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (~> 3.1)
       warden (~> 1.2.1)
     erubis (2.7.0)
+<<<<<<< HEAD
     eventmachine (1.0.3)
     eventmachine (1.0.3-x86-mingw32)
+=======
+>>>>>>> 3d2b483e70b2d46e3fb38193dcdbd68a778fbe66
     execjs (1.4.0)
       multi_json (~> 1.0)
     faraday (0.8.7)
@@ -171,6 +163,7 @@ GEM
       ffi (>= 0.5.0)
     rb-kqueue (0.2.0)
       ffi (>= 0.5.0)
+    rb-readline (0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
     sass (3.2.8)
@@ -178,10 +171,6 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    simplecov (0.7.1)
-      multi_json (~> 1.0)
-      simplecov-html (~> 0.7.1)
-    simplecov-html (0.7.1)
     slop (3.4.4)
     sprockets (2.1.3)
       hike (~> 1.2)
@@ -189,12 +178,18 @@ GEM
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.7)
     sqlite3 (1.3.7-x86-mingw32)
+<<<<<<< HEAD
     thin (1.5.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
+=======
+    therubyracer (0.11.4)
+      libv8 (~> 3.11.8.12)
+      ref
+>>>>>>> 3d2b483e70b2d46e3fb38193dcdbd68a778fbe66
     thor (0.14.6)
-    tilt (1.3.7)
+    tilt (1.4.0)
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
@@ -216,11 +211,9 @@ PLATFORMS
 DEPENDENCIES
   annotate
   better_errors
-  binding_of_caller
   cancan (~> 1.6.0)
   capybara
   coffee-rails (~> 3.2.1)
-  debugger
   devise (~> 2.2.3)
   gmaps4rails (~> 1.5.6)
   guard
@@ -229,9 +222,13 @@ DEPENDENCIES
   omniauth-facebook (~> 1.4.1)
   pg
   rails (= 3.2.3)
+  rb-readline
   sass-rails (~> 3.2.3)
-  simplecov
   sqlite3
+<<<<<<< HEAD
   thin
+=======
+  therubyracer
+>>>>>>> 3d2b483e70b2d46e3fb38193dcdbd68a778fbe66
   uglifier (>= 1.0.3)
   webrick

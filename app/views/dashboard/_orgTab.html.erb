@@ -12,30 +12,14 @@
 
 	<div id='org_programs'>
 		<input type='submit' value='Add Program' id='Add Program'/>
-
-		<table>
-			<tr>
-				<th>Program Name</th>
-				<th>Program Decription</th>
-				<th>Program Type</th>
-				<th>Number of Tutors</th>
-				<th>Number of Students</th>
-				<th>Details</th>
-				<th>Remove</th>
-			</tr>
-			
+		<ul class="programs_list">
 			<% @programs.each do |program| %>
-					<tr>
-						<th><%= program.name %></th>
-						<th><%= program.descrip %></th>
-						<th><%= program.type %></th>
-						<th><%= program.tutors %></th>
-						<th><%= program.students %></th>
-						<th><%= program.details %></th>
-						<th><form><input type="submit" name="Remove"></form></th>
-					</tr>
+				<li><h4><%= program.name %></h4>
+					<p>Description:<%= program.descrip %></p>
+					<p>Type:<%= program.type %></p>
+				</li>
 			<% end %>
-		</table>
+		</ul>
 	</div>
 </div>
 
