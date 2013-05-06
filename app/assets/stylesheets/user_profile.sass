@@ -1,48 +1,13 @@
 @import "./application"
 @import "./form_style"
+@import "./profile_sidebar"
 
 
 div
     display: block
     &#profile
-        float: left
-        width: $profile_sidebar_width
-        background-color: $light_grey
-        padding: $big_space * 2
-        img 
-            display: block
-            margin: auto
-            padding-bottom: $big_space
-        h2
-            margin: $medium_space
-            padding-left: 0
-            margin-left: 0
-
-        h3
-            border:
-                bottom: 1px $grey solid
-            margin:
-                bottom: $medium_space
-
-        ul 
-            list-style: none
-
-        form 
-            display: block
-
-            div
-                margin: 
-                    top: $big_space *2 
-                    left: 0
-
-                input
-                    margin: 0
-
-        span
-            &.address 
-                font-style: italic
-                margin-top: $medium_space
-                display: block
+        @include profile_sidebar
+        
 .map_container
     margin: 
         top: 0

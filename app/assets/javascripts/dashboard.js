@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-    $("#main_tab_container").tabs({active: 1})
+    $("#main_tab_container").tabs({active: 2})
     $("#main_tab_container .tabs").tabs({active: 0})
 
     //for all links in tabs, trigger onlick when li is clicked

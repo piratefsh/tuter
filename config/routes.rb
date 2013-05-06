@@ -19,6 +19,8 @@ Tuter::Application.routes.draw do
   resources :user
   resources :locations
   resources :search
+  resources :organizations
+  resources :programs
 
   resources :home do
     member do 
@@ -44,6 +46,14 @@ Tuter::Application.routes.draw do
   # Omniauth routes
   match '/users/auth/:provider/callback', to: 'sessions#create'
   match '/users/auth/failure', to: redirect('/')
+
+
+  # User Signup Routes
+  match "/user" => "user#user"
+  match "/dashboard" => "home#index"
+
+  # Organization List Page
+  match "/organizations" => "organizations#index"
  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

@@ -1,0 +1,20 @@
+
+
+<%= render 'organization_profile_sidebar' %>
+<%= content_for :header do %>
+	<%= stylesheet_link_tag "organizations" %>
+<% end -%>
+<div id='org_programs_container'>
+	<div id='org_programs'>
+		<h2>Programs</h2>
+		<ul class="programs_list">
+			<% @programs.each do |program| %>
+				<li><%= link_to program do %>
+					<h4><%= program.name %></h4>
+					<% end %>
+					<p>Description:<%= program.desc %></p>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+</div>
