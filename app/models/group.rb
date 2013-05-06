@@ -22,7 +22,7 @@ class Group < ActiveRecord::Base
   has_one :course
   after_destroy :cleanup
 
-  validates :name, :presence => true
+  validates :name, :location, :group_type, :presence => true
   accepts_nested_attributes_for :student_ids
   accepts_nested_attributes_for :tutor_ids
   accepts_nested_attributes_for :course

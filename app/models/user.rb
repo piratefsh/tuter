@@ -57,6 +57,7 @@ class User < ActiveRecord::Base
   # Devise's default => :email and :password must be present 
   validates :first_name, :last_name, :presence => true
 
+  # https://github.com/ryanb/cancan/wiki/Role-Based-Authorization
   # define user roles and association
   ROLES = %w[student tutor org]
   has_and_belongs_to_many :roles
