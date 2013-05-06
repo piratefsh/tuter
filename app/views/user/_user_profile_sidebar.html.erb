@@ -34,6 +34,7 @@
             <span class="address"><%= @user_location.address.split(',').join('<br/>').html_safe%></span>
         <% end %>
     <% elsif @user == current_user%>
+        <br />
         <%= link_to "Add Location", new_location_path %>
     <% end %>
     </div>

@@ -9934,3 +9934,789 @@ ActiveRecord::RecordNotFound - Couldn't find User without an ID:
   c:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/test/unit.rb:325:in `block in autorun'
 
   [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "locations"
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "student_ids"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "week_availabilities"
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "day_availabilities"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "roles_users"
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "roles"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "roles_users" ("role_id", "user_id") VALUES (100, 206669143)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "roles" ("id", "created_at", "updated_at") VALUES (100, '2013-05-06 12:50:40', '2013-05-06 12:50:40')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "roles" ("id", "created_at", "updated_at") VALUES (8, '2013-05-06 12:50:40', '2013-05-06 12:50:40')
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "reviews"
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "roles_users"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "roles_users" ("user_id", "role_id") VALUES (206669143, 925085493)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "roles_users" ("user_id", "role_id") VALUES (358143215, 419907146)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "roles_users" ("user_id", "role_id") VALUES (576709754, 840284801)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "roles_users" ("user_id", "role_id") VALUES (1010528733, 135138680)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Peter', 'Collins', 'Peter@Collins.com', '$2a$04$mKjm0hBbOAlb4xlOUtLcC.ZZJLnYSdFSNJiHN5VVwsbupZTHblMuy', 1, '2013-05-06 12:50:40', '2013-05-06 12:50:40', 206669143)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Justin', 'Bob', 'justin@bob.tut', '$2a$04$pDoG2JaQ9NdA5MZiCokQo.WD7r.fSnz9v0UcxliqVEH8xL/PswH8S', 2, '2013-05-06 12:50:40', '2013-05-06 12:50:40', 358143215)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('GUTS', 'Tutoring', 'guts@webmaster.edu', '$2a$04$eCXCarA/GqD06jTWDglGnekj4FpAs3vutu3tdtFScxp/ZDNLpXwR6', 4, '2013-05-06 12:50:40', '2013-05-06 12:50:40', 576709754)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Anonymous', 'Anon', 'anon@anon@anon', '$2a$04$40O2ROoVf5.2kkHokpS7Me36DLPVxAKkPpiDStxmZhmO/gdS.TEq6', 1000, '2013-05-06 12:50:40', '2013-05-06 12:50:40', 1010528733)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "groups"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "groups" ("name", "location", "group_type", "created_at", "updated_at", "id") VALUES ('Computer Science', 'CS 1325', 'Group', '2013-05-06 12:50:40', '2013-05-06 12:50:40', 100993568)
+  [1m[36m (25.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1010528733]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 206669143]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 358143215]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 576709754]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.3ms)[0m  INSERT INTO "courses" ("course_ID", "course_code", "created_at", "group_id", "name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["course_ID", nil], ["course_code", nil], ["created_at", Mon, 06 May 2013 17:50:40 UTC +00:00], ["group_id", nil], ["name", "PHI 101"], ["updated_at", Mon, 06 May 2013 17:50:40 UTC +00:00], ["user_id", nil]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "groups" ("created_at", "desc", "group_ID", "group_type", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 06 May 2013 17:50:40 UTC +00:00], ["desc", nil], ["group_ID", nil], ["group_type", "Drop-In"], ["location", "Chemistry B220"], ["name", "PHI 101"], ["updated_at", Mon, 06 May 2013 17:50:40 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "groups" ("created_at", "desc", "group_ID", "group_type", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 06 May 2013 17:50:40 UTC +00:00], ["desc", nil], ["group_ID", nil], ["group_type", "Drop-In"], ["location", "Chemistry B220"], ["name", "PHI 101"], ["updated_at", Mon, 06 May 2013 17:50:40 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE "groups"."name" = 'CS 302' LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE "groups"."name" = 'PHI 101' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "groups" WHERE "groups"."id" = ?[0m  [["id", 100993569]]
+  [1m[35mTutorId Load (0.1ms)[0m  SELECT "tutor_ids".* FROM "tutor_ids" WHERE "tutor_ids"."group_id" = 100993569
+  [1m[36mStudentId Load (0.1ms)[0m  [1mSELECT "student_ids".* FROM "student_ids" WHERE "student_ids"."group_id" = 100993569[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 100993568]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Mon, 06 May 2013 17:50:40 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Mon, 06 May 2013 17:50:40 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Mon, 06 May 2013 17:50:40 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Mon, 06 May 2013 17:50:40 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mProgram Load (0.1ms)[0m  SELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Mathematics' LIMIT 1
+  [1m[36mProgram Load (0.1ms)[0m  [1mSELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Economics' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("age", "confirmation_sent_at", "confirmation_token", "confirmed_at", "course_ID", "created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "rate", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "time_zone", "transportation", "uid", "unconfirmed_email", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["age", nil], ["confirmation_sent_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["course_ID", nil], ["created_at", Mon, 06 May 2013 17:50:40 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$BnAzE1XFdg4zicmIxCav3.cQ2m/wRoSLAXr4mQqaYVbfSZFYTZiyy"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["rate", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["time_zone", nil], ["transportation", nil], ["uid", nil], ["unconfirmed_email", nil], ["updated_at", Mon, 06 May 2013 17:50:40 UTC +00:00], ["year", nil]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("age", "confirmation_sent_at", "confirmation_token", "confirmed_at", "course_ID", "created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "rate", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "time_zone", "transportation", "uid", "unconfirmed_email", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["age", nil], ["confirmation_sent_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["course_ID", nil], ["created_at", Mon, 06 May 2013 17:50:40 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$NOUuEE4nobo0pGGY4uSoxePIj/3Z79cOSFUSe0rP.b2QjNZEaf.Se"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["rate", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["time_zone", nil], ["transportation", nil], ["uid", nil], ["unconfirmed_email", nil], ["updated_at", Mon, 06 May 2013 17:50:40 UTC +00:00], ["year", nil]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'NotFoundFaiz@tuter.me' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1010528734
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1010528734]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 206669143]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 206669143]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "locations"
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "student_ids"[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "week_availabilities"
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "day_availabilities"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "roles_users"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "roles"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "roles_users" ("role_id", "user_id") VALUES (100, 206669143)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "roles" ("id", "created_at", "updated_at") VALUES (100, '2013-05-06 12:50:53', '2013-05-06 12:50:53')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "roles" ("id", "created_at", "updated_at") VALUES (8, '2013-05-06 12:50:53', '2013-05-06 12:50:53')
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "reviews"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "roles_users"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "roles_users" ("user_id", "role_id") VALUES (206669143, 925085493)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles_users" ("user_id", "role_id") VALUES (358143215, 419907146)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles_users" ("user_id", "role_id") VALUES (576709754, 840284801)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles_users" ("user_id", "role_id") VALUES (1010528733, 135138680)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Peter', 'Collins', 'Peter@Collins.com', '$2a$04$y6BbYhbm1XDn0u2vHl.OPeTyADrvNCRSlL0PkT9YH70jFitogtUAe', 1, '2013-05-06 12:50:53', '2013-05-06 12:50:53', 206669143)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Justin', 'Bob', 'justin@bob.tut', '$2a$04$qnhUNHw/iegYsQV92DYWPeTxezfxMhaBN.VaicZS/u68sF6JajuXu', 2, '2013-05-06 12:50:53', '2013-05-06 12:50:53', 358143215)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('GUTS', 'Tutoring', 'guts@webmaster.edu', '$2a$04$fiNXvRMagMMquoor7StCKOljsWzZ6Opx1V75rWvlMaRG0kZtR0/iS', 4, '2013-05-06 12:50:53', '2013-05-06 12:50:53', 576709754)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Anonymous', 'Anon', 'anon@anon@anon', '$2a$04$mM9S.7UQPSKDNndpcONCbudlvZ6A7Kr6s0PCIgZaY.SilazOlhGj.', 1000, '2013-05-06 12:50:53', '2013-05-06 12:50:53', 1010528733)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "groups"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "groups" ("name", "location", "group_type", "created_at", "updated_at", "id") VALUES ('Computer Science', 'CS 1325', 'Group', '2013-05-06 12:50:53', '2013-05-06 12:50:53', 100993568)
+  [1m[36m (13.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+
+
+Started GET "/day_availabilities/" for 127.0.0.1 at 2013-05-06 12:50:53 -0500
+Processing by DayAvailabilitiesController#index as HTML
+  [1m[36mDayAvailability Load (0.1ms)[0m  [1mSELECT "day_availabilities".* FROM "day_availabilities" [0m
+Completed 500 Internal Server Error in 3ms
+
+NoMethodError - undefined method `week_availability' for []:Array:
+  app/controllers/day_availabilities_controller.rb:10:in `block (2 levels) in index'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/mime_responds.rb:196:in `call'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/mime_responds.rb:196:in `respond_to'
+  app/controllers/day_availabilities_controller.rb:9:in `index'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  (gem) actionpack-3.2.3/lib/abstract_controller/base.rb:167:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/rendering.rb:10:in `process_action'
+  (gem) actionpack-3.2.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:425:in `_run__4152462380446885480__process_action__1913600528555296885__callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/rescue.rb:29:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  (gem) activesupport-3.2.3/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.3/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/params_wrapper.rb:205:in `process_action'
+  (gem) activerecord-3.2.3/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  (gem) actionpack-3.2.3/lib/abstract_controller/base.rb:121:in `process'
+  (gem) actionpack-3.2.3/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.3/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.3/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:73:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `each'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:600:in `call'
+  (gem) omniauth-1.1.4/lib/omniauth/strategy.rb:184:in `call!'
+  (gem) omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+  (gem) omniauth-1.1.4/lib/omniauth/builder.rb:49:in `call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.5/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  (gem) activerecord-3.2.3/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:467:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `_run__3303869707851777941__call__2577047180470434912__callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.3/lib/rails/rack/logger.rb:26:in `call_app'
+  (gem) railties-3.2.3/lib/rails/rack/logger.rb:16:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.3/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.3/lib/rails/application.rb:220:in `call'
+  (gem) rack-1.4.5/lib/rack/builder.rb:134:in `call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:64:in `block in call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:49:in `each'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:49:in `call'
+  (gem) rack-test-0.6.2/lib/rack/mock_session.rb:30:in `request'
+  (gem) rack-test-0.6.2/lib/rack/test.rb:230:in `process_request'
+  (gem) rack-test-0.6.2/lib/rack/test.rb:57:in `get'
+  /usr/share/ruby/forwardable.rb:201:in `get'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/browser.rb:59:in `process'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/browser.rb:35:in `process_and_follow_redirects'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/browser.rb:21:in `visit'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/driver.rb:42:in `visit'
+  (gem) capybara-2.1.0/lib/capybara/session.rb:193:in `visit'
+  (gem) capybara-2.1.0/lib/capybara/dsl.rb:51:in `block (2 levels) in <module:DSL>'
+  test/functional/day_availabilities_controller_test.rb:9:in `block in <class:DayAvailabilitiesControllerTest>'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1294:in `run'
+  /usr/share/ruby/test/unit/testcase.rb:17:in `run'
+  (gem) activesupport-3.2.3/lib/active_support/testing/setup_and_teardown.rb:35:in `block in run'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:458:in `_run__622999873890654060__setup__2577047180470434912__callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_setup_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/testing/setup_and_teardown.rb:34:in `run'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:912:in `block in _run_suite'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:905:in `map'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:905:in `_run_suite'
+  /usr/share/ruby/test/unit.rb:565:in `block in _run_suites'
+  /usr/share/ruby/test/unit.rb:563:in `each'
+  /usr/share/ruby/test/unit.rb:563:in `_run_suites'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:860:in `_run_anything'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1053:in `run_tests'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1040:in `block in _run'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1039:in `each'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1039:in `_run'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1028:in `run'
+  /usr/share/ruby/test/unit.rb:21:in `run'
+  /usr/share/ruby/test/unit.rb:326:in `block (2 levels) in autorun'
+  /usr/share/ruby/test/unit.rb:27:in `run_once'
+  /usr/share/ruby/test/unit.rb:325:in `block in autorun'
+
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/groups/" for 127.0.0.1 at 2013-05-06 12:50:53 -0500
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" 
+Completed 500 Internal Server Error in 9ms
+
+ActiveRecord::RecordNotFound - Couldn't find Group without an ID:
+  (gem) activerecord-3.2.3/lib/active_record/relation/finder_methods.rb:309:in `find_with_ids'
+  (gem) activerecord-3.2.3/lib/active_record/relation/finder_methods.rb:107:in `find'
+  (gem) activerecord-3.2.3/lib/active_record/querying.rb:5:in `find'
+  app/controllers/groups_controller.rb:4:in `index'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  (gem) actionpack-3.2.3/lib/abstract_controller/base.rb:167:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/rendering.rb:10:in `process_action'
+  (gem) actionpack-3.2.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:425:in `_run__3353554927443518562__process_action__1913600528555296885__callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/rescue.rb:29:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  (gem) activesupport-3.2.3/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.3/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/params_wrapper.rb:205:in `process_action'
+  (gem) activerecord-3.2.3/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  (gem) actionpack-3.2.3/lib/abstract_controller/base.rb:121:in `process'
+  (gem) actionpack-3.2.3/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.3/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.3/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:73:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `each'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:600:in `call'
+  (gem) omniauth-1.1.4/lib/omniauth/strategy.rb:184:in `call!'
+  (gem) omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+  (gem) omniauth-1.1.4/lib/omniauth/builder.rb:49:in `call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.5/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  (gem) activerecord-3.2.3/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:467:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `_run__3303869707851777941__call__2577047180470434912__callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.3/lib/rails/rack/logger.rb:26:in `call_app'
+  (gem) railties-3.2.3/lib/rails/rack/logger.rb:16:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.3/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.3/lib/rails/application.rb:220:in `call'
+  (gem) rack-1.4.5/lib/rack/builder.rb:134:in `call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:64:in `block in call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:49:in `each'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:49:in `call'
+  (gem) rack-test-0.6.2/lib/rack/mock_session.rb:30:in `request'
+  (gem) rack-test-0.6.2/lib/rack/test.rb:230:in `process_request'
+  (gem) rack-test-0.6.2/lib/rack/test.rb:57:in `get'
+  /usr/share/ruby/forwardable.rb:201:in `get'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/browser.rb:59:in `process'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/browser.rb:35:in `process_and_follow_redirects'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/browser.rb:21:in `visit'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/driver.rb:42:in `visit'
+  (gem) capybara-2.1.0/lib/capybara/session.rb:193:in `visit'
+  (gem) capybara-2.1.0/lib/capybara/dsl.rb:51:in `block (2 levels) in <module:DSL>'
+  test/functional/groups_controller_test.rb:5:in `block in <class:GroupsControllerTest>'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1294:in `run'
+  /usr/share/ruby/test/unit/testcase.rb:17:in `run'
+  (gem) activesupport-3.2.3/lib/active_support/testing/setup_and_teardown.rb:35:in `block in run'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:458:in `_run__1161901735772646071__setup__2577047180470434912__callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_setup_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/testing/setup_and_teardown.rb:34:in `run'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:912:in `block in _run_suite'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:905:in `map'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:905:in `_run_suite'
+  /usr/share/ruby/test/unit.rb:565:in `block in _run_suites'
+  /usr/share/ruby/test/unit.rb:563:in `each'
+  /usr/share/ruby/test/unit.rb:563:in `_run_suites'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:860:in `_run_anything'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1053:in `run_tests'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1040:in `block in _run'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1039:in `each'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1039:in `_run'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1028:in `run'
+  /usr/share/ruby/test/unit.rb:21:in `run'
+  /usr/share/ruby/test/unit.rb:326:in `block (2 levels) in autorun'
+  /usr/share/ruby/test/unit.rb:27:in `run_once'
+  /usr/share/ruby/test/unit.rb:325:in `block in autorun'
+
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+
+
+Started GET "/locations/" for 127.0.0.1 at 2013-05-06 12:50:53 -0500
+Processing by LocationsController#index as HTML
+  [1m[36mLocation Load (0.1ms)[0m  [1mSELECT "locations".* FROM "locations" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "locations".* FROM "locations" 
+Completed 200 OK in 94ms (Views: 90.3ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+
+
+Started GET "/groups/" for 127.0.0.1 at 2013-05-06 12:50:53 -0500
+Processing by GroupsController#index as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+Completed 500 Internal Server Error in 2ms
+
+ActiveRecord::RecordNotFound - Couldn't find Group without an ID:
+  (gem) activerecord-3.2.3/lib/active_record/relation/finder_methods.rb:309:in `find_with_ids'
+  (gem) activerecord-3.2.3/lib/active_record/relation/finder_methods.rb:107:in `find'
+  (gem) activerecord-3.2.3/lib/active_record/querying.rb:5:in `find'
+  app/controllers/groups_controller.rb:4:in `index'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  (gem) actionpack-3.2.3/lib/abstract_controller/base.rb:167:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/rendering.rb:10:in `process_action'
+  (gem) actionpack-3.2.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:425:in `_run__3353554927443518562__process_action__1913600528555296885__callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/rescue.rb:29:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  (gem) activesupport-3.2.3/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.3/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/params_wrapper.rb:205:in `process_action'
+  (gem) activerecord-3.2.3/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  (gem) actionpack-3.2.3/lib/abstract_controller/base.rb:121:in `process'
+  (gem) actionpack-3.2.3/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.3/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.3/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:73:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `each'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:600:in `call'
+  (gem) omniauth-1.1.4/lib/omniauth/strategy.rb:184:in `call!'
+  (gem) omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+  (gem) omniauth-1.1.4/lib/omniauth/builder.rb:49:in `call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.5/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  (gem) activerecord-3.2.3/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:467:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `_run__3303869707851777941__call__2577047180470434912__callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.3/lib/rails/rack/logger.rb:26:in `call_app'
+  (gem) railties-3.2.3/lib/rails/rack/logger.rb:16:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.3/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.3/lib/rails/application.rb:220:in `call'
+  (gem) rack-1.4.5/lib/rack/builder.rb:134:in `call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:64:in `block in call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:49:in `each'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:49:in `call'
+  (gem) rack-test-0.6.2/lib/rack/mock_session.rb:30:in `request'
+  (gem) rack-test-0.6.2/lib/rack/test.rb:230:in `process_request'
+  (gem) rack-test-0.6.2/lib/rack/test.rb:57:in `get'
+  /usr/share/ruby/forwardable.rb:201:in `get'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/browser.rb:59:in `process'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/browser.rb:35:in `process_and_follow_redirects'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/browser.rb:21:in `visit'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/driver.rb:42:in `visit'
+  (gem) capybara-2.1.0/lib/capybara/session.rb:193:in `visit'
+  (gem) capybara-2.1.0/lib/capybara/dsl.rb:51:in `block (2 levels) in <module:DSL>'
+  test/functional/organizations_controller_test.rb:5:in `block in <class:OrganizationsControllerTest>'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1294:in `run'
+  /usr/share/ruby/test/unit/testcase.rb:17:in `run'
+  (gem) activesupport-3.2.3/lib/active_support/testing/setup_and_teardown.rb:35:in `block in run'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:458:in `_run__763413191384442545__setup__2577047180470434912__callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_setup_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/testing/setup_and_teardown.rb:34:in `run'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:912:in `block in _run_suite'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:905:in `map'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:905:in `_run_suite'
+  /usr/share/ruby/test/unit.rb:565:in `block in _run_suites'
+  /usr/share/ruby/test/unit.rb:563:in `each'
+  /usr/share/ruby/test/unit.rb:563:in `_run_suites'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:860:in `_run_anything'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1053:in `run_tests'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1040:in `block in _run'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1039:in `each'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1039:in `_run'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1028:in `run'
+  /usr/share/ruby/test/unit.rb:21:in `run'
+  /usr/share/ruby/test/unit.rb:326:in `block (2 levels) in autorun'
+  /usr/share/ruby/test/unit.rb:27:in `run_once'
+  /usr/share/ruby/test/unit.rb:325:in `block in autorun'
+
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/reviews/" for 127.0.0.1 at 2013-05-06 12:50:53 -0500
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" 
+Completed 500 Internal Server Error in 43ms
+
+ActionView::MissingTemplate - Missing template reviews/index, application/index with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/piratefsh/Dropbox/Development/RoR/Tuter/app/views"
+  * "/home/piratefsh/.gem/ruby/1.9.1/gems/gmaps4rails-1.5.6/app/views"
+  * "/home/piratefsh/.gem/ruby/1.9.1/gems/devise-2.2.3/app/views"
+:
+  (gem) actionpack-3.2.3/lib/action_view/path_set.rb:58:in `find'
+  (gem) actionpack-3.2.3/lib/action_view/lookup_context.rb:109:in `find'
+  (gem) actionpack-3.2.3/lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  (gem) actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  (gem) actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:10:in `render'
+  (gem) actionpack-3.2.3/lib/action_view/renderer/renderer.rb:36:in `render_template'
+  (gem) actionpack-3.2.3/lib/action_view/renderer/renderer.rb:17:in `render'
+  (gem) actionpack-3.2.3/lib/abstract_controller/rendering.rb:110:in `_render_template'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  (gem) actionpack-3.2.3/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  (gem) actionpack-3.2.3/lib/abstract_controller/rendering.rb:88:in `render'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/rendering.rb:16:in `render'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  (gem) activesupport-3.2.3/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/share/ruby/benchmark.rb:295:in `realtime'
+  (gem) activesupport-3.2.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  (gem) activerecord-3.2.3/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/mime_responds.rb:196:in `respond_to'
+  app/controllers/reviews_controller.rb:7:in `index'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  (gem) actionpack-3.2.3/lib/abstract_controller/base.rb:167:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/rendering.rb:10:in `process_action'
+  (gem) actionpack-3.2.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:425:in `_run__2549835751990833688__process_action__1913600528555296885__callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/rescue.rb:29:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  (gem) activesupport-3.2.3/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.3/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/params_wrapper.rb:205:in `process_action'
+  (gem) activerecord-3.2.3/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  (gem) actionpack-3.2.3/lib/abstract_controller/base.rb:121:in `process'
+  (gem) actionpack-3.2.3/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.3/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.3/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:73:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `each'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:600:in `call'
+  (gem) omniauth-1.1.4/lib/omniauth/strategy.rb:184:in `call!'
+  (gem) omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+  (gem) omniauth-1.1.4/lib/omniauth/builder.rb:49:in `call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.5/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  (gem) activerecord-3.2.3/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:467:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `_run__3303869707851777941__call__2577047180470434912__callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.3/lib/rails/rack/logger.rb:26:in `call_app'
+  (gem) railties-3.2.3/lib/rails/rack/logger.rb:16:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.3/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.3/lib/rails/application.rb:220:in `call'
+  (gem) rack-1.4.5/lib/rack/builder.rb:134:in `call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:64:in `block in call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:49:in `each'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:49:in `call'
+  (gem) rack-test-0.6.2/lib/rack/mock_session.rb:30:in `request'
+  (gem) rack-test-0.6.2/lib/rack/test.rb:230:in `process_request'
+  (gem) rack-test-0.6.2/lib/rack/test.rb:57:in `get'
+  /usr/share/ruby/forwardable.rb:201:in `get'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/browser.rb:59:in `process'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/browser.rb:35:in `process_and_follow_redirects'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/browser.rb:21:in `visit'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/driver.rb:42:in `visit'
+  (gem) capybara-2.1.0/lib/capybara/session.rb:193:in `visit'
+  (gem) capybara-2.1.0/lib/capybara/dsl.rb:51:in `block (2 levels) in <module:DSL>'
+  test/functional/reviews_controller_test.rb:9:in `block in <class:ReviewsControllerTest>'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1294:in `run'
+  /usr/share/ruby/test/unit/testcase.rb:17:in `run'
+  (gem) activesupport-3.2.3/lib/active_support/testing/setup_and_teardown.rb:35:in `block in run'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:458:in `_run__2741686814567877481__setup__2577047180470434912__callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_setup_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/testing/setup_and_teardown.rb:34:in `run'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:912:in `block in _run_suite'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:905:in `map'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:905:in `_run_suite'
+  /usr/share/ruby/test/unit.rb:565:in `block in _run_suites'
+  /usr/share/ruby/test/unit.rb:563:in `each'
+  /usr/share/ruby/test/unit.rb:563:in `_run_suites'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:860:in `_run_anything'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1053:in `run_tests'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1040:in `block in _run'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1039:in `each'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1039:in `_run'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1028:in `run'
+  /usr/share/ruby/test/unit.rb:21:in `run'
+  /usr/share/ruby/test/unit.rb:326:in `block (2 levels) in autorun'
+  /usr/share/ruby/test/unit.rb:27:in `run_once'
+  /usr/share/ruby/test/unit.rb:325:in `block in autorun'
+
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+
+
+Started GET "/week_availabilities/" for 127.0.0.1 at 2013-05-06 12:50:53 -0500
+Processing by WeekAvailabilitiesController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::RecordNotFound - Couldn't find User without an ID:
+  (gem) activerecord-3.2.3/lib/active_record/relation/finder_methods.rb:309:in `find_with_ids'
+  (gem) activerecord-3.2.3/lib/active_record/relation/finder_methods.rb:107:in `find'
+  (gem) activerecord-3.2.3/lib/active_record/querying.rb:5:in `find'
+  app/controllers/week_availabilities_controller.rb:10:in `index'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  (gem) actionpack-3.2.3/lib/abstract_controller/base.rb:167:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/rendering.rb:10:in `process_action'
+  (gem) actionpack-3.2.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:425:in `_run__4012819016320581112__process_action__1913600528555296885__callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/rescue.rb:29:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  (gem) activesupport-3.2.3/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.3/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/params_wrapper.rb:205:in `process_action'
+  (gem) activerecord-3.2.3/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  (gem) actionpack-3.2.3/lib/abstract_controller/base.rb:121:in `process'
+  (gem) actionpack-3.2.3/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.3/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.3/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:73:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `each'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:600:in `call'
+  (gem) omniauth-1.1.4/lib/omniauth/strategy.rb:184:in `call!'
+  (gem) omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+  (gem) omniauth-1.1.4/lib/omniauth/builder.rb:49:in `call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.5/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  (gem) activerecord-3.2.3/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:467:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `_run__3303869707851777941__call__2577047180470434912__callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.3/lib/rails/rack/logger.rb:26:in `call_app'
+  (gem) railties-3.2.3/lib/rails/rack/logger.rb:16:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.3/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.3/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.3/lib/rails/application.rb:220:in `call'
+  (gem) rack-1.4.5/lib/rack/builder.rb:134:in `call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:64:in `block in call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:49:in `each'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:49:in `call'
+  (gem) rack-test-0.6.2/lib/rack/mock_session.rb:30:in `request'
+  (gem) rack-test-0.6.2/lib/rack/test.rb:230:in `process_request'
+  (gem) rack-test-0.6.2/lib/rack/test.rb:57:in `get'
+  /usr/share/ruby/forwardable.rb:201:in `get'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/browser.rb:59:in `process'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/browser.rb:35:in `process_and_follow_redirects'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/browser.rb:21:in `visit'
+  (gem) capybara-2.1.0/lib/capybara/rack_test/driver.rb:42:in `visit'
+  (gem) capybara-2.1.0/lib/capybara/session.rb:193:in `visit'
+  (gem) capybara-2.1.0/lib/capybara/dsl.rb:51:in `block (2 levels) in <module:DSL>'
+  test/functional/week_availabilities_controller_test.rb:9:in `block in <class:WeekAvailabilitiesControllerTest>'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1294:in `run'
+  /usr/share/ruby/test/unit/testcase.rb:17:in `run'
+  (gem) activesupport-3.2.3/lib/active_support/testing/setup_and_teardown.rb:35:in `block in run'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:458:in `_run__778701637728420040__setup__2577047180470434912__callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_setup_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) activesupport-3.2.3/lib/active_support/testing/setup_and_teardown.rb:34:in `run'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:912:in `block in _run_suite'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:905:in `map'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:905:in `_run_suite'
+  /usr/share/ruby/test/unit.rb:565:in `block in _run_suites'
+  /usr/share/ruby/test/unit.rb:563:in `each'
+  /usr/share/ruby/test/unit.rb:563:in `_run_suites'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:860:in `_run_anything'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1053:in `run_tests'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1040:in `block in _run'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1039:in `each'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1039:in `_run'
+  (gem) minitest-4.3.2/lib/minitest/unit.rb:1028:in `run'
+  /usr/share/ruby/test/unit.rb:21:in `run'
+  /usr/share/ruby/test/unit.rb:326:in `block (2 levels) in autorun'
+  /usr/share/ruby/test/unit.rb:27:in `run_once'
+  /usr/share/ruby/test/unit.rb:325:in `block in autorun'
+
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
