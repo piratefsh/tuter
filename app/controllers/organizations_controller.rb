@@ -1,7 +1,7 @@
 class OrganizationsController < ApplicationController
   def index
     @organizations = Organization.all
-    @user = current_user
+    
 
     respond_to do |format|
       format.html
@@ -10,6 +10,7 @@ class OrganizationsController < ApplicationController
 
   def new
     @organization = Organization.new
+    @email = current_user.email
 
     respond_to do |format|
       format.html
@@ -18,6 +19,7 @@ class OrganizationsController < ApplicationController
 
   def create 
     @organization = Organization.new(params[:organization])
+    @email = current_user.email
 
     respond_to do |format|
       if @organization.save
@@ -28,7 +30,8 @@ class OrganizationsController < ApplicationController
 
   def show
     @organization = Organization.find(params[:id])
-
+    @programs = Program.where(:organization_id => @organization.id)
+    @user = User.where(:id => @organization.user_id).first
     respond_to do |format|
       format.html
     end

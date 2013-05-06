@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
+<%= render 'program_profile_sidebar' %>
 
-<% if current_user && current_user.id == Organization.where(:id => @program.organization_id).first.user_id %>
-	<%= link_to 'Edit', edit_program_path(@program) %>
-<% end %>
+<h2>Under Construction...</h2>

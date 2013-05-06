@@ -1,0 +1,20 @@
+<!-- Partial for user profile sidebar. Displays user's personal information -->
+<% content_for :header do %>
+    <% stylesheet_link_tag "user_profile", :media => "all" %>
+<% end %>
+<div id="profile">
+    <!-- Display User Profile Picture-->
+    <%= image_tag("/images/programPendingImage.jpg", :alt => "Profile Picture")%>
+
+    <h2><%=@program.name %></h2>
+    <p><%=@program.desc %></p>
+
+    <h3>Contact Info</h3>
+
+    <% if current_user and current_user.id == @organization.user_id %>
+    <div class="small_button unimp">
+    <%= button_to "Edit Program", edit_program_path(@program), :method=> :get %>
+    </div>
+    <% end %>
+
+</div>

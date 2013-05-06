@@ -1,0 +1,13 @@
+<%= render 'organization_profile_sidebar' %>
+
+<div id='org_programs'>
+		<ul class="programs_list">
+			<% @programs.each do |program| %>
+				<li><%= link_to program do %>
+					<h4><%= program.name %></h4>
+					<% end %>
+					<p>Description:<%= program.desc %></p>
+				</li>
+			<% end %>
+		</ul>
+	</div>

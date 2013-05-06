@@ -14,6 +14,7 @@ class ProgramsController < ApplicationController
   # GET /programs/1.json
   def show
     @program = Program.find(params[:id])
+    @organization = Organization.where(:id => @program.organization_id).first
 
     respond_to do |format|
       format.html # show.html.erb
