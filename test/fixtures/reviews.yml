@@ -1,17 +1,32 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+# == Schema Information
+#
+# Table name: reviews
+#
+#  id          :integer          not null, primary key
+#  user_id     :integer
+#  reviewer_id :integer
+#  rating      :integer
+#  title       :string(255)
+#  content     :text(255)
+#  recommend   :boolean
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
 
-one:
-  user_id: 1
-  reviewer_id: 1
-  rating: 1
-  title: MyString
-  content: MyString
-  recommend: false
-
-two:
-  user_id: 1
-  reviewer_id: 1
-  rating: 1
-  title: MyString
-  content: MyString
-  recommend: false
+# # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+# 
+# one:
+  # user_id: 1
+  # reviewer_id: 1
+  # rating: 1
+  # title: MyString
+  # content: MyString
+  # recommend: false
+# 
+# two:
+  # user_id: 1
+  # reviewer_id: 1
+  # rating: 1
+  # title: MyString
+  # content: MyString
+  # recommend: false

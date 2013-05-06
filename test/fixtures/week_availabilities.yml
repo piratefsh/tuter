@@ -1,9 +1,20 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+# == Schema Information
+#
+# Table name: week_availabilities
+#
+#  id         :integer          not null, primary key
+#  avail_type :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :integer
+#
 
-one:
-  type: 
-  reference: 
-
-two:
-  type: 
-  reference: 
+# # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+# 
+# one:
+  # type: 
+  # reference: 
+# 
+# two:
+  # type: 
+  # reference: 
