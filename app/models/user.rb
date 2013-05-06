@@ -151,4 +151,10 @@ class User < ActiveRecord::Base
     end
     courses
   end
+
+  def after_save
+    @tutor_watchlist = Tutor_watchlist.new
+    @tutor_watchlist.user_id = self.id
+    @tutor_watchlist.save
+  end
 end

@@ -20,6 +20,10 @@ Tuter::Application.routes.draw do
   resources :locations
   resources :search
 
+  resources :tutor_watchlist do
+    resources :user
+  end
+
   resources :home do
     member do 
       get 'search_tutors'
@@ -44,6 +48,8 @@ Tuter::Application.routes.draw do
   # Omniauth routes
   match '/users/auth/:provider/callback', to: 'sessions#create'
   match '/users/auth/failure', to: redirect('/')
+
+  match '/update_watchlist' => 'user#update_watchlist' 
  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
