@@ -1,5 +1,9 @@
 <%= content_for :header do %>
+  <%= stylesheet_link_tag "locations" %>
   <%= stylesheet_link_tag "form_style" %>
+  <%= stylesheet_link_tag "gmaps_style" %>
+  <%= javascript_include_tag "gmaps.js" %>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <% end -%>
 
 <%= form_for(@location) do |f| %>
@@ -21,10 +25,11 @@
   </div>
   <div>
     <%= f.label :address%>
-    <%= f.text_field :address%>
+    <%= f.text_field :address, {:id => 'gmaps-input-address'}%>
+    <div id='gmaps-canvas'></div>
   </div>
-
   <div class="actions">
+    <label></label>
     <%= f.submit %>
   </div>
 <% end %>
