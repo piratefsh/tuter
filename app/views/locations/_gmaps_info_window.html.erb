@@ -1,2 +1,3 @@
 <strong><%=user.full_name%></strong>
-<%= link_to "Profile", user %>
+<%= link_to "Profile", user %><br />
+<%= user.roles.join(", ").upcase%>

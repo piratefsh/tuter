@@ -29,7 +29,7 @@ class Location < ActiveRecord::Base
   end
 
   def gmaps4rails_infowindow   
-    # user = User.find(self.user_id)
-    # user.full_name
+    user = User.find(self.user_id)
+    user.full_name
   end
 end
