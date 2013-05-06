@@ -34,12 +34,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :validatable,
          :recoverable, :rememberable, :trackable, :omniauthable
 
-  has_one :location
   has_many :courses
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
-                  :first_name, :last_name, :desc, :provider, :uid, :roles, :location, :location_attributes,
+                  :first_name, :last_name, :desc, :provider, :uid, :roles, 
                   :age, :transportation, :year, :courses, :courses_attributes, :rate, :time_zone, :confirmed_at
 
   # Setup creation validation
@@ -50,7 +49,7 @@ class User < ActiveRecord::Base
   ROLES = %w[student tutor org]
   has_and_belongs_to_many :roles
 
-  accepts_nested_attributes_for :location, :courses
+  accepts_nested_attributes_for :courses
 
   def self.years
     ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate', 'Others']
@@ -64,10 +63,6 @@ class User < ActiveRecord::Base
     18..80
   end
 
-  def with_location
-    self.build_location
-    self
-  end
   def with_course
     self.courses.build
     self
