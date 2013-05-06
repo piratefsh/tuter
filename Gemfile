@@ -25,7 +25,7 @@ gem 'omniauth-facebook', '~> 1.4.1'
 gem 'gmaps4rails', '~> 1.5.6'
 #gem 'role_model'
 gem 'guard'
-# gem 'simplecov', :require => false, :group => :test
+gem 'simplecov', :require => false, :group => :test
 gem 'cancan', '~> 1.6.0'
 #gem 'rails_admin'
 #gem 'activeadmin'

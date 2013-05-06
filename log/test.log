@@ -6685,3 +6685,492 @@ Content-Transfer-Encoding: 7bit
   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
   [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "day_availabilities"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "groups"[0m
+  [1m[35mFixture Insert (1.0ms)[0m  INSERT INTO "groups" ("name", "location", "group_type", "created_at", "updated_at", "id") VALUES ('Computer Science', 'CS 1325', 'Group', '2013-05-06 00:31:40', '2013-05-06 00:31:40', 100993568)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "locations"[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "reviews"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "roles_users"[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "roles"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles_users" ("role_id", "user_id") VALUES (100, 206669143)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles" ("id", "created_at", "updated_at") VALUES (100, '2013-05-06 00:31:40', '2013-05-06 00:31:40')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles" ("id", "created_at", "updated_at") VALUES (8, '2013-05-06 00:31:40', '2013-05-06 00:31:40')[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "roles_users"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles_users" ("user_id", "role_id") VALUES (206669143, 925085493)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles_users" ("user_id", "role_id") VALUES (358143215, 419907146)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles_users" ("user_id", "role_id") VALUES (576709754, 840284801)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles_users" ("user_id", "role_id") VALUES (1010528733, 135138680)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Peter', 'Collins', 'Peter@Collins.com', '$2a$04$L6Icdfxw/yrunYKV8znxFuHuTANZ7aqk9b.mOKlXPhrQAB70cD2O6', 1, '2013-05-06 00:31:40', '2013-05-06 00:31:40', 206669143)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Justin', 'Bob', 'justin@bob.tut', '$2a$04$i8mi.UQFoctEWnQti4KaNuZCvMjgNhriVnxCOY.O62/Gc6sdQ/gq.', 2, '2013-05-06 00:31:40', '2013-05-06 00:31:40', 358143215)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('GUTS', 'Tutoring', 'guts@webmaster.edu', '$2a$04$kuEYcrnRJJ3qpLcDcoq23e5GsfGIjMCtG8D8lhQNwzwkh3aIrGGsO', 4, '2013-05-06 00:31:40', '2013-05-06 00:31:40', 576709754)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Anonymous', 'Anon', 'anon@anon@anon', '$2a$04$O2DhxyeLQkDEHoirwcXpH.psfdUJXGNSaMCwfkgChSoWPdeXcdkNq', 1000, '2013-05-06 00:31:40', '2013-05-06 00:31:40', 1010528733)[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "week_availabilities"
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1010528733]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 206669143]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 358143215]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 576709754]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (21.0ms)[0m  INSERT INTO "courses" ("course_ID", "course_code", "created_at", "group_id", "name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["course_ID", nil], ["course_code", nil], ["created_at", Mon, 06 May 2013 05:31:40 UTC +00:00], ["group_id", nil], ["name", "PHI 101"], ["updated_at", Mon, 06 May 2013 05:31:40 UTC +00:00], ["user_id", nil]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "groups" ("created_at", "desc", "group_ID", "group_type", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 06 May 2013 05:31:40 UTC +00:00], ["desc", nil], ["group_ID", nil], ["group_type", "Drop-In"], ["location", "Chemistry B220"], ["name", "PHI 101"], ["updated_at", Mon, 06 May 2013 05:31:40 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.0ms)[0m  INSERT INTO "groups" ("created_at", "desc", "group_ID", "group_type", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 06 May 2013 05:31:40 UTC +00:00], ["desc", nil], ["group_ID", nil], ["group_type", "Drop-In"], ["location", "Chemistry B220"], ["name", "PHI 101"], ["updated_at", Mon, 06 May 2013 05:31:40 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" WHERE "groups"."name" = 'CS 302' LIMIT 1
+  [1m[36mGroup Load (0.0ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE "groups"."name" = 'PHI 101' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "groups" WHERE "groups"."id" = ?[0m  [["id", 100993569]]
+  [1m[35mTutorId Load (0.0ms)[0m  SELECT "tutor_ids".* FROM "tutor_ids" WHERE "tutor_ids"."group_id" = 100993569
+  [1m[36mStudentId Load (0.0ms)[0m  [1mSELECT "student_ids".* FROM "student_ids" WHERE "student_ids"."group_id" = 100993569[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (2.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGroup Load (0.0ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 100993568]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Mon, 06 May 2013 05:31:40 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Mon, 06 May 2013 05:31:40 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Mon, 06 May 2013 05:31:40 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Mon, 06 May 2013 05:31:40 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mProgram Load (0.0ms)[0m  SELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Mathematics' LIMIT 1
+  [1m[36mProgram Load (0.0ms)[0m  [1mSELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Economics' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "users" ("age", "confirmation_sent_at", "confirmation_token", "confirmed_at", "course_ID", "created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "rate", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "time_zone", "transportation", "uid", "unconfirmed_email", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["age", nil], ["confirmation_sent_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["course_ID", nil], ["created_at", Mon, 06 May 2013 05:31:40 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$wOUl1q8tWSmgg/2rXFM9ruFgjSHXQbAXE32bTc5A6ubHwQ54Qwiim"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["rate", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["time_zone", nil], ["transportation", nil], ["uid", nil], ["unconfirmed_email", nil], ["updated_at", Mon, 06 May 2013 05:31:40 UTC +00:00], ["year", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "users" ("age", "confirmation_sent_at", "confirmation_token", "confirmed_at", "course_ID", "created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "rate", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "time_zone", "transportation", "uid", "unconfirmed_email", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["age", nil], ["confirmation_sent_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["course_ID", nil], ["created_at", Mon, 06 May 2013 05:31:40 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$VoQDtwvMzFr7rjvx8HZ6bOtW1smOwXdYLwD8VPzE72FtE1ztPRTpG"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["rate", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["time_zone", nil], ["transportation", nil], ["uid", nil], ["unconfirmed_email", nil], ["updated_at", Mon, 06 May 2013 05:31:40 UTC +00:00], ["year", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'NotFoundFaiz@tuter.me' LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1010528734
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1010528734]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 206669143]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 206669143]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 206669143]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "day_availabilities"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "groups"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "groups" ("name", "location", "group_type", "created_at", "updated_at", "id") VALUES ('Computer Science', 'CS 1325', 'Group', '2013-05-06 00:32:39', '2013-05-06 00:32:39', 100993568)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "locations"[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "reviews"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "roles_users"[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "roles"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles_users" ("role_id", "user_id") VALUES (100, 206669143)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles" ("id", "created_at", "updated_at") VALUES (100, '2013-05-06 00:32:39', '2013-05-06 00:32:39')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles" ("id", "created_at", "updated_at") VALUES (8, '2013-05-06 00:32:39', '2013-05-06 00:32:39')[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "roles_users"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles_users" ("user_id", "role_id") VALUES (206669143, 925085493)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles_users" ("user_id", "role_id") VALUES (358143215, 419907146)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles_users" ("user_id", "role_id") VALUES (576709754, 840284801)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles_users" ("user_id", "role_id") VALUES (1010528733, 135138680)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Peter', 'Collins', 'Peter@Collins.com', '$2a$04$GdDaqkzIGQ/Wne/uYJOAtuHkTjpXcub4whi0ifpc04hUzuFY3fVda', 1, '2013-05-06 00:32:39', '2013-05-06 00:32:39', 206669143)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Justin', 'Bob', 'justin@bob.tut', '$2a$04$MOKCVYxXQIbHMUMa9ERqSOjoByazHy3HKhDA52wcPzxZ4IUttvUSq', 2, '2013-05-06 00:32:39', '2013-05-06 00:32:39', 358143215)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('GUTS', 'Tutoring', 'guts@webmaster.edu', '$2a$04$9Po9sbO3C.f7EcIqABFWbecLb29hh6yedf55BKrIt0GanX7OJCsYq', 4, '2013-05-06 00:32:39', '2013-05-06 00:32:39', 576709754)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Anonymous', 'Anon', 'anon@anon@anon', '$2a$04$ZO5Yq5nfg2Gg7lhpXUitHOxHFP99x4KYQIb8B9MHKvA12TTqd5H3y', 1000, '2013-05-06 00:32:39', '2013-05-06 00:32:39', 1010528733)[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "week_availabilities"
+  [1m[36m (8.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "day_availabilities"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "groups"[0m
+  [1m[35mFixture Insert (1.0ms)[0m  INSERT INTO "groups" ("name", "location", "group_type", "created_at", "updated_at", "id") VALUES ('Computer Science', 'CS 1325', 'Group', '2013-05-06 00:35:44', '2013-05-06 00:35:44', 100993568)
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "locations"[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "reviews"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "roles_users"[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "roles"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles_users" ("role_id", "user_id") VALUES (100, 206669143)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles" ("id", "created_at", "updated_at") VALUES (100, '2013-05-06 00:35:44', '2013-05-06 00:35:44')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles" ("id", "created_at", "updated_at") VALUES (8, '2013-05-06 00:35:44', '2013-05-06 00:35:44')[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "roles_users"
+  [1m[36mFixture Delete (2.0ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles_users" ("user_id", "role_id") VALUES (206669143, 925085493)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles_users" ("user_id", "role_id") VALUES (358143215, 419907146)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles_users" ("user_id", "role_id") VALUES (576709754, 840284801)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles_users" ("user_id", "role_id") VALUES (1010528733, 135138680)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Peter', 'Collins', 'Peter@Collins.com', '$2a$04$PW/uZhZ2OqG2DIf6AVSm2.7zRPiF2NWejGslF/foYvSsLYSp8WZau', 1, '2013-05-06 00:35:44', '2013-05-06 00:35:44', 206669143)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Justin', 'Bob', 'justin@bob.tut', '$2a$04$wRD0bARgiR6c8VsPO.INK.sxkSIqQ6UZoHPMRH.odP4qDEtmcIRQu', 2, '2013-05-06 00:35:44', '2013-05-06 00:35:44', 358143215)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('GUTS', 'Tutoring', 'guts@webmaster.edu', '$2a$04$XGiKq27jkMnMLFzvqyZ2c.1yPPcwEYBK2hVmKFEVJbfemvZKgPLim', 4, '2013-05-06 00:35:44', '2013-05-06 00:35:44', 576709754)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Anonymous', 'Anon', 'anon@anon@anon', '$2a$04$U/9OLTb/NWTc.JyacOuHruZNyBwynUXnvmvBgIdj50hJuLTJCkAX6', 1000, '2013-05-06 00:35:44', '2013-05-06 00:35:44', 1010528733)[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "week_availabilities"
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "day_availabilities"
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "groups"[0m
+  [1m[35mFixture Insert (1.0ms)[0m  INSERT INTO "groups" ("name", "location", "group_type", "created_at", "updated_at", "id") VALUES ('Computer Science', 'CS 1325', 'Group', '2013-05-06 00:39:44', '2013-05-06 00:39:44', 100993568)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "locations"[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "reviews"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "roles_users"[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "roles"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles_users" ("role_id", "user_id") VALUES (100, 206669143)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles" ("id", "created_at", "updated_at") VALUES (100, '2013-05-06 00:39:44', '2013-05-06 00:39:44')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles" ("id", "created_at", "updated_at") VALUES (8, '2013-05-06 00:39:44', '2013-05-06 00:39:44')[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "roles_users"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles_users" ("user_id", "role_id") VALUES (206669143, 925085493)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles_users" ("user_id", "role_id") VALUES (358143215, 419907146)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles_users" ("user_id", "role_id") VALUES (576709754, 840284801)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles_users" ("user_id", "role_id") VALUES (1010528733, 135138680)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Peter', 'Collins', 'Peter@Collins.com', '$2a$04$i9C1QULTcKs3nKEaYlQ6weB.8hfljFtoObWEmmvkHtzDeFCt9YK9y', 1, '2013-05-06 00:39:44', '2013-05-06 00:39:44', 206669143)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Justin', 'Bob', 'justin@bob.tut', '$2a$04$UdXC2gyjmrz/9n2o3v.wA.ZXLh0CSnM60OBKU9FTWlv4m.2do3Q82', 2, '2013-05-06 00:39:44', '2013-05-06 00:39:44', 358143215)[0m
+  [1m[35mFixture Insert (1.0ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('GUTS', 'Tutoring', 'guts@webmaster.edu', '$2a$04$5sShNe929PhhaQn40zNn4OOGSJ7jYH93AKFIx5CWlkfDv5lA0Tacm', 4, '2013-05-06 00:39:44', '2013-05-06 00:39:44', 576709754)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Anonymous', 'Anon', 'anon@anon@anon', '$2a$04$pKehGRdF7V7pEzHxhTqj.eNkA.5Dr1Cnl9JLwX5JAQDe2U013ccK.', 1000, '2013-05-06 00:39:44', '2013-05-06 00:39:44', 1010528733)[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "week_availabilities"
+  [1m[36m (12.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1010528733]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 206669143]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 358143215]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 576709754]]
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (26.0ms)[0m  INSERT INTO "courses" ("course_ID", "course_code", "created_at", "group_id", "name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["course_ID", nil], ["course_code", nil], ["created_at", Mon, 06 May 2013 05:39:44 UTC +00:00], ["group_id", nil], ["name", "PHI 101"], ["updated_at", Mon, 06 May 2013 05:39:44 UTC +00:00], ["user_id", nil]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "groups" ("created_at", "desc", "group_ID", "group_type", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 06 May 2013 05:39:44 UTC +00:00], ["desc", nil], ["group_ID", nil], ["group_type", "Drop-In"], ["location", "Chemistry B220"], ["name", "PHI 101"], ["updated_at", Mon, 06 May 2013 05:39:44 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "groups" ("created_at", "desc", "group_ID", "group_type", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 06 May 2013 05:39:44 UTC +00:00], ["desc", nil], ["group_ID", nil], ["group_type", "Drop-In"], ["location", "Chemistry B220"], ["name", "PHI 101"], ["updated_at", Mon, 06 May 2013 05:39:44 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" WHERE "groups"."name" = 'CS 302' LIMIT 1
+  [1m[36mGroup Load (0.0ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE "groups"."name" = 'PHI 101' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mDELETE FROM "groups" WHERE "groups"."id" = ?[0m  [["id", 100993569]]
+  [1m[35mTutorId Load (0.0ms)[0m  SELECT "tutor_ids".* FROM "tutor_ids" WHERE "tutor_ids"."group_id" = 100993569
+  [1m[36mStudentId Load (1.0ms)[0m  [1mSELECT "student_ids".* FROM "student_ids" WHERE "student_ids"."group_id" = 100993569[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGroup Load (0.0ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 100993568]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Mon, 06 May 2013 05:39:45 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Mon, 06 May 2013 05:39:45 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Mon, 06 May 2013 05:39:45 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Mon, 06 May 2013 05:39:45 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mProgram Load (0.0ms)[0m  SELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Mathematics' LIMIT 1
+  [1m[36mProgram Load (0.0ms)[0m  [1mSELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Economics' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "users" ("age", "confirmation_sent_at", "confirmation_token", "confirmed_at", "course_ID", "created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "rate", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "time_zone", "transportation", "uid", "unconfirmed_email", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["age", nil], ["confirmation_sent_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["course_ID", nil], ["created_at", Mon, 06 May 2013 05:39:45 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$YocYFoXAZMwPyxKbHdkcX.L59c1WmNGhpZDlrXL2VnW4YWAjOCJDm"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["rate", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["time_zone", nil], ["transportation", nil], ["uid", nil], ["unconfirmed_email", nil], ["updated_at", Mon, 06 May 2013 05:39:45 UTC +00:00], ["year", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "users" ("age", "confirmation_sent_at", "confirmation_token", "confirmed_at", "course_ID", "created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "rate", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "time_zone", "transportation", "uid", "unconfirmed_email", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["age", nil], ["confirmation_sent_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["course_ID", nil], ["created_at", Mon, 06 May 2013 05:39:45 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$eAixd5Ceagpo7NLK4dHCZuh3oNhgA1wgdQ4.PqW3HayKjFLIjrOkG"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["rate", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["time_zone", nil], ["transportation", nil], ["uid", nil], ["unconfirmed_email", nil], ["updated_at", Mon, 06 May 2013 05:39:45 UTC +00:00], ["year", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'NotFoundFaiz@tuter.me' LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1010528734
+  [1m[36mSQL (3.0ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1010528734]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (2.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 206669143]]
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 206669143]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 206669143]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "day_availabilities"
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "groups"[0m
+  [1m[35mFixture Insert (1.0ms)[0m  INSERT INTO "groups" ("name", "location", "group_type", "created_at", "updated_at", "id") VALUES ('Computer Science', 'CS 1325', 'Group', '2013-05-06 00:43:25', '2013-05-06 00:43:25', 100993568)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "locations"[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "reviews"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "roles_users"[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "roles"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles_users" ("role_id", "user_id") VALUES (100, 206669143)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles" ("id", "created_at", "updated_at") VALUES (100, '2013-05-06 00:43:25', '2013-05-06 00:43:25')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles" ("id", "created_at", "updated_at") VALUES (8, '2013-05-06 00:43:25', '2013-05-06 00:43:25')[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "roles_users"
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles_users" ("user_id", "role_id") VALUES (206669143, 925085493)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles_users" ("user_id", "role_id") VALUES (358143215, 419907146)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles_users" ("user_id", "role_id") VALUES (576709754, 840284801)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles_users" ("user_id", "role_id") VALUES (1010528733, 135138680)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Peter', 'Collins', 'Peter@Collins.com', '$2a$04$A8civ7OEW6.alzaclQ4kDuOfnAViqPOS8/gwSozC85uOG6zF2NACq', 1, '2013-05-06 00:43:25', '2013-05-06 00:43:25', 206669143)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Justin', 'Bob', 'justin@bob.tut', '$2a$04$4ke7Y6eR.BnVwoqNMDCpLe1l1cP2FY6WJDX4M3BepbPKjnlG/vza2', 2, '2013-05-06 00:43:25', '2013-05-06 00:43:25', 358143215)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('GUTS', 'Tutoring', 'guts@webmaster.edu', '$2a$04$Wvxjft50jpY79EblWim7M.wJWvExVXRsuvxAuWhwwFcRICnBRsmje', 4, '2013-05-06 00:43:25', '2013-05-06 00:43:25', 576709754)
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Anonymous', 'Anon', 'anon@anon@anon', '$2a$04$dnuzaGI42QhnGA6OtorBneS17QDGSWOQ/WQEuoUJiSk/VaCcZNgjO', 1000, '2013-05-06 00:43:25', '2013-05-06 00:43:25', 1010528733)[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "week_availabilities"
+  [1m[36m (12.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (22.0ms)[0m  INSERT INTO "users" ("age", "confirmation_sent_at", "confirmation_token", "confirmed_at", "course_ID", "created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "rate", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "time_zone", "transportation", "uid", "unconfirmed_email", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["age", nil], ["confirmation_sent_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["course_ID", nil], ["created_at", Mon, 06 May 2013 05:43:26 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$exBG5eIneQ/gcE7GrYcszedyPQ0zshGiwGNu1NUahALBzuCzWFqpm"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["rate", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["time_zone", nil], ["transportation", nil], ["uid", nil], ["unconfirmed_email", nil], ["updated_at", Mon, 06 May 2013 05:43:26 UTC +00:00], ["year", nil]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "users" ("age", "confirmation_sent_at", "confirmation_token", "confirmed_at", "course_ID", "created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "rate", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "time_zone", "transportation", "uid", "unconfirmed_email", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["age", nil], ["confirmation_sent_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["course_ID", nil], ["created_at", Mon, 06 May 2013 05:43:26 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$axoges2cSqns6sNgzwDDk.1ywHhwiZLNbDMyocAwDLbLYQ9Signdu"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["rate", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["time_zone", nil], ["transportation", nil], ["uid", nil], ["unconfirmed_email", nil], ["updated_at", Mon, 06 May 2013 05:43:26 UTC +00:00], ["year", nil]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'NotFoundFaiz@tuter.me' LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1010528734[0m
+  [1m[35mSQL (2.0ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 1010528734]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 206669143]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 206669143]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "day_availabilities"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "groups"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "groups" ("name", "location", "group_type", "created_at", "updated_at", "id") VALUES ('Computer Science', 'CS 1325', 'Group', '2013-05-06 00:46:24', '2013-05-06 00:46:24', 100993568)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "locations"[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "reviews"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "roles_users"[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "roles"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles_users" ("role_id", "user_id") VALUES (100, 206669143)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles" ("id", "created_at", "updated_at") VALUES (100, '2013-05-06 00:46:24', '2013-05-06 00:46:24')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles" ("id", "created_at", "updated_at") VALUES (8, '2013-05-06 00:46:24', '2013-05-06 00:46:24')[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "student_ids"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "tutor_ids"[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "roles_users"
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles_users" ("user_id", "role_id") VALUES (206669143, 925085493)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles_users" ("user_id", "role_id") VALUES (358143215, 419907146)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "roles_users" ("user_id", "role_id") VALUES (576709754, 840284801)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "roles_users" ("user_id", "role_id") VALUES (1010528733, 135138680)[0m
+  [1m[35mFixture Insert (1.0ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Peter', 'Collins', 'Peter@Collins.com', '$2a$04$ZTjAipp8jul.4hLtXA2OZuqlWM/C2Am6It.yeFAifs2TmDljpan66', 1, '2013-05-06 00:46:24', '2013-05-06 00:46:24', 206669143)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Justin', 'Bob', 'justin@bob.tut', '$2a$04$KjSu4huaTLiwSrNNfxhcj.crVGxTVIn/N6V5iaXfNzIOKEBLz1PL6', 2, '2013-05-06 00:46:24', '2013-05-06 00:46:24', 358143215)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('GUTS', 'Tutoring', 'guts@webmaster.edu', '$2a$04$XPYFQN4O6E8bVtfTeVXEGepa1C4JnZK5FBiM0thvGsrJb3MdgNqjm', 4, '2013-05-06 00:46:24', '2013-05-06 00:46:24', 576709754)
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "roles_mask", "created_at", "updated_at", "id") VALUES ('Anonymous', 'Anon', 'anon@anon@anon', '$2a$04$dcW3g5DgHCEo0c2cwmJp/.Fa3uwrLXlF6TcVhcNC6zt5KTISqxiKu', 1000, '2013-05-06 00:46:24', '2013-05-06 00:46:24', 1010528733)[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "week_availabilities"
+  [1m[36m (59.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1010528733]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 206669143]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 358143215]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 576709754]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (23.0ms)[0m  INSERT INTO "courses" ("course_ID", "course_code", "created_at", "group_id", "name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["course_ID", nil], ["course_code", nil], ["created_at", Mon, 06 May 2013 05:46:24 UTC +00:00], ["group_id", nil], ["name", "PHI 101"], ["updated_at", Mon, 06 May 2013 05:46:24 UTC +00:00], ["user_id", nil]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "groups" ("created_at", "desc", "group_ID", "group_type", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 06 May 2013 05:46:24 UTC +00:00], ["desc", nil], ["group_ID", nil], ["group_type", "Drop-In"], ["location", "Chemistry B220"], ["name", "PHI 101"], ["updated_at", Mon, 06 May 2013 05:46:24 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "groups" ("created_at", "desc", "group_ID", "group_type", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 06 May 2013 05:46:24 UTC +00:00], ["desc", nil], ["group_ID", nil], ["group_type", "Drop-In"], ["location", "Chemistry B220"], ["name", "PHI 101"], ["updated_at", Mon, 06 May 2013 05:46:24 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mGroup Load (0.0ms)[0m  SELECT "groups".* FROM "groups" WHERE "groups"."name" = 'CS 302' LIMIT 1
+  [1m[36mGroup Load (0.0ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE "groups"."name" = 'PHI 101' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mDELETE FROM "groups" WHERE "groups"."id" = ?[0m  [["id", 100993569]]
+  [1m[35mTutorId Load (0.0ms)[0m  SELECT "tutor_ids".* FROM "tutor_ids" WHERE "tutor_ids"."group_id" = 100993569
+  [1m[36mStudentId Load (0.0ms)[0m  [1mSELECT "student_ids".* FROM "student_ids" WHERE "student_ids"."group_id" = 100993569[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGroup Load (0.0ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 100993568]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Mon, 06 May 2013 05:46:24 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Mon, 06 May 2013 05:46:24 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "programs" ("created_at", "desc", "name", "program_ID", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Mon, 06 May 2013 05:46:24 UTC +00:00], ["desc", nil], ["name", "Economics"], ["program_ID", nil], ["updated_at", Mon, 06 May 2013 05:46:24 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mProgram Load (0.0ms)[0m  SELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Mathematics' LIMIT 1
+  [1m[36mProgram Load (0.0ms)[0m  [1mSELECT "programs".* FROM "programs" WHERE "programs"."name" = 'Economics' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "users" ("age", "confirmation_sent_at", "confirmation_token", "confirmed_at", "course_ID", "created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "rate", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "time_zone", "transportation", "uid", "unconfirmed_email", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["age", nil], ["confirmation_sent_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["course_ID", nil], ["created_at", Mon, 06 May 2013 05:46:25 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$xfx0twQ7EbyHEFf.fVi5n.fKjjqc4AIZZR7xTlx.oUB0awYlGeVrq"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["rate", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["time_zone", nil], ["transportation", nil], ["uid", nil], ["unconfirmed_email", nil], ["updated_at", Mon, 06 May 2013 05:46:25 UTC +00:00], ["year", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (7.0ms)[0m  [1mINSERT INTO "users" ("age", "confirmation_sent_at", "confirmation_token", "confirmed_at", "course_ID", "created_at", "current_sign_in_at", "current_sign_in_ip", "desc", "email", "encrypted_password", "fb_profile", "first_name", "last_name", "last_sign_in_at", "last_sign_in_ip", "oauth_expires_at", "oauth_token", "photo", "provider", "rate", "remember_created_at", "reset_password_sent_at", "reset_password_token", "roles_mask", "sign_in_count", "time_zone", "transportation", "uid", "unconfirmed_email", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["age", nil], ["confirmation_sent_at", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["course_ID", nil], ["created_at", Mon, 06 May 2013 05:46:25 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["desc", nil], ["email", "faiz@tuter.me"], ["encrypted_password", "$2a$04$GzG90625mTZtJYqJ51Zou.LW5wphGYjmzBSU0hg/jYpjPP1oNaU8C"], ["fb_profile", nil], ["first_name", "Faiz"], ["last_name", "Lurman"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["oauth_expires_at", nil], ["oauth_token", nil], ["photo", nil], ["provider", nil], ["rate", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["roles_mask", nil], ["sign_in_count", 0], ["time_zone", nil], ["transportation", nil], ["uid", nil], ["unconfirmed_email", nil], ["updated_at", Mon, 06 May 2013 05:46:25 UTC +00:00], ["year", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'NotFoundFaiz@tuter.me' LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'faiz@tuter.me' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1010528734
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1010528734]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (2.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 206669143]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 206669143]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction

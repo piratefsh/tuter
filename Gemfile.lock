@@ -59,11 +59,6 @@ GEM
       railties (~> 3.1)
       warden (~> 1.2.1)
     erubis (2.7.0)
-<<<<<<< HEAD
-    eventmachine (1.0.3)
-    eventmachine (1.0.3-x86-mingw32)
-=======
->>>>>>> 3d2b483e70b2d46e3fb38193dcdbd68a778fbe66
     execjs (1.4.0)
       multi_json (~> 1.0)
     faraday (0.8.7)
@@ -171,6 +166,10 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    simplecov (0.7.1)
+      multi_json (~> 1.0)
+      simplecov-html (~> 0.7.1)
+    simplecov-html (0.7.1)
     slop (3.4.4)
     sprockets (2.1.3)
       hike (~> 1.2)
@@ -178,16 +177,6 @@ GEM
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.7)
     sqlite3 (1.3.7-x86-mingw32)
-<<<<<<< HEAD
-    thin (1.5.1)
-      daemons (>= 1.0.9)
-      eventmachine (>= 0.12.6)
-      rack (>= 1.0.0)
-=======
-    therubyracer (0.11.4)
-      libv8 (~> 3.11.8.12)
-      ref
->>>>>>> 3d2b483e70b2d46e3fb38193dcdbd68a778fbe66
     thor (0.14.6)
     tilt (1.4.0)
     treetop (1.4.12)
@@ -200,6 +189,7 @@ GEM
     warden (1.2.1)
       rack (>= 1.0)
     webrick (1.3.1)
+    win32console (1.3.2)
     win32console (1.3.2-x86-mingw32)
     xpath (2.0.0)
       nokogiri (~> 1.3)
@@ -224,11 +214,7 @@ DEPENDENCIES
   rails (= 3.2.3)
   rb-readline
   sass-rails (~> 3.2.3)
+  simplecov
   sqlite3
-<<<<<<< HEAD
-  thin
-=======
-  therubyracer
->>>>>>> 3d2b483e70b2d46e3fb38193dcdbd68a778fbe66
   uglifier (>= 1.0.3)
   webrick

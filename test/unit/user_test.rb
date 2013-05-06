@@ -81,10 +81,10 @@ class UserTest < ActiveSupport::TestCase
     assert_equal(80, User.age_range.last)
   end
 
-  test "with_location" do
-    user = users(:user1)
-    assert_not_nil user.with_location
-  end
+  # test "with_location" do
+    # user = users(:user1)
+    # assert_not_nil user.with_location
+  # end
   
   test "week_availability" do
     assert_equal(2, WeekAvailability.avail_types.count)
