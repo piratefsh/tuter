@@ -3,17 +3,23 @@
   <%= javascript_include_tag "schedule" %>
 <% end %>
 <h2><%=@user.full_name%>'s Schedule</h2>
-<div class="legend">
-    <table>
-      <tr><td><h3>Legend</h3></td><td class="free">Available</td><td class="busy">Busy</td></tr>
-    </table>
+
+<div class="new_time_slot">
+<%= render 'day_availabilities/form' %>
 </div>
+
 <table class="schedule">
     <th>Time/Day</th>
     <% DayAvailability.days.each do |d| %>
     <th><%= d[0].humanize %></th>
     <% end -%>
 </table>
+
+<div class="legend">
+    <table>
+      <tr><td><h3>Legend</h3></td><td class="free">Available</td><td class="busy">Busy</td></tr>
+    </table>
+</div>
 
 <ul id="days">
 <%@days.each do |d| %>
@@ -29,9 +35,7 @@
 <% end %>
 </ul>   
 
-<div class="new_time_slot">
-<%= render 'day_availabilities/form' %>
-</div>
+
 <%= link_to 'Edit', edit_week_availability_path(@week_availability) %> |
 <%= link_to 'Back', user_path(@week_availability.user_id) %>
 
