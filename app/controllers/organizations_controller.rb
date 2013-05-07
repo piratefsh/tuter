@@ -45,10 +45,19 @@ class OrganizationsController < ApplicationController
   end
 
   def edit
-    # @group = Group.find(params[:group_id])
+    @organization = Organization.find(params[:id])
 
     respond_to do |format|
       format.html
+    end
+  end
+
+  def update
+    @organization = Organization.find(params[:id])
+
+    @organization.update_attributes(params[:organization])
+    respond_to do |format|
+      format.html {redirect_to organization_path}
     end
   end
 end

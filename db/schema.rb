@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130507025331) do
+ActiveRecord::Schema.define(:version => 20130507163944) do
 
   create_table "abilities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(:version => 20130507025331) do
 
   create_table "day_availabilities", :force => true do |t|
     t.string   "day"
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.time     "start_time"
+    t.time     "end_time"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.integer  "week_availability_id"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(:version => 20130507025331) do
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
     t.string   "email"
+    t.text     "about"
+    t.string   "website"
   end
 
   create_table "programs", :force => true do |t|
