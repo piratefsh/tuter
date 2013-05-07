@@ -71,6 +71,10 @@ class User < ActiveRecord::Base
     self.first_name + " " + self.last_name
   end
 
+  def initials
+    self.first_name[0] + self.last_name[0]
+  end
+
   def self.age_range
     18..80
   end

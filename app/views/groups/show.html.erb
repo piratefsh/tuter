@@ -8,29 +8,31 @@
 </div>
 
 <div>
-    <h3>Course: </h3>
-    <ul><li><%= @group.course.name %></li></ul>
+    <h3>Course </h3>
+    <ul><li><%= @group.course.course_code%> - <%= @group.course.name %></li></ul>
 </div>
 
 <div>
-    <h3>Location: </h3>
+    <h3>Location</h3>
     <ul><li><%= @group.location %></li></ul>
 </div>
 
 <div>
-    <h3>Tutors:</h3>
+    <h3>Tutors</h3>
     <ul>
     <% @group.tutor_ids.all.each do |tutor| %>
-        <li><%= User.find(tutor.tid).first_name %> <%= User.find(tutor.tid).last_name %></li>
+        <%u = User.find(tutor.tid) %>
+        <li><%= link_to  u.full_name, u%></li>
     <% end %>
     </ul>
 </div>
 
 <div>
-    <h3>Students:</h3>
+    <h3>Students</h3>
     <ul>
     <% @group.student_ids.all.each do |student| %>
-        <%= User.find(student.sid).first_name %> <%= User.find(student.sid).last_name %><br />
+        <%u = User.find(student.sid) %>
+        <li><%= link_to  u.full_name, u%></li>
     <% end %>
     </ul>
 </div>

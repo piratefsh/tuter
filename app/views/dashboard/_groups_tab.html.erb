@@ -30,7 +30,7 @@
                         <ul>
                             <% group.tutor_ids.all.each do |tutor| %>
                                     <%u = User.find(tutor.tid)%>
-                               <li> <%=link_to u.full_name, u %></li>
+                               <li> <%=link_to u.initials, u %></li>
                             <% end %> 
                         </ul>
                         <% end %>
@@ -44,13 +44,13 @@
                             <% group.student_ids.all.each do |student| %>
                                 <% if student.sid %>
                                 <%u = User.find(student.sid)%>
-                                    <li> <%=link_to u.full_name, u %></li>
+                                    <li> <%=link_to u.initials, u %></li>
                                 <% end %>
                             <% end %>
                             </ul>
                         <% end %>
                     </td>
-                    <td><%= group.course.name %></td>
+                    <td><%= group.course.course_code %></td>
                     <td><%= group.location %></td>
                     <td></td>
 

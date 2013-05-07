@@ -13,7 +13,7 @@
 #
 
 class Course < ActiveRecord::Base
-  attr_accessible :course_ID, :name
+  attr_accessible :course_ID, :name, :course_code
   validates :name, :presence => true
   belongs_to :user
   belongs_to :group
