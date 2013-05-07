@@ -22,6 +22,10 @@ Tuter::Application.routes.draw do
   resources :organizations
   resources :programs
 
+  resources :tutor_watchlist do
+    resources :user
+  end
+
   resources :home do
     member do 
       get 'search_tutors'
@@ -47,13 +51,13 @@ Tuter::Application.routes.draw do
   match '/users/auth/:provider/callback', to: 'sessions#create'
   match '/users/auth/failure', to: redirect('/')
 
-
   # User Signup Routes
   match "/user" => "user#user"
   match "/dashboard" => "home#index"
 
   # Organization List Page
   match "/organizations" => "organizations#index"
+  match '/update_watchlist' => 'tutor_watchlist#update' 
  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

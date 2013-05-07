@@ -106,12 +106,34 @@ ActiveRecord::Schema.define(:version => 20130506153317) do
   end
 
   create_table "tutor_ids", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.integer  "tid"
     t.integer  "group_id"
+    t.integer  "tutor_watchlist_id"
   end
 
+<<<<<<< HEAD
+=======
+  create_table "tutor_roles", :force => true do |t|
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "tutor_ID"
+    t.integer  "age"
+    t.string   "year_in_school"
+    t.float    "rating"
+    t.boolean  "transportation"
+  end
+
+  create_table "tutor_watchlists", :force => true do |t|
+    t.integer  "uid"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "user_id"
+    t.integer  "tutor_watchlist_id"
+  end
+
+>>>>>>> aba0d0854c972432e242e560ac805b38bd27dc41
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -145,6 +167,7 @@ ActiveRecord::Schema.define(:version => 20130506153317) do
     t.string   "transportation"
     t.string   "rate"
     t.string   "time_zone"
+    t.integer  "tutor_watchlist_id"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

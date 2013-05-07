@@ -15,6 +15,12 @@
 	<%= render 'user_reviews' %>
 </div>
 
+Like this tutor? Add them to your <%= link_to "watchlist!", {:controller => "tutor_watchlist", :action => "update", :tutor_id => @user.id, :user_id => current_user.id}, :method => :put %>
+
+
+
+
+
 
 
 

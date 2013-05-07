@@ -13,7 +13,8 @@ class DashboardController < ApplicationController
         @program = Program.new
         student_id = @group.student_ids.build
         tutor_id = @group.tutor_ids.build
-
+        @tutor_watchlist ||= @user.tutor_watchlist
+        
         @tutor_groups = Array.new
         @student_groups = Array.new
 

@@ -12,11 +12,11 @@ User.create(first_name: 'Sher Minn', last_name: 'Chong',
 User.create(first_name: 'Trever', last_name: 'Johnson',
             email: 'tjjo@hd.wisc.edu', password:'PASSWORD', roles: %w[tutor student org])
 User.create(first_name: 'Josh', last_name: 'Serbus',
-            email:'serbus@tuter.me', password:'PASSWORD')
+            email:'serbus@tuter.me', password:'PASSWORD', roles: %w[tutor student org])
 User.create(first_name: 'Faiz', last_name: 'Lurman',
-            email:'faiz@tuter.me', password:'PASSWORD')
+            email:'faiz@tuter.me', password:'PASSWORD', roles: %w[tutor student org])
 User.create(first_name: 'Adam', last_name: 'Thorson',
-            email:'adthorson@tuter.me', password:'PASSWORD')
+            email:'adthorson@tuter.me', password:'PASSWORD', roles: %w[tutor student org])
 User.create(first_name: 'Mike', last_name: 'Cheah',
             email:'cheah@tuter.me', password:'PASSWORD', roles: %w[tutor student org])
 User.create(first_name: 'Aedan', last_name: 'Swanesbury',
@@ -25,45 +25,45 @@ User.create(first_name: 'Canan', last_name: 'Swanesbury',
             email:'canan@tuter.me', password:'PASSWORD', roles: %w[tutor student org])
 
 # Tutor User Seeds
-User.create(first_name: 'Essie', last_name: 'Vaill', roles: %w[tutor],
+User.create(first_name: 'Essie', last_name: 'Vaill', roles: %w[tutor], rate: User.rates[0],
 			email: 'essie@vaill.com', password: 'PASSWORD')
-User.create(first_name: 'Billie', last_name: 'Tinnes', roles: %w[tutor],
+User.create(first_name: 'Billie', last_name: 'Tinnes', roles: %w[tutor], rate: User.rates[2],
 			email: 'billie@tinnes.com', password: 'PASSWORD')
-User.create(first_name: 'Zackary', last_name: 'Mockus', roles: %w[tutor],
+User.create(first_name: 'Zackary', last_name: 'Mockus', roles: %w[tutor], rate: User.rates[1],
 			email: 'zackary@mockus.com', password: 'PASSWORD')
-User.create(first_name: 'Rosemarie', last_name: 'Fifield', roles: %w[tutor],
+User.create(first_name: 'Rosemarie', last_name: 'Fifield', roles: %w[tutor], rate: User.rates[2],
 			email: 'rosemarie@fifield.com', password: 'PASSWORD')
-User.create(first_name: 'Bernard', last_name: 'Laboy', roles: %w[tutor],
+User.create(first_name: 'Bernard', last_name: 'Laboy', roles: %w[tutor], rate: User.rates[1],
 			email: 'bernard@laboy.com', password: 'PASSWORD')
-User.create(first_name: 'Sue', last_name: 'Haakinson', roles: %w[tutor],
+User.create(first_name: 'Sue', last_name: 'Haakinson', roles: %w[tutor], rate: User.rates[8],
 			email: 'sue@haakinson.com', password: 'PASSWORD')
-User.create(first_name: 'Valerie', last_name: 'Pou', roles: %w[tutor],
+User.create(first_name: 'Valerie', last_name: 'Pou', roles: %w[tutor], rate: User.rates[3],
 			email: 'valerie@pou.com', password: 'PASSWORD')
-User.create(first_name: 'Lashawn', last_name: 'Hasty', roles: %w[tutor],
+User.create(first_name: 'Lashawn', last_name: 'Hasty', roles: %w[tutor], rate: User.rates[3],
 			email: 'lashawn@hasty.com', password: 'PASSWORD')
-User.create(first_name: 'Marianne', last_name: 'Earman', roles: %w[tutor],
+User.create(first_name: 'Marianne', last_name: 'Earman', roles: %w[tutor], rate: User.rates[6],
 			email: 'marianne@earman.com', password: 'PASSWORD')
-User.create(first_name: 'Mandy', last_name: 'Mcdonnell', roles: %w[tutor],
+User.create(first_name: 'Mandy', last_name: 'Mcdonnell', roles: %w[tutor], rate: User.rates[4],
 			email: 'mandy@mcdonnell.com', password: 'PASSWORD')
-User.create(first_name: 'Conrad', last_name: 'Lanfear', roles: %w[tutor],
+User.create(first_name: 'Conrad', last_name: 'Lanfear', roles: %w[tutor], rate: User.rates[7],
 			email: 'conrad@lanfear.com', password: 'PASSWORD')
-User.create(first_name: 'Cyril', last_name: 'Behen', roles: %w[tutor],
+User.create(first_name: 'Cyril', last_name: 'Behen', roles: %w[tutor], rate: User.rates[6],
 			email: 'cyril@behen.com', password: 'PASSWORD')
-User.create(first_name: 'Shelley', last_name: 'Groden', roles: %w[tutor],
+User.create(first_name: 'Shelley', last_name: 'Groden', roles: %w[tutor], rate: User.rates[9],
 			email: 'shelley@groden.com', password: 'PASSWORD')
-User.create(first_name: 'Rosalind', last_name: 'Krenzke', roles: %w[tutor],
+User.create(first_name: 'Rosalind', last_name: 'Krenzke', roles: %w[tutor], rate: User.rates[2],
 			email: 'rosalind@krenzke.com', password: 'PASSWORD')
-User.create(first_name: 'Davis', last_name: 'Brevard', roles: %w[tutor],
+User.create(first_name: 'Davis', last_name: 'Brevard', roles: %w[tutor], rate: User.rates[8],
 			email: 'davis@brevard.com', password: 'PASSWORD')
-User.create(first_name: 'Trudy', last_name: 'Worlds', roles: %w[tutor],
+User.create(first_name: 'Trudy', last_name: 'Worlds', roles: %w[tutor], rate: User.rates[5],
 			email: 'trudy@worlds.com', password: 'PASSWORD')
-User.create(first_name: 'Claudio', last_name: 'Loose', roles: %w[tutor],
+User.create(first_name: 'Claudio', last_name: 'Loose', roles: %w[tutor], rate: User.rates[6],
 			email: 'claudio@loose.com', password: 'PASSWORD')
-User.create(first_name: 'Sal', last_name: 'Pindell', roles: %w[tutor],
+User.create(first_name: 'Sal', last_name: 'Pindell', roles: %w[tutor], rate: User.rates[6],
 			email: 'sal@pindell.com', password: 'PASSWORD')
-User.create(first_name: 'Cary', last_name: 'Mccamey', roles: %w[tutor],
+User.create(first_name: 'Cary', last_name: 'Mccamey', roles: %w[tutor], rate: User.rates[0],
 			email: 'cary@mccamey.com', password: 'PASSWORD')
-User.create(first_name: 'Dorothea', last_name: 'Sweem', roles: %w[tutor],
+User.create(first_name: 'Dorothea', last_name: 'Sweem', roles: %w[tutor], rate: User.rates[1],
 			email: 'dorothea@sweem.com', password: 'PASSWORD')
 
 
