@@ -4,6 +4,12 @@
 @import "./nice_list"
 
 
+@mixin right_divs
+    margin:
+        left: $big_space
+        bottom: $big_space
+    padding: $big_space * 2
+    background-color: $light_grey  
 
 div
     display: block
@@ -11,14 +17,16 @@ div
         @include profile_sidebar
 
     &#users_groups
-        margin:
-            left: $big_space
-            bottom: $big_space
-        padding: $big_space * 2
-        background-color: $light_grey  
+        @include right_divs
 
         h1 
-            margin: 0      
+            margin: 0  
+    &#add_to_watchlist
+        @include right_divs
+        padding: $medium_space
+        p 
+            padding-left: $big_space
+
 .map_container
     margin: 
         top: 0
