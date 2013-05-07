@@ -51,9 +51,6 @@ Tuter::Application.routes.draw do
   match '/users/auth/:provider/callback', to: 'sessions#create'
   match '/users/auth/failure', to: redirect('/')
 
-<<<<<<< HEAD
-  match '/update_watchlist' => 'tutor_watchlist#update' 
-=======
 
   # User Signup Routes
   match "/user" => "user#user"
@@ -61,7 +58,8 @@ Tuter::Application.routes.draw do
 
   # Organization List Page
   match "/organizations" => "organizations#index"
->>>>>>> b4bae1156c97bfdf7dc6be40200cf5cad2255730
+  
+  match '/update_watchlist' => 'tutor_watchlist#update' 
  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

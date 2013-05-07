@@ -45,3 +45,5 @@ class Group < ActiveRecord::Base
     students
   end
 end
+
+
