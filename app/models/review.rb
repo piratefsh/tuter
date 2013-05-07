@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: reviews
+#
+#  id          :integer          not null, primary key
+#  user_id     :integer
+#  reviewer_id :integer
+#  rating      :integer
+#  title       :string(255)
+#  content     :text(255)
+#  recommend   :boolean
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class Review < ActiveRecord::Base
   attr_accessible :content, :rating, :recommend, :reviewer_id, :title, :user_id
 

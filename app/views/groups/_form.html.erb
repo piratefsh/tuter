@@ -1,34 +1,28 @@
 <%= content_for :header do %>
     <%= stylesheet_link_tag 'form_style', :media => "all" %>
 <% end %>
-
+<h3> Create New Group </h3>
 <%= form_for(@group) do |f| %>
-    <div class="field form_element">
+    <div class="field">
         <%= f.label :name %>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, :placeholder => "e.g. Small Biology Group"%>
     </div>
 
-    <div class="field form_element">
+    <div class="field">
         <%= f.label 'Description' %>
-        <%= f.text_field :desc %>
+        <%= f.text_area :desc, :class=>'narrow'%>
 
-    </div>    <div class="field form_element">
+    </div>    <div class="field ">
         <%= f.label 'Group Type' %>
         <%= select(:group, :group_type, Group.group_types)%>
     </div>
 
-    <div class="field form_element">
+    <div class="field">
         <%= f.label :location %>
-        <%= f.text_field :location %>
+        <%= f.text_field :location, :placeholder => "e.g. Helen C White" %>
     </div>  
 
-    <div class="field form_element">
-        <%= f.fields_for :student_ids do |studentBuilder| %>
-            <%= render "groups/studentFields", :f => studentBuilder %>
-        <% end %>   
-    </div>
-
-    <div class="field form_element">
+    <div class="field">
         <%= f.fields_for :tutor_ids do |tutorBuilder| %>
             <%= render "groups/tutorFields", :f => tutorBuilder %>
         <% end %>
@@ -36,8 +30,12 @@
 
     <%= f.fields_for :course do |c|%>
         <div class="field">
-          <%= c.label "Course" %>
-          <%= c.text_field :name %>
+          <%= c.label "Course Title" %>
+          <%= c.text_field :name, :placeholder => "e.g. Introduction of Biology"%>
+        </div>
+        <div class="field">
+          <%= c.label "Course Code" %>
+          <%= c.text_field :course_code, :placeholder => "e.g. BIO 101" %>
         </div>
     <% end %>
 
@@ -48,6 +46,5 @@
     <div class="actions small_button float_left">
         <%= button_to "Cancel", {}, :class => "cancel", :id=>"cancel_create" %>
     </div>
-
 <% end %>
 

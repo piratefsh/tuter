@@ -13,6 +13,10 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
+#  confirmation_token     :string(255)
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
+#  unconfirmed_email      :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  first_name             :string(255)
@@ -25,6 +29,12 @@
 #  photo                  :string(255)
 #  fb_profile             :string(255)
 #  roles_mask             :integer
+#  course_ID              :integer
+#  age                    :integer
+#  year                   :string(255)
+#  transportation         :string(255)
+#  rate                   :string(255)
+#  time_zone              :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -37,6 +47,7 @@ class User < ActiveRecord::Base
   has_one :location
   has_one :tutor_watchlist
   has_many :courses
+  has_one :organization
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
@@ -48,6 +59,7 @@ class User < ActiveRecord::Base
   # Devise's default => :email and :password must be present 
   validates :first_name, :last_name, :presence => true
 
+  # https://github.com/ryanb/cancan/wiki/Role-Based-Authorization
   # define user roles and association
   ROLES = %w[student tutor org]
   has_and_belongs_to_many :roles
@@ -60,6 +72,10 @@ class User < ActiveRecord::Base
   
   def full_name
     self.first_name + " " + self.last_name
+  end
+
+  def initials
+    self.first_name[0] + self.last_name[0]
   end
 
   def self.age_range
@@ -125,6 +141,7 @@ class User < ActiveRecord::Base
     end
   end
 
+  # http://asciicasts.com/episodes/189-embedded-association
   # define user bitmask to represent which roles the user has
   def roles=(roles)
     self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.inject(0, :+)
@@ -142,7 +159,7 @@ class User < ActiveRecord::Base
     Group.all.select do |group|
       group.tutor_ids.all.each do |tutor|
         if (self.id == tutor.tid) and group.course 
-            courses << group.course.name
+            courses << group.course
         end
       end
     end

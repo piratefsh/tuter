@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: student_ids
+#
+#  id         :integer          not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  sid        :integer
+#  group_id   :integer
+#
+
 class StudentId < ActiveRecord::Base
   attr_accessible :sid, :group_id
 
@@ -7,7 +18,7 @@ class StudentId < ActiveRecord::Base
     students = Array.new
     User.all.each do |u|
         if u.role? :student 
-            students << [u.last_name, u.id]
+            students << [u.full_name, u.id]
         end
     end
 

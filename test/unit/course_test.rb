@@ -2,11 +2,14 @@
 #
 # Table name: courses
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  course_ID  :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  course_ID   :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  user_id     :integer
+#  course_code :string(255)
+#  group_id    :integer
 #
 
 require 'test_helper'

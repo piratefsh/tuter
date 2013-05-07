@@ -1,0 +1,15 @@
+# == Schema Information
+#
+# Table name: roles
+#
+#  id         :integer          not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+student:  
+  id: 100
+  users: user1
+
+tuter:
+  id: 010

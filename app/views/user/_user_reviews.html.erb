@@ -5,7 +5,7 @@
 <h1>Reviews</h1>
     <% if @user.role? :tutor %>
         <% if @reviews.any? %>
-            <h3>Rating: <%= user_average_rating %></h3>
+            <h3>Average Rating: <%= user_average_rating %>/5</h3>
         <% end %>
         <ul>
             <% @reviews.each do |r| %>

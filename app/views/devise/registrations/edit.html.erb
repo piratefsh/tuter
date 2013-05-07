@@ -15,10 +15,10 @@
     <% end %>
   </div>
 
-  <div><%= f.label :password %> 
+  <div><%= f.label "New Password" %> 
   <%= f.password_field :password, :autocomplete => "off" %></div>
 
-  <div><%= f.label :password_confirmation %><br />
+  <div><%= f.label "Confirm New Password" %><br />
   <%= f.password_field :password_confirmation %></div>
 
 
@@ -42,7 +42,7 @@
     <%= select(:user, :age, User.age_range, {:include_blank => :true}) %></div>
 
   <div>
-    <%= f.label :year %>
+    <%= f.label "Year in School" %>
     <%= select(:user, :year, User.years, {:include_blank => :true}) %></div>
   <% if current_user.role? :tutor%>
   <div>

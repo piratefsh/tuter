@@ -17,7 +17,7 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html{redirect_to user_path(@location.user_id)}
       format.json { render json: @location }
     end
   end

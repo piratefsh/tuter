@@ -8,6 +8,8 @@
 #  desc       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  location   :string(255)
+#  group_type :string(255)
 #
 
 class Group < ActiveRecord::Base
@@ -20,12 +22,10 @@ class Group < ActiveRecord::Base
   has_one :course
   after_destroy :cleanup
 
-  validates :name, :presence => true
+  validates :name, :location, :group_type, :presence => true
   accepts_nested_attributes_for :student_ids
   accepts_nested_attributes_for :tutor_ids
   accepts_nested_attributes_for :course
-
-  private
 
   def cleanup
   	self.tutor_ids.destroy_all
@@ -34,5 +34,14 @@ class Group < ActiveRecord::Base
 
   def self.group_types
     ['Drop-In', 'Group', 'One-on-one']
+  end
+
+  def students
+    students = Array.new
+    self.student_ids.all.each do |student|
+      students << User.find(student.sid)
+    end
+
+    students
   end
 end

@@ -34,6 +34,7 @@ class GroupsController < ApplicationController
 
 	def show
 		@group = Group.find(params[:id])
+		@students = StudentId.all_students
 
 		respond_to do |format|
 			format.html

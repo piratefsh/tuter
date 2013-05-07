@@ -15,6 +15,8 @@
 h2
     margin-left: $big_space
 div
+    ul
+        list-style-type: none
     $div_width: $content_width - $profile_sidebar_width - 5 * $big_space
     &.tabs
         float: right
@@ -63,7 +65,6 @@ div
     &#new_group 
         background-color: $white
         clear: both
-        width: 400px
         padding: $big_space 
         @include center
         margin-top: $medium_space

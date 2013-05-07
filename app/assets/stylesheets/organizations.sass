@@ -1,0 +1,25 @@
+@import "./application"
+@import "./profile_sidebar"
+@import "./nice_list"
+
+div
+    &#maincontent
+        display: table
+        float: none
+
+    &#org_profile
+        @include profile_sidebar
+        
+    &#org_programs_container
+        @include profile_main
+
+        ul 
+            list-style-type: none
+            
+            li 
+                background-color: $white
+                padding: $big_space
+                margin-bottom: $big_space
+
+ul#org_list
+    @include nice_list

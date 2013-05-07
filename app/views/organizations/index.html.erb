@@ -1,0 +1,21 @@
+<%= content_for :header do%>
+  <%= stylesheet_link_tag "organizations" %>
+<% end %>
+
+<h1>Organization Index Page</h1>
+<div id="the_organizations">
+	<ul id="org_list">
+		<% @organizations.each do |organization| %>
+		<li>
+			 <%=link_to image_tag("/images/organizationPendingImage.jpg", :alt => "Profile Picture"), organization%>
+			<h3><%= link_to  organization.name, organization%></h3>
+			<% user = User.find(organization.user_id)%>
+			<h4>by <%= link_to user.full_name, user %></a></h4>
+			<p><%= organization.desc %></p>
+		</li>
+		<% end %>
+	<ul>
+</div>
+<% if current_user and current_user.role? :org%>
+	<%= link_to "/dashboard" do%>Create Organization<% end %>
+<% end %>

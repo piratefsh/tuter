@@ -5,7 +5,12 @@ class DashboardController < ApplicationController
         @user = current_user
         @group = Group.new
         @course = @group.build_course
-        @programs = Program.all
+        @organization = Organization.new
+        @organizations = Organization.where(:user_id => current_user.id)
+        if @organizations.any?
+            @programs = Program.where(:organization_id => @organizations.first.id)
+        end
+        @program = Program.new
         student_id = @group.student_ids.build
         tutor_id = @group.tutor_ids.build
         @tutor_watchlist ||= @user.tutor_watchlist
@@ -46,20 +51,6 @@ class DashboardController < ApplicationController
     def delete_group 
         Group.destroy(params[:id])
 
-        respond_to do |format|
-            format.html {redirect_to dashboard_path}
-        end
-    end
-
-    #GET edit group view
-    def edit_group 
-        @group = Group.find(params[:id])
-        respond_to do |format|
-            format.html {redirect_to edit_group}
-        end
-    end
-
-    def create_group 
         respond_to do |format|
             format.html {redirect_to dashboard_path}
         end
