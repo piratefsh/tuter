@@ -28,6 +28,10 @@ Organization.create(website: 'http://guts.studentorg.wisc.edu/',
         about: 'The Greater University Tutoring Service (GUTS) is a Registered Student Organization (RSO) supported by segregated fees and dedicated to connecting UW students with volunteer tutors for assistance with academic courses, study skills, conversational English, and intercultural exchange.',
         desc: 'Greater University Tutoring Service', name: 'GUTS', user_id: 1, 
         email: 'guts@rso.wisc.edu')
+Organization.create(website: 'https://www.facebook.com/plaUWmadison', 
+        about: 'PLA (Peer Learning Association) is a professional student organization that establishes and runs free small group study sessions led by Peer Facilitators. In these sessions, students have to opportunity to test their understanding of course material by presenting their understanding of key topics to classmates in an informal setting. Topic lists are assigned weekly and students can easily prepare for them as part of their normal studying.',
+        desc: 'Peer Learning Association - UW-Madison', name: 'Peer Learning Association', user_id: 5, 
+        email: 'pla@rso.wisc.edu')
 
 Program.create(desc: 'Time to tackle English!', name: 'Conversational English',
             organization_id: 1)

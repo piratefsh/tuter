@@ -38,6 +38,12 @@ class OrganizationsController < ApplicationController
   end
 
   def destroy
+    organization = Organization.find(params[:id])
+    organization.destroy
+
+    respond_to do |format|
+      format.html {redirect_to "/dashboard"}
+    end
   end
 
   def down

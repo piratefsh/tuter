@@ -6,7 +6,7 @@
 <% end -%>
 <div id='org_programs_container'>
 	<div id='org_programs'>
-		<% if not @organization.about == '' %>
+		<% if @organization.about%>
 			<h2>About<h2>
 			<ul class="programs_list">
 				<li>
@@ -25,4 +25,5 @@
 			<% end %>
 		</ul>
 	</div>
+
 </div>
