@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505235757) do
+ActiveRecord::Schema.define(:version => 20130507025331) do
 
   create_table "abilities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -108,10 +108,11 @@ ActiveRecord::Schema.define(:version => 20130505235757) do
   end
 
   create_table "tutor_ids", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.integer  "tid"
     t.integer  "group_id"
+    t.integer  "tutor_watchlist_id"
   end
 
   create_table "tutor_roles", :force => true do |t|
@@ -126,9 +127,10 @@ ActiveRecord::Schema.define(:version => 20130505235757) do
 
   create_table "tutor_watchlists", :force => true do |t|
     t.integer  "uid"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.integer  "user_id"
+    t.integer  "tutor_watchlist_id"
   end
 
   create_table "users", :force => true do |t|
@@ -160,6 +162,7 @@ ActiveRecord::Schema.define(:version => 20130505235757) do
     t.string   "transportation"
     t.string   "rate"
     t.string   "time_zone"
+    t.integer  "tutor_watchlist_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -49,7 +49,7 @@ Tuter::Application.routes.draw do
   match '/users/auth/:provider/callback', to: 'sessions#create'
   match '/users/auth/failure', to: redirect('/')
 
-  match '/update_watchlist' => 'user#update_watchlist' 
+  match '/update_watchlist' => 'tutor_watchlist#update' 
  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

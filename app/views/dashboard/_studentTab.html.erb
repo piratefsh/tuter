@@ -15,7 +15,7 @@
 
 	<div id='watchlist'>
 		<h2>Watchlisted Tutors</h2>
-		<p><%= @tutor_watchlist.first if @tutor_watchlist %></p>
+		<p><%= User.find(@tutor_watchlist.tutor_ids.first.tid).first_name %></p>
 	</div>
 	
 </div>
