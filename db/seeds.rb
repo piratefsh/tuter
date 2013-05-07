@@ -27,6 +27,11 @@ User.create(first_name: 'Canan', last_name: 'Swanesbury',
 data = [{:email=>"marcelo@arostegui.com", :first_name=>"Marcelo", :last_name=>"Arostegui", :age=>60, :roles=>["tutor"], :password=>"PASSWORD"}, {:email=>"armando@kolm.com", :first_name=>"Armando", :last_name=>"Kolm", :age=>63, :roles=>["tutor"], :password=>"PASSWORD"}, {:email=>"marshall@hutch.com", :first_name=>"Marshall", :last_name=>"Hutch", :age=>73, :roles=>["tutor"], :password=>"PASSWORD"}, {:email=>"kasey@nguyen.com", :first_name=>"Kasey", :last_name=>"Nguyen", :age=>36, :roles=>["tutor"], :password=>"PASSWORD"}, {:email=>"ione@kucera.com", :first_name=>"Ione", :last_name=>"Kucera", :age=>38, :roles=>["tutor"], :password=>"PASSWORD"}, {:email=>"armando@kolm.com", :first_name=>"Armando", :last_name=>"Kolm", :age=>36, :roles=>["tutor"], :password=>"PASSWORD"}, {:email=>"kory@wooldridge.com", :first_name=>"Kory", :last_name=>"Wooldridge", :age=>46, :roles=>["tutor"], :password=>"PASSWORD"}, {:email=>"lyman@whittley.com", :first_name=>"Lyman", :last_name=>"Whittley", :age=>37, :roles=>["tutor"], :password=>"PASSWORD"}, {:email=>"sharlene@circelli.com", :first_name=>"Sharlene", :last_name=>"Circelli", :age=>61, :roles=>["tutor"], :password=>"PASSWORD"}, {:email=>"jessie@barkle.com", :first_name=>"Jessie", :last_name=>"Barkle", :age=>35, :roles=>["tutor"], :password=>"PASSWORD"}]
 courses = [{:name=>"MATHEMATICS", :course_code=>"MAT 214"}, {:name=>"ENGLISH", :course_code=>"ENG 696"}, {:name=>"JEWISH", :course_code=>"JEW 654"}, {:name=>"RELIGIOUS", :course_code=>"REL 993"}, {:name=>"FOLKLORE", :course_code=>"FOL 498"}, {:name=>"MUSIC", :course_code=>"MUS 884"}, {:name=>"COMPUTER", :course_code=>"COM 342"}, {:name=>"COMPARATIVE", :course_code=>"COM 676"}, {:name=>"COMMUNICATION", :course_code=>"COM 077"}, {:name=>"E", :course_code=>"E 800"}, {:name=>"SOCIAL", :course_code=>"SOC 343"}, {:name=>"COMMUNICATION", :course_code=>"COM 522"}, {:name=>"INDUSTRIAL", :course_code=>"IND 275"}, {:name=>"INTERNATIONAL", :course_code=>"INT 119"}, {:name=>"GERMAN", :course_code=>"GER 431"}, {:name=>"GREEK", :course_code=>"GRE 725"}, {:name=>"ASIAN", :course_code=>"ASI 552"}, {:name=>"LATIN", :course_code=>"LAT 585"}, {:name=>"CLASSICS", :course_code=>"CLA 004"}, {:name=>"ENGLISH", :course_code=>"ENG 631"}]
 lipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse congue condimentum tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam suscipit faucibus vestibulum. Proin vel enim venenatis est pretium tincidunt eget a elit. "
+locations = [{:name => "Memorial Library", :address => "Memorial Library, State Street, Madison, WI"},
+                {:name => "Steenbock Library", :address => "Steenbock Memorial Library, Babcock Drive, Madison, WI"},
+                {:name => "Union South", :address => "Union South, West Dayton Street, Madison, WI"},
+                {:name => "Helen C White", :address => "Helen C. White Hall, North Park Street, Madison, WI"},
+                {:name => "Babcock Hall", :address => "Babcock Hall Dairy Store, Linden Drive, Madison, WI"}]
 
 # Tutor User Seeds
 users = Array.new
@@ -36,32 +41,43 @@ data.each do |d|
     users << User.create(d)
 end
 
-20.times do
-    # Groups
-    course = Course.create(courses.sample)
-    group = Group.create(name: "GROUP",
-            desc: lipsum,
-            group_type: Group.group_types.sample,
-            course: course,
-            location: "LOCATION")
+if not Group.all.any?
+    20.times do
+        # Groups
+        course = Course.create(courses.sample)
+        group = Group.create(name: "GROUP",
+                desc: lipsum,
+                group_type: Group.group_types.sample,
+                course: course,
+                location: "LOCATION")
 
-    tutor = User.all.sample
+        tutor = User.all.sample
 
-    until tutor.role? :tutor
-        tutor = User.all.sample 
+        until tutor.role? :tutor
+            tutor = User.all.sample 
+        end
+
+        group.tutor_ids << TutorId.create(:tid => tutor.id)
+        3.times do 
+            group.student_ids << StudentId.create(:sid => User.all.sample.id)
+        end
+
+        group.save
     end
-
-    group.tutor_ids << TutorId.create(:tid => tutor.id)
-    3.times do 
-        group.student_ids << StudentId.create(:sid => User.all.sample.id)
-    end
-
-    group.save
 end
 
 User.all.each do |u|
     # Rates
     u.rate = User.rates.sample if u.role? :tutor and u.rate.nil?
+
+    # Locations
+    if not Location.where(:user_id => u.id).any?
+        loc = Location.create(locations.sample)
+        loc.user_id = u.id
+
+        loc.save
+    end
+
     u.save
 end
 
