@@ -20,7 +20,7 @@
 			<% @tutor_watchlist.tutor_ids.each do |t|%>
 			<li>
 				<% u = User.find(t.tid) if t.tid%>
-					<%= u.full_name if u%>
+					<%=link_to u.full_name, u%>
 			</li>
 			<% end %>
 		</ul>
