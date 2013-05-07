@@ -39,7 +39,7 @@ class Group < ActiveRecord::Base
   def students
     students = Array.new
     self.student_ids.all.each do |student|
-      students << User.find(student.sid)
+      students << User.find(student.sid) if student.sid
     end
 
     students

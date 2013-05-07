@@ -22,8 +22,10 @@
     <h3>Tutors</h3>
     <ul>
     <% @group.tutor_ids.all.each do |tutor| %>
+        <% if tutor.tid  %>
         <%u = User.find(tutor.tid) %>
         <li><%= link_to  u.full_name, u%></li>
+    <% end %>
     <% end %>
     </ul>
 </div>
@@ -32,7 +34,9 @@
     <h3>Students</h3>
     <ul>
         <%@group.students.each do |s|%>
+        <% if s  %>
             <li><%= link_to s.full_name, s %></li>
+        <% end -%>
         <% end -%>
     </ul>
 </div>

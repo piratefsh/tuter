@@ -9,7 +9,7 @@
 <div id="reviews_container">
 
 <div id="add_to_watchlist">
-    <% if @user.role? :tutor %>
+    <% if @user.role? :tutor and current_user%>
         <p>Like this tutor? Add them to your <%= link_to "watchlist!", {:controller => "tutor_watchlist", :action => "update", :tutor_id => @user.id, :user_id => current_user.id}, :method => :put %></p>
     <% end %>
 </div>
