@@ -1,8 +1,8 @@
 
 <div id ="users_groups">  
-<h1>Groups</h1>  
-    <% if not @users_groups.any? %>
-        <p>User has no groups </p>
+<h1>Tutoring Groups</h1>  
+    <% if not @users_groups.any? or not @user.role? :tutor%>
+        <p>User does not tutor any groups </p>
     <% end -%>
     <ul class="groups_list">
     <% @users_groups.each do |g| %>
