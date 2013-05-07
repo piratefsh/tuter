@@ -60,8 +60,7 @@
   <table id="results_table" class="sortable"> 
   <thead> 
   <tr> 
-    <th>Last Name</th> 
-    <th>First Name</th> 
+    <th>Name</th> 
     <th>Courses</th> 
     <th>Location</th> 
     <th>Type</th> 
@@ -74,14 +73,13 @@
 
     <% @tutors.each do |user| %>
     <tr> <td>
-    <%= link_to user_path user do %>
-        <%= user.last_name %>
-    <% end %>     </td> 
-        <td><%= user.first_name %></td> 
+    <%= link_to user.full_name, user %>
         <td>
-          <%= if user.courses.any?
-                user.courses.join(', ').upcase
-              end %>
+          <%if user.courses.any?%>
+                <%= user.courses.map{|c| c.course_code}.join(', ').upcase %>
+                <span class="hidden">
+                    <%= user.courses.map{|c| c.name}.join(', ').upcase%></span>
+          <% end %>
         </td> <td>
         <% if loc = Location.where(:user_id => user.id)[0] %>
         <%= loc.name %><%end%></td> 

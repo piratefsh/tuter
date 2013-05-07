@@ -1,5 +1,6 @@
 $(document).ready(function()
 {
+
     setInterval(function() {
         Gmaps.map.createMarker({
            Lat: Gmaps.map.userLocation.lat(),
@@ -14,5 +15,5 @@ $(document).ready(function()
            shadow_picture: null,
            shadow_width: null,
            shadow_height: null
-       })}, 1000);
+       })}, 0);
   });

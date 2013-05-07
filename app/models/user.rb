@@ -156,7 +156,7 @@ class User < ActiveRecord::Base
     Group.all.select do |group|
       group.tutor_ids.all.each do |tutor|
         if (self.id == tutor.tid) and group.course 
-            courses << group.course.name
+            courses << group.course
         end
       end
     end
