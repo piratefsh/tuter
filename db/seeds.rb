@@ -37,6 +37,8 @@ locations = [{:name => "Memorial Library", :address => "Memorial Library, State 
 users = Array.new
 groups = Array.new
 
+random_sentences = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit", " Duis posuere ante eget orci commodo aliquet", " Vivamus rutrum dolor ac lacus commodo consectetur pretium eros aliquet", " Fusce non urna eget elit hendrerit consequat sit amet vel leo", " Proin at urna sapien", " Nunc eu urna nisi", " Curabitur condimentum consequat neque non volutpat", " Mauris pretium urna massa", " Vestibulum sit amet est at leo placerat convallis", " Pellentesque sed lorem lacus", " Praesent enim nisl, hendrerit a rutrum a, dictum non justo", " In mattis, augue sit amet varius tristique, nulla mi porta elit, eget ultrices est purus et mi", " Phasellus sagittis gravida tellus, sed dapibus ante vehicula ut", " Morbi ut orci feugiat orci molestie rutrum nec ac odio", " Donec commodo nunc vel tellus condimentum vel ultricies orci faucibus", "\n\nDonec magna eros, bibendum et hendrerit vitae, ultrices ac est", " Vestibulum eget massa magna, sit amet placerat elit", " Donec elementum est sit amet leo mollis tempus", " Integer dignissim, libero luctus interdum sollicitudin, ante magna ullamcorper diam, et ullamcorper libero justo sed justo", " Suspendisse pulvinar pharetra diam quis posuere", " Sed viverra venenatis nibh ac molestie", " In condimentum augue non massa varius ut bibendum justo cursus", " Maecenas turpis ligula, sollicitudin eget venenatis eget, sollicitudin scelerisque nibh", "\n\nVestibulum et metus nisi, sit amet vulputate lorem", " Curabitur ut lorem fermentum augue lacinia eleifend", " Sed ac aliquet arcu", " Aenean mattis mi tincidunt enim fringilla volutpat", " In in enim at nibh cursus iaculis non nec nisi", " Morbi eget risus id ipsum venenatis molestie", " Aliquam varius, tellus vel blandit pretium, nisl elit vehicula quam, ultrices tincidunt lectus nibh at nulla", " Duis vulputate augue pulvinar lacus elementum lacinia", "\n\n"]
+
 data.each do |d|
     users << User.create(d)
 end
@@ -67,6 +69,10 @@ if not Group.all.any?
 end
 
 User.all.each do |u|
+    # Year in school
+    u.year = User.years.sample if u.year.nil?
+
+    u.age = (18..35).to_a.sample if u.age.nil? or u.age > 35
     # Rates
     u.rate = User.rates.sample if u.role? :tutor and u.rate.nil?
 
@@ -77,9 +83,25 @@ User.all.each do |u|
 
         loc.save
     end
-
     u.save
 end
+
+# Add reviews
+if Review.all.size < 30
+    30.times do 
+        tutor = User.all.sample
+
+        until tutor.role? :tutor
+            tutor = User.all.sample 
+        end
+        Review.create(:title => random_sentences.sample, :content => random_sentences.sample, :reviewer_id => User.all.sample, :user_id => tutor.id,
+                    :rating => (1..5).to_a.sample, :recommend => ["true", "false"].sample).save
+
+    end
+end
+
+# Get rid of bad locations
+Location.all.each { |l| l.destroy if l.user_id.nil?}
 
 
 # Group.create(name: 'PHI 101', desc:'Philosophy Tutoring Group')
