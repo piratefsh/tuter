@@ -21,7 +21,7 @@
             <% @student_groups.reverse.each do |group| %>
                 <tr>
                     <td><%= link_to group.name, group %>
-                        <p><%= group.group_type + ': ' + group.desc %></p></td>
+                        <p><%= group.group_type + ': ' + group.desc[0..28] << "..." %></p></td>
 
                     <td>
                         <% if group.tutor_ids.empty? %>
@@ -29,8 +29,8 @@
                         <% else %>
                         <ul>
                             <% group.tutor_ids.all.each do |tutor| %>
-                                    <%u = User.find(tutor.tid)%>
-                               <li> <%= u.last_name + ', ' + u.first_name %></li>
+                                <%u = User.find(tutor.tid)%>
+                                    <li> <%= link_to u.initials, u%></li>
                             <% end %> 
                         </ul>
                         <% end %>
@@ -42,15 +42,13 @@
                          <% else%>
                             <ul>
                             <% group.student_ids.all.each do |student| %>
-                                <% if student.sid %>
                                 <%u = User.find(student.sid)%>
-                                   <li> <%= u.last_name + ', ' + u.first_name %></li>
-                                <% end %>
+                                   <li> <%= link_to u.initials, u %></li>
                             <% end %>
                             </ul>
                         <% end %>
                     </td>
-                    <td><%= group.course.name %></td>
+                    <td><%= group.course.course_code %></td>
                     <td><%= group.location %></td>
                     <td></td>
 
