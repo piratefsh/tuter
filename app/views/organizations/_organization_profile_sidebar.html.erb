@@ -12,10 +12,15 @@
     <h3>Contact Info</h3>
     <div><a href="mailto:<%=@user.email%>"><%= @user.email %></a></div>
 
+    <% if not @organization.website == ''%>
+        <h3>Official Site</h3>
+        <div><a href="<%=@organization.website%>"><%= @organization.website %></a></div>
+    <% end %>
+
     <% if current_user and current_user.id == @organization.user_id %>
-    <div class="small_button unimp">
-    <%= button_to "Edit Organization", edit_organization_path(@organization), :method=> :get %>
-    </div>
+        <div class="small_button unimp">
+        <%= button_to "Edit Organization", edit_organization_path(@organization), :method=> :get %>
+        </div>
     <% end %>
 
 </div>

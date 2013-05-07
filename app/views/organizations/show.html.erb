@@ -6,6 +6,14 @@
 <% end -%>
 <div id='org_programs_container'>
 	<div id='org_programs'>
+		<% if not @organization.about == '' %>
+			<h2>About<h2>
+			<ul class="programs_list">
+				<li>
+					<p><%= @organization.about %></p>
+				</li>
+			</ul>
+		<% end %>
 		<h2>Programs</h2>
 		<ul class="programs_list">
 			<% @programs.each do |program| %>
