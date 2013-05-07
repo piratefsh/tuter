@@ -19,25 +19,30 @@ class TutorWatchlistController < ApplicationController
 			@watchlist = @user.tutor_watchlist
 		end
 
+		tutor_id = TutorId.create(:tid => params[:tutor_id], :tutor_watchlist_id => @watchlist.id)
 
-		@tutor_id = TutorId.create(:tid => params[:tutor_id], :tutor_watchlist_id => @watchlist.id)
-		#raise @tutor_id.tid.to_s
-		@watchlist.tutor_ids << @tutor_id
-
+		@watchlist.tutor_ids << tutor_id
+		
+		respond_to do |format|
+			if @watchlist.save
+				format.html{ redirect_to @watchlist}
+			end
+		end
 		# if @watchlist.tutor_ids.first.tid.nil?
 		# 	raise "fuck"
 		# else 
 		# 	raise "yay"
 		# end
-		#raise @watchlist.tutor_ids.first.tutor_watchlist_id.to_s
-		raise @watchlist.tutor_ids.first.tid.to_s
+		# raise @watchlist.tutor_ids.first.tutor_watchlist_id.to_s
 
-		redirect_to "/dashboard"
 	end
 
 	def show
 		@watchlist = current_user.tutor_watchlist
-		redirect_to "/dashboard"
+		
+		respond_to do |format|
+			format.html {redirect_to "/dashboard"} 
+		end
 	end	
 
 	def destroy

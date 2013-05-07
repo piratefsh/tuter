@@ -15,7 +15,16 @@
 
 	<div id='watchlist'>
 		<h2>Watchlisted Tutors</h2>
-		<p><%= User.find(@tutor_watchlist.tutor_ids.first.tid).first_name %></p>
+		<%if @tutor_watchlist %>
+		<ul>
+			<% @tutor_watchlist.tutor_ids.each do |t|%>
+			<li>
+				<% u = User.find(t.tid) if t.tid%>
+					<%= u.full_name if u%>
+			</li>
+			<% end %>
+		</ul>
+		<% end%>
 	</div>
 	
 </div>

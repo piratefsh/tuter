@@ -6,16 +6,17 @@
 <% end %>
 
 <%= render 'user_profile_sidebar' %>
-
 <div id="reviews_container">
+
+<div>
+Like this tutor? Add them to your <%= link_to "watchlist!", {:controller => "tutor_watchlist", :action => "update", :tutor_id => @user.id, :user_id => current_user.id}, :method => :put %>
+</div>
     <%if @user_location %>
         <%= render 'user_location' %>
     <% end -%>
     <%= render 'user_groups' %>
-	<%= render 'user_reviews' %>
+    <%= render 'user_reviews' %>
 </div>
-
-Like this tutor? Add them to your <%= link_to "watchlist!", {:controller => "tutor_watchlist", :action => "update", :tutor_id => @user.id, :user_id => current_user.id}, :method => :put %>
 
 
 
