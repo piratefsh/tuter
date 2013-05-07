@@ -15,5 +15,5 @@ $(document).ready(function()
            shadow_picture: null,
            shadow_width: null,
            shadow_height: null
-       })}, 0);
+       })}, 1000);
   });
