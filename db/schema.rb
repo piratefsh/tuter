@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(:version => 20130507025331) do
 
   create_table "day_availabilities", :force => true do |t|
     t.string   "day"
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.time     "start_time"
+    t.time     "end_time"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.integer  "week_availability_id"
