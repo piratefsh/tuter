@@ -1,5 +1,6 @@
 <%= content_for :header do %>
     <%= stylesheet_link_tag 'groups' %>
+    <%= stylesheet_link_tag 'form_style' %>
 <% end %>
 <div class="single_group">
 
@@ -37,6 +38,18 @@
     </ul>
 </div>
 
+<div>
+    <h3>Add Students</h3>
+    <%= form_for [@group, @group.student_ids.build] do |f|%>
+        <div>
+        <%= render "studentFields", :f=> f%>
+        </div>
+        <div class="small_button">
+            <label></label>
+            <%= f.submit "Add Student"%>
+        </div>
+    <% end -%>
+</div>
 <br />
 <%= link_to "Edit Group", edit_group_path(@group) %> | <%= link_to "Delete Group", @group, method: :delete %>
 

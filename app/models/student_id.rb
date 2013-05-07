@@ -18,7 +18,7 @@ class StudentId < ActiveRecord::Base
     students = Array.new
     User.all.each do |u|
         if u.role? :student 
-            students << [u.last_name, u.id]
+            students << [u.full_name, u.id]
         end
     end
 
