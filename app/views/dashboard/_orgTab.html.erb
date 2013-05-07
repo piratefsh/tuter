@@ -8,9 +8,8 @@
     <% end %>
    
     <% if @organizations.any? %>
-    	<%= link_to @organizations.first do%>
-    	<h2><%= @organizations.first.name %></h2>
-    	<% end %>
+        <h2 class="inline"><%= @organizations.first.name %>  </h2>
+    	<%= link_to "Show", @organizations.first%>
     	<ul class="secondary_tabs">
 		   <li><a href="#org_programs">Programs</a></li>
 		   <li> <a href="#org_students_tutors" >Students and Tutors</a></li>
@@ -30,10 +29,8 @@
 				</li>
 			<% end %>
 		</ul>
-	</div>
-
-		<div id='org_programs'>
-			<div id="new_program" ><%= render 'programs/form' %>
+    <%= render 'programs/form' %>
+    </div>
 	<% end %>
 </div>
 
