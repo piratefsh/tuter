@@ -1,0 +1,14 @@
+
+<div id ="users_groups">  
+<h1>Groups</h1>  
+    <ul class="groups_list">
+    <% @users_groups.each do |g| %>
+        <li>
+            <h3><%=link_to g.name, g %><span> - <%=g.course.name%></span></h3>
+            <p class="float_right"><span>Tutors: <%= g.tutor_ids.size %>, </span><span>Students: <%= g.student_ids.size %></span></p>
+            <p><strong><%=g.group_type %>. </strong><%= g.desc %></p>
+        </li>
+    <% end %>
+    </ul>
+
+</div>

@@ -5,17 +5,15 @@
 <div id="profile">
     <!-- Display User Profile Picture-->
     <% if @user.photo? %>
-        <%= image_tag(@user.photo, :alt => "Profile Picture") %>
+        <%= link_to image_tag(@user.photo, :alt => "Profile Picture"), @user %>
     <% else %>
-        <%= image_tag("/images/def_profile_pic.jpg", :alt => "Profile Picture")%>
+        <%= link_to image_tag("/images/def_profile_pic.jpg", :alt => "Profile Picture"), @user%>
     <% end %>
 
     <h2><%=@user.first_name %> <%=@user.last_name %></h2>
     <p><%=@user.desc %></p>
 
 
-    <h3>Courses</h3>
-    <p><%= @user.courses.join(' <br/> ').upcase.html_safe %></p>
     <h3>Personal Information</h3>
     <div>
     <% if @user.age? %>
