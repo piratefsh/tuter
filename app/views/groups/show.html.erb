@@ -31,25 +31,12 @@
 <div>
     <h3>Students</h3>
     <ul>
-    <% @group.student_ids.all.each do |student| %>
-        <%u = User.find(student.sid) %>
-        <li><%= link_to  u.full_name, u%></li>
-    <% end %>
+        <%@group.students.each do |s|%>
+            <li><%= link_to s.full_name, s %></li>
+        <% end -%>
     </ul>
 </div>
 
-<div>
-    <h3>Add Students</h3>
-    <%= form_for [@group, @group.student_ids.build] do |f|%>
-        <div>
-        <%= render "studentFields", :f=> f%>
-        </div>
-        <div class="small_button">
-            <label></label>
-            <%= f.submit "Add Student"%>
-        </div>
-    <% end -%>
-</div>
 <br />
 <%= link_to "Edit Group", edit_group_path(@group) %> | <%= link_to "Delete Group", @group, method: :delete %>
 

@@ -3,3 +3,16 @@
 <h1>Edit group</h2>
     <%= render 'form' %>
 
+<h3>Add Students</h3>
+<ul>
+    <%@group.students.each do |s|%>
+        <li><%= link_to s.full_name, s %></li>
+    <% end -%>
+</ul>
+<%= form_for [@group, @group.student_ids.build] do |f|%>
+    <%= render "studentFields", :f=> f%>
+    <div class="small_button">
+        <label></label>
+        <%= f.submit "Add Student"%>
+    </div>
+<% end -%>

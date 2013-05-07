@@ -27,8 +27,6 @@ class Group < ActiveRecord::Base
   accepts_nested_attributes_for :tutor_ids
   accepts_nested_attributes_for :course
 
-  private
-
   def cleanup
   	self.tutor_ids.destroy_all
   	self.student_ids.destroy_all
@@ -36,5 +34,14 @@ class Group < ActiveRecord::Base
 
   def self.group_types
     ['Drop-In', 'Group', 'One-on-one']
+  end
+
+  def students
+    students = Array.new
+    self.student_ids.all.each do |student|
+      students << User.find(student.sid)
+    end
+
+    students
   end
 end
