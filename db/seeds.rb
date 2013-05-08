@@ -55,7 +55,7 @@ data.each do |d|
     users << User.create(d)
 end
 
-if not Group.all.any?
+if not Group.all.size < 20
     20.times do
         # Groups
         course = Course.create(courses.sample)
