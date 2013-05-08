@@ -1,0 +1,9 @@
+ <% width = '12px'%>
+ <% width = '20px' if size == "large"%>
+ <% stars.times do %>
+    <%= image_tag("/images/rating_star.png", :width => width) %>
+<%end%>
+
+<% (Review.rating_range.last - stars).times do %>
+    <%= image_tag("/images/rating_star_unselected.png", :width => width) %>
+<% end -%>

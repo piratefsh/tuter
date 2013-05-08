@@ -5,7 +5,7 @@
 <h1>Reviews</h1>
     <% if @user.role? :tutor %>
         <% if @reviews.any? %>
-            <h3>Average Rating: <%= user_average_rating %>/5</h3>
+            <h3>Average Rating: <%= render "rating_stars", stars: user_average_rating , size: "large"%></h3>
         <% end %>
         <ul>
             <% @reviews.each do |r| %>
@@ -13,13 +13,7 @@
                     <h4><%= r.title %></h4>
                     <p class="review">
                     <span class="review_rating">
-                        <% r.rating.times do %>
-                        <%= image_tag("/images/rating_star.png", :width => '12px') %>
-                        <%end%>
-
-                        <% (Review.rating_range.last - r.rating).times do %>
-                        <%= image_tag("/images/rating_star_unselected.png", :width => '12px') %>
-                        <% end -%>
+                       <%= render "rating_stars", stars: r.rating, size: "small"%>
                     </span>
                     <span class="review_content"><%= r.content%></span>
                     <% if r.recommend %>
