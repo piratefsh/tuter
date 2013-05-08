@@ -41,9 +41,9 @@ courses = [{:name=>"MATHEMATICS", :course_code=>"MAT 214"}, {:name=>"ENGLISH", :
 lipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse congue condimentum tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam suscipit faucibus vestibulum. Proin vel enim venenatis est pretium tincidunt eget a elit. "
 locations = [{:name => "Memorial Library", :address => "Memorial Library, State Street, Madison, WI"},
                 {:name => "Steenbock Library", :address => "Steenbock Memorial Library, Babcock Drive, Madison, WI"},
-                {:name => "Union South", :address => "Union South, West Dayton Street, Madison, WI"},
-                {:name => "Helen C White", :address => "Helen C. White Hall, North Park Street, Madison, WI"},
-                {:name => "Babcock Hall", :address => "Babcock Hall Dairy Store, Linden Drive, Madison, WI"}]
+                {:name => "Union South", :address => "Union South, University of Wisconsin-Madison, 1308 W Dayton St, Madison, Dane, Wisconsin 53715"},
+                {:name => "Helen C White", :address => "Helen C. White Hall, 600 N Park St, Madison, WI"},
+                {:name => "Babcock Hall", :address => " 1605 Linden Dr, Madison, WI 53706"}]
 
 # Tutor User Seeds
 users = Array.new
