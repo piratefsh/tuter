@@ -99,6 +99,8 @@ User.all.each do |u|
 end
 
 # Add reviews
+
+Review.all.each { |r| r.destroy}
 if Review.all.size < 30
     30.times do 
         tutor = User.all.sample
@@ -106,7 +108,7 @@ if Review.all.size < 30
         until tutor.role? :tutor
             tutor = User.all.sample 
         end
-        Review.create(:title => random_sentences.sample, :content => random_sentences.sample, :reviewer_id => User.all.sample, :user_id => tutor.id,
+        Review.create(:title => random_sentences.sample, :content => random_sentences.sample, :reviewer_id => User.all.sample.id, :user_id => tutor.id,
                     :rating => (1..5).to_a.sample, :recommend => ["true", "false"].sample).save
 
     end

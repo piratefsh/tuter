@@ -3,6 +3,7 @@ class DashboardController < ApplicationController
 
     def dashboard
         @user = current_user
+        @user_location = Location.where(:user_id => @user.id).first
         @group = Group.new
         @course = @group.build_course
         @organization = Organization.new
