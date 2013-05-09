@@ -16,10 +16,9 @@ class SearchController < ApplicationController
         @tutors.push(u)
       end
     end
-
     respond_to do |format|
         format.html #search/index/html.erb
-        # format.json {render :json => @tutors(:only => [:first_name, :last_name, :email]) }
+        format.json {render :json => @tutors.to_json(:only => User.json_attributes, :include => @user.role_to_h) }
     end
   end
 

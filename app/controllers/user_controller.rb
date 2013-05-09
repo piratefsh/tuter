@@ -20,7 +20,7 @@ class UserController < ApplicationController
 
     respond_to do |format|
         format.html
-        format.json {render json: @user}
+        format.json {render :json => @user.to_json(:only => User.json_attributes)}
     end
   end
 

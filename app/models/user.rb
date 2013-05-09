@@ -88,6 +88,11 @@ class User < ActiveRecord::Base
     self
   end
 
+  def self.json_attributes
+    [:id, :first_name, :last_name, :age, :year, :email,
+          :photo, :desc, :roles, :rate,:tutor_watchlist]
+  end
+
   def self.rates 
     rates = Array.new
     start_rate  = 0
@@ -152,6 +157,15 @@ class User < ActiveRecord::Base
     ROLES.reject do |r|
       ((roles_mask || 0) & 2**ROLES.index(r)).zero?
     end
+  end
+
+  def roles_to_h
+    hash = Hash.new
+    self.roles.each_with_index{|role, index|
+      hash[role] = true
+    }
+
+    hash.to_json
   end
 
   def courses

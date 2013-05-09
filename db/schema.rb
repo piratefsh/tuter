@@ -114,8 +114,6 @@ ActiveRecord::Schema.define(:version => 20130507163944) do
     t.integer  "tutor_watchlist_id"
   end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
   create_table "tutor_roles", :force => true do |t|
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
@@ -126,8 +124,6 @@ ActiveRecord::Schema.define(:version => 20130507163944) do
     t.boolean  "transportation"
   end
 
-=======
->>>>>>> 9ab7d66428cdec52eb942ecb27e73ebed4b22cc2
   create_table "tutor_watchlists", :force => true do |t|
     t.integer  "user_id"
     t.datetime "created_at",         :null => false
@@ -135,11 +131,6 @@ ActiveRecord::Schema.define(:version => 20130507163944) do
     t.integer  "tutor_watchlist_id"
   end
 
-<<<<<<< HEAD
-=======
->>>>>>> b4bae1156c97bfdf7dc6be40200cf5cad2255730
-=======
->>>>>>> 9ab7d66428cdec52eb942ecb27e73ebed4b22cc2
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false

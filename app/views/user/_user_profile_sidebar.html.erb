@@ -21,9 +21,9 @@
     <% end %>    
     <% if @user.year? %>
         <%=@user.year %>
+        <br />
     <% end -%>
     <% if @user_location %>
-        <br />
         <% if @user == current_user %>
             <%= link_to edit_location_path(@user_location) do %>
             <span class="address"><%= @user_location.address.split(',').join('<br/>').html_safe%></span>
