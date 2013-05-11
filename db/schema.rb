@@ -12,7 +12,8 @@
 # It's strongly recommended to check this file into your version control system.
 
 ActiveRecord::Schema.define(:version => 20130507163944) do
- create_table "abilities", :force => true do |t|
+
+  create_table "abilities", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -56,6 +57,13 @@ ActiveRecord::Schema.define(:version => 20130507163944) do
     t.datetime "updated_at",  :null => false
     t.string   "location_ID"
     t.integer  "user_id"
+  end
+
+  create_table "organization_roles", :force => true do |t|
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "organization_ID"
+    t.string   "organization_name"
   end
 
   create_table "organizations", :force => true do |t|
@@ -103,7 +111,17 @@ ActiveRecord::Schema.define(:version => 20130507163944) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "sid"
+    t.integer  "gid"
     t.integer  "group_id"
+  end
+
+  create_table "student_roles", :force => true do |t|
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "student_ID"
+    t.integer  "age"
+    t.string   "year_in_school"
+    t.boolean  "transportation"
   end
 
   create_table "tutor_ids", :force => true do |t|
@@ -114,8 +132,6 @@ ActiveRecord::Schema.define(:version => 20130507163944) do
     t.integer  "tutor_watchlist_id"
   end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
   create_table "tutor_roles", :force => true do |t|
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
@@ -126,20 +142,14 @@ ActiveRecord::Schema.define(:version => 20130507163944) do
     t.boolean  "transportation"
   end
 
-=======
->>>>>>> 9ab7d66428cdec52eb942ecb27e73ebed4b22cc2
   create_table "tutor_watchlists", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "uid"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.integer  "user_id"
     t.integer  "tutor_watchlist_id"
   end
 
-<<<<<<< HEAD
-=======
->>>>>>> b4bae1156c97bfdf7dc6be40200cf5cad2255730
-=======
->>>>>>> 9ab7d66428cdec52eb942ecb27e73ebed4b22cc2
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -151,10 +161,6 @@ ActiveRecord::Schema.define(:version => 20130507163944) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "first_name"
@@ -176,7 +182,6 @@ ActiveRecord::Schema.define(:version => 20130507163944) do
     t.integer  "tutor_watchlist_id"
   end
 
-  add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
