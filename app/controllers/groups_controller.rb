@@ -38,6 +38,7 @@ class GroupsController < ApplicationController
 
 		respond_to do |format|
 			format.html
+			format.json { render :json => @group.to_json(:include => :course)}
 		end
 	end
 

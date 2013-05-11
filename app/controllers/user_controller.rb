@@ -16,7 +16,7 @@ class UserController < ApplicationController
     end
     @review = Review.new
 
-    @reviews= Review.where("user_id =?", @user.id)
+    @reviews= Review.where(:user_id => @user.id)
 
     respond_to do |format|
         format.html
@@ -30,14 +30,16 @@ class UserController < ApplicationController
 
     groups_json = users_groups.collect do |group|
       {
-        :name => group.name,
+        :name   => group.name,
+        :id     => group.id
+        :desc   => group.desc,
         :course => 
           {
             :course_name => group.course.name,
             :course_code => group.course.course_code
           }
       }
-    end.to_json
+    end
 
     json.merge :groups => groups_json
 
