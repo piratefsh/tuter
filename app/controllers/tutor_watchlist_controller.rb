@@ -13,7 +13,6 @@ class TutorWatchlistController < ApplicationController
 		if @user.tutor_watchlist.nil?
 			@watchlist = TutorWatchlist.new
 			@watchlist.assign_attributes(:user => @user)
-			@watchlist.tutor_ids.build
 			@user.assign_attributes(:tutor_watchlist => @watchlist)
 		else
 			@watchlist = @user.tutor_watchlist

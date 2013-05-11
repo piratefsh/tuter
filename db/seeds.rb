@@ -41,9 +41,9 @@ courses = [{:name=>"MATHEMATICS", :course_code=>"MAT 214"}, {:name=>"ENGLISH", :
 lipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse congue condimentum tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam suscipit faucibus vestibulum. Proin vel enim venenatis est pretium tincidunt eget a elit. "
 locations = [{:name => "Memorial Library", :address => "Memorial Library, State Street, Madison, WI"},
                 {:name => "Steenbock Library", :address => "Steenbock Memorial Library, Babcock Drive, Madison, WI"},
-                {:name => "Union South", :address => "Union South, West Dayton Street, Madison, WI"},
-                {:name => "Helen C White", :address => "Helen C. White Hall, North Park Street, Madison, WI"},
-                {:name => "Babcock Hall", :address => "Babcock Hall Dairy Store, Linden Drive, Madison, WI"}]
+                {:name => "Union South", :address => "Union South, University of Wisconsin-Madison, 1308 W Dayton St, Madison, Dane, Wisconsin 53715"},
+                {:name => "Helen C White", :address => "Helen C. White Hall, 600 N Park St, Madison, WI"},
+                {:name => "Babcock Hall", :address => " 1605 Linden Dr, Madison, WI 53706"}]
 
 # Tutor User Seeds
 users = Array.new
@@ -55,7 +55,7 @@ data.each do |d|
     users << User.create(d)
 end
 
-if not Group.all.any?
+if Group.all.size < 20
     20.times do
         # Groups
         course = Course.create(courses.sample)
@@ -99,6 +99,8 @@ User.all.each do |u|
 end
 
 # Add reviews
+
+Review.all.each { |r| r.destroy}
 if Review.all.size < 30
     30.times do 
         tutor = User.all.sample
@@ -106,7 +108,7 @@ if Review.all.size < 30
         until tutor.role? :tutor
             tutor = User.all.sample 
         end
-        Review.create(:title => random_sentences.sample, :content => random_sentences.sample, :reviewer_id => User.all.sample, :user_id => tutor.id,
+        Review.create(:title => random_sentences.sample, :content => random_sentences.sample, :reviewer_id => User.all.sample.id, :user_id => tutor.id,
                     :rating => (1..5).to_a.sample, :recommend => ["true", "false"].sample).save
 
     end

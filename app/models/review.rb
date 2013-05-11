@@ -21,4 +21,8 @@ class Review < ActiveRecord::Base
   validates :rating, :presence => {:message => "has to be between 1 and 5"}
   validates :user_id, :presence => :true
   validates :reviewer_id, :presence => :true
+
+  def self.rating_range 
+    return (1..5).to_a
+  end
 end
