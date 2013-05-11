@@ -20,8 +20,27 @@ class UserController < ApplicationController
 
     respond_to do |format|
         format.html
-        format.json {render :json => @user.to_json(:only => User.json_attributes)}
+        format.json {render :json => groups_as_json(@user, @users_groups)}#:json => @user.to_json(:method => groups_as_json(@users_groups), :only => User.json_attributes)}
     end
+  end
+
+  def groups_as_json (user, users_groups)
+
+    json = user.to_h
+
+    groups_json = users_groups.collect do |group|
+      {
+        :name => group.name,
+        :course => 
+          {
+            :course_name => group.course.name,
+            :course_code => group.course.course_code
+          }
+      }
+    end.to_json
+
+    json.merge :groups => groups_json
+
   end
 
   def user_average_rating

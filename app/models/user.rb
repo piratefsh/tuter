@@ -180,4 +180,13 @@ class User < ActiveRecord::Base
     end
     courses
   end
+
+  def to_h
+    hash = Hash.new
+    User.json_attributes.each do |a|
+      hash[a] = self[a]
+    end
+
+    hash
+  end
 end

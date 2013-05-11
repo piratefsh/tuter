@@ -18,7 +18,7 @@ class SearchController < ApplicationController
     end
     respond_to do |format|
         format.html #search/index/html.erb
-        format.json {render :json => @tutors.to_json(:only => User.json_attributes, :include => @user.role_to_h) }
+        format.json {render :json => @tutors.to_json}
     end
   end
 
