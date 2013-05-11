@@ -6,17 +6,17 @@
 $(document).ready(function(){
     //Mapping of input field to table column
     var column = new Array();
-    column['name'] = 1;
-    column['location'] = 3;
-    column['course'] = 2;
-    column['rates'] = 5;
+    column['name'] = 2;
+    column['location'] = 4;
+    column['course'] = 3;
+    column['rates'] = 6;
 
     //map all types
     var groupInputs = $('input', '#group_types');
 
     for(var i = 0; i < groupInputs.size(); i++)
     {
-        column[$(groupInputs[i]).attr('name')] = 4;
+        column[$(groupInputs[i]).attr('name')] = 5;
     }
 
     var table = $('table#results_table')

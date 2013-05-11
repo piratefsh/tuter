@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, 
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :validatable,
-         :recoverable, :rememberable, :trackable, :omniauthable
+         :recoverable, :rememberable, :trackable, :omniauthable, :token_authenticatable
 
   has_one :location
   has_one :tutor_watchlist
@@ -54,6 +54,8 @@ class User < ActiveRecord::Base
                   :first_name, :last_name, :desc, :provider, :uid, :roles, :location, :location_attributes,
                   :age, :transportation, :year, :courses, :courses_attributes, :rate, :time_zone,
                   :tutor_watchlist
+
+  before_save :ensure_authentication_token
 
 
   # Setup creation validation
@@ -188,5 +190,9 @@ class User < ActiveRecord::Base
     end
 
     hash
+  end
+
+  def skip_confirmation!
+    self.confirmed_at = Time.now
   end
 end
