@@ -16,10 +16,25 @@ class SearchController < ApplicationController
         @tutors.push(u)
       end
     end
+
+    # clean json response
     respond_to do |format|
         format.html #search/index/html.erb
-        format.json {render :json => @tutors.to_json}
+        format.json {render :json => tutors_as_json(@tutors).to_json}
     end
+  end
+
+  def tutors_as_json(tutors)
+    json = Array.new
+
+    tutors.each do |t|
+      tu = t.to_h
+      tu[:location] = Location.find(t.location_ID).to_h
+
+      json << tu
+    end
+
+    json
   end
 
   #get types of groups that tutor has
