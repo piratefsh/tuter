@@ -36,4 +36,16 @@ class Location < ActiveRecord::Base
     user = User.find(self.user_id)
     user.full_name
   end
+
+  def self.json_attributes
+    [:address, :latitude, :longitude, :name]
+  end
+
+  def to_h
+    hash = Hash.new
+    Location.json_attributes.each do |a|
+      hash[a] = self[a]
+    end
+    hash
+  end
 end

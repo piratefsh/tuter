@@ -81,7 +81,7 @@
                     <%= user.courses.map{|c| c.name}.join(', ').upcase%></span>
           <% end %>
         </td> <td>
-        <% if loc = Location.where(:user_id => user.id)[0] %>
+        <% if loc = Location.find(user.location_ID) %>
         <%= loc.name %><%end%></td> 
         <td><%= get_types(user).join(', ')%></td> 
         <td><%= if user.rate? 

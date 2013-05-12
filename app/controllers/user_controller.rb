@@ -2,7 +2,7 @@ class UserController < ApplicationController
   helper_method :user_average_rating
   def show
     @user = User.find(params[:id])
-    @user_location = Location.where(:user_id => @user.id).first
+    @user_location = Location.find(@user.location_ID)
     @users_groups = Array.new
 
     #select user's groups
@@ -20,11 +20,11 @@ class UserController < ApplicationController
 
     respond_to do |format|
         format.html
-        format.json {render :json => groups_as_json(@user, @users_groups)}#:json => @user.to_json(:method => groups_as_json(@users_groups), :only => User.json_attributes)}
+        format.json {render :json => user_as_json(@user, @users_groups, @user_location)}#:json => @user.to_json(:method => groups_as_json(@users_groups), :only => User.json_attributes)}
     end
   end
 
-  def groups_as_json (user, users_groups)
+  def user_as_json (user, users_groups, loc)
 
     json = user.to_h
 
@@ -41,7 +41,7 @@ class UserController < ApplicationController
       }
     end
 
-    json.merge :groups => groups_json
+    json.merge :location => loc.to_h, :groups => groups_json
 
   end
 

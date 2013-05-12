@@ -188,6 +188,7 @@ class User < ActiveRecord::Base
     User.json_attributes.each do |a|
       hash[a] = self[a]
     end
+    # add location
 
     hash
   end

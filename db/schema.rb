@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130511173012) do
+ActiveRecord::Schema.define(:version => 20130512203949) do
 
   create_table "abilities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -157,6 +157,7 @@ ActiveRecord::Schema.define(:version => 20130511173012) do
     t.string   "time_zone"
     t.integer  "tutor_watchlist_id"
     t.string   "authentication_token"
+    t.integer  "location_ID"
   end
 
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
