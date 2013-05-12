@@ -31,7 +31,7 @@ class UserController < ApplicationController
     groups_json = users_groups.collect do |group|
       {
         :name   => group.name,
-        :id     => group.id
+        :id     => group.id,
         :desc   => group.desc,
         :course => 
           {

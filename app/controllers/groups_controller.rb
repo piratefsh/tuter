@@ -38,8 +38,39 @@ class GroupsController < ApplicationController
 
 		respond_to do |format|
 			format.html
-			format.json { render :json => @group.to_json(:include => :course)}
+			format.json { render :json => group_to_json(@group)}
 		end
+	end
+
+	def group_to_json(group)
+		# @group.to_json(:include => [:course, :student_ids, :tutor_ids])
+		hash = group.to_h
+
+		course = 
+		{
+			:course_name => group.course.name,
+			:course_code => group.course.course_code,
+		}
+
+		tutors = Array.new
+
+		group.tutor_ids.each do |t|
+			u = User.find(t.tid)
+			tutors << u.to_h
+		end
+
+		students = Array.new
+
+		group.student_ids.each do |t|
+			u = User.find(t.sid)
+			students << u.to_h
+		end
+
+		hash[:course] = course
+		hash[:students] = students
+		hash[:tutors] = tutors
+
+		hash
 	end
 
 	def destroy

@@ -44,6 +44,19 @@ class Group < ActiveRecord::Base
 
     students
   end
+
+
+  def self.json_attributes
+    [:id, :name, :location, :group_type, :desc, :course]
+  end
+
+  def to_h
+    hash = Hash.new
+    Group.json_attributes.each do |a|
+      hash[a] = self[a]
+    end
+    hash
+  end
 end
 
 
