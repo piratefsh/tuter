@@ -30,6 +30,7 @@ class SearchController < ApplicationController
     tutors.each do |t|
       tu = t.to_h
       tu[:location] = Location.find(t.location_ID).to_h
+      tu[:courses] = t.courses
 
       json << tu
     end

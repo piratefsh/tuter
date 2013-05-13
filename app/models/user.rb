@@ -176,12 +176,12 @@ class User < ActiveRecord::Base
     Group.all.select do |group|
       group.tutor_ids.all.each do |tutor|
         if (self.id == tutor.tid) and group.course 
-            courses << group.course
+            courses << group.course.to_h
         end
       end
     end
     courses
-  end
+  end 
 
   def to_h
     hash = Hash.new

@@ -17,4 +17,12 @@ class Course < ActiveRecord::Base
   validates :name, :presence => true
   belongs_to :user
   belongs_to :group
+
+  def to_h
+    json = Hash.new
+    [:name, :course_code].each do |a|
+        json[a] = self[a]
+    end
+    json
+  end
 end
